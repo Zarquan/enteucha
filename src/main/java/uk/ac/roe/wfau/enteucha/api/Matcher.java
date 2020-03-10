@@ -18,6 +18,8 @@
 
 package uk.ac.roe.wfau.enteucha.api;
 
+import edu.jhu.htm.core.HTMException;
+
 /**
  * Public interface for a {@link Position} matcher. 
  * 
@@ -62,12 +64,6 @@ public interface Matcher
      * 
      */
     public long total();
-
-    /**
-     * Get the zone height for this {@link Matcher}. 
-     * 
-     */
-    public double height();
     
     /**
      * Describe the {@link Matcher} configuration.
@@ -76,9 +72,28 @@ public interface Matcher
     public String info();
 
     /**
-     * Get the indexing shape for this {@link Matcher}.
+     * Wrapper for {HTMException}.
      * 
      */
-    public Enum<?> indexing();
+    public static abstract class MatcherException extends Exception
+        {
+        /**
+         * Default serial version ID, {@value}.
+         * 
+         */
+        private static final long serialVersionUID = 1L;
+
+        /**
+         * Public constructor.
+         * 
+         */
+        public MatcherException(final Exception cause)
+            {
+            super(
+                cause
+                );
+            }
+        
+        }
     
     }

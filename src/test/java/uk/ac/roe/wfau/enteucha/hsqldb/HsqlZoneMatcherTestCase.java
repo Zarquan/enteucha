@@ -16,19 +16,19 @@
  *
  */
 
-package uk.ac.roe.wfau.enteucha.cqengine;
+package uk.ac.roe.wfau.enteucha.hsqldb;
 
 import org.junit.Test;
 
 import uk.ac.roe.wfau.enteucha.api.AbstractTestCase;
 import uk.ac.roe.wfau.enteucha.api.Matcher;
-import uk.ac.roe.wfau.enteucha.cqengine.ZoneMatcher.IndexingShape;
+import uk.ac.roe.wfau.enteucha.hsqldb.HsqlZoneMatcherImpl.IndexingShape;
 
 /**
  * 
  * 
  */
-public class ZoneMatcherTestCase
+public class HsqlZoneMatcherTestCase
 extends AbstractTestCase
     {
 
@@ -36,7 +36,7 @@ extends AbstractTestCase
      * Public constructor.
      * 
      */
-    public ZoneMatcherTestCase()
+    public HsqlZoneMatcherTestCase()
         {
         super();
         }
@@ -50,8 +50,9 @@ extends AbstractTestCase
         {
         IndexingShape[] shapes =
             {
-            IndexingShape.SEPARATE_SIMPLE,
-            IndexingShape.COMBINED_SIMPLE
+            //IndexingShape.SEPARATE,
+            IndexingShape.COMBINED,
+            IndexingShape.COMPLEX
             };
         for (IndexingShape indexshape : shapes)
             {
@@ -62,7 +63,7 @@ extends AbstractTestCase
                     @Override
                     public Matcher create(double zoneheight)
                         {
-                        return new ZoneMatcherImpl(
+                        return new HsqlZoneMatcherImpl(
                             indexing,
                             zoneheight
                             );

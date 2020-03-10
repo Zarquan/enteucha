@@ -25,7 +25,7 @@ import uk.ac.roe.wfau.enteucha.api.Position;
  * Public interface for a declination stripe.
  * 
  */
-public interface ZoneMatcher
+public interface CQZoneMatcher
 extends Matcher
     {
 
@@ -63,7 +63,7 @@ extends Matcher
         };
 
     /**
-     * The {@link IndexingShape} for this {@link ZoneMatcher}.
+     * The {@link IndexingShape} for this {@link CQZoneMatcher}.
      * 
      */
     public IndexingShape indexing();

@@ -18,18 +18,13 @@
 
 package uk.ac.roe.wfau.enteucha.hsqldb;
 
-import java.sql.Connection;
-import java.sql.Driver;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
-import javax.sql.DataSource;
-
 import org.apache.commons.math3.util.FastMath;
-import org.springframework.jdbc.datasource.SimpleDriverDataSource;
 
 import lombok.extern.slf4j.Slf4j;
 import uk.ac.roe.wfau.enteucha.api.Matcher;
@@ -41,13 +36,15 @@ import uk.ac.roe.wfau.enteucha.api.PositionImpl;
  * 
  */
 @Slf4j
-public class HsqlMatcherImpl implements Matcher
+public class HsqlZoneMatcherImpl
+extends HsqlMatcherBase
+implements Matcher
     {
     /**
      * Public constructor.
      * 
      */
-    public HsqlMatcherImpl(int count)
+    public HsqlZoneMatcherImpl(int count)
         {
         this(
             IndexingShape.SEPARATE,
@@ -59,7 +56,7 @@ public class HsqlMatcherImpl implements Matcher
      * Public constructor.
      * 
      */
-    public HsqlMatcherImpl(final IndexingShape indexing, double zoneheight)
+    public HsqlZoneMatcherImpl(final IndexingShape indexing, double zoneheight)
         {
         this.indexing = indexing;
         this.zoneheight = zoneheight ;
@@ -83,19 +80,25 @@ public class HsqlMatcherImpl implements Matcher
      */
     private IndexingShape indexing ;
 
-    @Override
+    /**
+     * The {@link IndexingShape} for this {@link Matcher}.
+     * 
+     */
     public IndexingShape indexing()
         {
         return this.indexing;
         }
 
     /**
-     * Height of each zone slice.
+     * The height of each zone slice.
      * 
      */
     private double zoneheight ;
 
-    @Override
+    /**
+     * The height of each zone slice.
+     * 
+     */
     public double height()
         {
         return this.zoneheight;
@@ -106,159 +109,9 @@ public class HsqlMatcherImpl implements Matcher
      * 
      */
     protected static final Double epsilon = 10E-6;
-    
-    /**
-     * The matcher database type.
-     * 
-     */
-    protected String databasetype = "mem";
-    protected String databasetype()
-        {
-        return this.databasetype.trim();
-        }
-
-    /**
-     * The matcher database host.
-     * 
-     */
-    protected String databasehost = "localhost";
-    protected String databasehost()
-        {
-        return this.databasehost.trim();
-        }
-
-    /**
-     * The matcher database port.
-     * 
-     */
-    protected String databaseport = "9001" ;
-    protected String databaseport()
-        {
-        return this.databaseport.trim();
-        }
-    
-    /**
-     * The matcher database name.
-     * 
-     */
-    protected String databasename = "zonematch";
-    protected String databasename()
-        {
-        return this.databasename.trim();
-        }
-
-    /**
-     * The matcher database user name.
-     * 
-    @Value("${databaseuser:}")
-    protected String databaseuser;
-    protected String databaseuser()
-        {
-        return this.databaseuser.trim();
-        }
-     */
-
-    /**
-     * The matcher database password.
-     * 
-    @Value("${databasepass:}")
-    protected String databasepass;
-    protected String databasepass()
-        {
-        return this.databasepass.trim();
-        }
-     */
-
-    /**
-     * Generate our database connection url.
-     * 
-     */
-    public String url()
-        {
-        final StringBuilder builder = new StringBuilder(
-            "jdbc:hsqldb"
-            ); 
-
-        if ("mem".equals(this.databasetype()))
-            {
-            builder.append(":mem:");
-            builder.append(this.databasename());
-            }
-        else {
-            log.error("Unknown database type [{}]",
-                this.databasetype()
-                );
-            throw new UnsupportedOperationException(
-                "Unknown database type [" + this.databasetype() + "]"
-                );
-            }
-        log.trace("url() [{}]", builder.toString());
-        return builder.toString();
-        }
-
-    /**
-     * Our JDBC {@link DataSource}.
-     *
-     */
-    private DataSource source ;
-
-    /**
-     * Our JDBC {@link Driver}.
-     *
-     */
-    protected Driver driver()
-        {
-        return new org.hsqldb.jdbc.JDBCDriver();
-        }
-
-    /**
-     * Connect our {@link DataSource}.
-     * 
-     */
-    protected DataSource source()
-        {
-        log.trace("source()");
-        log.trace(" databasehost [{}]", databasehost());
-        log.trace(" databaseport [{}]", databaseport());
-        log.trace(" databasename [{}]", databasename());
-        //log.debug(" databaseuser [{}]", databaseuser());
-        //log.debug(" databasepass [{}]", databasepass());
-        if (null == this.source)
-            {
-            this.source = new SimpleDriverDataSource(
-                this.driver(),
-                this.url()//,
-                //this.databaseuser(),
-                //this.databasepass()
-                );            
-            }
-        return this.source;
-        }
-
-    /**
-     * Our database connection.
-     * 
-     */
-    private Connection connection ;
-
-    /**
-     * Connect our {@link DataSource}.
-     * @throws SQLException 
-     * 
-     */
-    protected Connection connect()
-    throws SQLException
-        {
-        if (null == this.connection)
-            {
-            this.connection = this.source().getConnection();
-            }
-        return this.connection; 
-        }
 
     /**
      * Initialise our database connection.
-     * @throws SQLException 
      * 
      */
     public void init()
@@ -266,10 +119,10 @@ public class HsqlMatcherImpl implements Matcher
         try {
             this.connect();
 
-            this.connection.createStatement().executeUpdate(
+            this.connection().createStatement().executeUpdate(
                     "DROP TABLE zones IF EXISTS"
                     );
-            this.connection.createStatement().executeUpdate(
+            this.connection().createStatement().executeUpdate(
                 "CREATE TABLE zones ("
                 + "zone INT NOT NULL, "
                 + "ra  DOUBLE NOT NULL, "
@@ -282,19 +135,19 @@ public class HsqlMatcherImpl implements Matcher
             switch (this.indexing)
                 {
                 case SEPARATE:
-                    this.connection.createStatement().executeUpdate(
+                    this.connection().createStatement().executeUpdate(
                         "CREATE INDEX zoneindex "
                         + " ON zones ("
                         + "    zone"
                         + ")"
                         );
-                    this.connection.createStatement().executeUpdate(
+                    this.connection().createStatement().executeUpdate(
                         "CREATE INDEX raindex "
                         + " ON zones ("
                         + "    ra"
                         + ")"
                         );
-                    this.connection.createStatement().executeUpdate(
+                    this.connection().createStatement().executeUpdate(
                         "CREATE INDEX decindex"
                         + " ON zones ("
                         + "    dec"
@@ -303,13 +156,13 @@ public class HsqlMatcherImpl implements Matcher
                     break ;
 
                 case COMBINED:
-                    this.connection.createStatement().executeUpdate(
+                    this.connection().createStatement().executeUpdate(
                         "CREATE INDEX zoneindex "
                         + " ON zones ("
                         + "    zone"
                         + ")"
                         );
-                    this.connection.createStatement().executeUpdate(
+                    this.connection().createStatement().executeUpdate(
                         "CREATE INDEX radecindex"
                         + " ON zones ("
                         + "    ra,"
@@ -319,7 +172,7 @@ public class HsqlMatcherImpl implements Matcher
                     break ;
 
                 case COMPLEX:
-                    this.connection.createStatement().executeUpdate(
+                    this.connection().createStatement().executeUpdate(
                         "CREATE INDEX complexindex"
                         + " ON zones ("
                         + "    zone,"
@@ -339,21 +192,6 @@ public class HsqlMatcherImpl implements Matcher
             {
             log.error("SQLException [{}]", ouch);
             }
-        }
-
-    /**
-     * Shutdown our database connection.
-     * @throws SQLException 
-     * 
-     */
-    public void done()
-    throws SQLException
-        {
-        if (this.connection != null)
-            {
-            this.connection.close();
-            }
-        this.connection = null ;
         }
 
     @Override
@@ -424,7 +262,7 @@ public class HsqlMatcherImpl implements Matcher
         final List<Position> list = new ArrayList<Position>();
         try {
             //log.debug("preparing");
-            final PreparedStatement statement = connection.prepareStatement(template);
+            final PreparedStatement statement = connection().prepareStatement(template);
 
             //log.debug("setting");
             statement.setInt(1, minzone);
@@ -456,6 +294,9 @@ public class HsqlMatcherImpl implements Matcher
                         )
                     );
                 }
+
+            // TODO - Do the cz, cy, cz filtering in java not in the database. 
+        
             }
         catch (SQLException ouch)
             {
@@ -468,7 +309,7 @@ public class HsqlMatcherImpl implements Matcher
     @Override
     public void insert(Position position)
         {
-        //log.trace("insert() [{}][{}]", position.ra(), position.dec());
+        //log.trace("insert [{}][{}]", position.ra(), position.dec());
         String template = "INSERT INTO "
             + "    zones ( "
             + "        zone, "
@@ -490,7 +331,7 @@ public class HsqlMatcherImpl implements Matcher
         final Integer zone = (int) FastMath.floor((position.dec() + 90) / this.zoneheight);
 
         try {
-            final PreparedStatement statement = connection.prepareStatement(template);
+            final PreparedStatement statement = connection().prepareStatement(template);
             statement.setInt(1, zone);
             statement.setDouble(2, position.ra());
             statement.setDouble(3, position.dec());

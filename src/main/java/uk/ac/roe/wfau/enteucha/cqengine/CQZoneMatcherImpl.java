@@ -42,14 +42,14 @@ import uk.ac.roe.wfau.enteucha.api.PositionImpl;
 import uk.ac.roe.wfau.enteucha.util.GenericIterable;
 
 /**
- * A CQEngine based implementation of {@link ZoneMatcher}
+ * A CQEngine based implementation of {@link CQZoneMatcher}
  * TODO Add validation for out of range values.
  * TODO Add +360 and -360 copies for positions within margins of ra = 0 or 360.
  *  
  */
 @Slf4j
-public class ZoneMatcherImpl
-implements ZoneMatcher
+public class CQZoneMatcherImpl
+implements CQZoneMatcher
     {
 
     /**
@@ -59,25 +59,28 @@ implements ZoneMatcher
     protected static final double epsilon = 10E-6;
 
     /**
-     * The height in degrees of the {link Zone}s in this set.
+     * The height in degrees of the {@link Zone}s in this set.
      * 
      */
     private double zoneheight ;
 
-    @Override
+    /**
+     * The height in degrees of the {@link Zone}s in this set.
+     * 
+     */
     public double height()
         {
         return this.zoneheight;
         }
     
     /**
-     * The {@link IndexingShape} for this {@link ZoneMatcher}.
+     * The {@link IndexingShape} for this {@link CQZoneMatcher}.
      * 
      */
     protected IndexingShape indexing ;
 
     /**
-     * The {@link IndexingShape} for this {@link ZoneMatcher}.
+     * The {@link IndexingShape} for this {@link CQZoneMatcher}.
      * 
      */
     @Override
@@ -88,7 +91,7 @@ implements ZoneMatcher
 
 
     /**
-     * Initialise this {@link ZoneMatcher}.
+     * Initialise this {@link CQZoneMatcher}.
      * 
      */
     public void init()
@@ -99,7 +102,7 @@ implements ZoneMatcher
      * Public constructor.
      * 
      */
-    public ZoneMatcherImpl(final IndexingShape indexing, double zoneheight)
+    public CQZoneMatcherImpl(final IndexingShape indexing, double zoneheight)
         {
         this.indexing = indexing ;
         this.zoneheight = zoneheight ;
@@ -177,7 +180,7 @@ implements ZoneMatcher
         long zonestart = System.nanoTime();
         final ResultSet<ZoneImpl>  results = zones.retrieve(
             QueryFactory.between(
-                ZoneMatcherImpl.ZONE_ID,
+                CQZoneMatcherImpl.ZONE_ID,
                 min,
                 true,
                 max,
@@ -203,7 +206,7 @@ implements ZoneMatcher
         //log.trace("select() [{}]", ident);
         final Iterator<ZoneImpl> iter = zones.retrieve(
             QueryFactory.equal(
-                ZoneMatcherImpl.ZONE_ID,
+                CQZoneMatcherImpl.ZONE_ID,
                 ident
                 )
             ).iterator();
@@ -240,13 +243,13 @@ implements ZoneMatcher
         }
 
     /**
-     * The total count of {@link Position}s inserted into this {@link ZoneMatcher}.
+     * The total count of {@link Position}s inserted into this {@link CQZoneMatcher}.
      *
      */
     private long total = 0 ;
 
     /**
-     * The total count of {@link Position}s inserted into this {@link ZoneMatcher}.
+     * The total count of {@link Position}s inserted into this {@link CQZoneMatcher}.
      *
      */
     public long total()
@@ -260,7 +263,7 @@ implements ZoneMatcher
      */
     private final IndexedCollection<ZoneImpl> zones = new ConcurrentIndexedCollection<ZoneImpl>(
         OnHeapPersistence.onPrimaryKey(
-            ZoneMatcherImpl.ZONE_ID
+            CQZoneMatcherImpl.ZONE_ID
             )
         );
 
@@ -329,11 +332,11 @@ implements ZoneMatcher
         }
 
     /**
-     * A CQEngine based implementation of {@link ZoneMatcher.Zone}
+     * A CQEngine based implementation of {@link CQZoneMatcher.Zone}
      * 
      */
     public class ZoneImpl
-    implements ZoneMatcher.Zone
+    implements CQZoneMatcher.Zone
         {
     
         /**
@@ -496,14 +499,14 @@ implements ZoneMatcher
             final ResultSet<PositionImpl> results = positions.retrieve(
                 QueryFactory.and(
                     QueryFactory.between(
-                        ZoneMatcherImpl.POS_DEC,
+                        CQZoneMatcherImpl.POS_DEC,
                         mindec,
                         true,
                         maxdec,
                         true
                         ),
                     QueryFactory.between(
-                        ZoneMatcherImpl.POS_RA,
+                        CQZoneMatcherImpl.POS_RA,
                         minra,
                         true,
                         maxra,
@@ -554,17 +557,17 @@ implements ZoneMatcher
         @SuppressWarnings("unchecked")
         public void init()
             {
-            switch(ZoneMatcherImpl.this.indexing)
+            switch(CQZoneMatcherImpl.this.indexing)
                 {
                 case SEPARATE_SIMPLE:
                     positions.addIndex(
                         NavigableIndex.onAttribute(
-                            ZoneMatcherImpl.POS_RA
+                            CQZoneMatcherImpl.POS_RA
                             )
                         );
                     positions.addIndex(
                         NavigableIndex.onAttribute(
-                            ZoneMatcherImpl.POS_DEC
+                            CQZoneMatcherImpl.POS_DEC
                             )
                         );
                     break ;
@@ -575,12 +578,12 @@ implements ZoneMatcher
                             DoubleQuantizer.withCompressionFactor(
                                 5
                                 ),
-                            ZoneMatcherImpl.POS_RA
+                            CQZoneMatcherImpl.POS_RA
                             )
                         );
                     positions.addIndex(
                         NavigableIndex.onAttribute(
-                            ZoneMatcherImpl.POS_DEC
+                            CQZoneMatcherImpl.POS_DEC
                             )
                         );
                 break ;
@@ -589,15 +592,15 @@ implements ZoneMatcher
                     {
                     positions.addIndex(
                         CompoundIndex.onAttributes(
-                            ZoneMatcherImpl.POS_RA,
-                            ZoneMatcherImpl.POS_DEC
+                            CQZoneMatcherImpl.POS_RA,
+                            CQZoneMatcherImpl.POS_DEC
                             )
                         );
                     }
                     break ;
                 default:
                     throw new IllegalArgumentException(
-                        "Unknown indexing [{" + ZoneMatcherImpl.this.indexing.name() + "}]"
+                        "Unknown indexing [{" + CQZoneMatcherImpl.this.indexing.name() + "}]"
                         ); 
                 }
             }
@@ -610,24 +613,12 @@ implements ZoneMatcher
             builder.append(this.getClass().getSimpleName());
             builder.append("] ");
             builder.append("Indexing [");
-            builder.append(ZoneMatcherImpl.this.indexing.name());
+            builder.append(CQZoneMatcherImpl.this.indexing.name());
             builder.append("]");
             builder.append("Total rows [");
             builder.append(String.format("%,d", this.total()));
             builder.append("]");
             return builder.toString();
-            }
-
-        @Override
-        public double height()
-            {
-            return ZoneMatcherImpl.this.zoneheight;
-            }
-
-        @Override
-        public Enum<?> indexing()
-            {
-            return ZoneMatcherImpl.this.indexing;
             }
         }
 

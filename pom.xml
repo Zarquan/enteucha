@@ -157,6 +157,16 @@
         </dependency>
 
         <!--+
+            | HTMID classes from JHU.
+            | http://www.skyserver.org/htm
+            +-->
+        <dependency>
+            <groupId>edu.jhu.htm</groupId>
+            <artifactId>htmid</artifactId>
+            <version>3.0.1</version>
+        </dependency>
+
+        <!--+
             | Apache Commons Math.
             | http://commons.apache.org/proper/commons-math/index.html
             +-->
