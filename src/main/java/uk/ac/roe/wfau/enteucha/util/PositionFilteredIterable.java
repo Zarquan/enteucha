@@ -26,7 +26,8 @@ import uk.ac.roe.wfau.enteucha.api.Position;
 
 /**
  * An {@link Iterable} to filter an {@link Iterable} of {@link Position}s.  
- *
+ * @deprecated
+ * 
  */
 @Slf4j
 public class PositionFilteredIterable implements Iterable<Position>

@@ -24,6 +24,7 @@ import junit.framework.TestCase;
 import lombok.extern.slf4j.Slf4j;
 import uk.ac.roe.wfau.enteucha.api.Matcher;
 import uk.ac.roe.wfau.enteucha.api.Position;
+import uk.ac.roe.wfau.enteucha.util.IteratorIterable;
 
 /**
  * 
@@ -71,7 +72,7 @@ extends TestCase
     int zonemax = 7 ;
 
     int radiusmin = 6 ;
-    int radiusmax = 7 ;
+    int radiusmax = 8 ;
 
     final Runtime runtime = Runtime.getRuntime();
 
@@ -119,13 +120,15 @@ extends TestCase
                 for (int insertexp = 0 ; insertexp <= countmax ; insertexp++)
                     {
                     double insertnum = FastMath.pow(2.0, insertexp);
-                    double insertsum = FastMath.pow((insertnum+1), 2.0);
-                    //log.info("Insert range [2^{} = {}]", rangeexp, rangeval);
-                    //log.info("Insert count [2^{} = {}]", insertexp, insertnum);
+                    double traceexp = insertexp + 1 ;
+                    double tracenum = FastMath.pow(2.0, traceexp)+1;
+                    double tracesum = FastMath.pow(tracenum, 2.0);
+                    //log.info("Insert range [2^{} = {}]",     rangeexp,  rangeval);
+                    //log.info("Insert count [2^({}+1) = {}]", insertexp, insertnum);
                     log.info("Insert [{}][{}][{}]",
                         insertexp,
-                        String.format("%.0f",  insertnum + 1),
-                        String.format("%,.0f", insertsum)
+                        String.format("%,.0f", tracenum),
+                        String.format("%,.0f", tracesum)
                         );
                     
                     //log.info("Memory [{}][{}][{}]", humanSize(runtime.totalMemory()), humanSize(runtime.freeMemory()), humanSize(runtime.maxMemory()));
@@ -155,16 +158,16 @@ extends TestCase
                         }
                     if (insertexp >= countmin)
                         {
-                        log.info("Totals [{}] [(2^{})+1 = {}] => [{}^2 = {}] in range [{}] step [{}/{} = {}] ",
+                        log.info("Totals [{}] [(2^({}+1))+1 = {}] => [{}^2 = {}] in range [{}] step [{}/{} = {}] ",
                             insertexp,
                             insertexp,
-                            String.format("%.0f", (insertnum+1)),
-                            String.format("%.0f", (insertnum+1)),
-                            String.format("%,.0f", insertsum),
+                            String.format("%.0f",  tracenum),
+                            String.format("%.0f",  tracenum),
+                            String.format("%.0f", tracesum),
                             rangeval,
                             rangeval,
-                            String.format("%,.0f", insertsum),
-                            String.format("%.8f", (rangeval / insertsum))
+                            String.format("%.0f", tracesum),
+                            String.format("%.8f", (rangeval / tracesum))
                             );
                         log.info("Memory [{}][{}][{}]",
                             humanSize(runtime.totalMemory()),
@@ -199,9 +202,11 @@ extends TestCase
                 //log.debug("---- ---- ---- ----");
                 //log.debug("Starting crossmatch");
                 long innerstart = System.nanoTime();
-                Iterable<Position> matches = matcher.matches(
-                    target,
-                    radiusval
+                Iterable<Position> matches = new IteratorIterable<Position>(
+                    matcher.matches(
+                        target,
+                        radiusval
+                        )
                     );
                 for (Position match : matches)
                     {

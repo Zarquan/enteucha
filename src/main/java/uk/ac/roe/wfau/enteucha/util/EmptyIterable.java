@@ -20,7 +20,7 @@ package uk.ac.roe.wfau.enteucha.util;
 import java.util.Iterator;
 
 /**
- * Empty implementation of the Iterable interface. 
+ * Empty implementation of the {@link Iterable} interface. 
  *
  */
 public class EmptyIterable<T>

@@ -21,6 +21,7 @@ package uk.ac.roe.wfau.enteucha.hsqldb;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
 
 import org.apache.commons.math3.util.FastMath;
@@ -28,8 +29,8 @@ import org.apache.commons.math3.util.FastMath;
 import lombok.extern.slf4j.Slf4j;
 import uk.ac.roe.wfau.enteucha.api.Matcher;
 import uk.ac.roe.wfau.enteucha.api.Position;
-import uk.ac.roe.wfau.enteucha.util.PositionFilteredIterable;
-import uk.ac.roe.wfau.enteucha.util.PositionResultSetIterable;
+import uk.ac.roe.wfau.enteucha.util.PositionFilteredIterator;
+import uk.ac.roe.wfau.enteucha.util.PositionResultSetIterator;
 
 /**
  * 
@@ -195,7 +196,7 @@ implements Matcher
         }
 
     @Override
-    public Iterable<Position> matches(final Position target, final Double radius)
+    public Iterator<Position> matches(final Position target, final Double radius)
         {
         log.trace("matches [{}][{}] [{}]", target.ra(), target.dec(), radius);
         final List<Position> results = new ArrayList<Position>();
@@ -287,8 +288,8 @@ implements Matcher
             statement.setDouble(5, mindec);
             statement.setDouble(6, maxdec);
 
-            return new PositionFilteredIterable(
-                new PositionResultSetIterable(
+            return new PositionFilteredIterator(
+                new PositionResultSetIterator(
                     statement.executeQuery()
                     ),
                 target,

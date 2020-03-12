@@ -35,7 +35,9 @@ import lombok.extern.slf4j.Slf4j;
 import uk.ac.roe.wfau.enteucha.api.Matcher;
 import uk.ac.roe.wfau.enteucha.api.Position;
 import uk.ac.roe.wfau.enteucha.util.PositionFilteredIterable;
+import uk.ac.roe.wfau.enteucha.util.PositionFilteredIterator;
 import uk.ac.roe.wfau.enteucha.util.PositionResultSetIterable;
+import uk.ac.roe.wfau.enteucha.util.PositionResultSetIterator;
 
 /**
  *
@@ -266,7 +268,7 @@ implements Matcher
         }
     
     @Override
-    public Iterable<Position> matches(Position target, Double radius)
+    public Iterator<Position> matches(Position target, Double radius)
         {
         log.trace("matches [{}][{}] [{}]", target.ra(), target.dec(), radius);
         final String template = "SELECT "
@@ -314,8 +316,8 @@ implements Matcher
             log.trace("--- [{}]", query);
 
             //log.debug("executing");
-            return new PositionFilteredIterable(
-                new PositionResultSetIterable(
+            return new PositionFilteredIterator(
+                new PositionResultSetIterator(
                     statement.executeQuery(
                         query
                         )

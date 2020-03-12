@@ -40,7 +40,10 @@ import lombok.extern.slf4j.Slf4j;
 import uk.ac.roe.wfau.enteucha.api.Position;
 import uk.ac.roe.wfau.enteucha.api.PositionImpl;
 import uk.ac.roe.wfau.enteucha.util.GenericIterable;
+import uk.ac.roe.wfau.enteucha.util.IterableIteratorList;
+import uk.ac.roe.wfau.enteucha.util.IteratorIterable;
 import uk.ac.roe.wfau.enteucha.util.PositionFilteredIterable;
+import uk.ac.roe.wfau.enteucha.util.PositionFilteredIterator;
 
 /**
  * A CQEngine based implementation of {@link CQZoneMatcher}
@@ -109,20 +112,34 @@ implements CQZoneMatcher
         this.zoneheight = zoneheight ;
         }
 
-    long zonetotal = 0 ;
-    long zonecount = 0 ;
+    //long zonetotal = 0 ;
+    //long zonecount = 0 ;
 
-    long mathtotal = 0 ;
-    long mathcount = 0 ;
+    //long mathtotal = 0 ;
+    //long mathcount = 0 ;
 
-    long radectotal = 0 ;
-    long radeccount = 0 ;
+    //long radectotal = 0 ;
+    //long radeccount = 0 ;
     
     @Override
-    public Iterable<Position> matches(final Position target, final Double radius)
+    public Iterator<Position> matches(final Position target, final Double radius)
         {
         log.trace("matches() [{}][{}][{}]", target.ra(), target.dec(), radius);
 
+        final IterableIteratorList<Position> list = new IterableIteratorList<Position>();  
+        for (Zone zone : contains(target, radius))
+            {
+            list.add(
+                zone.matches(
+                    target,
+                    radius
+                    )
+                );
+            }
+        return list.iterator();
+        
+        /*
+         * 
         this.zonetotal = 0 ;
         this.zonecount = 0 ;
 
@@ -137,7 +154,8 @@ implements CQZoneMatcher
             {
             log.trace("Checking zone [{}][{}]", zone.ident(), zone.total());
             zonecount++;
-            for (Position match : zone.matches(target, radius))
+            Iterable<Position> iter = new IteratorIterable<Position>(zone.matches(target, radius));
+            for (Position match : iter)
                 {
                 log.trace("Found match [{}][{}]", match.ra(), match.dec());
                 list.add(match);
@@ -148,7 +166,9 @@ implements CQZoneMatcher
         //log.trace("Zone ra/dec/pos query [{}] took [{}µs][{}ns] avg [{}µs][{}ns]", (this.radeccount), (this.radectotal/1000), (this.radectotal), (this.radectotal/(this.radeccount * 1000)), (this.radectotal/this.radeccount));
         //log.trace("Zone between found [{}] from [{}] took [{}µs][{}ns]", (zonecount), zones.size(), ((zonetotal)/1000), (zonetotal) );
         
-        return list ;
+        return list.iterator();
+         * 
+         */
         }
         
     @Override
@@ -191,7 +211,6 @@ implements CQZoneMatcher
 
         long zonedone = System.nanoTime();
         long zonediff = zonedone - zonestart;
-        this.zonetotal += zonediff;  
         log.trace("Zone between took [{}µs][{}ns]", ((zonediff)/1000), (zonediff) );
         return results ; 
         }
@@ -233,8 +252,8 @@ implements CQZoneMatcher
         {
         //log.debug("insert() [{}][{}]", position.ra(), position.dec());
         final Zone zone = select(
-                (int) FastMath.floor((position.dec() + 90) / this.zoneheight)
-                );
+            (int) FastMath.floor((position.dec() + 90) / this.zoneheight)
+            );
         //log.debug("Zone [{}]", zone.ident());
         zone.insert(
             position
@@ -357,117 +376,22 @@ implements CQZoneMatcher
             }
 
         @Override
-        public Iterable<Position> matches(final Position target, final Double radius)
+        public Iterator<Position> matches(final Position target, final Double radius)
             {
             log.trace("Zone.matches() [{}][{}] [{}]", target.ra(), target.dec(), radius);
-            return new PositionFilteredIterable(
-                query(
-                    target,
-                    radius
-                    ),
+            Iterable<Position> iteratable = query(
+                target,
+                radius
+                );
+
+            Iterator<Position> iterator = iteratable.iterator();
+            
+            return new PositionFilteredIterator(
+                iterator,
                 target,
                 radius
                 );
             }
-        
-        /**
-         * Filter a list of candidates, checking if they are within the search radius of a target {@link Position}.
-         *
-         *
-        protected Iterable<Position> filter(final Iterable<PositionImpl> candidates, final Position target, final Double radius)
-            {
-            return new Iterable<Position>()
-                {
-                @Override
-                public Iterator<Position> iterator()
-                    {
-                    return new Iterator<Position>()
-                        {
-                        private final Iterator<PositionImpl> iter = candidates.iterator(); 
-                        private Position next = step();
-
-                        **
-                         * Get the next candidate and check if it is within range.
-                         *
-                         *
-                        protected Position step()
-                            {
-                            for (int count = 0 ; iter.hasNext(); count++)
-                                {
-                                final Position temp = iter.next();
-                                if (check(target, radius, temp))
-                                    {
-                                    log.trace("  match [{}] [{}][{}]", count, temp.ra(), temp.dec());
-                                    return temp ;
-                                    }
-                                else {
-                                    log.trace("  skip [{}] [{}][{}]", count, temp.ra(), temp.dec());
-                                    }
-                                }
-                            return null ;
-                            }
-
-                        @Override
-                        public boolean hasNext()
-                            {
-                            return (next != null);
-                            }
-
-                        @Override
-                        public Position next()
-                            {
-                            final Position temp = next ;
-                            next = step();
-                            return temp;
-                            }
-                        };
-                    }
-                };
-            }
-         *
-         */
-        
-        /**
-         * Check if a {@link Position} is within the search radius of a target {@link Position}
-         * by calculating the distance between the cartesian coordinates. 
-         *
-        protected boolean check(final Position target, final Double radius, final Position pos)
-            {
-            log.trace("zone [{}] check [{}][{}]", this.ident, pos.ra(), pos.dec());
-            long mathstart = System.nanoTime();
-            double squares =
-                    FastMath.pow(
-                        pos.cx() - target.cx(),
-                        2
-                        ) 
-                  + FastMath.pow(
-                        pos.cy() - target.cy(),
-                        2
-                        ) 
-                  + FastMath.pow(
-                      pos.cz() - target.cz(),
-                      2
-                      )
-                    ;
-            double squaresin = 4 * (
-                    FastMath.pow(
-                        FastMath.sin(
-                            FastMath.toRadians(
-                                radius
-                                )/2
-                            ),
-                        2)
-                    );
-
-            boolean result = (squaresin > squares) ;
-            long mathend = System.nanoTime();
-            long mathdif = mathend - mathstart ;
-            mathtotal += mathdif ;
-            mathcount++;
-            //log.trace("Math cx/cy/zc compare [{}]>[{}]=[{}] took [{}µs][{}ns]", squaresin, squares, result, (mathdif/1000), (mathdif));
-            return result;
-            }
-         */
         
         /**
          * Query our CQEngine collection for {@link Position}s within a search radius of a target {@link Position}.
@@ -500,7 +424,7 @@ implements CQZoneMatcher
                 );
  *
  */        
-            long radecstart = System.nanoTime();
+            //long radecstart = System.nanoTime();
 
             final ResultSet<Position> results = positions.retrieve(
                 QueryFactory.and(
@@ -521,11 +445,11 @@ implements CQZoneMatcher
                     )
                 );
 
-            long radecdone = System.nanoTime();
-            long radecdiff = radecdone -radecstart;
-            log.trace("Found [{}]", results.size());
-            radectotal += radecdiff;
-            radeccount++;
+            //long radecdone = System.nanoTime();
+            //long radecdiff = radecdone -radecstart;
+            //log.trace("Found [{}]", results.size());
+            //radectotal += radecdiff;
+            //radeccount++;
 
             /*
              * 
@@ -549,7 +473,7 @@ implements CQZoneMatcher
              */
             
             //log.trace("Zone ra/dec query took [{}µs][{}ns]", (radecdiff/1000), (radecdiff) );
-            return results ;
+            return results;
             }
 
         @Override

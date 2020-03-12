@@ -17,34 +17,39 @@
  */
 package uk.ac.roe.wfau.enteucha.util;
 
+import java.util.ArrayList;
 import java.util.Iterator;
+import java.util.List;
 
 /**
+ * A {@link List} based {@link IteratableIterator}.
  *
  */
-public class IteratorIterable<T>
+public class IterableIteratorList<T>
+extends IteratableIterator<T>
 implements Iterable<T>
     {
-    public IteratorIterable(final Iterator<T> iter)
+    public IterableIteratorList()
         {
-        this.iter = iter;
+        this(
+            new ArrayList<Iterator<T>>()
+            );
+        }
+
+    public IterableIteratorList(List<Iterator<T>> list)
+        {
+        super(
+            list
+            );
+        this.list = list ;
         }
     
-    private Iterator<T> iter ;
+    private List<Iterator<T>> list ;
     
-    @Override
-    public synchronized Iterator<T> iterator()
+    public void add(Iterator<T> iter)
         {
-        if (this.iter != null)
-            {
-            Iterator<T> temp = this.iter;
-            this.iter = null ;
-            return temp;
-            }
-        else {
-            throw new UnsupportedOperationException(
-                "Single use Iterator cannot be used more than once"
-                );
-            }
+        list.add(
+            iter
+            );
         }
     }

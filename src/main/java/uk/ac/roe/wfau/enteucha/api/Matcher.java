@@ -18,7 +18,7 @@
 
 package uk.ac.roe.wfau.enteucha.api;
 
-import edu.jhu.htm.core.HTMException;
+import java.util.Iterator;
 
 /**
  * Public interface for a {@link Position} matcher. 
@@ -51,7 +51,7 @@ public interface Matcher
      * Match {@link Position}s within a radius around a target {@link Position}.
      * 
      */
-    public Iterable<Position> matches(final Position target, final Double radius);
+    public Iterator<Position> matches(final Position target, final Double radius);
         
     /**
      * Insert a {@link Position} into the {@link Matcher}.
