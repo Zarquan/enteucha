@@ -67,10 +67,10 @@ extends TestCase
     int countmin = 9;
     int countmax = 10;
 
-    int zonemin = 5 ;
+    int zonemin = 6 ;
     int zonemax = 7 ;
 
-    int radiusmin = 5 ;
+    int radiusmin = 6 ;
     int radiusmax = 7 ;
 
     final Runtime runtime = Runtime.getRuntime();
@@ -155,7 +155,6 @@ extends TestCase
                         }
                     if (insertexp >= countmin)
                         {
-                        log.info("Memory [{}][{}][{}]", humanSize(runtime.totalMemory()), humanSize(runtime.freeMemory()), humanSize(runtime.maxMemory()));
                         log.info("Totals [{}] [(2^{})+1 = {}] => [{}^2 = {}] in range [{}] step [{}/{} = {}] ",
                             insertexp,
                             insertexp,
@@ -167,8 +166,12 @@ extends TestCase
                             String.format("%,.0f", insertsum),
                             String.format("%.8f", (rangeval / insertsum))
                             );
+                        log.info("Memory [{}][{}][{}]",
+                            humanSize(runtime.totalMemory()),
+                            humanSize(runtime.freeMemory()),
+                            humanSize(runtime.maxMemory())
+                            );
                         log.info(">>>>");
-                        //log.info("---- Data spread [{}]", spreadval);
                         innerloop(
                             matcher,
                             target 

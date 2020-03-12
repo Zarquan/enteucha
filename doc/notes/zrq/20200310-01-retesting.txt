@@ -44,6 +44,69 @@ INFO : Disc size [16GiB]
 --END--
 
 # -----------------------------------------------------
+# Update the virtual machine memory allocation.
+#[user@trop04]
+
+    vmname=Larilaweth
+    vmsize=100G
+
+    source "${HOME}/libvirt.settings"
+
+    virsh \
+        --connect "${connection:?}" \
+        shutdown "${vmname:?}"
+
+--START--
+Domain Larilaweth is being shutdown
+--END--
+
+
+    virsh \
+        --connect "${connection:?}" \
+        list \
+            --all
+
+--START--
+ Id    Name                           State
+----------------------------------------------------
+ -     Larilaweth                     shut off
+--END--
+
+
+    virsh \
+        --connect "${connection:?}" \
+        setmaxmem "${vmname:?}" \
+            "${vmsize:?}" \
+            --config
+
+    virsh \
+        --connect "${connection:?}" \
+        setmem "${vmname:?}" \
+            "${vmsize:?}" \
+            --config
+        
+    virsh \
+        --connect "${connection:?}" \
+        start "${vmname:?}"
+        
+--START--
+Domain Larilaweth started
+--END--
+
+
+    virsh \
+        --connect "${connection:?}" \
+        list \
+            --all
+
+--START--
+ Id    Name                           State
+----------------------------------------------------
+ 10    Larilaweth                     running
+--END--
+
+
+# -----------------------------------------------------
 # Login to the new virtual machine.
 #[user@desktop]
         
@@ -84,8 +147,12 @@ INFO : Disc size [16GiB]
 
 
 --START--
+   
+TestHTMfunc.java                              100% 7921   295.3KB/s   00:00    
+TestHTMindexImp.java                          100% 5411   182.8KB/s   00:00    
 ....
-....
+htmid-3.0.1.jar                               100%   83KB  92.9KB/s   00:00    
+duplicate-finder-result.xml                   100% 5627   126.5KB/s   00:00  
 --END--
 
 
@@ -121,9 +188,18 @@ EOF
         popd
     fi
 
+--START--
+remote: Enumerating objects: 81, done.
+remote: Counting objects: 100% (81/81), done.
+remote: Compressing objects: 100% (37/37), done.
+remote: Total 1059 (delta 24), reused 68 (delta 19), pack-reused 978
+Receiving objects: 100% (1059/1059), 608.15 KiB | 313.00 KiB/s, done.
+Resolving deltas: 100% (314/314), done.
+--END--
+
 
 # -----------------------------------------------------
-# Chgeckout the current dev branch.
+# Checkout the current dev branch.
 #[user@virtual]
     
     branchname=20200309-zrq-retest
@@ -134,6 +210,11 @@ EOF
         git checkout "${branchname:?}"
     popd
 
+
+--START--
+Branch '20200309-zrq-retest' set up to track remote branch '20200309-zrq-retest' from 'origin'.
+Switched to a new branch '20200309-zrq-retest'
+--END--
 
 # -----------------------------------------------------
 # Run an instance of firethorn builder container.
@@ -167,6 +248,13 @@ EOF
 --START--
 ....
 ....
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time: 17.821 s
+[INFO] Finished at: 2020-03-12T15:27:43Z
+[INFO] Final Memory: 33M/1904M
+[INFO] ------------------------------------------------------------------------
 --END--
 
 
@@ -182,16 +270,51 @@ EOF
 --START--
 ....
 ....
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time: 19.915 s
+[INFO] Finished at: 2020-03-12T15:28:28Z
+[INFO] Final Memory: 35M/1170M
+[INFO] ------------------------------------------------------------------------
 --END--
+
+
+
+# -----------------------------------------------------
+# Update our test config.
+#[user@builder]
+
+    pushd /var/local/build/enteucha
+
+        vi src/test/conf/logback.xml 
+
+            <!--+
+                | Enteucha logging.
+                +-->
+            <logger name="uk.ac.roe.wfau.enteucha">
+        -       <level value="DEBUG"/>
+        +       <level value="INFO"/>
+            </logger>
+
+
+    popd
 
 
 # -----------------------------------------------------
 # Run our tests.
 #[user@builder]
 
-    pushd /var/local/build/enteucha
-        mvn test
-    popd
+    retest()
+        {
+        source "${HOME}/enteucha.settings"
+        pushd "${ENTEUCHA_CODE:?}"
+            mvn test -D 'test=HsqlHtmidMatcherTestCase' ; mv target/enteucha-trace.log target/enteucha-htmid.log
+            mvn test -D 'test=HsqlZoneMatcherTestCase'  ; mv target/enteucha-trace.log target/enteucha-zone.log
+        popd
+        }
+
+    retest
 
 --START--
 ....

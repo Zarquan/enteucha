@@ -21,7 +21,6 @@ package uk.ac.roe.wfau.enteucha.cqengine;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
-import java.util.function.Consumer;
 
 import org.apache.commons.math3.util.FastMath;
 
@@ -41,6 +40,7 @@ import lombok.extern.slf4j.Slf4j;
 import uk.ac.roe.wfau.enteucha.api.Position;
 import uk.ac.roe.wfau.enteucha.api.PositionImpl;
 import uk.ac.roe.wfau.enteucha.util.GenericIterable;
+import uk.ac.roe.wfau.enteucha.util.PositionFilteredIterable;
 
 /**
  * A CQEngine based implementation of {@link CQZoneMatcher}
@@ -360,7 +360,7 @@ implements CQZoneMatcher
         public Iterable<Position> matches(final Position target, final Double radius)
             {
             log.trace("Zone.matches() [{}][{}] [{}]", target.ra(), target.dec(), radius);
-            final Iterable<Position> results = filter(
+            return new PositionFilteredIterable(
                 query(
                     target,
                     radius
@@ -368,13 +368,12 @@ implements CQZoneMatcher
                 target,
                 radius
                 );
-            return results;
             }
         
         /**
          * Filter a list of candidates, checking if they are within the search radius of a target {@link Position}.
          *
-         */
+         *
         protected Iterable<Position> filter(final Iterable<PositionImpl> candidates, final Position target, final Double radius)
             {
             return new Iterable<Position>()
@@ -387,10 +386,10 @@ implements CQZoneMatcher
                         private final Iterator<PositionImpl> iter = candidates.iterator(); 
                         private Position next = step();
 
-                        /**
+                        **
                          * Get the next candidate and check if it is within range.
                          *
-                         */
+                         *
                         protected Position step()
                             {
                             for (int count = 0 ; iter.hasNext(); count++)
@@ -425,12 +424,13 @@ implements CQZoneMatcher
                     }
                 };
             }
-
+         *
+         */
+        
         /**
          * Check if a {@link Position} is within the search radius of a target {@link Position}
          * by calculating the distance between the cartesian coordinates. 
          *
-         */
         protected boolean check(final Position target, final Double radius, final Position pos)
             {
             log.trace("zone [{}] check [{}][{}]", this.ident, pos.ra(), pos.dec());
@@ -467,12 +467,13 @@ implements CQZoneMatcher
             //log.trace("Math cx/cy/zc compare [{}]>[{}]=[{}] took [{}µs][{}ns]", squaresin, squares, result, (mathdif/1000), (mathdif));
             return result;
             }
+         */
         
         /**
          * Query our CQEngine collection for {@link Position}s within a search radius of a target {@link Position}.
          *
          */
-        protected ResultSet<PositionImpl> query(final Position target, final Double radius)
+        protected ResultSet<Position> query(final Position target, final Double radius)
             {
             log.trace("zone [{}] query [{}][{}][{}]", this.ident, target.ra(), target.dec(), radius);
 
@@ -501,7 +502,7 @@ implements CQZoneMatcher
  */        
             long radecstart = System.nanoTime();
 
-            final ResultSet<PositionImpl> results = positions.retrieve(
+            final ResultSet<Position> results = positions.retrieve(
                 QueryFactory.and(
                     QueryFactory.between(
                         CQZoneMatcherImpl.POS_DEC,
@@ -526,8 +527,10 @@ implements CQZoneMatcher
             radectotal += radecdiff;
             radeccount++;
 
+            /*
+             * 
             log.trace("--- --- --- ---");
-            for(PositionImpl pos : positions)
+            for(Position pos : positions)
                 {
                 if (
                     (pos.ra() >= minra) && (pos.ra() <= maxra)
@@ -542,6 +545,8 @@ implements CQZoneMatcher
                     }
                 }
             log.trace("--- --- --- ---");
+             *             
+             */
             
             //log.trace("Zone ra/dec query took [{}µs][{}ns]", (radecdiff/1000), (radecdiff) );
             return results ;
@@ -568,7 +573,7 @@ implements CQZoneMatcher
          * Our collection of {@link Position}s. 
          * 
          */
-        private final IndexedCollection<PositionImpl> positions = new ConcurrentIndexedCollection<PositionImpl>();
+        private final IndexedCollection<Position> positions = new ConcurrentIndexedCollection<Position>();
 
         @Override
         public long total()
@@ -649,10 +654,10 @@ implements CQZoneMatcher
      * The CQEngine {@link Attribute} for a {@link PositionImpl} right ascension.
      * 
      */
-    public static final SimpleAttribute<PositionImpl, Double> POS_RA = new SimpleAttribute<PositionImpl, Double>("pos.ra")
+    public static final SimpleAttribute<Position, Double> POS_RA = new SimpleAttribute<Position, Double>("pos.ra")
         {
         @Override
-        public Double getValue(final PositionImpl position, final QueryOptions options)
+        public Double getValue(final Position position, final QueryOptions options)
             {
             return position.ra();
             }
@@ -662,10 +667,10 @@ implements CQZoneMatcher
      * The CQEngine {@link Attribute} for a {@link PositionImpl} declination.
      * 
      */
-    public static final SimpleAttribute<PositionImpl, Double> POS_DEC = new SimpleAttribute<PositionImpl, Double>("pos.dec")
+    public static final SimpleAttribute<Position, Double> POS_DEC = new SimpleAttribute<Position, Double>("pos.dec")
         {
         @Override
-        public Double getValue(final PositionImpl position, final QueryOptions options)
+        public Double getValue(final Position position, final QueryOptions options)
             {
             return position.dec();
             }
