@@ -18,13 +18,12 @@
 
 package uk.ac.roe.wfau.enteucha.api;
 
+import java.util.Iterator;
+
 import org.apache.commons.math3.util.FastMath;
 
 import junit.framework.TestCase;
 import lombok.extern.slf4j.Slf4j;
-import uk.ac.roe.wfau.enteucha.api.Matcher;
-import uk.ac.roe.wfau.enteucha.api.Position;
-import uk.ac.roe.wfau.enteucha.util.IteratorIterable;
 
 /**
  * 
@@ -202,14 +201,13 @@ extends TestCase
                 //log.debug("---- ---- ---- ----");
                 //log.debug("Starting crossmatch");
                 long innerstart = System.nanoTime();
-                Iterable<Position> matches = new IteratorIterable<Position>(
-                    matcher.matches(
-                        target,
-                        radiusval
-                        )
+                Iterator<Position> iter = matcher.matches(
+                    target,
+                    radiusval
                     );
-                for (Position match : matches)
+                while (iter.hasNext())
                     {
+                    Position pos = iter.next();
                     //log.debug("Found [{}][{}]", match.ra(), match.dec());
                     loopcount++;
                     //matchcount++;

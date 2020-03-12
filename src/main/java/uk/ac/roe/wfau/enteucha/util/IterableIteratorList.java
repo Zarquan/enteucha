@@ -29,6 +29,15 @@ public class IterableIteratorList<T>
 extends IteratableIterator<T>
 implements Iterable<T>
     {
+    public IterableIteratorList(int size)
+        {
+        this(
+            new ArrayList<Iterator<T>>(
+                size
+                )
+            );
+        }
+    
     public IterableIteratorList()
         {
         this(

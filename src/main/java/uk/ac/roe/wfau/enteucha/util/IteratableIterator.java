@@ -20,14 +20,15 @@ package uk.ac.roe.wfau.enteucha.util;
 import java.util.Iterator;
 
 /**
- * An {@link Iterable} that iterates through a list of {@link Iterator}s.  
+ * An {@link Iterable} that iterates through an {@link Iterable} of {@link Iterator}s,
+ * returning the elements from each {@link Iterator} in turn.
  *
  */
 public class IteratableIterator<T> implements Iterable<T>
     {
     /**
      * Public constructor.
-     * @param iterators An {@link Iterable} list of {@link Iterator}s. 
+     * @param iters An {@link Iterable} list of {@link Iterator}s. 
      * 
      */
     public IteratableIterator(Iterable<Iterator<T>> iters)

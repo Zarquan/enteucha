@@ -20,7 +20,9 @@ package uk.ac.roe.wfau.enteucha.util;
 import java.util.Iterator;
 
 /**
- * Wrapper class to solve a problem with Java generics.  
+ * Wrapper class to solve a problem with Java generics.
+ * Given type <T> implements interface <I>, this wrapper will convert  
+ * an {@link Iterable} of type T to an {@link Iterable} of interface I.  
  *
  */
 public class GenericIterable<I, T extends I>
@@ -29,6 +31,7 @@ public class GenericIterable<I, T extends I>
 
     /**
      * Public constructor.
+     * @param iterable The {@link Iterable} of type <T> to wrap.
      *
      */
     public GenericIterable(Iterable<T> iterable)
@@ -36,58 +39,12 @@ public class GenericIterable<I, T extends I>
         this.iterable = iterable ;
         }
 
-    /**
-     * The original Iterable<T>.
-     *
-     */
     private Iterable<T> iterable ;
-
-    /**
-     * Inner class to implement the Iterator<I> interface.
-     *
-     */
-    private class GenericIterator
-        implements Iterator<I>
-        {
-
-        /**
-         * Private constructor.
-         *
-         */
-        private GenericIterator(Iterator<T> iterator)
-            {
-            this.iterator = iterator ;
-            }
-
-        /**
-         * Our source iterator.
-         *
-         */
-        private Iterator<T> iterator ;
-
-        @Override
-        public boolean hasNext()
-            {
-            return iterator.hasNext();
-            }
-
-        @Override
-        public I next()
-            {
-            return iterator.next();
-            }
-
-        @Override
-        public void remove()
-            {
-            iterator.remove();
-            }
-        }
 
     @Override
     public Iterator<I> iterator()
         {
-        return new GenericIterator(
+        return new GenericIterator<I, T>(
             this.iterable.iterator()
             );
         }

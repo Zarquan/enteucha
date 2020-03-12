@@ -20,31 +20,42 @@ package uk.ac.roe.wfau.enteucha.util;
 import java.util.Iterator;
 
 /**
+ * Wrapper class to solve a problem with Java generics.
+ * Given type <T> implements interface <I>, this wrapper will convert  
+ * an {@link Iterator} of type T to an {@link Iterator} of interface I.  
  *
  */
-public class IteratorIterable<T>
-implements Iterable<T>
+public class GenericIterator<I, T extends I>
+    implements Iterator<I>
     {
-    public IteratorIterable(final Iterator<T> iter)
+
+    /**
+     * Private constructor.
+     * @param iterator An {@link Iterator} of type <T> to wrap.
+     *
+     */
+    public GenericIterator(Iterator<T> iterator)
         {
-        this.iter = iter;
+        this.iterator = iterator ;
         }
-    
-    private Iterator<T> iter ;
-    
+
+    private Iterator<T> iterator ;
+
     @Override
-    public synchronized Iterator<T> iterator()
+    public boolean hasNext()
         {
-        if (this.iter != null)
-            {
-            Iterator<T> temp = this.iter;
-            this.iter = null ;
-            return temp;
-            }
-        else {
-            throw new UnsupportedOperationException(
-                "Single use Iterator cannot be used more than once"
-                );
-            }
+        return iterator.hasNext();
+        }
+
+    @Override
+    public I next()
+        {
+        return iterator.next();
+        }
+
+    @Override
+    public void remove()
+        {
+        iterator.remove();
         }
     }

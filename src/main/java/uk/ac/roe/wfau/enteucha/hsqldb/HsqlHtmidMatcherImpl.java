@@ -34,9 +34,7 @@ import edu.jhu.htm.geometry.Circle;
 import lombok.extern.slf4j.Slf4j;
 import uk.ac.roe.wfau.enteucha.api.Matcher;
 import uk.ac.roe.wfau.enteucha.api.Position;
-import uk.ac.roe.wfau.enteucha.util.PositionFilteredIterable;
 import uk.ac.roe.wfau.enteucha.util.PositionFilteredIterator;
-import uk.ac.roe.wfau.enteucha.util.PositionResultSetIterable;
 import uk.ac.roe.wfau.enteucha.util.PositionResultSetIterator;
 
 /**

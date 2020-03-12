@@ -18,9 +18,7 @@
 
 package uk.ac.roe.wfau.enteucha.cqengine;
 
-import java.util.ArrayList;
 import java.util.Iterator;
-import java.util.List;
 
 import org.apache.commons.math3.util.FastMath;
 
@@ -41,8 +39,6 @@ import uk.ac.roe.wfau.enteucha.api.Position;
 import uk.ac.roe.wfau.enteucha.api.PositionImpl;
 import uk.ac.roe.wfau.enteucha.util.GenericIterable;
 import uk.ac.roe.wfau.enteucha.util.IterableIteratorList;
-import uk.ac.roe.wfau.enteucha.util.IteratorIterable;
-import uk.ac.roe.wfau.enteucha.util.PositionFilteredIterable;
 import uk.ac.roe.wfau.enteucha.util.PositionFilteredIterator;
 
 /**
