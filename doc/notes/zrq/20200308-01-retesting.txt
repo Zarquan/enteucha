@@ -407,7 +407,7 @@ Resolving deltas: 100% (285/285), done.
 
 
 # -----------------------------------------------------
-# Run our an instance of firethorn builder container.
+# Run an instance of firethorn builder container.
 #[user@virtual]
 
     source "${HOME:?}/enteucha.settings"

@@ -20,12 +20,19 @@
     +-->
 <configuration>
 
+	<!--+
+	    | Enteucha logging.
+	    +-->
+	<logger name="uk.ac.roe.wfau.enteucha">
+		<level value="DEBUG"/>
+	</logger>
+
     <!--+
         | Live test logging to stdout.
         +-->
     <appender name="console" class="ch.qos.logback.core.ConsoleAppender">
         <filter class="ch.qos.logback.classic.filter.ThresholdFilter">
-          <level>INFO</level>
+          <level>TRACE</level>
         </filter>
         <encoder>
             <!--pattern>%date{ISO8601} %-5level [%thread] [%logger{0}] %message %n</pattern-->
@@ -71,7 +78,8 @@
           <level>TRACE</level>
         </filter>
         <encoder>
-            <pattern>%date{ISO8601} %-5level [%thread] [%logger{0}] %message %n</pattern>
+            <!--pattern>%date{ISO8601} %-5level [%thread] [%logger{0}] %message %n</pattern-->
+            <pattern>%-5level [%logger{0}] %message %n</pattern>
         </encoder>
     </appender>
 
@@ -81,16 +89,9 @@
     <root level="ALL">
         <appender-ref ref="console" />
         <appender-ref ref="info-log" />
-        <!--appender-ref ref="debug-log" /-->
-        <!--appender-ref ref="trace-log" /-->
+        <appender-ref ref="debug-log" />
+        <appender-ref ref="trace-log" />
     </root>
-
-	<!--+
-	    | Enteucha logging.
-	    +-->
-	<logger name="uk.ac.roe.wfau.enteucha">
-		<level value="TRACE"/>
-	</logger>
 
 	<!--+
 	    | Spring loggers.

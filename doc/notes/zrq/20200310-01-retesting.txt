@@ -1,0 +1,200 @@
+#
+# <meta:header>
+#   <meta:licence>
+#     Copyright (c) 2020, ROE (http://www.roe.ac.uk/)
+#
+#     This information is free software: you can redistribute it and/or modify
+#     it under the terms of the GNU General Public License as published by
+#     the Free Software Foundation, either version 3 of the License, or
+#     (at your option) any later version.
+#
+#     This information is distributed in the hope that it will be useful,
+#     but WITHOUT ANY WARRANTY; without even the implied warranty of
+#     MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+#     GNU General Public License for more details.
+#
+#     You should have received a copy of the GNU General Public License
+#     along with this program.  If not, see <http://www.gnu.org/licenses/>.
+#   </meta:licence>
+# </meta:header>
+#
+#zrq-notes-time
+#zrq-notes-indent
+#zrq-notes-crypto
+#zrq-notes-ansible
+#zrq-notes-osformat
+#
+
+# -----------------------------------------------------
+# Login to one of the trop machines and run a virtual machine.
+#[user@desktop]
+
+    ssh trop04
+
+        createvm
+
+--START--
+....
+INFO : Node name [Larilaweth]
+INFO : Base name [fedora-28-docker-base-20180708.qcow]
+INFO : Base path [/var/lib/libvirt/images/base/fedora-28-docker-base-20180708.qcow]
+INFO : Disc name [Larilaweth.qcow]
+INFO : Disc size [16GiB]
+....
+--END--
+
+# -----------------------------------------------------
+# Login to the new virtual machine.
+#[user@desktop]
+        
+    ssh Larilaweth
+
+# -----------------------------------------------------
+# Create our cache directory.
+#[user@virtual]
+
+    sudo mkdir /var/local/cache
+    sudo chgrp 'users' /var/local/cache
+    sudo chmod 'a+rwx' /var/local/cache
+
+    # Need to make it 'a' ragter than 'g' because Docker user still has root group.
+
+# -----------------------------------------------------
+# Create our build directory.
+#[user@virtual]
+
+    sudo mkdir -p /var/local/build
+    sudo chgrp 'users' /var/local/build
+    sudo chmod 'a+rwx' /var/local/build
+
+
+# -----------------------------------------------------
+# -----------------------------------------------------
+# Transfer (push) a copy of the JHU source code.
+#[user@desktop]
+
+    source "${HOME}/phymatopus.settings"
+    pushd "${PHYMATOPUS_CODE:?}"
+
+        scp -r "../external/htmid/jhu-htmid" \
+            Larilaweth:/var/local/build/jhu-htmid
+
+        popd
+    popd
+
+
+--START--
+....
+....
+--END--
+
+
+# -----------------------------------------------------
+# -----------------------------------------------------
+# Create our settings file.
+#[user@virtual]
+
+    cat > "${HOME}/enteucha.settings" << 'EOF'
+ENTEUCHA_REPO='git@github.com:Zarquan/enteucha.git'
+ENTEUCHA_CODE='/var/local/build/enteucha'
+EOF
+
+
+# -----------------------------------------------------
+# Checkout our source code.
+#[user@virtual]
+
+    source "${HOME}/enteucha.settings"
+
+    echo "Checking [${ENTEUCHA_CODE}]"
+    if [ ! -e "${ENTEUCHA_CODE:?}" ]
+    then
+        echo "Creating [${ENTEUCHA_CODE}]"
+        mkdir "$(dirname ${ENTEUCHA_CODE:?})"
+        pushd "$(dirname ${ENTEUCHA_CODE:?})"
+            git clone "${ENTEUCHA_REPO:?}" "$(basename ${ENTEUCHA_CODE:?})"
+        popd
+    else
+        echo "Updating [${ENTEUCHA_CODE}]"
+        pushd "${ENTEUCHA_CODE:?}"
+            git pull
+        popd
+    fi
+
+
+# -----------------------------------------------------
+# Chgeckout the current dev branch.
+#[user@virtual]
+    
+    branchname=20200309-zrq-retest
+
+    source "${HOME}/enteucha.settings"
+
+    pushd "${ENTEUCHA_CODE:?}"
+        git checkout "${branchname:?}"
+    popd
+
+
+# -----------------------------------------------------
+# Run an instance of firethorn builder container.
+#[user@virtual]
+
+    docker run \
+        --rm \
+        --tty \
+        --interactive \
+        --user "$(id -u)" \
+        --volume "/var/local/cache:/var/local/cache" \
+        --volume "/var/local/build:/var/local/build" \
+        --volume "${SSH_AUTH_SOCK}:/tmp/ssh_auth_sock" \
+        --volume "/var/run/docker.sock:/var/run/docker.sock" \
+        --volume "${secretsh}:/bin/secret" \
+        "firethorn/builder:latest" \
+        'bash'
+
+
+# -----------------------------------------------------
+# -----------------------------------------------------
+# Build the JHU library.
+#[user@builder]
+
+    # Need to skip tests because they fail for some reason !?
+
+    pushd /var/local/build/jhu-htmid
+        mvn clean install -D 'skipTests=true'
+    popd
+
+--START--
+....
+....
+--END--
+
+
+
+# -----------------------------------------------------
+# Build our source code.
+#[user@builder]
+
+    pushd /var/local/build/enteucha
+        mvn clean compile
+    popd
+
+--START--
+....
+....
+--END--
+
+
+# -----------------------------------------------------
+# Run our tests.
+#[user@builder]
+
+    pushd /var/local/build/enteucha
+        mvn test
+    popd
+
+--START--
+....
+....
+--END--
+

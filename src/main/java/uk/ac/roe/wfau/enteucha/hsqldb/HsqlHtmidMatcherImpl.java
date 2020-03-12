@@ -18,13 +18,11 @@
 package uk.ac.roe.wfau.enteucha.hsqldb;
 
 import java.sql.PreparedStatement;
-import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Iterator;
-import java.util.List;
 
 import edu.jhu.htm.core.Domain;
 import edu.jhu.htm.core.HTMException;
@@ -36,7 +34,8 @@ import edu.jhu.htm.geometry.Circle;
 import lombok.extern.slf4j.Slf4j;
 import uk.ac.roe.wfau.enteucha.api.Matcher;
 import uk.ac.roe.wfau.enteucha.api.Position;
-import uk.ac.roe.wfau.enteucha.api.PositionImpl;
+import uk.ac.roe.wfau.enteucha.util.PositionFilteredIterable;
+import uk.ac.roe.wfau.enteucha.util.PositionResultSetIterable;
 
 /**
  *
@@ -51,7 +50,8 @@ implements Matcher
      * Default depth.
      * 
      */
-    public static final int DEFAULT_DEPTH = 20 ;
+    public static final int DEFAULT_DEPTH = 10;
+    public static final int DEFAULT_BUILD = 10;
 
     /**
      * Public constructor.
@@ -60,7 +60,8 @@ implements Matcher
     public HsqlHtmidMatcherImpl()
         {
         this(
-            DEFAULT_DEPTH
+            DEFAULT_DEPTH,
+            DEFAULT_BUILD
            );
         }
 
@@ -68,10 +69,10 @@ implements Matcher
      * Public constructor.
      * 
      */
-    public HsqlHtmidMatcherImpl(final int depth)
+    public HsqlHtmidMatcherImpl(final int depth, final int build)
         {
         this.depth = depth;
-        this.index = new HTMindexImp(depth);
+        this.index = new HTMindexImp(depth, build);
         this.init();
         }
 
@@ -128,7 +129,6 @@ implements Matcher
      */
     public Long htmid(double ra, double dec)
         {
-        //log.debug("htmid [{}][{}]", ra, dec);
         try {
             return index.lookupId(
                 ra,
@@ -137,7 +137,7 @@ implements Matcher
             }
         catch (final HTMException cause)
             {
-            log.error("HTMException [{}]", ra, dec, cause.getMessage());
+            log.error("HTMException checking HTMID for position [{}]", ra, dec, cause.getMessage());
             return INVALID_HTMID ;
             }
         }
@@ -156,10 +156,11 @@ implements Matcher
 
         try {
             final HTMrange range = new HTMrange();
+            // constructor specifying center vector and radius in arcmin
             final Circle circle = new Circle(
                 ra,
                 dec,
-                radius
+                (radius * 160)
                 ); 
             final Domain domain = circle.getDomain();
             domain.setOlevel(depth);
@@ -194,7 +195,6 @@ implements Matcher
     @Override
     public void init()
         {
-        //log.debug("init()");
         try {
             this.connect();
     
@@ -227,7 +227,6 @@ implements Matcher
     @Override
     public void insert(final Position position)
         {
-        //log.trace("insert() [{}][{}]", position.ra(), position.dec());
         String template = "INSERT INTO "
             + "    htmsources ( "
             + "        htmid, "
@@ -247,6 +246,7 @@ implements Matcher
             + "        ) ";
 
         final Long htmid = htmid(position);
+        log.trace("insert [{}] [{}][{}]", htmid, position.ra(), position.dec());
 
         try {
             final PreparedStatement statement = connection().prepareStatement(template);
@@ -268,8 +268,7 @@ implements Matcher
     @Override
     public Iterable<Position> matches(Position target, Double radius)
         {
-        final List<Position> results = new ArrayList<Position>();
-        
+        log.trace("matches [{}][{}] [{}]", target.ra(), target.dec(), radius);
         final String template = "SELECT "
                 + "    htmid, "
                 + "    ra, "
@@ -296,10 +295,12 @@ implements Matcher
             final StringBuilder builder = new StringBuilder();
 
             Iterator<Long> iter = htmids.iterator();
-            while (iter.hasNext())
+            for (int i = 0 ; iter.hasNext() ;  i++)
                 {
+                Long htmid = iter.next();
+                //log.trace("--- [{}][{}]", i, htmid);
                 builder.append(
-                    iter.next()
+                    htmid 
                     );
                 if (iter.hasNext())
                     {
@@ -310,32 +311,24 @@ implements Matcher
                 }
             
             final String query = template.replace("?", builder.toString());
-            //log.trace("query [{}]", query);
+            log.trace("--- [{}]", query);
 
             //log.debug("executing");
-            final ResultSet resultset = statement.executeQuery(query);
-            while (resultset.next())
-                {
-                results.add(
-                    new PositionImpl(
-                        resultset.getDouble(2),                        
-                        resultset.getDouble(3),                        
-                        resultset.getDouble(4),                        
-                        resultset.getDouble(5),                        
-                        resultset.getDouble(6)                        
+            return new PositionFilteredIterable(
+                new PositionResultSetIterable(
+                    statement.executeQuery(
+                        query
                         )
-                    );
-                }
-
-            // TODO - Do the cz, cy, cz filtering in java not in the database. 
-        
+                    ),
+                target,
+                radius
+                );
             }
         catch (SQLException ouch)
             {
-            log.error("SQLException [{}]", ouch);
+            log.error("SQLException [{}]", ouch.getMessage());
+            return null;
             }
-        //log.debug("done");
-        return results;
         }
 
     @Override
@@ -344,7 +337,6 @@ implements Matcher
         final StringBuilder builder = new StringBuilder(); 
         builder.append("Class [");
         builder.append(this.getClass().getSimpleName());
-        builder.append("] ");
         builder.append("] ");
         builder.append("Total rows [");
         builder.append(String.format("%,d", this.total()));

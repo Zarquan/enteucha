@@ -50,9 +50,9 @@ extends AbstractTestCase
         {
         IndexingShape[] shapes =
             {
-            //IndexingShape.SEPARATE,
-            IndexingShape.COMBINED,
-            IndexingShape.COMPLEX
+            IndexingShape.SEPARATE,
+            //IndexingShape.COMBINED,
+            //IndexingShape.COMPLEX
             };
         for (IndexingShape indexshape : shapes)
             {

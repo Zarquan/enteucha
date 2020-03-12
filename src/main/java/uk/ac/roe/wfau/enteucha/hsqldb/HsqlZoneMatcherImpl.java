@@ -19,7 +19,6 @@
 package uk.ac.roe.wfau.enteucha.hsqldb;
 
 import java.sql.PreparedStatement;
-import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
@@ -29,7 +28,8 @@ import org.apache.commons.math3.util.FastMath;
 import lombok.extern.slf4j.Slf4j;
 import uk.ac.roe.wfau.enteucha.api.Matcher;
 import uk.ac.roe.wfau.enteucha.api.Position;
-import uk.ac.roe.wfau.enteucha.api.PositionImpl;
+import uk.ac.roe.wfau.enteucha.util.PositionFilteredIterable;
+import uk.ac.roe.wfau.enteucha.util.PositionResultSetIterable;
 
 /**
  * 
@@ -124,7 +124,7 @@ implements Matcher
                     );
             this.connection().createStatement().executeUpdate(
                 "CREATE TABLE zones ("
-                + "zone INT NOT NULL, "
+                + "zoneid BIGINT NOT NULL, "
                 + "ra  DOUBLE NOT NULL, "
                 + "dec DOUBLE NOT NULL, "
                 + "cx  DOUBLE NOT NULL, "
@@ -138,7 +138,7 @@ implements Matcher
                     this.connection().createStatement().executeUpdate(
                         "CREATE INDEX zoneindex "
                         + " ON zones ("
-                        + "    zone"
+                        + "    zoneid"
                         + ")"
                         );
                     this.connection().createStatement().executeUpdate(
@@ -159,7 +159,7 @@ implements Matcher
                     this.connection().createStatement().executeUpdate(
                         "CREATE INDEX zoneindex "
                         + " ON zones ("
-                        + "    zone"
+                        + "    zoneid"
                         + ")"
                         );
                     this.connection().createStatement().executeUpdate(
@@ -175,7 +175,7 @@ implements Matcher
                     this.connection().createStatement().executeUpdate(
                         "CREATE INDEX complexindex"
                         + " ON zones ("
-                        + "    zone,"
+                        + "    zoneid,"
                         + "    ra,"
                         + "    dec"
                         + ")"
@@ -197,6 +197,8 @@ implements Matcher
     @Override
     public Iterable<Position> matches(final Position target, final Double radius)
         {
+        log.trace("matches [{}][{}] [{}]", target.ra(), target.dec(), radius);
+        final List<Position> results = new ArrayList<Position>();
         //log.debug("preparing");
 
         //log.debug("radius [{}]", radius);
@@ -210,7 +212,7 @@ implements Matcher
         //log.debug("cz  [{}]", target.cz());
 
         final String template = "SELECT "
-            + "    zone, "
+            + "    zoneid, "
             + "    ra, "
             + "    dec,"
             + "    cx, "
@@ -219,7 +221,7 @@ implements Matcher
             + " FROM "
             + "    zones "
             + " WHERE "
-            + "    zone BETWEEN "
+            + "    zoneid BETWEEN "
             + "        ? "
             + "    AND "
             + "        ? "
@@ -233,8 +235,16 @@ implements Matcher
             + "        ? "
             + "    AND "
             + "        ? "
+            ;
+
+/*
+ * 
+            + "    AND "
+            + "        ? "
             + "    AND  "
             + "        ? > (power((cx - ?), 2) + power((cy - ?), 2) + power(cz - ?, 2)) ";
+ *             
+ */
 
         final int minzone = (int) FastMath.floor(((target.dec() + 90) - radius) / this.zoneheight) ;
         final int maxzone = (int) FastMath.floor(((target.dec() + 90) + radius) / this.zoneheight) ;
@@ -245,6 +255,8 @@ implements Matcher
         double mindec = target.dec() - radius ; 
         double maxdec = target.dec() + radius ; 
 
+        /*
+         * 
         double squaresin = 4 * (
                 FastMath.pow(
                     FastMath.sin(
@@ -254,12 +266,13 @@ implements Matcher
                         ),
                     2)
                 );
+         * 
+         */
 
         //log.debug("min/max zone [{}][{}]", minzone, maxzone);
         //log.debug("min/max ra   [{}][{}]", minra, maxra);
         //log.debug("min/max dec  [{}][{}]", mindec, maxdec);
         
-        final List<Position> list = new ArrayList<Position>();
         try {
             //log.debug("preparing");
             final PreparedStatement statement = connection().prepareStatement(template);
@@ -274,45 +287,27 @@ implements Matcher
             statement.setDouble(5, mindec);
             statement.setDouble(6, maxdec);
 
-            statement.setDouble(7, squaresin);            
-
-            statement.setDouble(8,  target.cx());            
-            statement.setDouble(9,  target.cy());            
-            statement.setDouble(10, target.cz());            
-            
-            //log.debug("executing");
-            final ResultSet resultset = statement.executeQuery();
-            while (resultset.next())
-                {
-                list.add(
-                    new PositionImpl(
-                        resultset.getDouble(2),                        
-                        resultset.getDouble(3),                        
-                        resultset.getDouble(4),                        
-                        resultset.getDouble(5),                        
-                        resultset.getDouble(6)                        
-                        )
-                    );
-                }
-
-            // TODO - Do the cz, cy, cz filtering in java not in the database. 
-        
+            return new PositionFilteredIterable(
+                new PositionResultSetIterable(
+                    statement.executeQuery()
+                    ),
+                target,
+                radius
+                );
             }
         catch (SQLException ouch)
             {
-            log.error("SQLException [{}]", ouch);
+            log.error("SQLException [{}]", ouch.getMessage());
+            return null;
             }
-        //log.debug("done");
-        return list;
         }
 
     @Override
     public void insert(Position position)
         {
-        //log.trace("insert [{}][{}]", position.ra(), position.dec());
         String template = "INSERT INTO "
             + "    zones ( "
-            + "        zone, "
+            + "        zoneid, "
             + "        ra, "
             + "        dec, "
             + "        cx, "
@@ -329,6 +324,7 @@ implements Matcher
             + "        ) ";
 
         final Integer zone = (int) FastMath.floor((position.dec() + 90) / this.zoneheight);
+        log.trace("insert [{}] [{}][{}]", zone, position.ra(), position.dec());
 
         try {
             final PreparedStatement statement = connection().prepareStatement(template);

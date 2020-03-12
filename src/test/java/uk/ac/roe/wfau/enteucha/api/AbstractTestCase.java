@@ -41,16 +41,34 @@ extends TestCase
         {
         }
 
+    /*
+     * 
     int looprepeat = 10;    
 
-    int rangemin =  5;
-    int rangemax =  6;
+    int rangemin = 5;
+    int rangemax = 6;
 
-    int countmin =  9;
+    int countmin = 8;
+    int countmax = 9;
+
+    int zonemin = 5 ;
+    int zonemax = 6 ;
+
+    int radiusmin = 5 ;
+    int radiusmax = 6 ;
+     * 
+     */
+
+    int looprepeat = 10;    
+
+    int rangemin = 0;
+    int rangemax = 0;
+
+    int countmin = 9;
     int countmax = 10;
 
-    int zonemin = 6 ;
-    int zonemax = 6 ;
+    int zonemin = 5 ;
+    int zonemax = 7 ;
 
     int radiusmin = 5 ;
     int radiusmax = 7 ;
@@ -58,11 +76,24 @@ extends TestCase
     final Runtime runtime = Runtime.getRuntime();
 
     /**
+     * Flag to prevent clean on the first call to outer loop.
+     *  
+     */
+    boolean first = true ;
+
+    /**
      * Test finding things.
      * 
      */
     public void outerloop(final Matcher.Factory factory)
         {
+        if (first)
+            {
+            first = false;
+            }
+        else {
+            clean();
+            }
         final Position target = new PositionImpl(
             120.0,
             120.0
@@ -88,8 +119,15 @@ extends TestCase
                 for (int insertexp = 0 ; insertexp <= countmax ; insertexp++)
                     {
                     double insertnum = FastMath.pow(2.0, insertexp);
-                    log.info("Insert range [2^{} = {}]", rangeexp, rangeval);
-                    log.info("Insert count [2^{} = {}]", insertexp, insertnum);
+                    double insertsum = FastMath.pow((insertnum+1), 2.0);
+                    //log.info("Insert range [2^{} = {}]", rangeexp, rangeval);
+                    //log.info("Insert count [2^{} = {}]", insertexp, insertnum);
+                    log.info("Insert [{}][{}][{}]",
+                        insertexp,
+                        String.format("%.0f",  insertnum + 1),
+                        String.format("%,.0f", insertsum)
+                        );
+                    
                     //log.info("Memory [{}][{}][{}]", humanSize(runtime.totalMemory()), humanSize(runtime.freeMemory()), humanSize(runtime.maxMemory()));
                     for (double c = -insertnum ; c <= insertnum ; c++)
                         {
@@ -118,6 +156,17 @@ extends TestCase
                     if (insertexp >= countmin)
                         {
                         log.info("Memory [{}][{}][{}]", humanSize(runtime.totalMemory()), humanSize(runtime.freeMemory()), humanSize(runtime.maxMemory()));
+                        log.info("Totals [{}] [(2^{})+1 = {}] => [{}^2 = {}] in range [{}] step [{}/{} = {}] ",
+                            insertexp,
+                            insertexp,
+                            String.format("%.0f", (insertnum+1)),
+                            String.format("%.0f", (insertnum+1)),
+                            String.format("%,.0f", insertsum),
+                            rangeval,
+                            rangeval,
+                            String.format("%,.0f", insertsum),
+                            String.format("%.8f", (rangeval / insertsum))
+                            );
                         log.info(">>>>");
                         //log.info("---- Data spread [{}]", spreadval);
                         innerloop(
@@ -129,26 +178,7 @@ extends TestCase
                     }
                 }
             }
-        try {
-            log.info("---- Finalize");
-            System.runFinalization();
-            Thread.sleep(10000);
-            }
-        catch (final InterruptedException ouch)
-            {
-            log.debug("InterruptedException [{}]", ouch);
-            }
-        try {
-            log.info("---- Running gc");
-            System.gc();
-            Thread.sleep(10000);
-            }
-        catch (final InterruptedException ouch)
-            {
-            log.debug("InterruptedException [{}]", ouch);
-            }
         }
-
 
     public void innerloop(final Matcher matcher, final Position target)
         {
@@ -157,7 +187,7 @@ extends TestCase
             double radiusval = FastMath.pow(2.0, -radiusexp);
             log.info("---- ----");
             log.info("Radius [2^{} = {}]", -radiusexp, radiusval);
-
+            
             long looptime  = 0 ;
             long loopcount = 0 ;
             for(int loop = 0 ; loop < this.looprepeat ; loop++)
@@ -216,17 +246,44 @@ extends TestCase
         }
     
     /**
-     * Format a data size as a human readable String.
+     * Format a number as a human readable String.
      * https://programming.guide/java/formatting-byte-size-to-human-readable-format.html 
      * 
      */
-    public static String humanSize(long bytes, boolean si)
+    public static String humanSize(long value, boolean si)
         {
         int unit = (si) ? 1000 : 1024;
-        if (bytes < unit) return bytes + " B";
-        int exponent = (int) (Math.log(bytes) / Math.log(unit));
+        if (value < unit) return value + " B";
+        int exponent = (int) (Math.log(value) / Math.log(unit));
         final String prefix = (si ? "kMGTPE" : "KMGTPE").charAt(exponent-1) + (si ? "" : "i");
-        return String.format("%.1f %sB", bytes / Math.pow(unit, exponent), prefix);
+        return String.format("%.1f %sB", value / Math.pow(unit, exponent), prefix);
+        }
+
+    
+    /**
+     * Run finalise and gc.
+     *  
+     */
+    public void clean()
+        {
+        try {
+            log.info("---- Finalize");
+            System.runFinalization();
+            Thread.sleep(10000);
+            }
+        catch (final InterruptedException ouch)
+            {
+            log.debug("InterruptedException [{}]", ouch);
+            }
+        try {
+            log.info("---- Running gc");
+            System.gc();
+            Thread.sleep(10000);
+            }
+        catch (final InterruptedException ouch)
+            {
+            log.debug("InterruptedException [{}]", ouch);
+            }
         }
     }
 

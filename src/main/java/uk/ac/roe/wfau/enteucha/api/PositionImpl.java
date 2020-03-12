@@ -42,7 +42,6 @@ public class PositionImpl implements Position
     /**
      * Protected constructor.
      *  
-     */
     public PositionImpl(final Position position)
         {
         this(
@@ -50,6 +49,7 @@ public class PositionImpl implements Position
             position.dec()
             );
         }
+     */
     
     /**
      * Protected constructor.
@@ -76,11 +76,34 @@ public class PositionImpl implements Position
      */
     public PositionImpl(final Double ra, final Double dec, final Double cx, final Double cy, final Double cz)
         {
+        this(
+            null,
+            ra,
+            dec,
+            cx,
+            cy,
+            cz
+            );
+        }
+
+    /**
+     * Protected constructor.
+     *  
+     */
+    public PositionImpl(final Long ident, final Double ra, final Double dec, final Double cx, final Double cy, final Double cz)
+        {
         this.ra  = ra ;
         this.dec = dec;
         this.cx  = cx ;
         this.cy  = cy ;
         this.cz  = cz ;
+        }
+
+    private Long ident;
+    @Override
+    public Long ident()
+        {
+        return this.ident;
         }
 
     private Double ra;

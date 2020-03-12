@@ -39,6 +39,12 @@ public interface Position
         }
     
     /**
+     * The zone or HTM identifier this position is in.
+     * 
+     */
+    public Long ident();
+
+    /**
      * The equatorial coordinate right ascension.
      * 
      */

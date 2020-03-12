@@ -21,6 +21,7 @@ package uk.ac.roe.wfau.enteucha.cqengine;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
+import java.util.function.Consumer;
 
 import org.apache.commons.math3.util.FastMath;
 
@@ -120,7 +121,7 @@ implements CQZoneMatcher
     @Override
     public Iterable<Position> matches(final Position target, final Double radius)
         {
-        //log.trace("matches() [{}][{}][{}]", target.ra(), target.dec(), radius);
+        log.trace("matches() [{}][{}][{}]", target.ra(), target.dec(), radius);
 
         this.zonetotal = 0 ;
         this.zonecount = 0 ;
@@ -134,11 +135,11 @@ implements CQZoneMatcher
         final List<Position> list = new ArrayList<Position>(100);  
         for (Zone zone : contains(target, radius))
             {
-            //log.trace("Checking zone [{}][{}]", zone.ident(), zone.total());
+            log.trace("Checking zone [{}][{}]", zone.ident(), zone.total());
             zonecount++;
             for (Position match : zone.matches(target, radius))
                 {
-                //log.trace("Found match [{}][{}]", match.ra(), match.dec());
+                log.trace("Found match [{}][{}]", match.ra(), match.dec());
                 list.add(match);
                 }
             }
@@ -153,14 +154,14 @@ implements CQZoneMatcher
     @Override
     public Iterable<Zone> contains(final Position target, final Double radius)
         {
-        //log.trace("contains() [{}][{}][{}]", target.ra(), target.dec(), radius);
-        //log.trace("height [{}]",  this.zoneheight);
+        log.trace("contains() [{}][{}][{}]", target.ra(), target.dec(), radius);
+        log.trace("height [{}]",  this.zoneheight);
 
         final Integer min = (int) FastMath.floor(((target.dec() + 90) - radius) / this.zoneheight) ;
         final Integer max = (int) FastMath.floor(((target.dec() + 90) + radius) / this.zoneheight) ;
 
-        //log.trace("min [{}]", min);
-        //log.trace("max [{}]", max);
+        log.trace("min [{}]", min);
+        log.trace("max [{}]", max);
 
         return new GenericIterable<Zone, ZoneImpl>(
             between(
@@ -176,9 +177,9 @@ implements CQZoneMatcher
      */
     protected ResultSet<ZoneImpl> between(final Integer min, final Integer max)
         {
-        //log.trace("between() [{}][{}]", min, max);
+        log.trace("between() [{}][{}]", min, max);
         long zonestart = System.nanoTime();
-        final ResultSet<ZoneImpl>  results = zones.retrieve(
+        final ResultSet<ZoneImpl> results = zones.retrieve(
             QueryFactory.between(
                 CQZoneMatcherImpl.ZONE_ID,
                 min,
@@ -191,7 +192,7 @@ implements CQZoneMatcher
         long zonedone = System.nanoTime();
         long zonediff = zonedone - zonestart;
         this.zonetotal += zonediff;  
-        //log.trace("Zone between took [{}µs][{}ns]", ((zonediff)/1000), (zonediff) );
+        log.trace("Zone between took [{}µs][{}ns]", ((zonediff)/1000), (zonediff) );
         return results ; 
         }
 
@@ -290,7 +291,7 @@ implements CQZoneMatcher
         builder.append("Indexing [");
         builder.append(this.indexing.name());
         builder.append("] ");
-        builder.append("Height [");
+        builder.append("Zone height [");
         builder.append(this.zoneheight);
         builder.append("] ");
 
@@ -301,9 +302,8 @@ implements CQZoneMatcher
         for (Zone zone : zones)
             {
             //builder.append("Zone [");
-            //builder.append(zone.config());
+            //builder.append(zone.ident());
             //builder.append("] ");
-            
             subcount++;
             subtotal += zone.total();
             if (zone.total() > maxtotal)
@@ -318,14 +318,14 @@ implements CQZoneMatcher
         builder.append("Zone count [");
         builder.append(subcount);
         builder.append("] ");
-        builder.append("Zone size [");
+        builder.append("Zone size avg [");
         builder.append((subtotal/subcount));
         builder.append("]");
-        builder.append("[");
-        builder.append((maxtotal));
-        builder.append("]");
-        builder.append("[");
+        builder.append(" min [");
         builder.append((mintotal));
+        builder.append("]");
+        builder.append(" max [");
+        builder.append((maxtotal));
         builder.append("]");
         
         return builder.toString();
@@ -359,6 +359,7 @@ implements CQZoneMatcher
         @Override
         public Iterable<Position> matches(final Position target, final Double radius)
             {
+            log.trace("Zone.matches() [{}][{}] [{}]", target.ra(), target.dec(), radius);
             final Iterable<Position> results = filter(
                 query(
                     target,
@@ -394,11 +395,14 @@ implements CQZoneMatcher
                             {
                             for (int count = 0 ; iter.hasNext(); count++)
                                 {
-                                //log.trace("loop [{}]", count);
                                 final Position temp = iter.next();
                                 if (check(target, radius, temp))
                                     {
+                                    log.trace("  match [{}] [{}][{}]", count, temp.ra(), temp.dec());
                                     return temp ;
+                                    }
+                                else {
+                                    log.trace("  skip [{}] [{}][{}]", count, temp.ra(), temp.dec());
                                     }
                                 }
                             return null ;
@@ -429,6 +433,7 @@ implements CQZoneMatcher
          */
         protected boolean check(final Position target, final Double radius, final Position pos)
             {
+            log.trace("zone [{}] check [{}][{}]", this.ident, pos.ra(), pos.dec());
             long mathstart = System.nanoTime();
             double squares =
                     FastMath.pow(
@@ -469,17 +474,17 @@ implements CQZoneMatcher
          */
         protected ResultSet<PositionImpl> query(final Position target, final Double radius)
             {
-            //log.trace("query() [{}][{}][{}]", target.ra(), target.dec(), radius);
+            log.trace("zone [{}] query [{}][{}][{}]", this.ident, target.ra(), target.dec(), radius);
 
             double factor = radius / (FastMath.abs(FastMath.cos(FastMath.toRadians(target.dec()))) + epsilon);
-            double minra = target.ra() - factor;
-            double maxra = target.ra() + factor;
+            double minra = (target.ra() - factor);
+            double maxra = (target.ra() + factor);
 
             double mindec = (target.dec() - radius) ; 
             double maxdec = (target.dec() + radius) ; 
 
-            //log.trace("min/max ra  [{}][{}]", minra,  maxra) ;
-            //log.trace("min/max dec [{}][{}]", mindec, maxdec);
+            log.trace("min/max ra  [{}][{}]", minra,  maxra) ;
+            log.trace("min/max dec [{}][{}]", mindec, maxdec);
 /*
  *
  * TODO Make this configurable.
@@ -517,9 +522,27 @@ implements CQZoneMatcher
 
             long radecdone = System.nanoTime();
             long radecdiff = radecdone -radecstart;
+            log.trace("Found [{}]", results.size());
             radectotal += radecdiff;
             radeccount++;
 
+            log.trace("--- --- --- ---");
+            for(PositionImpl pos : positions)
+                {
+                if (
+                    (pos.ra() >= minra) && (pos.ra() <= maxra)
+                    &&
+                    (pos.dec() >= mindec) && (pos.dec() <= maxdec)
+                    )
+                    {
+                    log.trace("+++ [{}][{}]", pos.ra(), pos.dec());
+                    }
+                else {
+                    log.trace("--- [{}][{}]", pos.ra(), pos.dec());
+                    }
+                }
+            log.trace("--- --- --- ---");
+            
             //log.trace("Zone ra/dec query took [{}µs][{}ns]", (radecdiff/1000), (radecdiff) );
             return results ;
             }
