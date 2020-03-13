@@ -133,38 +133,6 @@ implements CQZoneMatcher
                 );
             }
         return list.iterator();
-        
-        /*
-         * 
-        this.zonetotal = 0 ;
-        this.zonecount = 0 ;
-
-        this.mathtotal = 0 ;
-        this.mathcount = 0 ;
-
-        this.radectotal = 0 ;
-        this.radeccount = 0 ;
-        
-        final List<Position> list = new ArrayList<Position>(100);  
-        for (Zone zone : contains(target, radius))
-            {
-            log.trace("Checking zone [{}][{}]", zone.ident(), zone.total());
-            zonecount++;
-            Iterable<Position> iter = new IteratorIterable<Position>(zone.matches(target, radius));
-            for (Position match : iter)
-                {
-                log.trace("Found match [{}][{}]", match.ra(), match.dec());
-                list.add(match);
-                }
-            }
-
-        //log.trace("Math cx/cy/zc compare [{}] took [{}µs][{}ns] avg [{}µs][{}ns]", (this.mathcount),  (this.mathtotal/1000),  (this.mathtotal),  (this.mathtotal/(this.mathcount * 1000)),   (this.mathtotal/this.mathcount));
-        //log.trace("Zone ra/dec/pos query [{}] took [{}µs][{}ns] avg [{}µs][{}ns]", (this.radeccount), (this.radectotal/1000), (this.radectotal), (this.radectotal/(this.radeccount * 1000)), (this.radectotal/this.radeccount));
-        //log.trace("Zone between found [{}] from [{}] took [{}µs][{}ns]", (zonecount), zones.size(), ((zonetotal)/1000), (zonetotal) );
-        
-        return list.iterator();
-         * 
-         */
         }
         
     @Override

@@ -1,5 +1,5 @@
 /*
- *  Copyright (C) 2018 Royal Observatory, University of Edinburgh, UK
+ *  Copyright (C) 2020 Royal Observatory, University of Edinburgh, UK
  *
  *  This program is free software: you can redistribute it and/or modify
  *  it under the terms of the GNU General Public License as published by
@@ -20,9 +20,7 @@ package uk.ac.roe.wfau.enteucha.hsqldb;
 
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
-import java.util.ArrayList;
 import java.util.Iterator;
-import java.util.List;
 
 import org.apache.commons.math3.util.FastMath;
 
@@ -57,10 +55,10 @@ implements Matcher
      * Public constructor.
      * 
      */
-    public HsqlZoneMatcherImpl(final IndexingShape indexing, double zoneheight)
+    public HsqlZoneMatcherImpl(final IndexingShape indexing, double height)
         {
         this.indexing = indexing;
-        this.zoneheight = zoneheight ;
+        this.height = height ;
         this.init();
         }
 
@@ -94,7 +92,7 @@ implements Matcher
      * The height of each zone slice.
      * 
      */
-    private double zoneheight ;
+    private double height ;
 
     /**
      * The height of each zone slice.
@@ -102,7 +100,7 @@ implements Matcher
      */
     public double height()
         {
-        return this.zoneheight;
+        return this.height;
         }
     
     /**
@@ -199,11 +197,8 @@ implements Matcher
     public Iterator<Position> matches(final Position target, final Double radius)
         {
         log.trace("matches [{}][{}] [{}]", target.ra(), target.dec(), radius);
-        final List<Position> results = new ArrayList<Position>();
-        //log.debug("preparing");
-
         //log.debug("radius [{}]", radius);
-        //log.debug("height [{}]", zoneheight);
+        //log.debug("height [{}]", height);
 
         //log.debug("ra  [{}]", target.ra());
         //log.debug("dec [{}]", target.dec());
@@ -237,9 +232,8 @@ implements Matcher
             + "    AND "
             + "        ? "
             ;
-
 /*
- * 
+ * TODO Make this configurable. 
             + "    AND "
             + "        ? "
             + "    AND  "
@@ -247,8 +241,8 @@ implements Matcher
  *             
  */
 
-        final int minzone = (int) FastMath.floor(((target.dec() + 90) - radius) / this.zoneheight) ;
-        final int maxzone = (int) FastMath.floor(((target.dec() + 90) + radius) / this.zoneheight) ;
+        final int minzone = (int) FastMath.floor(((target.dec() + 90) - radius) / this.height) ;
+        final int maxzone = (int) FastMath.floor(((target.dec() + 90) + radius) / this.height) ;
         
         double minra = target.ra() - (radius / (FastMath.abs(FastMath.cos(FastMath.toRadians(target.dec()))) + epsilon));
         double maxra = target.ra() + (radius / (FastMath.abs(FastMath.cos(FastMath.toRadians(target.dec()))) + epsilon));
@@ -275,10 +269,9 @@ implements Matcher
         //log.debug("min/max dec  [{}][{}]", mindec, maxdec);
         
         try {
-            //log.debug("preparing");
+            //log.trace("preparing");
             final PreparedStatement statement = connection().prepareStatement(template);
 
-            //log.debug("setting");
             statement.setInt(1, minzone);
             statement.setInt(2, maxzone);            
             
@@ -288,6 +281,7 @@ implements Matcher
             statement.setDouble(5, mindec);
             statement.setDouble(6, maxdec);
 
+            //log.trace("executing");
             return new PositionFilteredIterator(
                 new PositionResultSetIterator(
                     statement.executeQuery()
@@ -324,7 +318,7 @@ implements Matcher
             + "        ?"
             + "        ) ";
 
-        final Integer zone = (int) FastMath.floor((position.dec() + 90) / this.zoneheight);
+        final Integer zone = (int) FastMath.floor((position.dec() + 90) / this.height);
         log.trace("insert [{}] [{}][{}]", zone, position.ra(), position.dec());
 
         try {
@@ -366,7 +360,7 @@ implements Matcher
         builder.append(String.format("%,d", this.total()));
         builder.append("] ");
         builder.append("Zone height [");
-        builder.append(this.zoneheight);
+        builder.append(this.height);
         builder.append("] ");
         builder.append("URL [");
         builder.append(this.url());

@@ -201,19 +201,11 @@ public class HsqlMatcherBase
         }
 
     /**
-     * Initialise our database connection.
-     * 
-     */
-    public void init()
-        {
-        }
-
-    /**
      * Shutdown our database connection.
      * @throws SQLException 
      * 
      */
-    public void done()
+    public void close()
     throws SQLException
         {
         if (this.connection != null)

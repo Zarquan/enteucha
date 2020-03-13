@@ -1,5 +1,5 @@
 /*
- *  Copyright (C) 2018 Royal Observatory, University of Edinburgh, UK
+ *  Copyright (C) 2020 Royal Observatory, University of Edinburgh, UK
  *
  *  This program is free software: you can redistribute it and/or modify
  *  it under the terms of the GNU General Public License as published by
@@ -40,24 +40,6 @@ extends TestCase
     public AbstractTestCase()
         {
         }
-
-    /*
-     * 
-    int looprepeat = 10;    
-
-    int rangemin = 5;
-    int rangemax = 6;
-
-    int countmin = 8;
-    int countmax = 9;
-
-    int zonemin = 5 ;
-    int zonemax = 6 ;
-
-    int radiusmin = 5 ;
-    int radiusmax = 6 ;
-     * 
-     */
 
     int looprepeat = 10;    
 
@@ -197,7 +179,6 @@ extends TestCase
             long loopcount = 0 ;
             for(int loop = 0 ; loop < this.looprepeat ; loop++)
                 {
-                //long matchcount = 0 ;
                 //log.debug("---- ---- ---- ----");
                 //log.debug("Starting crossmatch");
                 long innerstart = System.nanoTime();
@@ -208,9 +189,7 @@ extends TestCase
                 while (iter.hasNext())
                     {
                     Position pos = iter.next();
-                    //log.debug("Found [{}][{}]", match.ra(), match.dec());
                     loopcount++;
-                    //matchcount++;
                     }
                 long innerend = System.nanoTime();
                 long innertime = innerend - innerstart;
@@ -292,6 +271,3 @@ extends TestCase
             }
         }
     }
-
-
-    
