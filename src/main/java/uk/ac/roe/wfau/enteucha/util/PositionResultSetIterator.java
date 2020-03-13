@@ -25,7 +25,7 @@ import uk.ac.roe.wfau.enteucha.api.Position;
 import uk.ac.roe.wfau.enteucha.api.PositionImpl;
 
 /**
- * Wrap a {@ResultSet} with an {@link Iterator}.
+ * Wrap a {@ResultSet} with a {@link Position} {@link Iterator}.
  *
  */
 public class PositionResultSetIterator
@@ -37,6 +37,7 @@ implements Iterator<Position>
         super(results);
         }
 
+    @Override
     protected Position build(final ResultSet results)
     throws SQLException 
         {

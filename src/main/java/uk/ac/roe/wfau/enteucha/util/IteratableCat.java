@@ -20,18 +20,17 @@ package uk.ac.roe.wfau.enteucha.util;
 import java.util.Iterator;
 
 /**
- * An {@link Iterable} that iterates through an {@link Iterable} of {@link Iterator}s,
- * returning the elements from each {@link Iterator} in turn.
+ * An {@link Iterable} that concatenates the elements from a list of {@link Iterator}s.
  *
  */
-public class IteratableIterator<T> implements Iterable<T>
+public class IteratableCat<T> implements Iterable<T>
     {
     /**
      * Public constructor.
-     * @param iters An {@link Iterable} list of {@link Iterator}s. 
+     * @param iters The {@link Iterable} list of {@link Iterator}s to concatenate. 
      * 
      */
-    public IteratableIterator(Iterable<Iterator<T>> iters)
+    public IteratableCat(Iterable<Iterator<T>> iters)
         {
         this.iters = iters;
         }

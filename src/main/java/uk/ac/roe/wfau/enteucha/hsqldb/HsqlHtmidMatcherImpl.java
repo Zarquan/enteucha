@@ -156,7 +156,7 @@ implements Matcher
 
         try {
             final HTMrange range = new HTMrange();
-            // constructor specifying center vector and radius in arcmin
+            // constructor specifying (ra, dec) and radius in arcmin.
             final Circle circle = new Circle(
                 ra,
                 dec,
@@ -283,7 +283,6 @@ implements Matcher
                 + "";
 
         try {
-            //log.debug("preparing");
             final Statement statement = connection().createStatement();
 
             final Collection<Long> htmids = circle(
@@ -295,12 +294,10 @@ implements Matcher
             final StringBuilder builder = new StringBuilder();
 
             Iterator<Long> iter = htmids.iterator();
-            for (int i = 0 ; iter.hasNext() ;  i++)
+            while (iter.hasNext())
                 {
-                Long htmid = iter.next();
-                //log.trace("--- [{}][{}]", i, htmid);
                 builder.append(
-                    htmid 
+                    iter.next() 
                     );
                 if (iter.hasNext())
                     {
@@ -311,9 +308,8 @@ implements Matcher
                 }
             
             final String query = template.replace("?", builder.toString());
-            log.trace("--- [{}]", query);
+            //log.trace("--- [{}]", query);
 
-            //log.debug("executing");
             return new PositionFilteredIterator(
                 new PositionResultSetIterator(
                     statement.executeQuery(

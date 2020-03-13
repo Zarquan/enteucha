@@ -22,14 +22,14 @@ import java.util.Iterator;
 import java.util.List;
 
 /**
- * A {@link List} based {@link IteratableIterator}.
+ * A {@link List} based {@link IteratableCat}.
  *
  */
-public class IterableIteratorList<T>
-extends IteratableIterator<T>
+public class IterableListCat<T>
+extends IteratableCat<T>
 implements Iterable<T>
     {
-    public IterableIteratorList(int size)
+    public IterableListCat(int size)
         {
         this(
             new ArrayList<Iterator<T>>(
@@ -38,14 +38,14 @@ implements Iterable<T>
             );
         }
     
-    public IterableIteratorList()
+    public IterableListCat()
         {
         this(
             new ArrayList<Iterator<T>>()
             );
         }
 
-    public IterableIteratorList(List<Iterator<T>> list)
+    public IterableListCat(List<Iterator<T>> list)
         {
         super(
             list

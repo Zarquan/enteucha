@@ -24,7 +24,8 @@ import java.util.Iterator;
 import lombok.extern.slf4j.Slf4j;
 
 /**
- * Wrap a {@ResultSet} with an {@link Iterator}.
+ * Wrap a SQL {@ResultSet} with an {@link Iterator}.
+ * Returns an 
  *
  */
 @Slf4j
@@ -74,6 +75,14 @@ implements Iterator<T>
         return temp;
         }
 
+    /**
+     * Build a type <T> object from a {@link ResultSet}.
+     * @param results The ResultSet to read.
+     * @return A type <T> object. 
+     * @throws SQLException
+     * 
+     */
     abstract protected T build(final ResultSet results)
-    throws SQLException; 
+    throws SQLException;
+    
     }

@@ -1,5 +1,5 @@
 /*
- *  Copyright (C) 2018 Royal Observatory, University of Edinburgh, UK
+ *  Copyright (C) 2020 Royal Observatory, University of Edinburgh, UK
  *
  *  This program is free software: you can redistribute it and/or modify
  *  it under the terms of the GNU General Public License as published by
@@ -38,7 +38,7 @@ import lombok.extern.slf4j.Slf4j;
 import uk.ac.roe.wfau.enteucha.api.Position;
 import uk.ac.roe.wfau.enteucha.api.PositionImpl;
 import uk.ac.roe.wfau.enteucha.util.GenericIterable;
-import uk.ac.roe.wfau.enteucha.util.IterableIteratorList;
+import uk.ac.roe.wfau.enteucha.util.IterableListCat;
 import uk.ac.roe.wfau.enteucha.util.PositionFilteredIterator;
 
 /**
@@ -122,7 +122,7 @@ implements CQZoneMatcher
         {
         log.trace("matches() [{}][{}][{}]", target.ra(), target.dec(), radius);
 
-        final IterableIteratorList<Position> list = new IterableIteratorList<Position>();  
+        final IterableListCat<Position> list = new IterableListCat<Position>();  
         for (Zone zone : contains(target, radius))
             {
             list.add(
@@ -374,16 +374,12 @@ implements CQZoneMatcher
         @Override
         public Iterator<Position> matches(final Position target, final Double radius)
             {
-            log.trace("Zone.matches() [{}][{}] [{}]", target.ra(), target.dec(), radius);
-            Iterable<Position> iteratable = query(
-                target,
-                radius
-                );
-
-            Iterator<Position> iterator = iteratable.iterator();
-            
+            //log.trace("Zone.matches() [{}][{}] [{}]", target.ra(), target.dec(), radius);
             return new PositionFilteredIterator(
-                iterator,
+                query(
+                    target,
+                    radius
+                    ).iterator(),
                 target,
                 radius
                 );
@@ -406,22 +402,8 @@ implements CQZoneMatcher
 
             log.trace("min/max ra  [{}][{}]", minra,  maxra) ;
             log.trace("min/max dec [{}][{}]", mindec, maxdec);
-/*
- *
- * TODO Make this configurable.
-            return positions.retrieve(
-                QueryFactory.between(
-                    ZoneMatcherImpl.POS_RA,
-                    minra,
-                    true,
-                    maxra,
-                    true
-                    )
-                );
- *
- */        
-            //long radecstart = System.nanoTime();
 
+            //long radecstart = System.nanoTime();
             final ResultSet<Position> results = positions.retrieve(
                 QueryFactory.and(
                     QueryFactory.between(
@@ -440,34 +422,11 @@ implements CQZoneMatcher
                         )
                     )
                 );
-
             //long radecdone = System.nanoTime();
             //long radecdiff = radecdone -radecstart;
             //log.trace("Found [{}]", results.size());
             //radectotal += radecdiff;
             //radeccount++;
-
-            /*
-             * 
-            log.trace("--- --- --- ---");
-            for(Position pos : positions)
-                {
-                if (
-                    (pos.ra() >= minra) && (pos.ra() <= maxra)
-                    &&
-                    (pos.dec() >= mindec) && (pos.dec() <= maxdec)
-                    )
-                    {
-                    log.trace("+++ [{}][{}]", pos.ra(), pos.dec());
-                    }
-                else {
-                    log.trace("--- [{}][{}]", pos.ra(), pos.dec());
-                    }
-                }
-            log.trace("--- --- --- ---");
-             *             
-             */
-            
             //log.trace("Zone ra/dec query took [{}µs][{}ns]", (radecdiff/1000), (radecdiff) );
             return results;
             }

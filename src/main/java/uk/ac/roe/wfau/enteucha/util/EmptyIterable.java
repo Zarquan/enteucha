@@ -1,5 +1,5 @@
 /*
- *  Copyright (C) 2014 Royal Observatory, University of Edinburgh, UK
+ *  Copyright (C) 2020 Royal Observatory, University of Edinburgh, UK
  *
  *  This program is free software: you can redistribute it and/or modify
  *  it under the terms of the GNU General Public License as published by
@@ -20,7 +20,7 @@ package uk.ac.roe.wfau.enteucha.util;
 import java.util.Iterator;
 
 /**
- * Empty implementation of the {@link Iterable} interface. 
+ * An {@link Iterable} that returns empty {@link Iterator}s. 
  *
  */
 public class EmptyIterable<T>

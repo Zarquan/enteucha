@@ -25,7 +25,7 @@ import lombok.extern.slf4j.Slf4j;
 import uk.ac.roe.wfau.enteucha.api.Position;
 
 /**
- * An proximity filter for an {@link Iterator} of {@link Position}s.  
+ * A proximity filter for an {@link Iterator} of {@link Position}s.  
  *
  */
 @Slf4j
@@ -90,7 +90,6 @@ implements Iterator<Position>
      */
     protected boolean check(final Position position)
         {
-        log.trace("check [{}][{}]", position.ra(), position.dec());
         double squares =
                 FastMath.pow(
                     position.cx() - target.cx(),
@@ -116,7 +115,7 @@ implements Iterator<Position>
                 );
 
         boolean result = (squaresin > squares) ;
-        log.trace("{} [{}][{}]", (result ? "+++" : "---"), position.ra(), position.dec());
+        //log.trace("{} [{}][{}]", (result ? "+++" : "---"), position.ra(), position.dec());
         return result;
         }
     }
