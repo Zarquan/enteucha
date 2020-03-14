@@ -24,7 +24,7 @@
 	    | Enteucha logging.
 	    +-->
 	<logger name="uk.ac.roe.wfau.enteucha">
-		<level value="DEBUG"/>
+		<level value="INFO"/>
 	</logger>
 
     <!--+
