@@ -158,9 +158,9 @@ extends TestCase
                             String.format("%.8f", (rangeval / tracesum))
                             );
                         log.info(
-                            "Zone   [{}][2^{} = {}]",
+                            "Zone   [{}][2^(-{}) = {}]",
                             zoneexp,
-                            -zoneexp,
+                            zoneexp,
                             zoneheight
                             );
                         log.info(
@@ -225,7 +225,7 @@ extends TestCase
                 matcher.info()
                 );
             log.info(
-                "Searched [{}] radius [{}] found [{}] in [{}] loops, total [{}s][{}ms][{}µs][{}ns], average [{}ms][{}µs][{}ns] {}",
+                "Searched [{}] radius [{}] found [{}] in [{}] loops, total [{}s][{}ms], average [{}ms][{}µs][{}ns] {}",
                 String.format("%,d", matcher.total()),
                 radiusval,
                 (loopcount/this.looprepeat),
@@ -233,12 +233,10 @@ extends TestCase
                 
                 String.format("%,d", (looptime/1000000000)),
                 String.format("%,d", (looptime/1000000)),
-                String.format("%,d", (looptime/1000)),
-                String.format("%,d", (looptime)),
                 
-                String.format("%,f", (average/1000000)),
-                String.format("%,f", (average/1000)),
-                String.format("%,f", (average)),
+                String.format("%,.3f", (average/1000000)),
+                String.format("%,.3f", (average/1000)),
+                String.format("%,.0f", (average)),
                 
                 (((average) < 1000000) ? "PASS" : "FAIL")
                 );
