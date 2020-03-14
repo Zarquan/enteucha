@@ -43,18 +43,26 @@ extends TestCase
         }
 
     @Value("${enteucha.test.loop:1000}")
-    protected int looprepeat ;    
+    protected int looprepeat;    
 
-    int rangemin = 0;
-    int rangemax = 0;
+    @Value("${enteucha.test.range.min:0}")
+    int rangemin;
+    @Value("${enteucha.test.range.max:1}")
+    int rangemax;
 
-    int countmin = 9;
-    int countmax = 10;
+    @Value("${enteucha.test.count.min:9}")
+    int countmin;
+    @Value("${enteucha.test.count.max:10}")
+    int countmax;
 
-    int zonemin = 6 ;
-    int zonemax = 9 ;
+    @Value("${enteucha.test.zone.min:6}")
+    int zonemin;
+    @Value("${enteucha.test.zone.max:9}")
+    int zonemax;
 
+    @Value("${enteucha.test.radius.min:6}")
     int radiusmin = 6 ;
+    @Value("${enteucha.test.radius.max:9}")
     int radiusmax = 9 ;
 
     final Runtime runtime = Runtime.getRuntime();
