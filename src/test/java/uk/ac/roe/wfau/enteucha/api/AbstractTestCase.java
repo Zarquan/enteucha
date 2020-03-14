@@ -61,9 +61,9 @@ extends TestCase
     int zonemax;
 
     @Value("${enteucha.test.radius.min:6}")
-    int radiusmin = 6 ;
+    int radiusmin;
     @Value("${enteucha.test.radius.max:9}")
-    int radiusmax = 9 ;
+    int radiusmax;
 
     final Runtime runtime = Runtime.getRuntime();
 
