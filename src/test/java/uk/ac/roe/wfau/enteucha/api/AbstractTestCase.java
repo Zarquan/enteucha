@@ -42,8 +42,8 @@ extends TestCase
         {
         }
 
-    @Value("${enteucha.test:loop}")
-    protected int looprepeat = 1000;    
+    @Value("${enteucha.test.loop:1000}")
+    protected int looprepeat ;    
 
     int rangemin = 0;
     int rangemax = 0;

@@ -36,7 +36,7 @@ import uk.ac.roe.wfau.enteucha.cqengine.CQZoneMatcher.IndexingShape;
         )
 @ContextConfiguration(
     locations = {
-        "classpath:test-config.xml"
+        "classpath:component-config.xml"
         }
     )
 public class CQZoneMatcherTestCase

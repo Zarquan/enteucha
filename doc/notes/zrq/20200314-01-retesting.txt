@@ -69,6 +69,10 @@
         diff pom.xml pom.new
         
 --START--
+378c374
+<                     <argLine>-Xmx10g -Xms10g</argLine>
+---
+>                     <argLine>-Xmx100g -Xms100g</argLine>
 --END--
 
         
