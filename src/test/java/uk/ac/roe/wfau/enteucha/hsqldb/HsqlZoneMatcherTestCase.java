@@ -19,6 +19,9 @@
 package uk.ac.roe.wfau.enteucha.hsqldb;
 
 import org.junit.Test;
+import org.junit.runner.RunWith;
+import org.springframework.test.context.ContextConfiguration;
+import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
 import uk.ac.roe.wfau.enteucha.api.AbstractTestCase;
 import uk.ac.roe.wfau.enteucha.api.Matcher;
@@ -28,6 +31,14 @@ import uk.ac.roe.wfau.enteucha.hsqldb.HsqlZoneMatcherImpl.IndexingShape;
  * 
  * 
  */
+@RunWith(
+        SpringJUnit4ClassRunner.class
+        )
+@ContextConfiguration(
+    locations = {
+        "classpath:component-config.xml"
+        }
+    )
 public class HsqlZoneMatcherTestCase
 extends AbstractTestCase
     {
