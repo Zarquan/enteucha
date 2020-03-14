@@ -231,10 +231,10 @@ extends TestCase
                 (loopcount/this.looprepeat),
                 this.looprepeat,
                 
-                String.format("%,f", (looptime/1000000000)),
-                String.format("%,f", (looptime/1000000)),
-                String.format("%,f", (looptime/1000)),
-                String.format("%,f", (looptime)),
+                String.format("%,d", (looptime/1000000000)),
+                String.format("%,d", (looptime/1000000)),
+                String.format("%,d", (looptime/1000)),
+                String.format("%,d", (looptime)),
                 
                 String.format("%,f", (average/1000000)),
                 String.format("%,f", (average/1000)),
