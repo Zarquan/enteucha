@@ -225,18 +225,18 @@ extends TestCase
                 matcher.info()
                 );
             log.info(
-                "Searched [{}] radius [{}] found [{}] in [{}] loops, total [{}s][{}ms], average [{}ms][{}µs][{}ns] {}",
+              //"Searched [{}] radius [{}] found [{}] in [{}] loops, total [{}s][{}ms], average [{}ms][{}µs] {}",
+                "Searched [{}] radius [{}] found [{}] in [{}] loops, total [{}s][{}ms], average [{}ms][{}us] {}",
                 String.format("%,d", matcher.total()),
                 radiusval,
-                (loopcount/this.looprepeat),
-                this.looprepeat,
+                String.format("%,d", (loopcount/this.looprepeat)),
+                String.format("%,d", this.looprepeat),
                 
                 String.format("%,d", (looptime/1000000000)),
                 String.format("%,d", (looptime/1000000)),
                 
                 String.format("%,.3f", (average/1000000)),
                 String.format("%,.3f", (average/1000)),
-                String.format("%,.0f", (average)),
                 
                 (((average) < 1000000) ? "PASS" : "FAIL")
                 );
@@ -264,7 +264,7 @@ extends TestCase
         if (value < unit) return value + " B";
         int exponent = (int) (Math.log(value) / Math.log(unit));
         final String prefix = (si ? "kMGTPE" : "KMGTPE").charAt(exponent-1) + (si ? "" : "i");
-        return String.format("%.1f %sB", value / Math.pow(unit, exponent), prefix);
+        return String.format("%.1f%sB", value / Math.pow(unit, exponent), prefix);
         }
 
     
