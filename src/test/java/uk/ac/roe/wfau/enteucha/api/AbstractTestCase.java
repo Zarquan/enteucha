@@ -21,6 +21,7 @@ package uk.ac.roe.wfau.enteucha.api;
 import java.util.Iterator;
 
 import org.apache.commons.math3.util.FastMath;
+import org.springframework.beans.factory.annotation.Value;
 
 import junit.framework.TestCase;
 import lombok.extern.slf4j.Slf4j;
@@ -41,7 +42,8 @@ extends TestCase
         {
         }
 
-    int looprepeat = 10;    
+    @Value("${enteucha.test:loop}")
+    protected int looprepeat = 1000;    
 
     int rangemin = 0;
     int rangemax = 0;
@@ -50,10 +52,10 @@ extends TestCase
     int countmax = 10;
 
     int zonemin = 6 ;
-    int zonemax = 7 ;
+    int zonemax = 9 ;
 
     int radiusmin = 6 ;
-    int radiusmax = 8 ;
+    int radiusmax = 9 ;
 
     final Runtime runtime = Runtime.getRuntime();
 
@@ -90,7 +92,6 @@ extends TestCase
             for (int zoneexp = this.zonemin ; zoneexp <= this.zonemax ; zoneexp++ )
                 {
                 double zoneheight = FastMath.pow(2.0, -zoneexp);
-                log.info("Zone height [2^{} = {}]", -zoneexp, zoneheight);
                 final Matcher matcher = factory.create(
                     zoneheight
                     );
@@ -111,15 +112,9 @@ extends TestCase
                         String.format("%,.0f", tracenum),
                         String.format("%,.0f", tracesum)
                         );
-                    
                     //log.info("Memory [{}][{}][{}]", humanSize(runtime.totalMemory()), humanSize(runtime.freeMemory()), humanSize(runtime.maxMemory()));
                     for (double c = -insertnum ; c <= insertnum ; c++)
                         {
-                        long cmantissa = Double.doubleToLongBits(c) & 0x000fffffffffffffL ;
-                        if (cmantissa == 0L)
-                            {
-                            log.debug("--- [{}][{}]", c, Long.toHexString(cmantissa));
-                            }
                         for (double d = -insertnum ; d <= insertnum ; d++)
                             {
                             if ((((long)c) % 2) == 0)
@@ -139,18 +134,29 @@ extends TestCase
                         }
                     if (insertexp >= countmin)
                         {
-                        log.info("Totals [{}] [(2^({}+1))+1 = {}] => [{}^2 = {}] in range [{}] step [{}/{} = {}] ",
+                        log.info(
+                            "Total  [{}][(2^({}+1))+1 = {}] => [{}^2 = {}]",
                             insertexp,
                             insertexp,
                             String.format("%.0f",  tracenum),
                             String.format("%.0f",  tracenum),
-                            String.format("%.0f", tracesum),
+                            String.format("%.0f", tracesum)
+                            );
+                        log.info(
+                            "Range  [{}][{}/{} = {}] ",
                             rangeval,
                             rangeval,
                             String.format("%.0f", tracesum),
                             String.format("%.8f", (rangeval / tracesum))
                             );
-                        log.info("Memory [{}][{}][{}]",
+                        log.info(
+                            "Zone   [{}][2^{} = {}]",
+                            zoneexp,
+                            -zoneexp,
+                            zoneheight
+                            );
+                        log.info(
+                            "Memory [{}][{}][{}]",
                             humanSize(runtime.totalMemory()),
                             humanSize(runtime.freeMemory()),
                             humanSize(runtime.maxMemory())
@@ -173,7 +179,12 @@ extends TestCase
             {
             double radiusval = FastMath.pow(2.0, -radiusexp);
             log.info("---- ----");
-            log.info("Radius [2^{} = {}]", -radiusexp, radiusval);
+            log.info(
+                "Radius [{}][2^{} = {}]",
+                radiusexp,
+                -radiusexp,
+                radiusval
+                );
             
             long looptime  = 0 ;
             long loopcount = 0 ;

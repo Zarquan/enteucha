@@ -194,9 +194,16 @@ public class HsqlMatcherBase
     protected void connect()
     throws SQLException
         {
-        if (null == this.connection)
+        try {
+            if (null == this.connection)
+                {
+                this.connection = this.source().getConnection();
+                }
+            }
+        catch (SQLException ouch)
             {
-            this.connection = this.source().getConnection();
+            log.error("SQLException closing connection [{}]", ouch);
+            throw ouch;
             }
         }
 
@@ -208,10 +215,19 @@ public class HsqlMatcherBase
     public void close()
     throws SQLException
         {
-        if (this.connection != null)
-            {
-            this.connection.close();
+        try {
+            if (this.connection != null)
+                {
+                this.connection.close();
+                }
             }
-        this.connection = null ;
+        catch (SQLException ouch)
+            {
+            log.error("SQLException closing connection [{}]", ouch);
+            throw ouch;
+            }
+        finally {
+            this.connection = null ;
+            }
         }
     }

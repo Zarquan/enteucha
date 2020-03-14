@@ -120,7 +120,7 @@ implements CQZoneMatcher
     @Override
     public Iterator<Position> matches(final Position target, final Double radius)
         {
-        log.trace("matches() [{}][{}][{}]", target.ra(), target.dec(), radius);
+        //log.trace("matches() [{}][{}][{}]", target.ra(), target.dec(), radius);
 
         final IterableListCat<Position> list = new IterableListCat<Position>();  
         for (Zone zone : contains(target, radius))
@@ -138,14 +138,14 @@ implements CQZoneMatcher
     @Override
     public Iterable<Zone> contains(final Position target, final Double radius)
         {
-        log.trace("contains() [{}][{}][{}]", target.ra(), target.dec(), radius);
-        log.trace("height [{}]",  this.zoneheight);
+        //log.trace("contains() [{}][{}][{}]", target.ra(), target.dec(), radius);
+        //log.trace("height [{}]",  this.zoneheight);
 
         final Integer min = (int) FastMath.floor(((target.dec() + 90) - radius) / this.zoneheight) ;
         final Integer max = (int) FastMath.floor(((target.dec() + 90) + radius) / this.zoneheight) ;
 
-        log.trace("min [{}]", min);
-        log.trace("max [{}]", max);
+        //log.trace("min [{}]", min);
+        //log.trace("max [{}]", max);
 
         return new GenericIterable<Zone, ZoneImpl>(
             between(
@@ -161,8 +161,8 @@ implements CQZoneMatcher
      */
     protected ResultSet<ZoneImpl> between(final Integer min, final Integer max)
         {
-        log.trace("between() [{}][{}]", min, max);
-        long zonestart = System.nanoTime();
+        //log.trace("between() [{}][{}]", min, max);
+        //long zonestart = System.nanoTime();
         final ResultSet<ZoneImpl> results = zones.retrieve(
             QueryFactory.between(
                 CQZoneMatcherImpl.ZONE_ID,
@@ -173,9 +173,9 @@ implements CQZoneMatcher
                 )
             );
 
-        long zonedone = System.nanoTime();
-        long zonediff = zonedone - zonestart;
-        log.trace("Zone between took [{}µs][{}ns]", ((zonediff)/1000), (zonediff) );
+        //long zonedone = System.nanoTime();
+        //long zonediff = zonedone - zonestart;
+        //log.trace("Zone between took [{}µs][{}ns]", ((zonediff)/1000), (zonediff) );
         return results ; 
         }
 
@@ -196,8 +196,7 @@ implements CQZoneMatcher
             ).iterator();
         if (iter.hasNext())
             {
-            final ZoneImpl found = iter.next();
-            return found ;
+            return iter.next() ;
             }
         else {
             final ZoneImpl created = new ZoneImpl(
@@ -298,10 +297,10 @@ implements CQZoneMatcher
                 mintotal = zone.total();
                 }
             }
-        builder.append("Zone count [");
+        builder.append("count [");
         builder.append(subcount);
         builder.append("] ");
-        builder.append("Zone size avg [");
+        builder.append(" avg size [");
         builder.append((subtotal/subcount));
         builder.append("]");
         builder.append(" min [");
@@ -359,7 +358,7 @@ implements CQZoneMatcher
          */
         protected ResultSet<Position> query(final Position target, final Double radius)
             {
-            log.trace("zone [{}] query [{}][{}][{}]", this.ident, target.ra(), target.dec(), radius);
+            //log.trace("zone [{}] query [{}][{}][{}]", this.ident, target.ra(), target.dec(), radius);
 
             double factor = radius / (FastMath.abs(FastMath.cos(FastMath.toRadians(target.dec()))) + epsilon);
             double minra = (target.ra() - factor);
@@ -368,8 +367,8 @@ implements CQZoneMatcher
             double mindec = (target.dec() - radius) ; 
             double maxdec = (target.dec() + radius) ; 
 
-            log.trace("min/max ra  [{}][{}]", minra,  maxra) ;
-            log.trace("min/max dec [{}][{}]", mindec, maxdec);
+            //log.trace("min/max ra  [{}][{}]", minra,  maxra) ;
+            //log.trace("min/max dec [{}][{}]", mindec, maxdec);
 
             //long radecstart = System.nanoTime();
             final ResultSet<Position> results = positions.retrieve(

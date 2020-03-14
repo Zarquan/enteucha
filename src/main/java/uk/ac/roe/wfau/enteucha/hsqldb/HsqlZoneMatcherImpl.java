@@ -190,13 +190,16 @@ implements Matcher
         catch (final SQLException ouch)
             {
             log.error("SQLException [{}]", ouch);
+            throw new RuntimeException(
+                ouch
+                );
             }
         }
 
     @Override
     public Iterator<Position> matches(final Position target, final Double radius)
         {
-        log.trace("matches [{}][{}] [{}]", target.ra(), target.dec(), radius);
+        //log.trace("matches [{}][{}] [{}]", target.ra(), target.dec(), radius);
         //log.debug("radius [{}]", radius);
         //log.debug("height [{}]", height);
 
@@ -269,7 +272,6 @@ implements Matcher
         //log.debug("min/max dec  [{}][{}]", mindec, maxdec);
         
         try {
-            //log.trace("preparing");
             final PreparedStatement statement = connection().prepareStatement(template);
 
             statement.setInt(1, minzone);
@@ -281,7 +283,6 @@ implements Matcher
             statement.setDouble(5, mindec);
             statement.setDouble(6, maxdec);
 
-            //log.trace("executing");
             return new PositionFilteredIterator(
                 new PositionResultSetIterator(
                     statement.executeQuery()
@@ -293,7 +294,9 @@ implements Matcher
         catch (SQLException ouch)
             {
             log.error("SQLException [{}]", ouch.getMessage());
-            return null;
+            throw new RuntimeException(
+                ouch
+                );
             }
         }
 
@@ -319,7 +322,7 @@ implements Matcher
             + "        ) ";
 
         final Integer zone = (int) FastMath.floor((position.dec() + 90) / this.height);
-        log.trace("insert [{}] [{}][{}]", zone, position.ra(), position.dec());
+        //log.trace("insert [{}] [{}][{}]", zone, position.ra(), position.dec());
 
         try {
             final PreparedStatement statement = connection().prepareStatement(template);
@@ -335,6 +338,9 @@ implements Matcher
         catch (SQLException ouch)
             {
             log.error("SQLException during insert [{}]", ouch);
+            throw new RuntimeException(
+                ouch
+                );
             }
         }
 

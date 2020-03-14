@@ -28,7 +28,6 @@ import uk.ac.roe.wfau.enteucha.api.Position;
  * A proximity filter for an {@link Iterator} of {@link Position}s.  
  *
  */
-@Slf4j
 public class PositionFilteredIterator
 implements Iterator<Position>
     {
@@ -91,31 +90,27 @@ implements Iterator<Position>
     protected boolean check(final Position position)
         {
         double squares =
-                FastMath.pow(
-                    position.cx() - target.cx(),
-                    2
-                    ) 
-              + FastMath.pow(
-                    position.cy() - target.cy(),
-                    2
-                    ) 
-              + FastMath.pow(
-                  position.cz() - target.cz(),
-                  2
-                  )
-                ;
+            FastMath.pow(
+                position.cx() - target.cx(),
+                2
+                ) 
+          + FastMath.pow(
+                position.cy() - target.cy(),
+                2
+                ) 
+          + FastMath.pow(
+              position.cz() - target.cz(),
+              2
+              );
         double squaresin = 4 * (
-                FastMath.pow(
-                    FastMath.sin(
-                        FastMath.toRadians(
-                            radius
-                            )/2
-                        ),
-                    2)
-                );
-
-        boolean result = (squaresin > squares) ;
-        //log.trace("{} [{}][{}]", (result ? "+++" : "---"), position.ra(), position.dec());
-        return result;
+            FastMath.pow(
+                FastMath.sin(
+                    FastMath.toRadians(
+                        radius
+                        )/2
+                    ),
+                2)
+            );
+        return (squaresin > squares) ;
         }
     }

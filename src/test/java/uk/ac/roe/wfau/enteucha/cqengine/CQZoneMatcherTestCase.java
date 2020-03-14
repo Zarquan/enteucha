@@ -19,6 +19,9 @@
 package uk.ac.roe.wfau.enteucha.cqengine;
 
 import org.junit.Test;
+import org.junit.runner.RunWith;
+import org.springframework.test.context.ContextConfiguration;
+import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
 import uk.ac.roe.wfau.enteucha.api.AbstractTestCase;
 import uk.ac.roe.wfau.enteucha.api.Matcher;
@@ -28,6 +31,14 @@ import uk.ac.roe.wfau.enteucha.cqengine.CQZoneMatcher.IndexingShape;
  * 
  * 
  */
+@RunWith(
+        SpringJUnit4ClassRunner.class
+        )
+@ContextConfiguration(
+    locations = {
+        "classpath:test-config.xml"
+        }
+    )
 public class CQZoneMatcherTestCase
 extends AbstractTestCase
     {
@@ -50,7 +61,7 @@ extends AbstractTestCase
         {
         IndexingShape[] shapes =
             {
-            IndexingShape.COMBINED_SIMPLE,
+            //IndexingShape.COMBINED_SIMPLE,
             IndexingShape.SEPARATE_QUANTIZED,
             IndexingShape.SEPARATE_SIMPLE
             };

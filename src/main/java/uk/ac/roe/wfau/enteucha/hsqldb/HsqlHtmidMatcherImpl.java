@@ -135,10 +135,12 @@ implements Matcher
                 dec
                 );
             }
-        catch (final HTMException cause)
+        catch (final HTMException ouch)
             {
-            log.error("HTMException checking HTMID for position [{}]", ra, dec, cause.getMessage());
-            return INVALID_HTMID ;
+            log.error("HTMException checking HTMID for position [{}]", ra, dec, ouch.getMessage());
+            throw new RuntimeException(
+                ouch
+                );
             }
         }
 
@@ -187,7 +189,10 @@ implements Matcher
             }
         catch (HTMException ouch)
             {
-            log.error("HTMException [{}]", ouch.getMessage());
+            //log.error("HTMException [{}]", ouch.getMessage());
+            throw new RuntimeException(
+                ouch
+                );
             };
         return list ;
         }
@@ -221,6 +226,9 @@ implements Matcher
         catch (final SQLException ouch)
             {
             log.debug("SQLException during init() [{}]", ouch.getMessage());
+            throw new RuntimeException(
+                ouch
+                );
             }
         }
     
@@ -246,7 +254,7 @@ implements Matcher
             + "        ) ";
 
         final Long htmid = htmid(position);
-        log.trace("insert [{}] [{}][{}]", htmid, position.ra(), position.dec());
+        //log.trace("insert [{}] [{}][{}]", htmid, position.ra(), position.dec());
 
         try {
             final PreparedStatement statement = connection().prepareStatement(template);
@@ -262,13 +270,16 @@ implements Matcher
         catch (SQLException ouch)
             {
             log.error("SQLException during insert [{}]", ouch);
+            throw new RuntimeException(
+                ouch
+                );
             }
         }
     
     @Override
     public Iterator<Position> matches(Position target, Double radius)
         {
-        log.trace("matches [{}][{}] [{}]", target.ra(), target.dec(), radius);
+        //log.trace("matches [{}][{}] [{}]", target.ra(), target.dec(), radius);
         final String template = "SELECT "
                 + "    htmid, "
                 + "    ra, "
@@ -323,7 +334,9 @@ implements Matcher
         catch (SQLException ouch)
             {
             log.error("SQLException [{}]", ouch.getMessage());
-            return null;
+            throw new RuntimeException(
+                ouch
+                );
             }
         }
 

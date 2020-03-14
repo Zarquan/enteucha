@@ -19,14 +19,12 @@ package uk.ac.roe.wfau.enteucha.util;
 
 import java.util.Iterator;
 
-import lombok.extern.slf4j.Slf4j;
 import uk.ac.roe.wfau.enteucha.api.Position;
 
 /**
  * A proximity filter for an {@link Iterable} of {@link Position}s.  
  * 
  */
-@Slf4j
 public class PositionFilteredIterable implements Iterable<Position>
     {
 

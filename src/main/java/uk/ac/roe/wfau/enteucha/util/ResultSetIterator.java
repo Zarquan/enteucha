@@ -58,6 +58,9 @@ implements Iterator<T>
         catch (SQLException ouch)
             {
             log.error("SQLException reading ResultSet [{}]", ouch.getMessage());
+            throw new RuntimeException(
+                ouch
+                );
             }
         }
     
