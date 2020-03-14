@@ -104,16 +104,10 @@
 #[user@builder]
 
     ENTEUCHA_CODE=/var/local/build/enteucha
-
-    retest()
-        {
-        pushd "${ENTEUCHA_CODE:?}"
-            mvn clean compile
-            mvn test -D 'test=HsqlHtmidMatcherTestCase' ; mv target/enteucha-trace.log target/enteucha-htmid.log
-            mvn test -D 'test=HsqlZoneMatcherTestCase'  ; mv target/enteucha-trace.log target/enteucha-zone.log
-            mvn test -D 'test=CQZoneMatcherTestCase'    ; mv target/enteucha-trace.log target/enteucha-cq.log
-        popd
-        }
-
-    retest
+    pushd "${ENTEUCHA_CODE:?}"
+        mvn clean compile
+        mvn test -D 'test=HsqlHtmidMatcherTestCase' ; mv target/enteucha-trace.log target/enteucha-htmid.log
+        mvn test -D 'test=HsqlZoneMatcherTestCase'  ; mv target/enteucha-trace.log target/enteucha-zone.log
+        mvn test -D 'test=CQZoneMatcherTestCase'    ; mv target/enteucha-trace.log target/enteucha-cq.log
+    popd
 

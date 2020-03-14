@@ -188,9 +188,9 @@ extends TestCase
             double radiusval = FastMath.pow(2.0, -radiusexp);
             log.info("---- ----");
             log.info(
-                "Radius [{}][2^{} = {}]",
+                "Radius [{}][2^(-{}) = {}]",
                 radiusexp,
-                -radiusexp,
+                radiusexp,
                 radiusval
                 );
             
@@ -218,6 +218,9 @@ extends TestCase
                 //log.debug("Found [{}] in [{}µs {}ns][{}µs {}ns][{}µs {}ns]", matchcount, (innerone/1000), innerone, (innertwo/1000), innertwo, (innertime/1000), innertime);
                 //log.debug("Found [{}] in [{}ms][{}µs][{}ns]", matchcount, (innertime/1000000), (innertime/1000), innertime);
                 }
+            
+            double average = looptime/this.looprepeat; 
+
             log.info(
                 matcher.info()
                 );
@@ -227,14 +230,17 @@ extends TestCase
                 radiusval,
                 (loopcount/this.looprepeat),
                 this.looprepeat,
-                (looptime/1000000000),
-                (looptime/1000000),
-                (looptime/1000),
-                (looptime),
-                (looptime/(this.looprepeat * 1000000)),
-                (looptime/(this.looprepeat * 1000)),
-                (looptime/this.looprepeat),
-                (((looptime/this.looprepeat) < 1000000) ? "PASS" : "FAIL")
+                
+                String.format("%,d", (looptime/1000000000)),
+                String.format("%,d", (looptime/1000000)),
+                String.format("%,d", (looptime/1000)),
+                String.format("%,d", (looptime)),
+                
+                String.format("%,d", (average/1000000)),
+                String.format("%,d", (average/1000)),
+                String.format("%,d", (average)),
+                
+                (((average) < 1000000) ? "PASS" : "FAIL")
                 );
             }
         }
