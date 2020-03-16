@@ -332,7 +332,8 @@ extends TestCase
                 );
 
             log.info(
-                  "<data-row><points>{}</points><range>{}</range><zone>{}</zone><radius>{}</radius><found>{}</found><repeat>{}</repeat><timesum>{}<timesum><timeavg>{}</timeavg></data-row>",
+                  "<data-row><matcher>{}</matcher><points>{}</points><range>{}</range><zone>{}</zone><radius>{}</radius><found>{}</found><repeat>{}</repeat><timesum>{}<timesum><timeavg>{}</timeavg></data-row>",
+                  matcher.type(),
                   String.format("%d", matcher.total()),
                   rangeval,
                   zoneval,

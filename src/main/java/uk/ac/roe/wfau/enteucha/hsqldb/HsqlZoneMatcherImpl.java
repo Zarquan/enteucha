@@ -367,6 +367,12 @@ implements Matcher
         }
 
     @Override
+    public String type()
+        {
+        return this.getClass().getSimpleName();
+        }
+
+    @Override
     public String info()
         {
         final StringBuilder builder = new StringBuilder(); 

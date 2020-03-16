@@ -72,6 +72,12 @@ public interface Matcher
     public String info();
 
     /**
+     * Matcher type name.
+     * 
+     */
+    public String type();
+
+    /**
      * Wrapper for {HTMException}.
      * 
      */

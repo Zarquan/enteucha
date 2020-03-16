@@ -105,9 +105,21 @@
 
     ENTEUCHA_CODE=/var/local/build/enteucha
     pushd "${ENTEUCHA_CODE:?}"
+
         mvn clean compile
-        mvn test -D 'test=HsqlHtmidMatcherTestCase' ; mv target/enteucha-trace.log target/enteucha-htmid.log
-        mvn test -D 'test=HsqlZoneMatcherTestCase'  ; mv target/enteucha-trace.log target/enteucha-zone.log
-        mvn test -D 'test=CQZoneMatcherTestCase'    ; mv target/enteucha-trace.log target/enteucha-cq.log
+        datetime=$(date +%Y%m%dT%H%M%S)
+
+        mvn test -D 'test=HsqlHtmidMatcherTestCase'
+            cp target/enteucha-trace.log /var/local/cache/logs/latest-sqlhtm.log
+            cp target/enteucha-trace.log /var/local/cache/logs/${datetime:?}-sqlhtm.log
+
+        mvn test -D 'test=HsqlZoneMatcherTestCase'
+            cp target/enteucha-trace.log /var/local/cache/logs/latest-sqlzone.log
+            cp target/enteucha-trace.log /var/local/cache/logs/${datetime:?}-sqlzone.log
+
+        mvn test -D 'test=CQZoneMatcherTestCase'
+            cp target/enteucha-trace.log /var/local/cache/logs/latest-cqzone.log
+            cp target/enteucha-trace.log /var/local/cache/logs/${datetime:?}-cqzone.log
+
     popd
 

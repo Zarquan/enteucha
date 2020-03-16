@@ -264,6 +264,12 @@ implements CQZoneMatcher
         };
 
     @Override
+    public String type()
+        {
+        return this.getClass().getSimpleName();
+        }
+        
+    @Override
     public String info()
         {
         final StringBuilder builder = new StringBuilder(); 
@@ -493,6 +499,12 @@ implements CQZoneMatcher
             builder.append(String.format("%,d", this.total()));
             builder.append("]");
             return builder.toString();
+            }
+
+        @Override
+        public String type()
+            {
+            return this.getClass().getSimpleName();
             }
         }
 
