@@ -37,7 +37,7 @@ public interface Matcher
          * Create a new {@link Matcher}.
          *
          */
-        public Matcher create(double zoneheight);
+        public Matcher create();
 
         }
 

@@ -72,11 +72,11 @@ extends AbstractTestCase
                 new Matcher.Factory()
                     {
                     @Override
-                    public Matcher create(double zoneheight)
+                    public Matcher create()
                         {
                         return new CQZoneMatcherImpl(
                             indexing,
-                            zoneheight
+                            zoneval
                             );
                         }
                     }

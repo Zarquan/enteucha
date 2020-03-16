@@ -30,7 +30,7 @@ import uk.ac.roe.wfau.enteucha.api.Position;
  */
 @Slf4j
 public class MinMaxRangeFilter
-extends PositionFilteredIterator
+extends PositionFilter
 implements Iterator<Position>
     {
     /**
@@ -72,7 +72,7 @@ implements Iterator<Position>
             ((position.dec() >= mindec) && (position.dec() <= maxdec))   
             ;
                 
-        log.debug("[{}] [{}][{}]", (match ? "+++" : "---"), position.ra(), position.dec());
+        //log.debug("[{}] [{}][{}]", (match ? "+++" : "---"), position.ra(), position.dec());
         return match ;
         }
     }

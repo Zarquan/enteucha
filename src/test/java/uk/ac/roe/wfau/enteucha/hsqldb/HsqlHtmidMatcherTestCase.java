@@ -62,7 +62,7 @@ extends AbstractTestCase
             new Matcher.Factory()
                 {
                 @Override
-                public Matcher create(double depth)
+                public Matcher create()
                     {
                     return new HsqlHtmidMatcherImpl();
                     }

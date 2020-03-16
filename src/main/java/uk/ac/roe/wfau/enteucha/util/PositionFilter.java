@@ -29,14 +29,14 @@ import uk.ac.roe.wfau.enteucha.api.Position;
  *
  */
 @Slf4j
-public abstract class PositionFilteredIterator
+public abstract class PositionFilter
 implements Iterator<Position>
     {
     /**
      * Public constructor.
      * 
      */
-    public PositionFilteredIterator(final Iterator<Position> positions, final Position target, final Double radius)
+    public PositionFilter(final Iterator<Position> positions, final Position target, final Double radius)
         {
         this.positions = positions ;
         this.target    = target ;

@@ -45,26 +45,90 @@ extends TestCase
     @Value("${enteucha.test.loop:1000}")
     protected int looprepeat;    
 
+    /**
+     * The minimum range exponent.
+     * 
+     */
     @Value("${enteucha.test.range.min:0}")
-    int rangemin;
+    protected int rangemin;
+
+    /**
+     * The maximum range exponent.
+     * 
+     */
     @Value("${enteucha.test.range.max:1}")
-    int rangemax;
+    protected int rangemax;
 
+    /**
+     * The range exponent, ({@link rangemax} .. {@link rangemin}}).
+     * 
+     */
+    protected int rangeexp;
+    
+    /**
+     * The range value, 2^(-{@link rangeexp}).
+     * 
+     */
+    protected double rangeval;
+    
     @Value("${enteucha.test.count.min:9}")
-    int countmin;
+    protected int countmin;
     @Value("${enteucha.test.count.max:10}")
-    int countmax;
+    protected int countmax;
 
+    /**
+     * The minimum zone exponent.
+     * 
+     */
     @Value("${enteucha.test.zone.min:6}")
-    int zonemin;
+    protected int zonemin;
+
+    /**
+     * The maximum zone exponent.
+     * 
+     */
     @Value("${enteucha.test.zone.max:9}")
-    int zonemax;
+    protected int zonemax;
 
+    /**
+     * The zone exponent, ({@link zonemin} .. {@link zonemax}}).
+     * 
+     */
+    protected int zoneexp;
+
+    /**
+     * The zone size, 2^(-{@link zoneexp}).
+     * 
+     */
+    protected double zoneval;
+    
+    /**
+     * The minimum radius exponent.
+     * 
+     */
     @Value("${enteucha.test.radius.min:6}")
-    int radiusmin;
-    @Value("${enteucha.test.radius.max:9}")
-    int radiusmax;
+    protected int radiusmin;
 
+    /**
+     * The maximum radius exponent.
+     * 
+     */
+    @Value("${enteucha.test.radius.max:9}")
+    protected int radiusmax;
+
+    /**
+     * The radius exponent, ({@link rangemax} .. {@link rangemin}}).
+     * 
+     */
+    protected int radiusexp;
+
+    /**
+     * The radius, 2^(-{@link radiusexp}).
+     * 
+     */
+    protected double radiusval;
+
+    
     final Runtime runtime = Runtime.getRuntime();
 
     /**
@@ -72,6 +136,24 @@ extends TestCase
      *  
      */
     boolean first = true ;
+
+    /**
+     * The target position we are trying to crossmacth.
+     * 
+     */
+    final private Position target = new PositionImpl(
+            120.0,
+            120.0
+            );
+    
+    /**
+     * The target position we are trying to crossmacth.
+     * 
+     */
+    public Position target()
+        {
+        return this.target;
+        }
 
     /**
      * Test finding things.
@@ -86,27 +168,23 @@ extends TestCase
         else {
             clean();
             }
-        final Position target = new PositionImpl(
-            120.0,
-            120.0
-            );
         log.info("Target [{}][{}]", target.ra(), target.dec());
 
-        for (int rangeexp = this.rangemax ; rangeexp >= this.rangemin ; rangeexp--)
+        // TODO Move the range loop inside the matrix insert plugin.
+        for (this.rangeexp = this.rangemax ; this.rangeexp >= this.rangemin ; this.rangeexp--)
             {
-            double rangeval = FastMath.pow(2.0, rangeexp);
-            //log.info("Data spread [{}]", spreadval);
-            
-            for (int zoneexp = this.zonemin ; zoneexp <= this.zonemax ; zoneexp++ )
+            this.rangeval = FastMath.pow(2.0, this.rangeexp);
+
+            //TODO Move the zone loop to ZoneMatcherTestBase
+            for (this.zoneexp = this.zonemin ; this.zoneexp <= this.zonemax ; this.zoneexp++ )
                 {
-                double zoneheight = FastMath.pow(2.0, -zoneexp);
-                final Matcher matcher = factory.create(
-                    zoneheight
-                    );
+                this.zoneval = FastMath.pow(2.0, -this.zoneexp );
+                final Matcher matcher = factory.create();
                 matcher.insert(
                     target
                     );
                 log.info("---- ----");
+                //TODO Move the insert loop to a plugin (matrix, votable ..)
                 for (int insertexp = 0 ; insertexp <= countmax ; insertexp++)
                     {
                     double insertnum = FastMath.pow(2.0, insertexp);
@@ -152,18 +230,18 @@ extends TestCase
                             );
                         log.info(
                             "Range [{}][2^{} = {}] [{}/{} = {}] ",
-                            rangeexp,
-                            rangeexp,
-                            rangeval,
-                            rangeval,
+                            this.rangeexp,
+                            this.rangeexp,
+                            this.rangeval,
+                            this.rangeval,
                             String.format("%.0f", tracesum),
                             String.format("%.8f", (rangeval / tracesum))
                             );
                         log.info(
                             "Zone   [{}][2^(-{}) = {}]",
-                            zoneexp,
-                            zoneexp,
-                            zoneheight
+                            this.zoneexp,
+                            this.zoneexp,
+                            this.zoneval
                             );
                         log.info(
                             "Memory [{}][{}][{}]",
@@ -185,9 +263,9 @@ extends TestCase
 
     public void innerloop(final Matcher matcher, final Position target)
         {
-        for (int radiusexp = this.radiusmin ; radiusexp <= this.radiusmax ; radiusexp++ )
+        for (this.radiusexp = this.radiusmin ; radiusexp <= this.radiusmax ; radiusexp++ )
             {
-            double radiusval = FastMath.pow(2.0, -radiusexp);
+            this.radiusval = FastMath.pow(2.0, -radiusexp);
             log.info("---- ----");
             log.info(
                 "Radius [{}][2^(-{}) = {}]",
@@ -236,8 +314,10 @@ extends TestCase
                 );
             log.info(
               //"Searched [{}] radius [{}] found [{}] in [{}] loops, total [{}s][{}ms], average [{}ms][{}µs] {}",
-                "Searched [{}] radius [{}] found [{}] in [{}] loops, total [{}s][{}ms], average [{}ms][{}us] {}",
+                "Searched [{}] range [{}] zone [{}] radius [{}] found [{}] in [{}] loops, total [{}s][{}ms], average [{}ms][{}us] {}",
                 String.format("%,d", matcher.total()),
+                rangeval,
+                zoneval,
                 radiusval,
                 String.format("%,d", (loopcount/this.looprepeat)),
                 String.format("%,d", this.looprepeat),
@@ -250,6 +330,20 @@ extends TestCase
                 
                 (((average) < 1000000) ? "PASS" : "FAIL")
                 );
+
+            log.info(
+                  "<data-row><points>{}</points><range>{}</range><zone>{}</zone><radius>{}</radius><found>{}</found><repeat>{}</repeat><timesum>{}<timesum><timeavg>{}</timeavg></data-row>",
+                  String.format("%d", matcher.total()),
+                  rangeval,
+                  zoneval,
+                  radiusval,
+                  String.format("%d", (loopcount/this.looprepeat)),
+                  String.format("%d", this.looprepeat),
+                  
+                  String.format("%d", (looptime/1000000)),
+                  String.format("%.3f", (average/1000000))
+                  
+                  );
             }
         }
 

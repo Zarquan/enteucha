@@ -136,7 +136,7 @@ Searched \[4,198,401] radius \[9.765625E-4]
     Systematic errors caused by different filtering applied to the results.
     Zone based matchers apply min/max ra and dec filters as well as the cartesian squares.
     Htmid matcher only applies cartesian squares - which lets through some odd cases.
-    Need to check we have the implemented the filter algorithm correctly.
+    Need to check we have the implemented the cartesian squares algorithm correctly.
 
 
     /*

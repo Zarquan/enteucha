@@ -30,7 +30,7 @@ import uk.ac.roe.wfau.enteucha.api.Position;
  */
 @Slf4j
 public class CartesianSquaresFilter
-extends PositionFilteredIterator
+extends PositionFilter
 implements Iterator<Position>
     {
     /**
@@ -77,7 +77,7 @@ implements Iterator<Position>
                 2)
             );
         boolean match = (squaresin > squares);
-        log.debug("[{}] [{}][{}]", (match ? "+++" : "---"), position.ra(), position.dec());
+        //log.debug("[{}] [{}][{}]", (match ? "+++" : "---"), position.ra(), position.dec());
         return match ;
         }
 
