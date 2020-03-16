@@ -62,7 +62,7 @@ extends AbstractTestCase
         IndexingShape[] shapes =
             {
             //IndexingShape.COMBINED_SIMPLE,
-            IndexingShape.SEPARATE_QUANTIZED,
+            //IndexingShape.SEPARATE_QUANTIZED,
             IndexingShape.SEPARATE_SIMPLE
             };
         for (IndexingShape indexshape : shapes)

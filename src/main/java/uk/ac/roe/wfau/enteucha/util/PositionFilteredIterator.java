@@ -25,10 +25,11 @@ import lombok.extern.slf4j.Slf4j;
 import uk.ac.roe.wfau.enteucha.api.Position;
 
 /**
- * A proximity filter for an {@link Iterator} of {@link Position}s.  
+ * A filtered {@link Iterator} for {@link Position}s.
  *
  */
-public class PositionFilteredIterator
+@Slf4j
+public abstract class PositionFilteredIterator
 implements Iterator<Position>
     {
     /**
@@ -43,10 +44,10 @@ implements Iterator<Position>
         this.next = this.step();
         }
     
-    private Iterator<Position> positions;
-    private Position target;
-    private Double radius;
-    private Position next;
+    protected Iterator<Position> positions;
+    protected Position target;
+    protected Double radius;
+    protected Position next;
 
     /**
      * Get the next candidate and check if it is within range.
@@ -83,34 +84,9 @@ implements Iterator<Position>
         }
 
     /**
-     * Check if a {@link Position} is within the search radius of a target {@link Position}
-     * by calculating the distance between the cartesian coordinates. 
+     * Check if a {@link Position} is within the search radius of a target {@link Position}.
      *
      */
-    protected boolean check(final Position position)
-        {
-        double squares =
-            FastMath.pow(
-                position.cx() - target.cx(),
-                2
-                ) 
-          + FastMath.pow(
-                position.cy() - target.cy(),
-                2
-                ) 
-          + FastMath.pow(
-              position.cz() - target.cz(),
-              2
-              );
-        double squaresin = 4 * (
-            FastMath.pow(
-                FastMath.sin(
-                    FastMath.toRadians(
-                        radius
-                        )/2
-                    ),
-                2)
-            );
-        return (squaresin > squares) ;
-        }
+    protected abstract boolean check(final Position position);
+
     }

@@ -27,7 +27,8 @@ import org.apache.commons.math3.util.FastMath;
 import lombok.extern.slf4j.Slf4j;
 import uk.ac.roe.wfau.enteucha.api.Matcher;
 import uk.ac.roe.wfau.enteucha.api.Position;
-import uk.ac.roe.wfau.enteucha.util.PositionFilteredIterator;
+import uk.ac.roe.wfau.enteucha.util.CartesianSquaresFilter;
+import uk.ac.roe.wfau.enteucha.util.MinMaxRangeFilter;
 import uk.ac.roe.wfau.enteucha.util.PositionResultSetIterator;
 
 /**
@@ -224,6 +225,9 @@ implements Matcher
             + "        ? "
             + "    AND "
             + "        ? "
+            ;
+/*
+ * 
             + " AND "
             + "    ra BETWEEN "
             + "        ? "
@@ -235,6 +239,9 @@ implements Matcher
             + "    AND "
             + "        ? "
             ;
+ * 
+ */
+
 /*
  * TODO Make this configurable. 
             + "    AND "
@@ -246,10 +253,13 @@ implements Matcher
 
         final int minzone = (int) FastMath.floor(((target.dec() + 90) - radius) / this.height) ;
         final int maxzone = (int) FastMath.floor(((target.dec() + 90) + radius) / this.height) ;
-        
-        double minra = target.ra() - (radius / (FastMath.abs(FastMath.cos(FastMath.toRadians(target.dec()))) + epsilon));
-        double maxra = target.ra() + (radius / (FastMath.abs(FastMath.cos(FastMath.toRadians(target.dec()))) + epsilon));
-
+/*
+ *
+        double factor = radius / (FastMath.abs(FastMath.cos(FastMath.toRadians(target.dec()))) + epsilon);
+        double minra = (target.ra() - factor);
+        double maxra = (target.ra() + factor);
+ *
+ */
         double mindec = target.dec() - radius ; 
         double maxdec = target.dec() + radius ; 
 
@@ -276,16 +286,20 @@ implements Matcher
 
             statement.setInt(1, minzone);
             statement.setInt(2, maxzone);            
-            
+/*            
             statement.setDouble(3, minra);
             statement.setDouble(4, maxra);
 
             statement.setDouble(5, mindec);
             statement.setDouble(6, maxdec);
-
-            return new PositionFilteredIterator(
-                new PositionResultSetIterator(
-                    statement.executeQuery()
+ */
+            return new MinMaxRangeFilter(
+                new CartesianSquaresFilter(
+                    new PositionResultSetIterator(
+                        statement.executeQuery()
+                        ),
+                    target,
+                    radius
                     ),
                 target,
                 radius

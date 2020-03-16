@@ -39,7 +39,7 @@ import uk.ac.roe.wfau.enteucha.api.Position;
 import uk.ac.roe.wfau.enteucha.api.PositionImpl;
 import uk.ac.roe.wfau.enteucha.util.GenericIterable;
 import uk.ac.roe.wfau.enteucha.util.IterableListCat;
-import uk.ac.roe.wfau.enteucha.util.PositionFilteredIterator;
+import uk.ac.roe.wfau.enteucha.util.CartesianSquaresFilter;
 
 /**
  * A CQEngine based implementation of {@link CQZoneMatcher}
@@ -342,7 +342,7 @@ implements CQZoneMatcher
         public Iterator<Position> matches(final Position target, final Double radius)
             {
             //log.trace("Zone.matches() [{}][{}] [{}]", target.ra(), target.dec(), radius);
-            return new PositionFilteredIterator(
+            return new CartesianSquaresFilter(
                 query(
                     target,
                     radius

@@ -1,0 +1,916 @@
+INFO  [DefaultTestContextBootstrapper] Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener] 
+INFO  [DefaultTestContextBootstrapper] Using TestExecutionListeners: [org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@363ee3a2, org.springframework.test.context.support.DependencyInjectionTestExecutionListener@4690b489, org.springframework.test.context.support.DirtiesContextTestExecutionListener@79b06cab, org.springframework.test.context.transaction.TransactionalTestExecutionListener@3eb7fc54, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@7f552bd3] 
+INFO  [XmlBeanDefinitionReader] Loading XML bean definitions from class path resource [component-config.xml] 
+INFO  [GenericApplicationContext] Refreshing org.springframework.context.support.GenericApplicationContext@1817d444: startup date [Sun Mar 15 00:04:28 UTC 2020]; root of context hierarchy 
+INFO  [AbstractTestCase] Target [120.0][120.0] 
+INFO  [AbstractTestCase] ---- ---- 
+INFO  [AbstractTestCase] Insert [0][3][9] 
+INFO  [AbstractTestCase] Insert [1][5][25] 
+INFO  [AbstractTestCase] Insert [2][9][81] 
+INFO  [AbstractTestCase] Insert [3][17][289] 
+INFO  [AbstractTestCase] Insert [4][33][1,089] 
+INFO  [AbstractTestCase] Insert [5][65][4,225] 
+INFO  [AbstractTestCase] Insert [6][129][16,641] 
+INFO  [AbstractTestCase] Insert [7][257][66,049] 
+INFO  [AbstractTestCase] Insert [8][513][263,169] 
+INFO  [AbstractTestCase] Insert [9][1,025][1,050,625] 
+INFO  [AbstractTestCase] Total  [9][(2^(9+1))+1 = 1025] => [1025^2 = 1050625] 
+INFO  [AbstractTestCase] Range  [2.0][2.0/1050625 = 0.00000190]  
+INFO  [AbstractTestCase] Zone   [6][2^(-6) = 0.015625] 
+INFO  [AbstractTestCase] Memory [5.1GiB][2.4GiB][21.9GiB] 
+INFO  [AbstractTestCase] >>>> 
+INFO  [AbstractTestCase] ---- ---- 
+INFO  [AbstractTestCase] Radius [6][2^(-6) = 0.015625] 
+INFO  [AbstractTestCase] Class [HsqlHtmidMatcherImpl] Total rows [1,050,625] Depth [10] URL [jdbc:hsqldb:mem:zonematch] 
+INFO  [AbstractTestCase] Searched [1,050,625] radius [0.015625] found [96] in [10,000] loops, total [23s][23,618ms], average [2.362ms][2,361.883us] FAIL 
+INFO  [AbstractTestCase] ---- ---- 
+INFO  [AbstractTestCase] Radius [7][2^(-7) = 0.0078125] 
+INFO  [AbstractTestCase] Class [HsqlHtmidMatcherImpl] Total rows [1,050,625] Depth [10] URL [jdbc:hsqldb:mem:zonematch] 
+INFO  [AbstractTestCase] Searched [1,050,625] radius [0.0078125] found [24] in [10,000] loops, total [9s][9,910ms], average [0.991ms][991.038us] PASS 
+INFO  [AbstractTestCase] ---- ---- 
+INFO  [AbstractTestCase] Radius [8][2^(-8) = 0.00390625] 
+INFO  [AbstractTestCase] Class [HsqlHtmidMatcherImpl] Total rows [1,050,625] Depth [10] URL [jdbc:hsqldb:mem:zonematch] 
+INFO  [AbstractTestCase] Searched [1,050,625] radius [0.00390625] found [7] in [10,000] loops, total [3s][3,180ms], average [0.318ms][318.022us] PASS 
+INFO  [AbstractTestCase] ---- ---- 
+INFO  [AbstractTestCase] Radius [9][2^(-9) = 0.001953125] 
+INFO  [AbstractTestCase] Class [HsqlHtmidMatcherImpl] Total rows [1,050,625] Depth [10] URL [jdbc:hsqldb:mem:zonematch] 
+INFO  [AbstractTestCase] Searched [1,050,625] radius [0.001953125] found [3] in [10,000] loops, total [3s][3,522ms], average [0.352ms][352.249us] PASS 
+INFO  [AbstractTestCase] ---- ---- 
+INFO  [AbstractTestCase] Radius [10][2^(-10) = 9.765625E-4] 
+INFO  [AbstractTestCase] Class [HsqlHtmidMatcherImpl] Total rows [1,050,625] Depth [10] URL [jdbc:hsqldb:mem:zonematch] 
+INFO  [AbstractTestCase] Searched [1,050,625] radius [9.765625E-4] found [1] in [10,000] loops, total [3s][3,139ms], average [0.314ms][313.947us] PASS 
+INFO  [AbstractTestCase] <<<< 
+INFO  [AbstractTestCase] Insert [10][2,049][4,198,401] 
+INFO  [AbstractTestCase] Total  [10][(2^(10+1))+1 = 2049] => [2049^2 = 4198401] 
+INFO  [AbstractTestCase] Range  [2.0][2.0/4198401 = 0.00000048]  
+INFO  [AbstractTestCase] Zone   [6][2^(-6) = 0.015625] 
+INFO  [AbstractTestCase] Memory [8.0GiB][3.6GiB][21.9GiB] 
+INFO  [AbstractTestCase] >>>> 
+INFO  [AbstractTestCase] ---- ---- 
+INFO  [AbstractTestCase] Radius [6][2^(-6) = 0.015625] 
+INFO  [AbstractTestCase] Class [HsqlHtmidMatcherImpl] Total rows [4,198,401] Depth [10] URL [jdbc:hsqldb:mem:zonematch] 
+INFO  [AbstractTestCase] Searched [4,198,401] radius [0.015625] found [392] in [10,000] loops, total [84s][84,885ms], average [8.489ms][8,488.543us] FAIL 
+INFO  [AbstractTestCase] ---- ---- 
+INFO  [AbstractTestCase] Radius [7][2^(-7) = 0.0078125] 
+INFO  [AbstractTestCase] Class [HsqlHtmidMatcherImpl] Total rows [4,198,401] Depth [10] URL [jdbc:hsqldb:mem:zonematch] 
+INFO  [AbstractTestCase] Searched [4,198,401] radius [0.0078125] found [96] in [10,000] loops, total [32s][32,847ms], average [3.285ms][3,284.712us] FAIL 
+INFO  [AbstractTestCase] ---- ---- 
+INFO  [AbstractTestCase] Radius [8][2^(-8) = 0.00390625] 
+INFO  [AbstractTestCase] Class [HsqlHtmidMatcherImpl] Total rows [4,198,401] Depth [10] URL [jdbc:hsqldb:mem:zonematch] 
+INFO  [AbstractTestCase] Searched [4,198,401] radius [0.00390625] found [25] in [10,000] loops, total [11s][11,122ms], average [1.112ms][1,112.295us] FAIL 
+INFO  [AbstractTestCase] ---- ---- 
+INFO  [AbstractTestCase] Radius [9][2^(-9) = 0.001953125] 
+INFO  [AbstractTestCase] Class [HsqlHtmidMatcherImpl] Total rows [4,198,401] Depth [10] URL [jdbc:hsqldb:mem:zonematch] 
+INFO  [AbstractTestCase] Searched [4,198,401] radius [0.001953125] found [6] in [10,000] loops, total [11s][11,029ms], average [1.103ms][1,102.981us] FAIL 
+INFO  [AbstractTestCase] ---- ---- 
+INFO  [AbstractTestCase] Radius [10][2^(-10) = 9.765625E-4] 
+INFO  [AbstractTestCase] Class [HsqlHtmidMatcherImpl] Total rows [4,198,401] Depth [10] URL [jdbc:hsqldb:mem:zonematch] 
+INFO  [AbstractTestCase] Searched [4,198,401] radius [9.765625E-4] found [3] in [10,000] loops, total [11s][11,023ms], average [1.102ms][1,102.368us] FAIL 
+INFO  [AbstractTestCase] <<<< 
+INFO  [AbstractTestCase] Insert [11][4,097][16,785,409] 
+INFO  [AbstractTestCase] Total  [11][(2^(11+1))+1 = 4097] => [4097^2 = 16785409] 
+INFO  [AbstractTestCase] Range  [2.0][2.0/16785409 = 0.00000012]  
+INFO  [AbstractTestCase] Zone   [6][2^(-6) = 0.015625] 
+INFO  [AbstractTestCase] Memory [12.2GiB][3.3GiB][21.9GiB] 
+INFO  [AbstractTestCase] >>>> 
+INFO  [AbstractTestCase] ---- ---- 
+INFO  [AbstractTestCase] Radius [6][2^(-6) = 0.015625] 
+INFO  [AbstractTestCase] Class [HsqlHtmidMatcherImpl] Total rows [16,785,409] Depth [10] URL [jdbc:hsqldb:mem:zonematch] 
+INFO  [AbstractTestCase] Searched [16,785,409] radius [0.015625] found [1,596] in [10,000] loops, total [429s][429,381ms], average [42.938ms][42,938.149us] FAIL 
+INFO  [AbstractTestCase] ---- ---- 
+INFO  [AbstractTestCase] Radius [7][2^(-7) = 0.0078125] 
+INFO  [AbstractTestCase] Class [HsqlHtmidMatcherImpl] Total rows [16,785,409] Depth [10] URL [jdbc:hsqldb:mem:zonematch] 
+INFO  [AbstractTestCase] Searched [16,785,409] radius [0.0078125] found [392] in [10,000] loops, total [184s][184,714ms], average [18.471ms][18,471.455us] FAIL 
+INFO  [AbstractTestCase] ---- ---- 
+INFO  [AbstractTestCase] Radius [8][2^(-8) = 0.00390625] 
+INFO  [AbstractTestCase] Class [HsqlHtmidMatcherImpl] Total rows [16,785,409] Depth [10] URL [jdbc:hsqldb:mem:zonematch] 
+INFO  [AbstractTestCase] Searched [16,785,409] radius [0.00390625] found [97] in [10,000] loops, total [43s][43,430ms], average [4.343ms][4,343.079us] FAIL 
+INFO  [AbstractTestCase] ---- ---- 
+INFO  [AbstractTestCase] Radius [9][2^(-9) = 0.001953125] 
+INFO  [AbstractTestCase] Class [HsqlHtmidMatcherImpl] Total rows [16,785,409] Depth [10] URL [jdbc:hsqldb:mem:zonematch] 
+INFO  [AbstractTestCase] Searched [16,785,409] radius [0.001953125] found [24] in [10,000] loops, total [43s][43,685ms], average [4.369ms][4,368.566us] FAIL 
+INFO  [AbstractTestCase] ---- ---- 
+INFO  [AbstractTestCase] Radius [10][2^(-10) = 9.765625E-4] 
+INFO  [AbstractTestCase] Class [HsqlHtmidMatcherImpl] Total rows [16,785,409] Depth [10] URL [jdbc:hsqldb:mem:zonematch] 
+INFO  [AbstractTestCase] Searched [16,785,409] radius [9.765625E-4] found [6] in [10,000] loops, total [43s][43,919ms], average [4.392ms][4,391.970us] FAIL 
+INFO  [AbstractTestCase] <<<< 
+INFO  [AbstractTestCase] ---- ---- 
+INFO  [AbstractTestCase] Insert [0][3][9] 
+INFO  [AbstractTestCase] Insert [1][5][25] 
+INFO  [AbstractTestCase] Insert [2][9][81] 
+INFO  [AbstractTestCase] Insert [3][17][289] 
+INFO  [AbstractTestCase] Insert [4][33][1,089] 
+INFO  [AbstractTestCase] Insert [5][65][4,225] 
+INFO  [AbstractTestCase] Insert [6][129][16,641] 
+INFO  [AbstractTestCase] Insert [7][257][66,049] 
+INFO  [AbstractTestCase] Insert [8][513][263,169] 
+INFO  [AbstractTestCase] Insert [9][1,025][1,050,625] 
+INFO  [AbstractTestCase] Total  [9][(2^(9+1))+1 = 1025] => [1025^2 = 1050625] 
+INFO  [AbstractTestCase] Range  [2.0][2.0/1050625 = 0.00000190]  
+INFO  [AbstractTestCase] Zone   [7][2^(-7) = 0.0078125] 
+INFO  [AbstractTestCase] Memory [16.7GiB][4.4GiB][21.9GiB] 
+INFO  [AbstractTestCase] >>>> 
+INFO  [AbstractTestCase] ---- ---- 
+INFO  [AbstractTestCase] Radius [6][2^(-6) = 0.015625] 
+INFO  [AbstractTestCase] Class [HsqlHtmidMatcherImpl] Total rows [1,050,625] Depth [10] URL [jdbc:hsqldb:mem:zonematch] 
+INFO  [AbstractTestCase] Searched [1,050,625] radius [0.015625] found [96] in [10,000] loops, total [29s][29,191ms], average [2.919ms][2,919.120us] FAIL 
+INFO  [AbstractTestCase] ---- ---- 
+INFO  [AbstractTestCase] Radius [7][2^(-7) = 0.0078125] 
+INFO  [AbstractTestCase] Class [HsqlHtmidMatcherImpl] Total rows [1,050,625] Depth [10] URL [jdbc:hsqldb:mem:zonematch] 
+INFO  [AbstractTestCase] Searched [1,050,625] radius [0.0078125] found [24] in [10,000] loops, total [8s][8,953ms], average [0.895ms][895.321us] PASS 
+INFO  [AbstractTestCase] ---- ---- 
+INFO  [AbstractTestCase] Radius [8][2^(-8) = 0.00390625] 
+INFO  [AbstractTestCase] Class [HsqlHtmidMatcherImpl] Total rows [1,050,625] Depth [10] URL [jdbc:hsqldb:mem:zonematch] 
+INFO  [AbstractTestCase] Searched [1,050,625] radius [0.00390625] found [7] in [10,000] loops, total [3s][3,166ms], average [0.317ms][316.660us] PASS 
+INFO  [AbstractTestCase] ---- ---- 
+INFO  [AbstractTestCase] Radius [9][2^(-9) = 0.001953125] 
+INFO  [AbstractTestCase] Class [HsqlHtmidMatcherImpl] Total rows [1,050,625] Depth [10] URL [jdbc:hsqldb:mem:zonematch] 
+INFO  [AbstractTestCase] Searched [1,050,625] radius [0.001953125] found [3] in [10,000] loops, total [3s][3,038ms], average [0.304ms][303.830us] PASS 
+INFO  [AbstractTestCase] ---- ---- 
+INFO  [AbstractTestCase] Radius [10][2^(-10) = 9.765625E-4] 
+INFO  [AbstractTestCase] Class [HsqlHtmidMatcherImpl] Total rows [1,050,625] Depth [10] URL [jdbc:hsqldb:mem:zonematch] 
+INFO  [AbstractTestCase] Searched [1,050,625] radius [9.765625E-4] found [1] in [10,000] loops, total [3s][3,156ms], average [0.316ms][315.607us] PASS 
+INFO  [AbstractTestCase] <<<< 
+INFO  [AbstractTestCase] Insert [10][2,049][4,198,401] 
+INFO  [AbstractTestCase] Total  [10][(2^(10+1))+1 = 2049] => [2049^2 = 4198401] 
+INFO  [AbstractTestCase] Range  [2.0][2.0/4198401 = 0.00000048]  
+INFO  [AbstractTestCase] Zone   [7][2^(-7) = 0.0078125] 
+INFO  [AbstractTestCase] Memory [13.1GiB][6.7GiB][21.9GiB] 
+INFO  [AbstractTestCase] >>>> 
+INFO  [AbstractTestCase] ---- ---- 
+INFO  [AbstractTestCase] Radius [6][2^(-6) = 0.015625] 
+INFO  [AbstractTestCase] Class [HsqlHtmidMatcherImpl] Total rows [4,198,401] Depth [10] URL [jdbc:hsqldb:mem:zonematch] 
+INFO  [AbstractTestCase] Searched [4,198,401] radius [0.015625] found [392] in [10,000] loops, total [81s][81,544ms], average [8.154ms][8,154.495us] FAIL 
+INFO  [AbstractTestCase] ---- ---- 
+INFO  [AbstractTestCase] Radius [7][2^(-7) = 0.0078125] 
+INFO  [AbstractTestCase] Class [HsqlHtmidMatcherImpl] Total rows [4,198,401] Depth [10] URL [jdbc:hsqldb:mem:zonematch] 
+INFO  [AbstractTestCase] Searched [4,198,401] radius [0.0078125] found [96] in [10,000] loops, total [32s][32,057ms], average [3.206ms][3,205.757us] FAIL 
+INFO  [AbstractTestCase] ---- ---- 
+INFO  [AbstractTestCase] Radius [8][2^(-8) = 0.00390625] 
+INFO  [AbstractTestCase] Class [HsqlHtmidMatcherImpl] Total rows [4,198,401] Depth [10] URL [jdbc:hsqldb:mem:zonematch] 
+INFO  [AbstractTestCase] Searched [4,198,401] radius [0.00390625] found [25] in [10,000] loops, total [10s][10,910ms], average [1.091ms][1,091.056us] FAIL 
+INFO  [AbstractTestCase] ---- ---- 
+INFO  [AbstractTestCase] Radius [9][2^(-9) = 0.001953125] 
+INFO  [AbstractTestCase] Class [HsqlHtmidMatcherImpl] Total rows [4,198,401] Depth [10] URL [jdbc:hsqldb:mem:zonematch] 
+INFO  [AbstractTestCase] Searched [4,198,401] radius [0.001953125] found [6] in [10,000] loops, total [10s][10,931ms], average [1.093ms][1,093.141us] FAIL 
+INFO  [AbstractTestCase] ---- ---- 
+INFO  [AbstractTestCase] Radius [10][2^(-10) = 9.765625E-4] 
+INFO  [AbstractTestCase] Class [HsqlHtmidMatcherImpl] Total rows [4,198,401] Depth [10] URL [jdbc:hsqldb:mem:zonematch] 
+INFO  [AbstractTestCase] Searched [4,198,401] radius [9.765625E-4] found [3] in [10,000] loops, total [10s][10,980ms], average [1.098ms][1,098.067us] FAIL 
+INFO  [AbstractTestCase] <<<< 
+INFO  [AbstractTestCase] Insert [11][4,097][16,785,409] 
+INFO  [AbstractTestCase] Total  [11][(2^(11+1))+1 = 4097] => [4097^2 = 16785409] 
+INFO  [AbstractTestCase] Range  [2.0][2.0/16785409 = 0.00000012]  
+INFO  [AbstractTestCase] Zone   [7][2^(-7) = 0.0078125] 
+INFO  [AbstractTestCase] Memory [16.7GiB][8.6GiB][21.9GiB] 
+INFO  [AbstractTestCase] >>>> 
+INFO  [AbstractTestCase] ---- ---- 
+INFO  [AbstractTestCase] Radius [6][2^(-6) = 0.015625] 
+INFO  [AbstractTestCase] Class [HsqlHtmidMatcherImpl] Total rows [16,785,409] Depth [10] URL [jdbc:hsqldb:mem:zonematch] 
+INFO  [AbstractTestCase] Searched [16,785,409] radius [0.015625] found [1,596] in [10,000] loops, total [405s][405,787ms], average [40.579ms][40,578.757us] FAIL 
+INFO  [AbstractTestCase] ---- ---- 
+INFO  [AbstractTestCase] Radius [7][2^(-7) = 0.0078125] 
+INFO  [AbstractTestCase] Class [HsqlHtmidMatcherImpl] Total rows [16,785,409] Depth [10] URL [jdbc:hsqldb:mem:zonematch] 
+INFO  [AbstractTestCase] Searched [16,785,409] radius [0.0078125] found [392] in [10,000] loops, total [182s][182,047ms], average [18.205ms][18,204.711us] FAIL 
+INFO  [AbstractTestCase] ---- ---- 
+INFO  [AbstractTestCase] Radius [8][2^(-8) = 0.00390625] 
+INFO  [AbstractTestCase] Class [HsqlHtmidMatcherImpl] Total rows [16,785,409] Depth [10] URL [jdbc:hsqldb:mem:zonematch] 
+INFO  [AbstractTestCase] Searched [16,785,409] radius [0.00390625] found [97] in [10,000] loops, total [44s][44,218ms], average [4.422ms][4,421.863us] FAIL 
+INFO  [AbstractTestCase] ---- ---- 
+INFO  [AbstractTestCase] Radius [9][2^(-9) = 0.001953125] 
+INFO  [AbstractTestCase] Class [HsqlHtmidMatcherImpl] Total rows [16,785,409] Depth [10] URL [jdbc:hsqldb:mem:zonematch] 
+INFO  [AbstractTestCase] Searched [16,785,409] radius [0.001953125] found [24] in [10,000] loops, total [44s][44,135ms], average [4.414ms][4,413.546us] FAIL 
+INFO  [AbstractTestCase] ---- ---- 
+INFO  [AbstractTestCase] Radius [10][2^(-10) = 9.765625E-4] 
+INFO  [AbstractTestCase] Class [HsqlHtmidMatcherImpl] Total rows [16,785,409] Depth [10] URL [jdbc:hsqldb:mem:zonematch] 
+INFO  [AbstractTestCase] Searched [16,785,409] radius [9.765625E-4] found [6] in [10,000] loops, total [44s][44,759ms], average [4.476ms][4,475.988us] FAIL 
+INFO  [AbstractTestCase] <<<< 
+INFO  [AbstractTestCase] ---- ---- 
+INFO  [AbstractTestCase] Insert [0][3][9] 
+INFO  [AbstractTestCase] Insert [1][5][25] 
+INFO  [AbstractTestCase] Insert [2][9][81] 
+INFO  [AbstractTestCase] Insert [3][17][289] 
+INFO  [AbstractTestCase] Insert [4][33][1,089] 
+INFO  [AbstractTestCase] Insert [5][65][4,225] 
+INFO  [AbstractTestCase] Insert [6][129][16,641] 
+INFO  [AbstractTestCase] Insert [7][257][66,049] 
+INFO  [AbstractTestCase] Insert [8][513][263,169] 
+INFO  [AbstractTestCase] Insert [9][1,025][1,050,625] 
+INFO  [AbstractTestCase] Total  [9][(2^(9+1))+1 = 1025] => [1025^2 = 1050625] 
+INFO  [AbstractTestCase] Range  [2.0][2.0/1050625 = 0.00000190]  
+INFO  [AbstractTestCase] Zone   [8][2^(-8) = 0.00390625] 
+INFO  [AbstractTestCase] Memory [16.9GiB][6.5GiB][21.9GiB] 
+INFO  [AbstractTestCase] >>>> 
+INFO  [AbstractTestCase] ---- ---- 
+INFO  [AbstractTestCase] Radius [6][2^(-6) = 0.015625] 
+INFO  [AbstractTestCase] Class [HsqlHtmidMatcherImpl] Total rows [1,050,625] Depth [10] URL [jdbc:hsqldb:mem:zonematch] 
+INFO  [AbstractTestCase] Searched [1,050,625] radius [0.015625] found [96] in [10,000] loops, total [20s][20,696ms], average [2.070ms][2,069.659us] FAIL 
+INFO  [AbstractTestCase] ---- ---- 
+INFO  [AbstractTestCase] Radius [7][2^(-7) = 0.0078125] 
+INFO  [AbstractTestCase] Class [HsqlHtmidMatcherImpl] Total rows [1,050,625] Depth [10] URL [jdbc:hsqldb:mem:zonematch] 
+INFO  [AbstractTestCase] Searched [1,050,625] radius [0.0078125] found [24] in [10,000] loops, total [11s][11,081ms], average [1.108ms][1,108.170us] FAIL 
+INFO  [AbstractTestCase] ---- ---- 
+INFO  [AbstractTestCase] Radius [8][2^(-8) = 0.00390625] 
+INFO  [AbstractTestCase] Class [HsqlHtmidMatcherImpl] Total rows [1,050,625] Depth [10] URL [jdbc:hsqldb:mem:zonematch] 
+INFO  [AbstractTestCase] Searched [1,050,625] radius [0.00390625] found [7] in [10,000] loops, total [4s][4,004ms], average [0.400ms][400.421us] PASS 
+INFO  [AbstractTestCase] ---- ---- 
+INFO  [AbstractTestCase] Radius [9][2^(-9) = 0.001953125] 
+INFO  [AbstractTestCase] Class [HsqlHtmidMatcherImpl] Total rows [1,050,625] Depth [10] URL [jdbc:hsqldb:mem:zonematch] 
+INFO  [AbstractTestCase] Searched [1,050,625] radius [0.001953125] found [3] in [10,000] loops, total [4s][4,032ms], average [0.403ms][403.267us] PASS 
+INFO  [AbstractTestCase] ---- ---- 
+INFO  [AbstractTestCase] Radius [10][2^(-10) = 9.765625E-4] 
+INFO  [AbstractTestCase] Class [HsqlHtmidMatcherImpl] Total rows [1,050,625] Depth [10] URL [jdbc:hsqldb:mem:zonematch] 
+INFO  [AbstractTestCase] Searched [1,050,625] radius [9.765625E-4] found [1] in [10,000] loops, total [3s][3,885ms], average [0.389ms][388.504us] PASS 
+INFO  [AbstractTestCase] <<<< 
+INFO  [AbstractTestCase] Insert [10][2,049][4,198,401] 
+INFO  [AbstractTestCase] Total  [10][(2^(10+1))+1 = 2049] => [2049^2 = 4198401] 
+INFO  [AbstractTestCase] Range  [2.0][2.0/4198401 = 0.00000048]  
+INFO  [AbstractTestCase] Zone   [8][2^(-8) = 0.00390625] 
+INFO  [AbstractTestCase] Memory [17.0GiB][2.2GiB][21.9GiB] 
+INFO  [AbstractTestCase] >>>> 
+INFO  [AbstractTestCase] ---- ---- 
+INFO  [AbstractTestCase] Radius [6][2^(-6) = 0.015625] 
+INFO  [AbstractTestCase] Class [HsqlHtmidMatcherImpl] Total rows [4,198,401] Depth [10] URL [jdbc:hsqldb:mem:zonematch] 
+INFO  [AbstractTestCase] Searched [4,198,401] radius [0.015625] found [392] in [10,000] loops, total [90s][90,091ms], average [9.009ms][9,009.158us] FAIL 
+INFO  [AbstractTestCase] ---- ---- 
+INFO  [AbstractTestCase] Radius [7][2^(-7) = 0.0078125] 
+INFO  [AbstractTestCase] Class [HsqlHtmidMatcherImpl] Total rows [4,198,401] Depth [10] URL [jdbc:hsqldb:mem:zonematch] 
+INFO  [AbstractTestCase] Searched [4,198,401] radius [0.0078125] found [96] in [10,000] loops, total [32s][32,439ms], average [3.244ms][3,243.949us] FAIL 
+INFO  [AbstractTestCase] ---- ---- 
+INFO  [AbstractTestCase] Radius [8][2^(-8) = 0.00390625] 
+INFO  [AbstractTestCase] Class [HsqlHtmidMatcherImpl] Total rows [4,198,401] Depth [10] URL [jdbc:hsqldb:mem:zonematch] 
+INFO  [AbstractTestCase] Searched [4,198,401] radius [0.00390625] found [25] in [10,000] loops, total [10s][10,987ms], average [1.099ms][1,098.791us] FAIL 
+INFO  [AbstractTestCase] ---- ---- 
+INFO  [AbstractTestCase] Radius [9][2^(-9) = 0.001953125] 
+INFO  [AbstractTestCase] Class [HsqlHtmidMatcherImpl] Total rows [4,198,401] Depth [10] URL [jdbc:hsqldb:mem:zonematch] 
+INFO  [AbstractTestCase] Searched [4,198,401] radius [0.001953125] found [6] in [10,000] loops, total [12s][12,126ms], average [1.213ms][1,212.680us] FAIL 
+INFO  [AbstractTestCase] ---- ---- 
+INFO  [AbstractTestCase] Radius [10][2^(-10) = 9.765625E-4] 
+INFO  [AbstractTestCase] Class [HsqlHtmidMatcherImpl] Total rows [4,198,401] Depth [10] URL [jdbc:hsqldb:mem:zonematch] 
+INFO  [AbstractTestCase] Searched [4,198,401] radius [9.765625E-4] found [3] in [10,000] loops, total [11s][11,078ms], average [1.108ms][1,107.843us] FAIL 
+INFO  [AbstractTestCase] <<<< 
+INFO  [AbstractTestCase] Insert [11][4,097][16,785,409] 
+INFO  [AbstractTestCase] Total  [11][(2^(11+1))+1 = 4097] => [4097^2 = 16785409] 
+INFO  [AbstractTestCase] Range  [2.0][2.0/16785409 = 0.00000012]  
+INFO  [AbstractTestCase] Zone   [8][2^(-8) = 0.00390625] 
+INFO  [AbstractTestCase] Memory [14.4GiB][3.7GiB][21.9GiB] 
+INFO  [AbstractTestCase] >>>> 
+INFO  [AbstractTestCase] ---- ---- 
+INFO  [AbstractTestCase] Radius [6][2^(-6) = 0.015625] 
+INFO  [AbstractTestCase] Class [HsqlHtmidMatcherImpl] Total rows [16,785,409] Depth [10] URL [jdbc:hsqldb:mem:zonematch] 
+INFO  [AbstractTestCase] Searched [16,785,409] radius [0.015625] found [1,596] in [10,000] loops, total [401s][401,312ms], average [40.131ms][40,131.282us] FAIL 
+INFO  [AbstractTestCase] ---- ---- 
+INFO  [AbstractTestCase] Radius [7][2^(-7) = 0.0078125] 
+INFO  [AbstractTestCase] Class [HsqlHtmidMatcherImpl] Total rows [16,785,409] Depth [10] URL [jdbc:hsqldb:mem:zonematch] 
+INFO  [AbstractTestCase] Searched [16,785,409] radius [0.0078125] found [392] in [10,000] loops, total [176s][176,709ms], average [17.671ms][17,670.952us] FAIL 
+INFO  [AbstractTestCase] ---- ---- 
+INFO  [AbstractTestCase] Radius [8][2^(-8) = 0.00390625] 
+INFO  [AbstractTestCase] Class [HsqlHtmidMatcherImpl] Total rows [16,785,409] Depth [10] URL [jdbc:hsqldb:mem:zonematch] 
+INFO  [AbstractTestCase] Searched [16,785,409] radius [0.00390625] found [97] in [10,000] loops, total [42s][42,365ms], average [4.237ms][4,236.511us] FAIL 
+INFO  [AbstractTestCase] ---- ---- 
+INFO  [AbstractTestCase] Radius [9][2^(-9) = 0.001953125] 
+INFO  [AbstractTestCase] Class [HsqlHtmidMatcherImpl] Total rows [16,785,409] Depth [10] URL [jdbc:hsqldb:mem:zonematch] 
+INFO  [AbstractTestCase] Searched [16,785,409] radius [0.001953125] found [24] in [10,000] loops, total [42s][42,469ms], average [4.247ms][4,246.950us] FAIL 
+INFO  [AbstractTestCase] ---- ---- 
+INFO  [AbstractTestCase] Radius [10][2^(-10) = 9.765625E-4] 
+INFO  [AbstractTestCase] Class [HsqlHtmidMatcherImpl] Total rows [16,785,409] Depth [10] URL [jdbc:hsqldb:mem:zonematch] 
+INFO  [AbstractTestCase] Searched [16,785,409] radius [9.765625E-4] found [6] in [10,000] loops, total [42s][42,522ms], average [4.252ms][4,252.235us] FAIL 
+INFO  [AbstractTestCase] <<<< 
+INFO  [AbstractTestCase] ---- ---- 
+INFO  [AbstractTestCase] Insert [0][3][9] 
+INFO  [AbstractTestCase] Insert [1][5][25] 
+INFO  [AbstractTestCase] Insert [2][9][81] 
+INFO  [AbstractTestCase] Insert [3][17][289] 
+INFO  [AbstractTestCase] Insert [4][33][1,089] 
+INFO  [AbstractTestCase] Insert [5][65][4,225] 
+INFO  [AbstractTestCase] Insert [6][129][16,641] 
+INFO  [AbstractTestCase] Insert [7][257][66,049] 
+INFO  [AbstractTestCase] Insert [8][513][263,169] 
+INFO  [AbstractTestCase] Insert [9][1,025][1,050,625] 
+INFO  [AbstractTestCase] Total  [9][(2^(9+1))+1 = 1025] => [1025^2 = 1050625] 
+INFO  [AbstractTestCase] Range  [2.0][2.0/1050625 = 0.00000190]  
+INFO  [AbstractTestCase] Zone   [9][2^(-9) = 0.001953125] 
+INFO  [AbstractTestCase] Memory [19.4GiB][8.9GiB][21.9GiB] 
+INFO  [AbstractTestCase] >>>> 
+INFO  [AbstractTestCase] ---- ---- 
+INFO  [AbstractTestCase] Radius [6][2^(-6) = 0.015625] 
+INFO  [AbstractTestCase] Class [HsqlHtmidMatcherImpl] Total rows [1,050,625] Depth [10] URL [jdbc:hsqldb:mem:zonematch] 
+INFO  [AbstractTestCase] Searched [1,050,625] radius [0.015625] found [96] in [10,000] loops, total [20s][20,195ms], average [2.020ms][2,019.545us] FAIL 
+INFO  [AbstractTestCase] ---- ---- 
+INFO  [AbstractTestCase] Radius [7][2^(-7) = 0.0078125] 
+INFO  [AbstractTestCase] Class [HsqlHtmidMatcherImpl] Total rows [1,050,625] Depth [10] URL [jdbc:hsqldb:mem:zonematch] 
+INFO  [AbstractTestCase] Searched [1,050,625] radius [0.0078125] found [24] in [10,000] loops, total [9s][9,549ms], average [0.955ms][954.926us] PASS 
+INFO  [AbstractTestCase] ---- ---- 
+INFO  [AbstractTestCase] Radius [8][2^(-8) = 0.00390625] 
+INFO  [AbstractTestCase] Class [HsqlHtmidMatcherImpl] Total rows [1,050,625] Depth [10] URL [jdbc:hsqldb:mem:zonematch] 
+INFO  [AbstractTestCase] Searched [1,050,625] radius [0.00390625] found [7] in [10,000] loops, total [3s][3,120ms], average [0.312ms][312.023us] PASS 
+INFO  [AbstractTestCase] ---- ---- 
+INFO  [AbstractTestCase] Radius [9][2^(-9) = 0.001953125] 
+INFO  [AbstractTestCase] Class [HsqlHtmidMatcherImpl] Total rows [1,050,625] Depth [10] URL [jdbc:hsqldb:mem:zonematch] 
+INFO  [AbstractTestCase] Searched [1,050,625] radius [0.001953125] found [3] in [10,000] loops, total [3s][3,684ms], average [0.368ms][368.439us] PASS 
+INFO  [AbstractTestCase] ---- ---- 
+INFO  [AbstractTestCase] Radius [10][2^(-10) = 9.765625E-4] 
+INFO  [AbstractTestCase] Class [HsqlHtmidMatcherImpl] Total rows [1,050,625] Depth [10] URL [jdbc:hsqldb:mem:zonematch] 
+INFO  [AbstractTestCase] Searched [1,050,625] radius [9.765625E-4] found [1] in [10,000] loops, total [3s][3,646ms], average [0.365ms][364.655us] PASS 
+INFO  [AbstractTestCase] <<<< 
+INFO  [AbstractTestCase] Insert [10][2,049][4,198,401] 
+INFO  [AbstractTestCase] Total  [10][(2^(10+1))+1 = 2049] => [2049^2 = 4198401] 
+INFO  [AbstractTestCase] Range  [2.0][2.0/4198401 = 0.00000048]  
+INFO  [AbstractTestCase] Zone   [9][2^(-9) = 0.001953125] 
+INFO  [AbstractTestCase] Memory [18.8GiB][7.9GiB][21.9GiB] 
+INFO  [AbstractTestCase] >>>> 
+INFO  [AbstractTestCase] ---- ---- 
+INFO  [AbstractTestCase] Radius [6][2^(-6) = 0.015625] 
+INFO  [AbstractTestCase] Class [HsqlHtmidMatcherImpl] Total rows [4,198,401] Depth [10] URL [jdbc:hsqldb:mem:zonematch] 
+INFO  [AbstractTestCase] Searched [4,198,401] radius [0.015625] found [392] in [10,000] loops, total [80s][80,626ms], average [8.063ms][8,062.644us] FAIL 
+INFO  [AbstractTestCase] ---- ---- 
+INFO  [AbstractTestCase] Radius [7][2^(-7) = 0.0078125] 
+INFO  [AbstractTestCase] Class [HsqlHtmidMatcherImpl] Total rows [4,198,401] Depth [10] URL [jdbc:hsqldb:mem:zonematch] 
+INFO  [AbstractTestCase] Searched [4,198,401] radius [0.0078125] found [96] in [10,000] loops, total [32s][32,838ms], average [3.284ms][3,283.877us] FAIL 
+INFO  [AbstractTestCase] ---- ---- 
+INFO  [AbstractTestCase] Radius [8][2^(-8) = 0.00390625] 
+INFO  [AbstractTestCase] Class [HsqlHtmidMatcherImpl] Total rows [4,198,401] Depth [10] URL [jdbc:hsqldb:mem:zonematch] 
+INFO  [AbstractTestCase] Searched [4,198,401] radius [0.00390625] found [25] in [10,000] loops, total [11s][11,375ms], average [1.138ms][1,137.578us] FAIL 
+INFO  [AbstractTestCase] ---- ---- 
+INFO  [AbstractTestCase] Radius [9][2^(-9) = 0.001953125] 
+INFO  [AbstractTestCase] Class [HsqlHtmidMatcherImpl] Total rows [4,198,401] Depth [10] URL [jdbc:hsqldb:mem:zonematch] 
+INFO  [AbstractTestCase] Searched [4,198,401] radius [0.001953125] found [6] in [10,000] loops, total [11s][11,223ms], average [1.122ms][1,122.308us] FAIL 
+INFO  [AbstractTestCase] ---- ---- 
+INFO  [AbstractTestCase] Radius [10][2^(-10) = 9.765625E-4] 
+INFO  [AbstractTestCase] Class [HsqlHtmidMatcherImpl] Total rows [4,198,401] Depth [10] URL [jdbc:hsqldb:mem:zonematch] 
+INFO  [AbstractTestCase] Searched [4,198,401] radius [9.765625E-4] found [3] in [10,000] loops, total [11s][11,177ms], average [1.118ms][1,117.720us] FAIL 
+INFO  [AbstractTestCase] <<<< 
+INFO  [AbstractTestCase] Insert [11][4,097][16,785,409] 
+INFO  [AbstractTestCase] Total  [11][(2^(11+1))+1 = 4097] => [4097^2 = 16785409] 
+INFO  [AbstractTestCase] Range  [2.0][2.0/16785409 = 0.00000012]  
+INFO  [AbstractTestCase] Zone   [9][2^(-9) = 0.001953125] 
+INFO  [AbstractTestCase] Memory [17.8GiB][10.2GiB][21.9GiB] 
+INFO  [AbstractTestCase] >>>> 
+INFO  [AbstractTestCase] ---- ---- 
+INFO  [AbstractTestCase] Radius [6][2^(-6) = 0.015625] 
+INFO  [AbstractTestCase] Class [HsqlHtmidMatcherImpl] Total rows [16,785,409] Depth [10] URL [jdbc:hsqldb:mem:zonematch] 
+INFO  [AbstractTestCase] Searched [16,785,409] radius [0.015625] found [1,596] in [10,000] loops, total [384s][384,157ms], average [38.416ms][38,415.745us] FAIL 
+INFO  [AbstractTestCase] ---- ---- 
+INFO  [AbstractTestCase] Radius [7][2^(-7) = 0.0078125] 
+INFO  [AbstractTestCase] Class [HsqlHtmidMatcherImpl] Total rows [16,785,409] Depth [10] URL [jdbc:hsqldb:mem:zonematch] 
+INFO  [AbstractTestCase] Searched [16,785,409] radius [0.0078125] found [392] in [10,000] loops, total [176s][176,771ms], average [17.677ms][17,677.136us] FAIL 
+INFO  [AbstractTestCase] ---- ---- 
+INFO  [AbstractTestCase] Radius [8][2^(-8) = 0.00390625] 
+INFO  [AbstractTestCase] Class [HsqlHtmidMatcherImpl] Total rows [16,785,409] Depth [10] URL [jdbc:hsqldb:mem:zonematch] 
+INFO  [AbstractTestCase] Searched [16,785,409] radius [0.00390625] found [97] in [10,000] loops, total [42s][42,329ms], average [4.233ms][4,232.954us] FAIL 
+INFO  [AbstractTestCase] ---- ---- 
+INFO  [AbstractTestCase] Radius [9][2^(-9) = 0.001953125] 
+INFO  [AbstractTestCase] Class [HsqlHtmidMatcherImpl] Total rows [16,785,409] Depth [10] URL [jdbc:hsqldb:mem:zonematch] 
+INFO  [AbstractTestCase] Searched [16,785,409] radius [0.001953125] found [24] in [10,000] loops, total [42s][42,114ms], average [4.211ms][4,211.405us] FAIL 
+INFO  [AbstractTestCase] ---- ---- 
+INFO  [AbstractTestCase] Radius [10][2^(-10) = 9.765625E-4] 
+INFO  [AbstractTestCase] Class [HsqlHtmidMatcherImpl] Total rows [16,785,409] Depth [10] URL [jdbc:hsqldb:mem:zonematch] 
+INFO  [AbstractTestCase] Searched [16,785,409] radius [9.765625E-4] found [6] in [10,000] loops, total [42s][42,130ms], average [4.213ms][4,213.007us] FAIL 
+INFO  [AbstractTestCase] <<<< 
+INFO  [AbstractTestCase] ---- ---- 
+INFO  [AbstractTestCase] Insert [0][3][9] 
+INFO  [AbstractTestCase] Insert [1][5][25] 
+INFO  [AbstractTestCase] Insert [2][9][81] 
+INFO  [AbstractTestCase] Insert [3][17][289] 
+INFO  [AbstractTestCase] Insert [4][33][1,089] 
+INFO  [AbstractTestCase] Insert [5][65][4,225] 
+INFO  [AbstractTestCase] Insert [6][129][16,641] 
+INFO  [AbstractTestCase] Insert [7][257][66,049] 
+INFO  [AbstractTestCase] Insert [8][513][263,169] 
+INFO  [AbstractTestCase] Insert [9][1,025][1,050,625] 
+INFO  [AbstractTestCase] Total  [9][(2^(9+1))+1 = 1025] => [1025^2 = 1050625] 
+INFO  [AbstractTestCase] Range  [2.0][2.0/1050625 = 0.00000190]  
+INFO  [AbstractTestCase] Zone   [10][2^(-10) = 9.765625E-4] 
+INFO  [AbstractTestCase] Memory [17.7GiB][8.8GiB][21.9GiB] 
+INFO  [AbstractTestCase] >>>> 
+INFO  [AbstractTestCase] ---- ---- 
+INFO  [AbstractTestCase] Radius [6][2^(-6) = 0.015625] 
+INFO  [AbstractTestCase] Class [HsqlHtmidMatcherImpl] Total rows [1,050,625] Depth [10] URL [jdbc:hsqldb:mem:zonematch] 
+INFO  [AbstractTestCase] Searched [1,050,625] radius [0.015625] found [96] in [10,000] loops, total [17s][17,495ms], average [1.750ms][1,749.537us] FAIL 
+INFO  [AbstractTestCase] ---- ---- 
+INFO  [AbstractTestCase] Radius [7][2^(-7) = 0.0078125] 
+INFO  [AbstractTestCase] Class [HsqlHtmidMatcherImpl] Total rows [1,050,625] Depth [10] URL [jdbc:hsqldb:mem:zonematch] 
+INFO  [AbstractTestCase] Searched [1,050,625] radius [0.0078125] found [24] in [10,000] loops, total [9s][9,112ms], average [0.911ms][911.220us] PASS 
+INFO  [AbstractTestCase] ---- ---- 
+INFO  [AbstractTestCase] Radius [8][2^(-8) = 0.00390625] 
+INFO  [AbstractTestCase] Class [HsqlHtmidMatcherImpl] Total rows [1,050,625] Depth [10] URL [jdbc:hsqldb:mem:zonematch] 
+INFO  [AbstractTestCase] Searched [1,050,625] radius [0.00390625] found [7] in [10,000] loops, total [3s][3,262ms], average [0.326ms][326.265us] PASS 
+INFO  [AbstractTestCase] ---- ---- 
+INFO  [AbstractTestCase] Radius [9][2^(-9) = 0.001953125] 
+INFO  [AbstractTestCase] Class [HsqlHtmidMatcherImpl] Total rows [1,050,625] Depth [10] URL [jdbc:hsqldb:mem:zonematch] 
+INFO  [AbstractTestCase] Searched [1,050,625] radius [0.001953125] found [3] in [10,000] loops, total [3s][3,286ms], average [0.329ms][328.601us] PASS 
+INFO  [AbstractTestCase] ---- ---- 
+INFO  [AbstractTestCase] Radius [10][2^(-10) = 9.765625E-4] 
+INFO  [AbstractTestCase] Class [HsqlHtmidMatcherImpl] Total rows [1,050,625] Depth [10] URL [jdbc:hsqldb:mem:zonematch] 
+INFO  [AbstractTestCase] Searched [1,050,625] radius [9.765625E-4] found [1] in [10,000] loops, total [3s][3,407ms], average [0.341ms][340.750us] PASS 
+INFO  [AbstractTestCase] <<<< 
+INFO  [AbstractTestCase] Insert [10][2,049][4,198,401] 
+INFO  [AbstractTestCase] Total  [10][(2^(10+1))+1 = 2049] => [2049^2 = 4198401] 
+INFO  [AbstractTestCase] Range  [2.0][2.0/4198401 = 0.00000048]  
+INFO  [AbstractTestCase] Zone   [10][2^(-10) = 9.765625E-4] 
+INFO  [AbstractTestCase] Memory [18.2GiB][8.3GiB][21.9GiB] 
+INFO  [AbstractTestCase] >>>> 
+INFO  [AbstractTestCase] ---- ---- 
+INFO  [AbstractTestCase] Radius [6][2^(-6) = 0.015625] 
+INFO  [AbstractTestCase] Class [HsqlHtmidMatcherImpl] Total rows [4,198,401] Depth [10] URL [jdbc:hsqldb:mem:zonematch] 
+INFO  [AbstractTestCase] Searched [4,198,401] radius [0.015625] found [392] in [10,000] loops, total [74s][74,756ms], average [7.476ms][7,475.648us] FAIL 
+INFO  [AbstractTestCase] ---- ---- 
+INFO  [AbstractTestCase] Radius [7][2^(-7) = 0.0078125] 
+INFO  [AbstractTestCase] Class [HsqlHtmidMatcherImpl] Total rows [4,198,401] Depth [10] URL [jdbc:hsqldb:mem:zonematch] 
+INFO  [AbstractTestCase] Searched [4,198,401] radius [0.0078125] found [96] in [10,000] loops, total [32s][32,375ms], average [3.238ms][3,237.527us] FAIL 
+INFO  [AbstractTestCase] ---- ---- 
+INFO  [AbstractTestCase] Radius [8][2^(-8) = 0.00390625] 
+INFO  [AbstractTestCase] Class [HsqlHtmidMatcherImpl] Total rows [4,198,401] Depth [10] URL [jdbc:hsqldb:mem:zonematch] 
+INFO  [AbstractTestCase] Searched [4,198,401] radius [0.00390625] found [25] in [10,000] loops, total [11s][11,442ms], average [1.144ms][1,144.274us] FAIL 
+INFO  [AbstractTestCase] ---- ---- 
+INFO  [AbstractTestCase] Radius [9][2^(-9) = 0.001953125] 
+INFO  [AbstractTestCase] Class [HsqlHtmidMatcherImpl] Total rows [4,198,401] Depth [10] URL [jdbc:hsqldb:mem:zonematch] 
+INFO  [AbstractTestCase] Searched [4,198,401] radius [0.001953125] found [6] in [10,000] loops, total [11s][11,613ms], average [1.161ms][1,161.387us] FAIL 
+INFO  [AbstractTestCase] ---- ---- 
+INFO  [AbstractTestCase] Radius [10][2^(-10) = 9.765625E-4] 
+INFO  [AbstractTestCase] Class [HsqlHtmidMatcherImpl] Total rows [4,198,401] Depth [10] URL [jdbc:hsqldb:mem:zonematch] 
+INFO  [AbstractTestCase] Searched [4,198,401] radius [9.765625E-4] found [3] in [10,000] loops, total [11s][11,275ms], average [1.128ms][1,127.540us] FAIL 
+INFO  [AbstractTestCase] <<<< 
+INFO  [AbstractTestCase] Insert [11][4,097][16,785,409] 
+INFO  [AbstractTestCase] Total  [11][(2^(11+1))+1 = 4097] => [4097^2 = 16785409] 
+INFO  [AbstractTestCase] Range  [2.0][2.0/16785409 = 0.00000012]  
+INFO  [AbstractTestCase] Zone   [10][2^(-10) = 9.765625E-4] 
+INFO  [AbstractTestCase] Memory [16.1GiB][7.4GiB][21.9GiB] 
+INFO  [AbstractTestCase] >>>> 
+INFO  [AbstractTestCase] ---- ---- 
+INFO  [AbstractTestCase] Radius [6][2^(-6) = 0.015625] 
+INFO  [AbstractTestCase] Class [HsqlHtmidMatcherImpl] Total rows [16,785,409] Depth [10] URL [jdbc:hsqldb:mem:zonematch] 
+INFO  [AbstractTestCase] Searched [16,785,409] radius [0.015625] found [1,596] in [10,000] loops, total [396s][396,538ms], average [39.654ms][39,653.878us] FAIL 
+INFO  [AbstractTestCase] ---- ---- 
+INFO  [AbstractTestCase] Radius [7][2^(-7) = 0.0078125] 
+INFO  [AbstractTestCase] Class [HsqlHtmidMatcherImpl] Total rows [16,785,409] Depth [10] URL [jdbc:hsqldb:mem:zonematch] 
+INFO  [AbstractTestCase] Searched [16,785,409] radius [0.0078125] found [392] in [10,000] loops, total [183s][183,909ms], average [18.391ms][18,390.954us] FAIL 
+INFO  [AbstractTestCase] ---- ---- 
+INFO  [AbstractTestCase] Radius [8][2^(-8) = 0.00390625] 
+INFO  [AbstractTestCase] Class [HsqlHtmidMatcherImpl] Total rows [16,785,409] Depth [10] URL [jdbc:hsqldb:mem:zonematch] 
+INFO  [AbstractTestCase] Searched [16,785,409] radius [0.00390625] found [97] in [10,000] loops, total [43s][43,514ms], average [4.351ms][4,351.483us] FAIL 
+INFO  [AbstractTestCase] ---- ---- 
+INFO  [AbstractTestCase] Radius [9][2^(-9) = 0.001953125] 
+INFO  [AbstractTestCase] Class [HsqlHtmidMatcherImpl] Total rows [16,785,409] Depth [10] URL [jdbc:hsqldb:mem:zonematch] 
+INFO  [AbstractTestCase] Searched [16,785,409] radius [0.001953125] found [24] in [10,000] loops, total [42s][42,405ms], average [4.241ms][4,240.541us] FAIL 
+INFO  [AbstractTestCase] ---- ---- 
+INFO  [AbstractTestCase] Radius [10][2^(-10) = 9.765625E-4] 
+INFO  [AbstractTestCase] Class [HsqlHtmidMatcherImpl] Total rows [16,785,409] Depth [10] URL [jdbc:hsqldb:mem:zonematch] 
+INFO  [AbstractTestCase] Searched [16,785,409] radius [9.765625E-4] found [6] in [10,000] loops, total [42s][42,584ms], average [4.258ms][4,258.437us] FAIL 
+INFO  [AbstractTestCase] <<<< 
+INFO  [AbstractTestCase] ---- ---- 
+INFO  [AbstractTestCase] Insert [0][3][9] 
+INFO  [AbstractTestCase] Insert [1][5][25] 
+INFO  [AbstractTestCase] Insert [2][9][81] 
+INFO  [AbstractTestCase] Insert [3][17][289] 
+INFO  [AbstractTestCase] Insert [4][33][1,089] 
+INFO  [AbstractTestCase] Insert [5][65][4,225] 
+INFO  [AbstractTestCase] Insert [6][129][16,641] 
+INFO  [AbstractTestCase] Insert [7][257][66,049] 
+INFO  [AbstractTestCase] Insert [8][513][263,169] 
+INFO  [AbstractTestCase] Insert [9][1,025][1,050,625] 
+INFO  [AbstractTestCase] Total  [9][(2^(9+1))+1 = 1025] => [1025^2 = 1050625] 
+INFO  [AbstractTestCase] Range  [1.0][1.0/1050625 = 0.00000095]  
+INFO  [AbstractTestCase] Zone   [6][2^(-6) = 0.015625] 
+INFO  [AbstractTestCase] Memory [17.8GiB][7.4GiB][21.9GiB] 
+INFO  [AbstractTestCase] >>>> 
+INFO  [AbstractTestCase] ---- ---- 
+INFO  [AbstractTestCase] Radius [6][2^(-6) = 0.015625] 
+INFO  [AbstractTestCase] Class [HsqlHtmidMatcherImpl] Total rows [1,050,625] Depth [10] URL [jdbc:hsqldb:mem:zonematch] 
+INFO  [AbstractTestCase] Searched [1,050,625] radius [0.015625] found [392] in [10,000] loops, total [84s][84,463ms], average [8.446ms][8,446.321us] FAIL 
+INFO  [AbstractTestCase] ---- ---- 
+INFO  [AbstractTestCase] Radius [7][2^(-7) = 0.0078125] 
+INFO  [AbstractTestCase] Class [HsqlHtmidMatcherImpl] Total rows [1,050,625] Depth [10] URL [jdbc:hsqldb:mem:zonematch] 
+INFO  [AbstractTestCase] Searched [1,050,625] radius [0.0078125] found [96] in [10,000] loops, total [31s][31,211ms], average [3.121ms][3,121.187us] FAIL 
+INFO  [AbstractTestCase] ---- ---- 
+INFO  [AbstractTestCase] Radius [8][2^(-8) = 0.00390625] 
+INFO  [AbstractTestCase] Class [HsqlHtmidMatcherImpl] Total rows [1,050,625] Depth [10] URL [jdbc:hsqldb:mem:zonematch] 
+INFO  [AbstractTestCase] Searched [1,050,625] radius [0.00390625] found [25] in [10,000] loops, total [10s][10,871ms], average [1.087ms][1,087.131us] FAIL 
+INFO  [AbstractTestCase] ---- ---- 
+INFO  [AbstractTestCase] Radius [9][2^(-9) = 0.001953125] 
+INFO  [AbstractTestCase] Class [HsqlHtmidMatcherImpl] Total rows [1,050,625] Depth [10] URL [jdbc:hsqldb:mem:zonematch] 
+INFO  [AbstractTestCase] Searched [1,050,625] radius [0.001953125] found [6] in [10,000] loops, total [10s][10,936ms], average [1.094ms][1,093.680us] FAIL 
+INFO  [AbstractTestCase] ---- ---- 
+INFO  [AbstractTestCase] Radius [10][2^(-10) = 9.765625E-4] 
+INFO  [AbstractTestCase] Class [HsqlHtmidMatcherImpl] Total rows [1,050,625] Depth [10] URL [jdbc:hsqldb:mem:zonematch] 
+INFO  [AbstractTestCase] Searched [1,050,625] radius [9.765625E-4] found [3] in [10,000] loops, total [10s][10,881ms], average [1.088ms][1,088.172us] FAIL 
+INFO  [AbstractTestCase] <<<< 
+INFO  [AbstractTestCase] Insert [10][2,049][4,198,401] 
+INFO  [AbstractTestCase] Total  [10][(2^(10+1))+1 = 2049] => [2049^2 = 4198401] 
+INFO  [AbstractTestCase] Range  [1.0][1.0/4198401 = 0.00000024]  
+INFO  [AbstractTestCase] Zone   [6][2^(-6) = 0.015625] 
+INFO  [AbstractTestCase] Memory [17.0GiB][7.0GiB][21.9GiB] 
+INFO  [AbstractTestCase] >>>> 
+INFO  [AbstractTestCase] ---- ---- 
+INFO  [AbstractTestCase] Radius [6][2^(-6) = 0.015625] 
+INFO  [AbstractTestCase] Class [HsqlHtmidMatcherImpl] Total rows [4,198,401] Depth [10] URL [jdbc:hsqldb:mem:zonematch] 
+INFO  [AbstractTestCase] Searched [4,198,401] radius [0.015625] found [1,596] in [10,000] loops, total [357s][357,789ms], average [35.779ms][35,778.910us] FAIL 
+INFO  [AbstractTestCase] ---- ---- 
+INFO  [AbstractTestCase] Radius [7][2^(-7) = 0.0078125] 
+INFO  [AbstractTestCase] Class [HsqlHtmidMatcherImpl] Total rows [4,198,401] Depth [10] URL [jdbc:hsqldb:mem:zonematch] 
+INFO  [AbstractTestCase] Searched [4,198,401] radius [0.0078125] found [392] in [10,000] loops, total [168s][168,349ms], average [16.835ms][16,834.980us] FAIL 
+INFO  [AbstractTestCase] ---- ---- 
+INFO  [AbstractTestCase] Radius [8][2^(-8) = 0.00390625] 
+INFO  [AbstractTestCase] Class [HsqlHtmidMatcherImpl] Total rows [4,198,401] Depth [10] URL [jdbc:hsqldb:mem:zonematch] 
+INFO  [AbstractTestCase] Searched [4,198,401] radius [0.00390625] found [97] in [10,000] loops, total [43s][43,503ms], average [4.350ms][4,350.335us] FAIL 
+INFO  [AbstractTestCase] ---- ---- 
+INFO  [AbstractTestCase] Radius [9][2^(-9) = 0.001953125] 
+INFO  [AbstractTestCase] Class [HsqlHtmidMatcherImpl] Total rows [4,198,401] Depth [10] URL [jdbc:hsqldb:mem:zonematch] 
+INFO  [AbstractTestCase] Searched [4,198,401] radius [0.001953125] found [24] in [10,000] loops, total [42s][42,587ms], average [4.259ms][4,258.790us] FAIL 
+INFO  [AbstractTestCase] ---- ---- 
+INFO  [AbstractTestCase] Radius [10][2^(-10) = 9.765625E-4] 
+INFO  [AbstractTestCase] Class [HsqlHtmidMatcherImpl] Total rows [4,198,401] Depth [10] URL [jdbc:hsqldb:mem:zonematch] 
+INFO  [AbstractTestCase] Searched [4,198,401] radius [9.765625E-4] found [6] in [10,000] loops, total [41s][41,573ms], average [4.157ms][4,157.335us] FAIL 
+INFO  [AbstractTestCase] <<<< 
+INFO  [AbstractTestCase] Insert [11][4,097][16,785,409] 
+INFO  [AbstractTestCase] Total  [11][(2^(11+1))+1 = 4097] => [4097^2 = 16785409] 
+INFO  [AbstractTestCase] Range  [1.0][1.0/16785409 = 0.00000006]  
+INFO  [AbstractTestCase] Zone   [6][2^(-6) = 0.015625] 
+INFO  [AbstractTestCase] Memory [15.1GiB][7.8GiB][21.9GiB] 
+INFO  [AbstractTestCase] >>>> 
+INFO  [AbstractTestCase] ---- ---- 
+INFO  [AbstractTestCase] Radius [6][2^(-6) = 0.015625] 
+INFO  [AbstractTestCase] Class [HsqlHtmidMatcherImpl] Total rows [16,785,409] Depth [10] URL [jdbc:hsqldb:mem:zonematch] 
+INFO  [AbstractTestCase] Searched [16,785,409] radius [0.015625] found [6,416] in [10,000] loops, total [1,463s][1,463,463ms], average [146.346ms][146,346.394us] FAIL 
+INFO  [AbstractTestCase] ---- ---- 
+INFO  [AbstractTestCase] Radius [7][2^(-7) = 0.0078125] 
+INFO  [AbstractTestCase] Class [HsqlHtmidMatcherImpl] Total rows [16,785,409] Depth [10] URL [jdbc:hsqldb:mem:zonematch] 
+INFO  [AbstractTestCase] Searched [16,785,409] radius [0.0078125] found [1,596] in [10,000] loops, total [715s][715,429ms], average [71.543ms][71,542.999us] FAIL 
+INFO  [AbstractTestCase] ---- ---- 
+INFO  [AbstractTestCase] Radius [8][2^(-8) = 0.00390625] 
+INFO  [AbstractTestCase] Class [HsqlHtmidMatcherImpl] Total rows [16,785,409] Depth [10] URL [jdbc:hsqldb:mem:zonematch] 
+INFO  [AbstractTestCase] Searched [16,785,409] radius [0.00390625] found [393] in [10,000] loops, total [235s][235,794ms], average [23.579ms][23,579.487us] FAIL 
+INFO  [AbstractTestCase] ---- ---- 
+INFO  [AbstractTestCase] Radius [9][2^(-9) = 0.001953125] 
+INFO  [AbstractTestCase] Class [HsqlHtmidMatcherImpl] Total rows [16,785,409] Depth [10] URL [jdbc:hsqldb:mem:zonematch] 
+INFO  [AbstractTestCase] Searched [16,785,409] radius [0.001953125] found [96] in [10,000] loops, total [239s][239,261ms], average [23.926ms][23,926.177us] FAIL 
+INFO  [AbstractTestCase] ---- ---- 
+INFO  [AbstractTestCase] Radius [10][2^(-10) = 9.765625E-4] 
+INFO  [AbstractTestCase] Class [HsqlHtmidMatcherImpl] Total rows [16,785,409] Depth [10] URL [jdbc:hsqldb:mem:zonematch] 
+INFO  [AbstractTestCase] Searched [16,785,409] radius [9.765625E-4] found [24] in [10,000] loops, total [236s][236,015ms], average [23.602ms][23,601.532us] FAIL 
+INFO  [AbstractTestCase] <<<< 
+INFO  [AbstractTestCase] ---- ---- 
+INFO  [AbstractTestCase] Insert [0][3][9] 
+INFO  [AbstractTestCase] Insert [1][5][25] 
+INFO  [AbstractTestCase] Insert [2][9][81] 
+INFO  [AbstractTestCase] Insert [3][17][289] 
+INFO  [AbstractTestCase] Insert [4][33][1,089] 
+INFO  [AbstractTestCase] Insert [5][65][4,225] 
+INFO  [AbstractTestCase] Insert [6][129][16,641] 
+INFO  [AbstractTestCase] Insert [7][257][66,049] 
+INFO  [AbstractTestCase] Insert [8][513][263,169] 
+INFO  [AbstractTestCase] Insert [9][1,025][1,050,625] 
+INFO  [AbstractTestCase] Total  [9][(2^(9+1))+1 = 1025] => [1025^2 = 1050625] 
+INFO  [AbstractTestCase] Range  [1.0][1.0/1050625 = 0.00000095]  
+INFO  [AbstractTestCase] Zone   [7][2^(-7) = 0.0078125] 
+INFO  [AbstractTestCase] Memory [17.2GiB][3.3GiB][21.9GiB] 
+INFO  [AbstractTestCase] >>>> 
+INFO  [AbstractTestCase] ---- ---- 
+INFO  [AbstractTestCase] Radius [6][2^(-6) = 0.015625] 
+INFO  [AbstractTestCase] Class [HsqlHtmidMatcherImpl] Total rows [1,050,625] Depth [10] URL [jdbc:hsqldb:mem:zonematch] 
+INFO  [AbstractTestCase] Searched [1,050,625] radius [0.015625] found [392] in [10,000] loops, total [79s][79,198ms], average [7.920ms][7,919.868us] FAIL 
+INFO  [AbstractTestCase] ---- ---- 
+INFO  [AbstractTestCase] Radius [7][2^(-7) = 0.0078125] 
+INFO  [AbstractTestCase] Class [HsqlHtmidMatcherImpl] Total rows [1,050,625] Depth [10] URL [jdbc:hsqldb:mem:zonematch] 
+INFO  [AbstractTestCase] Searched [1,050,625] radius [0.0078125] found [96] in [10,000] loops, total [30s][30,633ms], average [3.063ms][3,063.319us] FAIL 
+INFO  [AbstractTestCase] ---- ---- 
+INFO  [AbstractTestCase] Radius [8][2^(-8) = 0.00390625] 
+INFO  [AbstractTestCase] Class [HsqlHtmidMatcherImpl] Total rows [1,050,625] Depth [10] URL [jdbc:hsqldb:mem:zonematch] 
+INFO  [AbstractTestCase] Searched [1,050,625] radius [0.00390625] found [25] in [10,000] loops, total [10s][10,695ms], average [1.070ms][1,069.557us] FAIL 
+INFO  [AbstractTestCase] ---- ---- 
+INFO  [AbstractTestCase] Radius [9][2^(-9) = 0.001953125] 
+INFO  [AbstractTestCase] Class [HsqlHtmidMatcherImpl] Total rows [1,050,625] Depth [10] URL [jdbc:hsqldb:mem:zonematch] 
+INFO  [AbstractTestCase] Searched [1,050,625] radius [0.001953125] found [6] in [10,000] loops, total [10s][10,666ms], average [1.067ms][1,066.646us] FAIL 
+INFO  [AbstractTestCase] ---- ---- 
+INFO  [AbstractTestCase] Radius [10][2^(-10) = 9.765625E-4] 
+INFO  [AbstractTestCase] Class [HsqlHtmidMatcherImpl] Total rows [1,050,625] Depth [10] URL [jdbc:hsqldb:mem:zonematch] 
+INFO  [AbstractTestCase] Searched [1,050,625] radius [9.765625E-4] found [3] in [10,000] loops, total [10s][10,755ms], average [1.076ms][1,075.566us] FAIL 
+INFO  [AbstractTestCase] <<<< 
+INFO  [AbstractTestCase] Insert [10][2,049][4,198,401] 
+INFO  [AbstractTestCase] Total  [10][(2^(10+1))+1 = 2049] => [2049^2 = 4198401] 
+INFO  [AbstractTestCase] Range  [1.0][1.0/4198401 = 0.00000024]  
+INFO  [AbstractTestCase] Zone   [7][2^(-7) = 0.0078125] 
+INFO  [AbstractTestCase] Memory [17.2GiB][12.4GiB][21.9GiB] 
+INFO  [AbstractTestCase] >>>> 
+INFO  [AbstractTestCase] ---- ---- 
+INFO  [AbstractTestCase] Radius [6][2^(-6) = 0.015625] 
+INFO  [AbstractTestCase] Class [HsqlHtmidMatcherImpl] Total rows [4,198,401] Depth [10] URL [jdbc:hsqldb:mem:zonematch] 
+INFO  [AbstractTestCase] Searched [4,198,401] radius [0.015625] found [1,596] in [10,000] loops, total [360s][360,818ms], average [36.082ms][36,081.884us] FAIL 
+INFO  [AbstractTestCase] ---- ---- 
+INFO  [AbstractTestCase] Radius [7][2^(-7) = 0.0078125] 
+INFO  [AbstractTestCase] Class [HsqlHtmidMatcherImpl] Total rows [4,198,401] Depth [10] URL [jdbc:hsqldb:mem:zonematch] 
+INFO  [AbstractTestCase] Searched [4,198,401] radius [0.0078125] found [392] in [10,000] loops, total [166s][166,855ms], average [16.686ms][16,685.587us] FAIL 
+INFO  [AbstractTestCase] ---- ---- 
+INFO  [AbstractTestCase] Radius [8][2^(-8) = 0.00390625] 
+INFO  [AbstractTestCase] Class [HsqlHtmidMatcherImpl] Total rows [4,198,401] Depth [10] URL [jdbc:hsqldb:mem:zonematch] 
+INFO  [AbstractTestCase] Searched [4,198,401] radius [0.00390625] found [97] in [10,000] loops, total [41s][41,818ms], average [4.182ms][4,181.851us] FAIL 
+INFO  [AbstractTestCase] ---- ---- 
+INFO  [AbstractTestCase] Radius [9][2^(-9) = 0.001953125] 
+INFO  [AbstractTestCase] Class [HsqlHtmidMatcherImpl] Total rows [4,198,401] Depth [10] URL [jdbc:hsqldb:mem:zonematch] 
+INFO  [AbstractTestCase] Searched [4,198,401] radius [0.001953125] found [24] in [10,000] loops, total [43s][43,344ms], average [4.334ms][4,334.407us] FAIL 
+INFO  [AbstractTestCase] ---- ---- 
+INFO  [AbstractTestCase] Radius [10][2^(-10) = 9.765625E-4] 
+INFO  [AbstractTestCase] Class [HsqlHtmidMatcherImpl] Total rows [4,198,401] Depth [10] URL [jdbc:hsqldb:mem:zonematch] 
+INFO  [AbstractTestCase] Searched [4,198,401] radius [9.765625E-4] found [6] in [10,000] loops, total [43s][43,755ms], average [4.376ms][4,375.537us] FAIL 
+INFO  [AbstractTestCase] <<<< 
+INFO  [AbstractTestCase] Insert [11][4,097][16,785,409] 
+INFO  [AbstractTestCase] Total  [11][(2^(11+1))+1 = 4097] => [4097^2 = 16785409] 
+INFO  [AbstractTestCase] Range  [1.0][1.0/16785409 = 0.00000006]  
+INFO  [AbstractTestCase] Zone   [7][2^(-7) = 0.0078125] 
+INFO  [AbstractTestCase] Memory [15.5GiB][5.5GiB][21.9GiB] 
+INFO  [AbstractTestCase] >>>> 
+INFO  [AbstractTestCase] ---- ---- 
+INFO  [AbstractTestCase] Radius [6][2^(-6) = 0.015625] 
+INFO  [AbstractTestCase] Class [HsqlHtmidMatcherImpl] Total rows [16,785,409] Depth [10] URL [jdbc:hsqldb:mem:zonematch] 
+INFO  [AbstractTestCase] Searched [16,785,409] radius [0.015625] found [6,416] in [10,000] loops, total [1,461s][1,461,585ms], average [146.159ms][146,158.576us] FAIL 
+INFO  [AbstractTestCase] ---- ---- 
+INFO  [AbstractTestCase] Radius [7][2^(-7) = 0.0078125] 
+INFO  [AbstractTestCase] Class [HsqlHtmidMatcherImpl] Total rows [16,785,409] Depth [10] URL [jdbc:hsqldb:mem:zonematch] 
+INFO  [AbstractTestCase] Searched [16,785,409] radius [0.0078125] found [1,596] in [10,000] loops, total [731s][731,394ms], average [73.139ms][73,139.456us] FAIL 
+INFO  [AbstractTestCase] ---- ---- 
+INFO  [AbstractTestCase] Radius [8][2^(-8) = 0.00390625] 
+INFO  [AbstractTestCase] Class [HsqlHtmidMatcherImpl] Total rows [16,785,409] Depth [10] URL [jdbc:hsqldb:mem:zonematch] 
+INFO  [AbstractTestCase] Searched [16,785,409] radius [0.00390625] found [393] in [10,000] loops, total [238s][238,406ms], average [23.841ms][23,840.615us] FAIL 
+INFO  [AbstractTestCase] ---- ---- 
+INFO  [AbstractTestCase] Radius [9][2^(-9) = 0.001953125] 
+INFO  [AbstractTestCase] Class [HsqlHtmidMatcherImpl] Total rows [16,785,409] Depth [10] URL [jdbc:hsqldb:mem:zonematch] 
+INFO  [AbstractTestCase] Searched [16,785,409] radius [0.001953125] found [96] in [10,000] loops, total [240s][240,212ms], average [24.021ms][24,021.243us] FAIL 
+INFO  [AbstractTestCase] ---- ---- 
+INFO  [AbstractTestCase] Radius [10][2^(-10) = 9.765625E-4] 
+INFO  [AbstractTestCase] Class [HsqlHtmidMatcherImpl] Total rows [16,785,409] Depth [10] URL [jdbc:hsqldb:mem:zonematch] 
+INFO  [AbstractTestCase] Searched [16,785,409] radius [9.765625E-4] found [24] in [10,000] loops, total [242s][242,357ms], average [24.236ms][24,235.739us] FAIL 
+INFO  [AbstractTestCase] <<<< 
+INFO  [AbstractTestCase] ---- ---- 
+INFO  [AbstractTestCase] Insert [0][3][9] 
+INFO  [AbstractTestCase] Insert [1][5][25] 
+INFO  [AbstractTestCase] Insert [2][9][81] 
+INFO  [AbstractTestCase] Insert [3][17][289] 
+INFO  [AbstractTestCase] Insert [4][33][1,089] 
+INFO  [AbstractTestCase] Insert [5][65][4,225] 
+INFO  [AbstractTestCase] Insert [6][129][16,641] 
+INFO  [AbstractTestCase] Insert [7][257][66,049] 
+INFO  [AbstractTestCase] Insert [8][513][263,169] 
+INFO  [AbstractTestCase] Insert [9][1,025][1,050,625] 
+INFO  [AbstractTestCase] Total  [9][(2^(9+1))+1 = 1025] => [1025^2 = 1050625] 
+INFO  [AbstractTestCase] Range  [1.0][1.0/1050625 = 0.00000095]  
+INFO  [AbstractTestCase] Zone   [8][2^(-8) = 0.00390625] 
+INFO  [AbstractTestCase] Memory [17.3GiB][2.7GiB][21.9GiB] 
+INFO  [AbstractTestCase] >>>> 
+INFO  [AbstractTestCase] ---- ---- 
+INFO  [AbstractTestCase] Radius [6][2^(-6) = 0.015625] 
+INFO  [AbstractTestCase] Class [HsqlHtmidMatcherImpl] Total rows [1,050,625] Depth [10] URL [jdbc:hsqldb:mem:zonematch] 
+INFO  [AbstractTestCase] Searched [1,050,625] radius [0.015625] found [392] in [10,000] loops, total [79s][79,226ms], average [7.923ms][7,922.691us] FAIL 
+INFO  [AbstractTestCase] ---- ---- 
+INFO  [AbstractTestCase] Radius [7][2^(-7) = 0.0078125] 
+INFO  [AbstractTestCase] Class [HsqlHtmidMatcherImpl] Total rows [1,050,625] Depth [10] URL [jdbc:hsqldb:mem:zonematch] 
+INFO  [AbstractTestCase] Searched [1,050,625] radius [0.0078125] found [96] in [10,000] loops, total [31s][31,485ms], average [3.149ms][3,148.540us] FAIL 
+INFO  [AbstractTestCase] ---- ---- 
+INFO  [AbstractTestCase] Radius [8][2^(-8) = 0.00390625] 
+INFO  [AbstractTestCase] Class [HsqlHtmidMatcherImpl] Total rows [1,050,625] Depth [10] URL [jdbc:hsqldb:mem:zonematch] 
+INFO  [AbstractTestCase] Searched [1,050,625] radius [0.00390625] found [25] in [10,000] loops, total [10s][10,696ms], average [1.070ms][1,069.608us] FAIL 
+INFO  [AbstractTestCase] ---- ---- 
+INFO  [AbstractTestCase] Radius [9][2^(-9) = 0.001953125] 
+INFO  [AbstractTestCase] Class [HsqlHtmidMatcherImpl] Total rows [1,050,625] Depth [10] URL [jdbc:hsqldb:mem:zonematch] 
+INFO  [AbstractTestCase] Searched [1,050,625] radius [0.001953125] found [6] in [10,000] loops, total [11s][11,293ms], average [1.129ms][1,129.351us] FAIL 
+INFO  [AbstractTestCase] ---- ---- 
+INFO  [AbstractTestCase] Radius [10][2^(-10) = 9.765625E-4] 
+INFO  [AbstractTestCase] Class [HsqlHtmidMatcherImpl] Total rows [1,050,625] Depth [10] URL [jdbc:hsqldb:mem:zonematch] 
+INFO  [AbstractTestCase] Searched [1,050,625] radius [9.765625E-4] found [3] in [10,000] loops, total [10s][10,831ms], average [1.083ms][1,083.186us] FAIL 
+INFO  [AbstractTestCase] <<<< 
+INFO  [AbstractTestCase] Insert [10][2,049][4,198,401] 
+INFO  [AbstractTestCase] Total  [10][(2^(10+1))+1 = 2049] => [2049^2 = 4198401] 
+INFO  [AbstractTestCase] Range  [1.0][1.0/4198401 = 0.00000024]  
+INFO  [AbstractTestCase] Zone   [8][2^(-8) = 0.00390625] 
+INFO  [AbstractTestCase] Memory [17.8GiB][12.3GiB][21.9GiB] 
+INFO  [AbstractTestCase] >>>> 
+INFO  [AbstractTestCase] ---- ---- 
+INFO  [AbstractTestCase] Radius [6][2^(-6) = 0.015625] 
+INFO  [AbstractTestCase] Class [HsqlHtmidMatcherImpl] Total rows [4,198,401] Depth [10] URL [jdbc:hsqldb:mem:zonematch] 
+INFO  [AbstractTestCase] Searched [4,198,401] radius [0.015625] found [1,596] in [10,000] loops, total [361s][361,606ms], average [36.161ms][36,160.661us] FAIL 
+INFO  [AbstractTestCase] ---- ---- 
+INFO  [AbstractTestCase] Radius [7][2^(-7) = 0.0078125] 
+INFO  [AbstractTestCase] Class [HsqlHtmidMatcherImpl] Total rows [4,198,401] Depth [10] URL [jdbc:hsqldb:mem:zonematch] 
+INFO  [AbstractTestCase] Searched [4,198,401] radius [0.0078125] found [392] in [10,000] loops, total [165s][165,890ms], average [16.589ms][16,589.023us] FAIL 
+INFO  [AbstractTestCase] ---- ---- 
+INFO  [AbstractTestCase] Radius [8][2^(-8) = 0.00390625] 
+INFO  [AbstractTestCase] Class [HsqlHtmidMatcherImpl] Total rows [4,198,401] Depth [10] URL [jdbc:hsqldb:mem:zonematch] 
+INFO  [AbstractTestCase] Searched [4,198,401] radius [0.00390625] found [97] in [10,000] loops, total [40s][40,978ms], average [4.098ms][4,097.854us] FAIL 
+INFO  [AbstractTestCase] ---- ---- 
+INFO  [AbstractTestCase] Radius [9][2^(-9) = 0.001953125] 
+INFO  [AbstractTestCase] Class [HsqlHtmidMatcherImpl] Total rows [4,198,401] Depth [10] URL [jdbc:hsqldb:mem:zonematch] 
+INFO  [AbstractTestCase] Searched [4,198,401] radius [0.001953125] found [24] in [10,000] loops, total [41s][41,073ms], average [4.107ms][4,107.345us] FAIL 
+INFO  [AbstractTestCase] ---- ---- 
+INFO  [AbstractTestCase] Radius [10][2^(-10) = 9.765625E-4] 
+INFO  [AbstractTestCase] Class [HsqlHtmidMatcherImpl] Total rows [4,198,401] Depth [10] URL [jdbc:hsqldb:mem:zonematch] 
+INFO  [AbstractTestCase] Searched [4,198,401] radius [9.765625E-4] found [6] in [10,000] loops, total [40s][40,999ms], average [4.100ms][4,099.904us] FAIL 
+INFO  [AbstractTestCase] <<<< 
+INFO  [AbstractTestCase] Insert [11][4,097][16,785,409] 
+INFO  [AbstractTestCase] Total  [11][(2^(11+1))+1 = 4097] => [4097^2 = 16785409] 
+INFO  [AbstractTestCase] Range  [1.0][1.0/16785409 = 0.00000006]  
+INFO  [AbstractTestCase] Zone   [8][2^(-8) = 0.00390625] 
+INFO  [AbstractTestCase] Memory [16.1GiB][5.3GiB][21.9GiB] 
+INFO  [AbstractTestCase] >>>> 
+INFO  [AbstractTestCase] ---- ---- 
+INFO  [AbstractTestCase] Radius [6][2^(-6) = 0.015625] 
+INFO  [AbstractTestCase] Class [HsqlHtmidMatcherImpl] Total rows [16,785,409] Depth [10] URL [jdbc:hsqldb:mem:zonematch] 
+INFO  [AbstractTestCase] Searched [16,785,409] radius [0.015625] found [6,416] in [10,000] loops, total [1,451s][1,451,093ms], average [145.109ms][145,109.318us] FAIL 
+INFO  [AbstractTestCase] ---- ---- 
+INFO  [AbstractTestCase] Radius [7][2^(-7) = 0.0078125] 
+INFO  [AbstractTestCase] Class [HsqlHtmidMatcherImpl] Total rows [16,785,409] Depth [10] URL [jdbc:hsqldb:mem:zonematch] 
+INFO  [AbstractTestCase] Searched [16,785,409] radius [0.0078125] found [1,596] in [10,000] loops, total [725s][725,385ms], average [72.539ms][72,538.584us] FAIL 
+INFO  [AbstractTestCase] ---- ---- 
+INFO  [AbstractTestCase] Radius [8][2^(-8) = 0.00390625] 
+INFO  [AbstractTestCase] Class [HsqlHtmidMatcherImpl] Total rows [16,785,409] Depth [10] URL [jdbc:hsqldb:mem:zonematch] 
+INFO  [AbstractTestCase] Searched [16,785,409] radius [0.00390625] found [393] in [10,000] loops, total [237s][237,104ms], average [23.710ms][23,710.457us] FAIL 
+INFO  [AbstractTestCase] ---- ---- 
+INFO  [AbstractTestCase] Radius [9][2^(-9) = 0.001953125] 
+INFO  [AbstractTestCase] Class [HsqlHtmidMatcherImpl] Total rows [16,785,409] Depth [10] URL [jdbc:hsqldb:mem:zonematch] 
+INFO  [AbstractTestCase] Searched [16,785,409] radius [0.001953125] found [96] in [10,000] loops, total [232s][232,392ms], average [23.239ms][23,239.295us] FAIL 
+INFO  [AbstractTestCase] ---- ---- 
+INFO  [AbstractTestCase] Radius [10][2^(-10) = 9.765625E-4] 
+INFO  [AbstractTestCase] Class [HsqlHtmidMatcherImpl] Total rows [16,785,409] Depth [10] URL [jdbc:hsqldb:mem:zonematch] 
+INFO  [AbstractTestCase] Searched [16,785,409] radius [9.765625E-4] found [24] in [10,000] loops, total [234s][234,672ms], average [23.467ms][23,467.244us] FAIL 
+INFO  [AbstractTestCase] <<<< 
+INFO  [AbstractTestCase] ---- ---- 
+INFO  [AbstractTestCase] Insert [0][3][9] 
+INFO  [AbstractTestCase] Insert [1][5][25] 
+INFO  [AbstractTestCase] Insert [2][9][81] 
+INFO  [AbstractTestCase] Insert [3][17][289] 
+INFO  [AbstractTestCase] Insert [4][33][1,089] 
+INFO  [AbstractTestCase] Insert [5][65][4,225] 
+INFO  [AbstractTestCase] Insert [6][129][16,641] 
+INFO  [AbstractTestCase] Insert [7][257][66,049] 
+INFO  [AbstractTestCase] Insert [8][513][263,169] 
+INFO  [AbstractTestCase] Insert [9][1,025][1,050,625] 
+INFO  [AbstractTestCase] Total  [9][(2^(9+1))+1 = 1025] => [1025^2 = 1050625] 
+INFO  [AbstractTestCase] Range  [1.0][1.0/1050625 = 0.00000095]  
+INFO  [AbstractTestCase] Zone   [9][2^(-9) = 0.001953125] 
+INFO  [AbstractTestCase] Memory [17.9GiB][6.7GiB][21.9GiB] 
+INFO  [AbstractTestCase] >>>> 
+INFO  [AbstractTestCase] ---- ---- 
+INFO  [AbstractTestCase] Radius [6][2^(-6) = 0.015625] 
+INFO  [AbstractTestCase] Class [HsqlHtmidMatcherImpl] Total rows [1,050,625] Depth [10] URL [jdbc:hsqldb:mem:zonematch] 
+INFO  [AbstractTestCase] Searched [1,050,625] radius [0.015625] found [392] in [10,000] loops, total [81s][81,799ms], average [8.180ms][8,179.985us] FAIL 
+INFO  [AbstractTestCase] ---- ---- 
+INFO  [AbstractTestCase] Radius [7][2^(-7) = 0.0078125] 
+INFO  [AbstractTestCase] Class [HsqlHtmidMatcherImpl] Total rows [1,050,625] Depth [10] URL [jdbc:hsqldb:mem:zonematch] 
+INFO  [AbstractTestCase] Searched [1,050,625] radius [0.0078125] found [96] in [10,000] loops, total [30s][30,714ms], average [3.071ms][3,071.406us] FAIL 
+INFO  [AbstractTestCase] ---- ---- 
+INFO  [AbstractTestCase] Radius [8][2^(-8) = 0.00390625] 
+INFO  [AbstractTestCase] Class [HsqlHtmidMatcherImpl] Total rows [1,050,625] Depth [10] URL [jdbc:hsqldb:mem:zonematch] 
+INFO  [AbstractTestCase] Searched [1,050,625] radius [0.00390625] found [25] in [10,000] loops, total [10s][10,679ms], average [1.068ms][1,067.975us] FAIL 
+INFO  [AbstractTestCase] ---- ---- 
+INFO  [AbstractTestCase] Radius [9][2^(-9) = 0.001953125] 
+INFO  [AbstractTestCase] Class [HsqlHtmidMatcherImpl] Total rows [1,050,625] Depth [10] URL [jdbc:hsqldb:mem:zonematch] 
+INFO  [AbstractTestCase] Searched [1,050,625] radius [0.001953125] found [6] in [10,000] loops, total [10s][10,642ms], average [1.064ms][1,064.290us] FAIL 
+INFO  [AbstractTestCase] ---- ---- 
+INFO  [AbstractTestCase] Radius [10][2^(-10) = 9.765625E-4] 
+INFO  [AbstractTestCase] Class [HsqlHtmidMatcherImpl] Total rows [1,050,625] Depth [10] URL [jdbc:hsqldb:mem:zonematch] 
+INFO  [AbstractTestCase] Searched [1,050,625] radius [9.765625E-4] found [3] in [10,000] loops, total [10s][10,898ms], average [1.090ms][1,089.847us] FAIL 
+INFO  [AbstractTestCase] <<<< 
+INFO  [AbstractTestCase] Insert [10][2,049][4,198,401] 
+INFO  [AbstractTestCase] Total  [10][(2^(10+1))+1 = 2049] => [2049^2 = 4198401] 
+INFO  [AbstractTestCase] Range  [1.0][1.0/4198401 = 0.00000024]  
+INFO  [AbstractTestCase] Zone   [9][2^(-9) = 0.001953125] 
+INFO  [AbstractTestCase] Memory [17.8GiB][13.8GiB][21.9GiB] 
+INFO  [AbstractTestCase] >>>> 
+INFO  [AbstractTestCase] ---- ---- 
+INFO  [AbstractTestCase] Radius [6][2^(-6) = 0.015625] 
+INFO  [AbstractTestCase] Class [HsqlHtmidMatcherImpl] Total rows [4,198,401] Depth [10] URL [jdbc:hsqldb:mem:zonematch] 
+INFO  [AbstractTestCase] Searched [4,198,401] radius [0.015625] found [1,596] in [10,000] loops, total [365s][365,282ms], average [36.528ms][36,528.283us] FAIL 
+INFO  [AbstractTestCase] ---- ---- 
+INFO  [AbstractTestCase] Radius [7][2^(-7) = 0.0078125] 
+INFO  [AbstractTestCase] Class [HsqlHtmidMatcherImpl] Total rows [4,198,401] Depth [10] URL [jdbc:hsqldb:mem:zonematch] 
+INFO  [AbstractTestCase] Searched [4,198,401] radius [0.0078125] found [392] in [10,000] loops, total [170s][170,295ms], average [17.030ms][17,029.596us] FAIL 
+INFO  [AbstractTestCase] ---- ---- 
+INFO  [AbstractTestCase] Radius [8][2^(-8) = 0.00390625] 
+INFO  [AbstractTestCase] Class [HsqlHtmidMatcherImpl] Total rows [4,198,401] Depth [10] URL [jdbc:hsqldb:mem:zonematch] 
+INFO  [AbstractTestCase] Searched [4,198,401] radius [0.00390625] found [97] in [10,000] loops, total [44s][44,087ms], average [4.409ms][4,408.710us] FAIL 
+INFO  [AbstractTestCase] ---- ---- 
+INFO  [AbstractTestCase] Radius [9][2^(-9) = 0.001953125] 
+INFO  [AbstractTestCase] Class [HsqlHtmidMatcherImpl] Total rows [4,198,401] Depth [10] URL [jdbc:hsqldb:mem:zonematch] 
+INFO  [AbstractTestCase] Searched [4,198,401] radius [0.001953125] found [24] in [10,000] loops, total [42s][42,137ms], average [4.214ms][4,213.754us] FAIL 
+INFO  [AbstractTestCase] ---- ---- 
+INFO  [AbstractTestCase] Radius [10][2^(-10) = 9.765625E-4] 
+INFO  [AbstractTestCase] Class [HsqlHtmidMatcherImpl] Total rows [4,198,401] Depth [10] URL [jdbc:hsqldb:mem:zonematch] 
+INFO  [AbstractTestCase] Searched [4,198,401] radius [9.765625E-4] found [6] in [10,000] loops, total [43s][43,654ms], average [4.365ms][4,365.415us] FAIL 
+INFO  [AbstractTestCase] <<<< 
+INFO  [AbstractTestCase] Insert [11][4,097][16,785,409] 
+INFO  [AbstractTestCase] Total  [11][(2^(11+1))+1 = 4097] => [4097^2 = 16785409] 
+INFO  [AbstractTestCase] Range  [1.0][1.0/16785409 = 0.00000006]  
+INFO  [AbstractTestCase] Zone   [9][2^(-9) = 0.001953125] 
+INFO  [AbstractTestCase] Memory [16.5GiB][7.4GiB][21.9GiB] 
+INFO  [AbstractTestCase] >>>> 
+INFO  [AbstractTestCase] ---- ---- 
+INFO  [AbstractTestCase] Radius [6][2^(-6) = 0.015625] 
+INFO  [AbstractTestCase] Class [HsqlHtmidMatcherImpl] Total rows [16,785,409] Depth [10] URL [jdbc:hsqldb:mem:zonematch] 
+INFO  [AbstractTestCase] Searched [16,785,409] radius [0.015625] found [6,416] in [10,000] loops, total [1,442s][1,442,341ms], average [144.234ms][144,234.181us] FAIL 
+INFO  [AbstractTestCase] ---- ---- 
+INFO  [AbstractTestCase] Radius [7][2^(-7) = 0.0078125] 
+INFO  [AbstractTestCase] Class [HsqlHtmidMatcherImpl] Total rows [16,785,409] Depth [10] URL [jdbc:hsqldb:mem:zonematch] 
+INFO  [AbstractTestCase] Searched [16,785,409] radius [0.0078125] found [1,596] in [10,000] loops, total [729s][729,413ms], average [72.941ms][72,941.397us] FAIL 
+INFO  [AbstractTestCase] ---- ---- 
+INFO  [AbstractTestCase] Radius [8][2^(-8) = 0.00390625] 
+INFO  [AbstractTestCase] Class [HsqlHtmidMatcherImpl] Total rows [16,785,409] Depth [10] URL [jdbc:hsqldb:mem:zonematch] 
+INFO  [AbstractTestCase] Searched [16,785,409] radius [0.00390625] found [393] in [10,000] loops, total [240s][240,008ms], average [24.001ms][24,000.830us] FAIL 
+INFO  [AbstractTestCase] ---- ---- 
+INFO  [AbstractTestCase] Radius [9][2^(-9) = 0.001953125] 
+INFO  [AbstractTestCase] Class [HsqlHtmidMatcherImpl] Total rows [16,785,409] Depth [10] URL [jdbc:hsqldb:mem:zonematch] 
+INFO  [AbstractTestCase] Searched [16,785,409] radius [0.001953125] found [96] in [10,000] loops, total [240s][240,727ms], average [24.073ms][24,072.735us] FAIL 
+INFO  [AbstractTestCase] ---- ---- 
+INFO  [AbstractTestCase] Radius [10][2^(-10) = 9.765625E-4] 
+INFO  [AbstractTestCase] Class [HsqlHtmidMatcherImpl] Total rows [16,785,409] Depth [10] URL [jdbc:hsqldb:mem:zonematch] 
+INFO  [AbstractTestCase] Searched [16,785,409] radius [9.765625E-4] found [24] in [10,000] loops, total [242s][242,537ms], average [24.254ms][24,253.722us] FAIL 
+INFO  [AbstractTestCase] <<<< 
+INFO  [AbstractTestCase] ---- ---- 
+INFO  [AbstractTestCase] Insert [0][3][9] 
+INFO  [AbstractTestCase] Insert [1][5][25] 
+INFO  [AbstractTestCase] Insert [2][9][81] 
+INFO  [AbstractTestCase] Insert [3][17][289] 
+INFO  [AbstractTestCase] Insert [4][33][1,089] 
+INFO  [AbstractTestCase] Insert [5][65][4,225] 
+INFO  [AbstractTestCase] Insert [6][129][16,641] 
+INFO  [AbstractTestCase] Insert [7][257][66,049] 
+INFO  [AbstractTestCase] Insert [8][513][263,169] 
+INFO  [AbstractTestCase] Insert [9][1,025][1,050,625] 
+INFO  [AbstractTestCase] Total  [9][(2^(9+1))+1 = 1025] => [1025^2 = 1050625] 
+INFO  [AbstractTestCase] Range  [1.0][1.0/1050625 = 0.00000095]  
+INFO  [AbstractTestCase] Zone   [10][2^(-10) = 9.765625E-4] 
+INFO  [AbstractTestCase] Memory [18.0GiB][7.6GiB][21.9GiB] 
+INFO  [AbstractTestCase] >>>> 
+INFO  [AbstractTestCase] ---- ---- 
+INFO  [AbstractTestCase] Radius [6][2^(-6) = 0.015625] 
+INFO  [AbstractTestCase] Class [HsqlHtmidMatcherImpl] Total rows [1,050,625] Depth [10] URL [jdbc:hsqldb:mem:zonematch] 
+INFO  [AbstractTestCase] Searched [1,050,625] radius [0.015625] found [392] in [10,000] loops, total [75s][75,212ms], average [7.521ms][7,521.211us] FAIL 
+INFO  [AbstractTestCase] ---- ---- 
+INFO  [AbstractTestCase] Radius [7][2^(-7) = 0.0078125] 
+INFO  [AbstractTestCase] Class [HsqlHtmidMatcherImpl] Total rows [1,050,625] Depth [10] URL [jdbc:hsqldb:mem:zonematch] 
+INFO  [AbstractTestCase] Searched [1,050,625] radius [0.0078125] found [96] in [10,000] loops, total [32s][32,299ms], average [3.230ms][3,229.979us] FAIL 
+INFO  [AbstractTestCase] ---- ---- 
+INFO  [AbstractTestCase] Radius [8][2^(-8) = 0.00390625] 
+INFO  [AbstractTestCase] Class [HsqlHtmidMatcherImpl] Total rows [1,050,625] Depth [10] URL [jdbc:hsqldb:mem:zonematch] 
+INFO  [AbstractTestCase] Searched [1,050,625] radius [0.00390625] found [25] in [10,000] loops, total [12s][12,027ms], average [1.203ms][1,202.748us] FAIL 
+INFO  [AbstractTestCase] ---- ---- 
+INFO  [AbstractTestCase] Radius [9][2^(-9) = 0.001953125] 
+INFO  [AbstractTestCase] Class [HsqlHtmidMatcherImpl] Total rows [1,050,625] Depth [10] URL [jdbc:hsqldb:mem:zonematch] 
+INFO  [AbstractTestCase] Searched [1,050,625] radius [0.001953125] found [6] in [10,000] loops, total [11s][11,076ms], average [1.108ms][1,107.633us] FAIL 
+INFO  [AbstractTestCase] ---- ---- 
+INFO  [AbstractTestCase] Radius [10][2^(-10) = 9.765625E-4] 
+INFO  [AbstractTestCase] Class [HsqlHtmidMatcherImpl] Total rows [1,050,625] Depth [10] URL [jdbc:hsqldb:mem:zonematch] 
+INFO  [AbstractTestCase] Searched [1,050,625] radius [9.765625E-4] found [3] in [10,000] loops, total [11s][11,762ms], average [1.176ms][1,176.252us] FAIL 
+INFO  [AbstractTestCase] <<<< 
+INFO  [AbstractTestCase] Insert [10][2,049][4,198,401] 
+INFO  [AbstractTestCase] Total  [10][(2^(10+1))+1 = 2049] => [2049^2 = 4198401] 
+INFO  [AbstractTestCase] Range  [1.0][1.0/4198401 = 0.00000024]  
+INFO  [AbstractTestCase] Zone   [10][2^(-10) = 9.765625E-4] 
+INFO  [AbstractTestCase] Memory [19.0GiB][15.0GiB][21.9GiB] 
+INFO  [AbstractTestCase] >>>> 
+INFO  [AbstractTestCase] ---- ---- 
+INFO  [AbstractTestCase] Radius [6][2^(-6) = 0.015625] 
+INFO  [AbstractTestCase] Class [HsqlHtmidMatcherImpl] Total rows [4,198,401] Depth [10] URL [jdbc:hsqldb:mem:zonematch] 
+INFO  [AbstractTestCase] Searched [4,198,401] radius [0.015625] found [1,596] in [10,000] loops, total [369s][369,521ms], average [36.952ms][36,952.149us] FAIL 
+INFO  [AbstractTestCase] ---- ---- 
+INFO  [AbstractTestCase] Radius [7][2^(-7) = 0.0078125] 
+INFO  [AbstractTestCase] Class [HsqlHtmidMatcherImpl] Total rows [4,198,401] Depth [10] URL [jdbc:hsqldb:mem:zonematch] 
+INFO  [AbstractTestCase] Searched [4,198,401] radius [0.0078125] found [392] in [10,000] loops, total [173s][173,925ms], average [17.393ms][17,392.547us] FAIL 
+INFO  [AbstractTestCase] ---- ---- 
+INFO  [AbstractTestCase] Radius [8][2^(-8) = 0.00390625] 
+INFO  [AbstractTestCase] Class [HsqlHtmidMatcherImpl] Total rows [4,198,401] Depth [10] URL [jdbc:hsqldb:mem:zonematch] 
+INFO  [AbstractTestCase] Searched [4,198,401] radius [0.00390625] found [97] in [10,000] loops, total [43s][43,099ms], average [4.310ms][4,309.924us] FAIL 
+INFO  [AbstractTestCase] ---- ---- 
+INFO  [AbstractTestCase] Radius [9][2^(-9) = 0.001953125] 
+INFO  [AbstractTestCase] Class [HsqlHtmidMatcherImpl] Total rows [4,198,401] Depth [10] URL [jdbc:hsqldb:mem:zonematch] 
+INFO  [AbstractTestCase] Searched [4,198,401] radius [0.001953125] found [24] in [10,000] loops, total [41s][41,551ms], average [4.155ms][4,155.146us] FAIL 
+INFO  [AbstractTestCase] ---- ---- 
+INFO  [AbstractTestCase] Radius [10][2^(-10) = 9.765625E-4] 
+INFO  [AbstractTestCase] Class [HsqlHtmidMatcherImpl] Total rows [4,198,401] Depth [10] URL [jdbc:hsqldb:mem:zonematch] 
+INFO  [AbstractTestCase] Searched [4,198,401] radius [9.765625E-4] found [6] in [10,000] loops, total [41s][41,656ms], average [4.166ms][4,165.689us] FAIL 
+INFO  [AbstractTestCase] <<<< 
+INFO  [AbstractTestCase] Insert [11][4,097][16,785,409] 
+INFO  [AbstractTestCase] Total  [11][(2^(11+1))+1 = 4097] => [4097^2 = 16785409] 
+INFO  [AbstractTestCase] Range  [1.0][1.0/16785409 = 0.00000006]  
+INFO  [AbstractTestCase] Zone   [10][2^(-10) = 9.765625E-4] 
+INFO  [AbstractTestCase] Memory [17.3GiB][7.4GiB][21.9GiB] 
+INFO  [AbstractTestCase] >>>> 
+INFO  [AbstractTestCase] ---- ---- 
+INFO  [AbstractTestCase] Radius [6][2^(-6) = 0.015625] 
+INFO  [AbstractTestCase] Class [HsqlHtmidMatcherImpl] Total rows [16,785,409] Depth [10] URL [jdbc:hsqldb:mem:zonematch] 
+INFO  [AbstractTestCase] Searched [16,785,409] radius [0.015625] found [6,416] in [10,000] loops, total [1,475s][1,475,916ms], average [147.592ms][147,591.679us] FAIL 
+INFO  [AbstractTestCase] ---- ---- 
+INFO  [AbstractTestCase] Radius [7][2^(-7) = 0.0078125] 
+INFO  [AbstractTestCase] Class [HsqlHtmidMatcherImpl] Total rows [16,785,409] Depth [10] URL [jdbc:hsqldb:mem:zonematch] 
+INFO  [AbstractTestCase] Searched [16,785,409] radius [0.0078125] found [1,596] in [10,000] loops, total [740s][740,693ms], average [74.069ms][74,069.334us] FAIL 
+INFO  [AbstractTestCase] ---- ---- 
+INFO  [AbstractTestCase] Radius [8][2^(-8) = 0.00390625] 
+INFO  [AbstractTestCase] Class [HsqlHtmidMatcherImpl] Total rows [16,785,409] Depth [10] URL [jdbc:hsqldb:mem:zonematch] 
+INFO  [AbstractTestCase] Searched [16,785,409] radius [0.00390625] found [393] in [10,000] loops, total [238s][238,330ms], average [23.833ms][23,833.054us] FAIL 
+INFO  [AbstractTestCase] ---- ---- 
+INFO  [AbstractTestCase] Radius [9][2^(-9) = 0.001953125] 
+INFO  [AbstractTestCase] Class [HsqlHtmidMatcherImpl] Total rows [16,785,409] Depth [10] URL [jdbc:hsqldb:mem:zonematch] 
+INFO  [AbstractTestCase] Searched [16,785,409] radius [0.001953125] found [96] in [10,000] loops, total [240s][240,824ms], average [24.082ms][24,082.437us] FAIL 
+INFO  [AbstractTestCase] ---- ---- 
+INFO  [AbstractTestCase] Radius [10][2^(-10) = 9.765625E-4] 
+INFO  [AbstractTestCase] Class [HsqlHtmidMatcherImpl] Total rows [16,785,409] Depth [10] URL [jdbc:hsqldb:mem:zonematch] 
+INFO  [AbstractTestCase] Searched [16,785,409] radius [9.765625E-4] found [24] in [10,000] loops, total [241s][241,023ms], average [24.102ms][24,102.384us] FAIL 
+INFO  [AbstractTestCase] <<<< 
+INFO  [GenericApplicationContext] Closing org.springframework.context.support.GenericApplicationContext@1817d444: startup date [Sun Mar 15 00:04:28 UTC 2020]; root of context hierarchy 

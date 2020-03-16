@@ -146,12 +146,14 @@ extends TestCase
                             "Total  [{}][(2^({}+1))+1 = {}] => [{}^2 = {}]",
                             insertexp,
                             insertexp,
-                            String.format("%.0f",  tracenum),
-                            String.format("%.0f",  tracenum),
+                            String.format("%.0f", tracenum),
+                            String.format("%.0f", tracenum),
                             String.format("%.0f", tracesum)
                             );
                         log.info(
-                            "Range  [{}][{}/{} = {}] ",
+                            "Range [{}][2^{} = {}] [{}/{} = {}] ",
+                            rangeexp,
+                            rangeexp,
                             rangeval,
                             rangeval,
                             String.format("%.0f", tracesum),
@@ -209,6 +211,7 @@ extends TestCase
                     {
                     Position pos = iter.next();
                     loopcount++;
+                    //log.debug("-- [{}][{}][{}]", loopcount, pos.ra(), pos.dec());
                     }
                 long innerend = System.nanoTime();
                 long innertime = innerend - innerstart;
@@ -221,6 +224,13 @@ extends TestCase
             
             double average = looptime/this.looprepeat; 
 
+//
+// TODO Checksum the ra and dec values to compare between different runs ?
+// TODO Make pass/fail configurable.
+// TODO Table output for analysis in TopCat
+// TODO Concurrent searches on a static dataset.
+//
+            
             log.info(
                 matcher.info()
                 );

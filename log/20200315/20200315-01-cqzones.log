@@ -1,0 +1,1829 @@
+INFO  [DefaultTestContextBootstrapper] Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener] 
+INFO  [DefaultTestContextBootstrapper] Using TestExecutionListeners: [org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@4690b489, org.springframework.test.context.support.DependencyInjectionTestExecutionListener@79b06cab, org.springframework.test.context.support.DirtiesContextTestExecutionListener@3eb7fc54, org.springframework.test.context.transaction.TransactionalTestExecutionListener@7f552bd3, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@3c22fc4c] 
+INFO  [XmlBeanDefinitionReader] Loading XML bean definitions from class path resource [component-config.xml] 
+INFO  [GenericApplicationContext] Refreshing org.springframework.context.support.GenericApplicationContext@6ca8564a: startup date [Sun Mar 15 18:07:22 UTC 2020]; root of context hierarchy 
+INFO  [AbstractTestCase] Target [120.0][120.0] 
+INFO  [AbstractTestCase] ---- ---- 
+INFO  [AbstractTestCase] Insert [0][3][9] 
+INFO  [AbstractTestCase] Insert [1][5][25] 
+INFO  [AbstractTestCase] Insert [2][9][81] 
+INFO  [AbstractTestCase] Insert [3][17][289] 
+INFO  [AbstractTestCase] Insert [4][33][1,089] 
+INFO  [AbstractTestCase] Insert [5][65][4,225] 
+INFO  [AbstractTestCase] Insert [6][129][16,641] 
+INFO  [AbstractTestCase] Insert [7][257][66,049] 
+INFO  [AbstractTestCase] Insert [8][513][263,169] 
+INFO  [AbstractTestCase] Insert [9][1,025][1,050,625] 
+INFO  [AbstractTestCase] Total  [9][(2^(9+1))+1 = 1025] => [1025^2 = 1050625] 
+INFO  [AbstractTestCase] Range  [2.0][2.0/1050625 = 0.00000190]  
+INFO  [AbstractTestCase] Zone   [6][2^(-6) = 0.015625] 
+INFO  [AbstractTestCase] Memory [2.6GiB][2.2GiB][21.9GiB] 
+INFO  [AbstractTestCase] >>>> 
+INFO  [AbstractTestCase] ---- ---- 
+INFO  [AbstractTestCase] Radius [6][2^(-6) = 0.015625] 
+INFO  [AbstractTestCase] Class [CQZoneMatcherImpl] Indexing [SEPARATE_QUANTIZED] Zone height [0.015625] count [257]  avg size [4088] min [1025] max [4100] 
+INFO  [AbstractTestCase] Searched [1,050,625] radius [0.015625] found [94] in [10,000] loops, total [8s][8,116ms], average [0.812ms][811.653us] PASS 
+INFO  [AbstractTestCase] ---- ---- 
+INFO  [AbstractTestCase] Radius [7][2^(-7) = 0.0078125] 
+INFO  [AbstractTestCase] Class [CQZoneMatcherImpl] Indexing [SEPARATE_QUANTIZED] Zone height [0.015625] count [257]  avg size [4088] min [1025] max [4100] 
+INFO  [AbstractTestCase] Searched [1,050,625] radius [0.0078125] found [22] in [10,000] loops, total [4s][4,196ms], average [0.420ms][419.674us] PASS 
+INFO  [AbstractTestCase] ---- ---- 
+INFO  [AbstractTestCase] Radius [8][2^(-8) = 0.00390625] 
+INFO  [AbstractTestCase] Class [CQZoneMatcherImpl] Indexing [SEPARATE_QUANTIZED] Zone height [0.015625] count [257]  avg size [4088] min [1025] max [4100] 
+INFO  [AbstractTestCase] Searched [1,050,625] radius [0.00390625] found [5] in [10,000] loops, total [2s][2,105ms], average [0.211ms][210.518us] PASS 
+INFO  [AbstractTestCase] ---- ---- 
+INFO  [AbstractTestCase] Radius [9][2^(-9) = 0.001953125] 
+INFO  [AbstractTestCase] Class [CQZoneMatcherImpl] Indexing [SEPARATE_QUANTIZED] Zone height [0.015625] count [257]  avg size [4088] min [1025] max [4100] 
+INFO  [AbstractTestCase] Searched [1,050,625] radius [0.001953125] found [1] in [10,000] loops, total [0s][762ms], average [0.076ms][76.261us] PASS 
+INFO  [AbstractTestCase] ---- ---- 
+INFO  [AbstractTestCase] Radius [10][2^(-10) = 9.765625E-4] 
+INFO  [AbstractTestCase] Class [CQZoneMatcherImpl] Indexing [SEPARATE_QUANTIZED] Zone height [0.015625] count [257]  avg size [4088] min [1025] max [4100] 
+INFO  [AbstractTestCase] Searched [1,050,625] radius [9.765625E-4] found [1] in [10,000] loops, total [0s][830ms], average [0.083ms][83.015us] PASS 
+INFO  [AbstractTestCase] <<<< 
+INFO  [AbstractTestCase] Insert [10][2,049][4,198,401] 
+INFO  [AbstractTestCase] Total  [10][(2^(10+1))+1 = 2049] => [2049^2 = 4198401] 
+INFO  [AbstractTestCase] Range  [2.0][2.0/4198401 = 0.00000048]  
+INFO  [AbstractTestCase] Zone   [6][2^(-6) = 0.015625] 
+INFO  [AbstractTestCase] Memory [7.4GiB][761.3MiB][21.9GiB] 
+INFO  [AbstractTestCase] >>>> 
+INFO  [AbstractTestCase] ---- ---- 
+INFO  [AbstractTestCase] Radius [6][2^(-6) = 0.015625] 
+INFO  [AbstractTestCase] Class [CQZoneMatcherImpl] Indexing [SEPARATE_QUANTIZED] Zone height [0.015625] count [257]  avg size [16336] min [2049] max [16392] 
+INFO  [AbstractTestCase] Searched [4,198,401] radius [0.015625] found [390] in [10,000] loops, total [31s][31,694ms], average [3.169ms][3,169.403us] FAIL 
+INFO  [AbstractTestCase] ---- ---- 
+INFO  [AbstractTestCase] Radius [7][2^(-7) = 0.0078125] 
+INFO  [AbstractTestCase] Class [CQZoneMatcherImpl] Indexing [SEPARATE_QUANTIZED] Zone height [0.015625] count [257]  avg size [16336] min [2049] max [16392] 
+INFO  [AbstractTestCase] Searched [4,198,401] radius [0.0078125] found [94] in [10,000] loops, total [13s][13,185ms], average [1.319ms][1,318.544us] FAIL 
+INFO  [AbstractTestCase] ---- ---- 
+INFO  [AbstractTestCase] Radius [8][2^(-8) = 0.00390625] 
+INFO  [AbstractTestCase] Class [CQZoneMatcherImpl] Indexing [SEPARATE_QUANTIZED] Zone height [0.015625] count [257]  avg size [16336] min [2049] max [16392] 
+INFO  [AbstractTestCase] Searched [4,198,401] radius [0.00390625] found [23] in [10,000] loops, total [7s][7,448ms], average [0.745ms][744.813us] PASS 
+INFO  [AbstractTestCase] ---- ---- 
+INFO  [AbstractTestCase] Radius [9][2^(-9) = 0.001953125] 
+INFO  [AbstractTestCase] Class [CQZoneMatcherImpl] Indexing [SEPARATE_QUANTIZED] Zone height [0.015625] count [257]  avg size [16336] min [2049] max [16392] 
+INFO  [AbstractTestCase] Searched [4,198,401] radius [0.001953125] found [4] in [10,000] loops, total [4s][4,476ms], average [0.448ms][447.601us] PASS 
+INFO  [AbstractTestCase] ---- ---- 
+INFO  [AbstractTestCase] Radius [10][2^(-10) = 9.765625E-4] 
+INFO  [AbstractTestCase] Class [CQZoneMatcherImpl] Indexing [SEPARATE_QUANTIZED] Zone height [0.015625] count [257]  avg size [16336] min [2049] max [16392] 
+INFO  [AbstractTestCase] Searched [4,198,401] radius [9.765625E-4] found [1] in [10,000] loops, total [1s][1,560ms], average [0.156ms][156.071us] PASS 
+INFO  [AbstractTestCase] <<<< 
+INFO  [AbstractTestCase] Insert [11][4,097][16,785,409] 
+INFO  [AbstractTestCase] Total  [11][(2^(11+1))+1 = 4097] => [4097^2 = 16785409] 
+INFO  [AbstractTestCase] Range  [2.0][2.0/16785409 = 0.00000012]  
+INFO  [AbstractTestCase] Zone   [6][2^(-6) = 0.015625] 
+INFO  [AbstractTestCase] Memory [11.5GiB][1.9GiB][21.9GiB] 
+INFO  [AbstractTestCase] >>>> 
+INFO  [AbstractTestCase] ---- ---- 
+INFO  [AbstractTestCase] Radius [6][2^(-6) = 0.015625] 
+INFO  [AbstractTestCase] Class [CQZoneMatcherImpl] Indexing [SEPARATE_QUANTIZED] Zone height [0.015625] count [257]  avg size [65312] min [4097] max [65552] 
+INFO  [AbstractTestCase] Searched [16,785,409] radius [0.015625] found [1,594] in [10,000] loops, total [334s][334,744ms], average [33.474ms][33,474.412us] FAIL 
+INFO  [AbstractTestCase] ---- ---- 
+INFO  [AbstractTestCase] Radius [7][2^(-7) = 0.0078125] 
+INFO  [AbstractTestCase] Class [CQZoneMatcherImpl] Indexing [SEPARATE_QUANTIZED] Zone height [0.015625] count [257]  avg size [65312] min [4097] max [65552] 
+INFO  [AbstractTestCase] Searched [16,785,409] radius [0.0078125] found [390] in [10,000] loops, total [77s][77,210ms], average [7.721ms][7,721.024us] FAIL 
+INFO  [AbstractTestCase] ---- ---- 
+INFO  [AbstractTestCase] Radius [8][2^(-8) = 0.00390625] 
+INFO  [AbstractTestCase] Class [CQZoneMatcherImpl] Indexing [SEPARATE_QUANTIZED] Zone height [0.015625] count [257]  avg size [65312] min [4097] max [65552] 
+INFO  [AbstractTestCase] Searched [16,785,409] radius [0.00390625] found [95] in [10,000] loops, total [27s][27,358ms], average [2.736ms][2,735.853us] FAIL 
+INFO  [AbstractTestCase] ---- ---- 
+INFO  [AbstractTestCase] Radius [9][2^(-9) = 0.001953125] 
+INFO  [AbstractTestCase] Class [CQZoneMatcherImpl] Indexing [SEPARATE_QUANTIZED] Zone height [0.015625] count [257]  avg size [65312] min [4097] max [65552] 
+INFO  [AbstractTestCase] Searched [16,785,409] radius [0.001953125] found [22] in [10,000] loops, total [15s][15,275ms], average [1.528ms][1,527.513us] FAIL 
+INFO  [AbstractTestCase] ---- ---- 
+INFO  [AbstractTestCase] Radius [10][2^(-10) = 9.765625E-4] 
+INFO  [AbstractTestCase] Class [CQZoneMatcherImpl] Indexing [SEPARATE_QUANTIZED] Zone height [0.015625] count [257]  avg size [65312] min [4097] max [65552] 
+INFO  [AbstractTestCase] Searched [16,785,409] radius [9.765625E-4] found [4] in [10,000] loops, total [9s][9,393ms], average [0.939ms][939.320us] PASS 
+INFO  [AbstractTestCase] <<<< 
+INFO  [AbstractTestCase] ---- ---- 
+INFO  [AbstractTestCase] Insert [0][3][9] 
+INFO  [AbstractTestCase] Insert [1][5][25] 
+INFO  [AbstractTestCase] Insert [2][9][81] 
+INFO  [AbstractTestCase] Insert [3][17][289] 
+INFO  [AbstractTestCase] Insert [4][33][1,089] 
+INFO  [AbstractTestCase] Insert [5][65][4,225] 
+INFO  [AbstractTestCase] Insert [6][129][16,641] 
+INFO  [AbstractTestCase] Insert [7][257][66,049] 
+INFO  [AbstractTestCase] Insert [8][513][263,169] 
+INFO  [AbstractTestCase] Insert [9][1,025][1,050,625] 
+INFO  [AbstractTestCase] Total  [9][(2^(9+1))+1 = 1025] => [1025^2 = 1050625] 
+INFO  [AbstractTestCase] Range  [2.0][2.0/1050625 = 0.00000190]  
+INFO  [AbstractTestCase] Zone   [7][2^(-7) = 0.0078125] 
+INFO  [AbstractTestCase] Memory [13.6GiB][8.7GiB][21.9GiB] 
+INFO  [AbstractTestCase] >>>> 
+INFO  [AbstractTestCase] ---- ---- 
+INFO  [AbstractTestCase] Radius [6][2^(-6) = 0.015625] 
+INFO  [AbstractTestCase] Class [CQZoneMatcherImpl] Indexing [SEPARATE_QUANTIZED] Zone height [0.0078125] count [513]  avg size [2048] min [1025] max [2050] 
+INFO  [AbstractTestCase] Searched [1,050,625] radius [0.015625] found [94] in [10,000] loops, total [6s][6,255ms], average [0.626ms][625.592us] PASS 
+INFO  [AbstractTestCase] ---- ---- 
+INFO  [AbstractTestCase] Radius [7][2^(-7) = 0.0078125] 
+INFO  [AbstractTestCase] Class [CQZoneMatcherImpl] Indexing [SEPARATE_QUANTIZED] Zone height [0.0078125] count [513]  avg size [2048] min [1025] max [2050] 
+INFO  [AbstractTestCase] Searched [1,050,625] radius [0.0078125] found [22] in [10,000] loops, total [3s][3,463ms], average [0.346ms][346.371us] PASS 
+INFO  [AbstractTestCase] ---- ---- 
+INFO  [AbstractTestCase] Radius [8][2^(-8) = 0.00390625] 
+INFO  [AbstractTestCase] Class [CQZoneMatcherImpl] Indexing [SEPARATE_QUANTIZED] Zone height [0.0078125] count [513]  avg size [2048] min [1025] max [2050] 
+INFO  [AbstractTestCase] Searched [1,050,625] radius [0.00390625] found [5] in [10,000] loops, total [2s][2,450ms], average [0.245ms][245.099us] PASS 
+INFO  [AbstractTestCase] ---- ---- 
+INFO  [AbstractTestCase] Radius [9][2^(-9) = 0.001953125] 
+INFO  [AbstractTestCase] Class [CQZoneMatcherImpl] Indexing [SEPARATE_QUANTIZED] Zone height [0.0078125] count [513]  avg size [2048] min [1025] max [2050] 
+INFO  [AbstractTestCase] Searched [1,050,625] radius [0.001953125] found [1] in [10,000] loops, total [0s][878ms], average [0.088ms][87.873us] PASS 
+INFO  [AbstractTestCase] ---- ---- 
+INFO  [AbstractTestCase] Radius [10][2^(-10) = 9.765625E-4] 
+INFO  [AbstractTestCase] Class [CQZoneMatcherImpl] Indexing [SEPARATE_QUANTIZED] Zone height [0.0078125] count [513]  avg size [2048] min [1025] max [2050] 
+INFO  [AbstractTestCase] Searched [1,050,625] radius [9.765625E-4] found [1] in [10,000] loops, total [1s][1,101ms], average [0.110ms][110.138us] PASS 
+INFO  [AbstractTestCase] <<<< 
+INFO  [AbstractTestCase] Insert [10][2,049][4,198,401] 
+INFO  [AbstractTestCase] Total  [10][(2^(10+1))+1 = 2049] => [2049^2 = 4198401] 
+INFO  [AbstractTestCase] Range  [2.0][2.0/4198401 = 0.00000048]  
+INFO  [AbstractTestCase] Zone   [7][2^(-7) = 0.0078125] 
+INFO  [AbstractTestCase] Memory [13.9GiB][7.8GiB][21.9GiB] 
+INFO  [AbstractTestCase] >>>> 
+INFO  [AbstractTestCase] ---- ---- 
+INFO  [AbstractTestCase] Radius [6][2^(-6) = 0.015625] 
+INFO  [AbstractTestCase] Class [CQZoneMatcherImpl] Indexing [SEPARATE_QUANTIZED] Zone height [0.0078125] count [513]  avg size [8184] min [2049] max [8196] 
+INFO  [AbstractTestCase] Searched [4,198,401] radius [0.015625] found [390] in [10,000] loops, total [23s][23,039ms], average [2.304ms][2,303.980us] FAIL 
+INFO  [AbstractTestCase] ---- ---- 
+INFO  [AbstractTestCase] Radius [7][2^(-7) = 0.0078125] 
+INFO  [AbstractTestCase] Class [CQZoneMatcherImpl] Indexing [SEPARATE_QUANTIZED] Zone height [0.0078125] count [513]  avg size [8184] min [2049] max [8196] 
+INFO  [AbstractTestCase] Searched [4,198,401] radius [0.0078125] found [94] in [10,000] loops, total [11s][11,278ms], average [1.128ms][1,127.875us] FAIL 
+INFO  [AbstractTestCase] ---- ---- 
+INFO  [AbstractTestCase] Radius [8][2^(-8) = 0.00390625] 
+INFO  [AbstractTestCase] Class [CQZoneMatcherImpl] Indexing [SEPARATE_QUANTIZED] Zone height [0.0078125] count [513]  avg size [8184] min [2049] max [8196] 
+INFO  [AbstractTestCase] Searched [4,198,401] radius [0.00390625] found [23] in [10,000] loops, total [6s][6,729ms], average [0.673ms][672.960us] PASS 
+INFO  [AbstractTestCase] ---- ---- 
+INFO  [AbstractTestCase] Radius [9][2^(-9) = 0.001953125] 
+INFO  [AbstractTestCase] Class [CQZoneMatcherImpl] Indexing [SEPARATE_QUANTIZED] Zone height [0.0078125] count [513]  avg size [8184] min [2049] max [8196] 
+INFO  [AbstractTestCase] Searched [4,198,401] radius [0.001953125] found [4] in [10,000] loops, total [3s][3,705ms], average [0.371ms][370.530us] PASS 
+INFO  [AbstractTestCase] ---- ---- 
+INFO  [AbstractTestCase] Radius [10][2^(-10) = 9.765625E-4] 
+INFO  [AbstractTestCase] Class [CQZoneMatcherImpl] Indexing [SEPARATE_QUANTIZED] Zone height [0.0078125] count [513]  avg size [8184] min [2049] max [8196] 
+INFO  [AbstractTestCase] Searched [4,198,401] radius [9.765625E-4] found [1] in [10,000] loops, total [1s][1,417ms], average [0.142ms][141.790us] PASS 
+INFO  [AbstractTestCase] <<<< 
+INFO  [AbstractTestCase] Insert [11][4,097][16,785,409] 
+INFO  [AbstractTestCase] Total  [11][(2^(11+1))+1 = 4097] => [4097^2 = 16785409] 
+INFO  [AbstractTestCase] Range  [2.0][2.0/16785409 = 0.00000012]  
+INFO  [AbstractTestCase] Zone   [7][2^(-7) = 0.0078125] 
+INFO  [AbstractTestCase] Memory [10.9GiB][3.6GiB][21.9GiB] 
+INFO  [AbstractTestCase] >>>> 
+INFO  [AbstractTestCase] ---- ---- 
+INFO  [AbstractTestCase] Radius [6][2^(-6) = 0.015625] 
+INFO  [AbstractTestCase] Class [CQZoneMatcherImpl] Indexing [SEPARATE_QUANTIZED] Zone height [0.0078125] count [513]  avg size [32720] min [4097] max [32776] 
+INFO  [AbstractTestCase] Searched [16,785,409] radius [0.015625] found [1,594] in [10,000] loops, total [327s][327,241ms], average [32.724ms][32,724.143us] FAIL 
+INFO  [AbstractTestCase] ---- ---- 
+INFO  [AbstractTestCase] Radius [7][2^(-7) = 0.0078125] 
+INFO  [AbstractTestCase] Class [CQZoneMatcherImpl] Indexing [SEPARATE_QUANTIZED] Zone height [0.0078125] count [513]  avg size [32720] min [4097] max [32776] 
+INFO  [AbstractTestCase] Searched [16,785,409] radius [0.0078125] found [390] in [10,000] loops, total [70s][70,739ms], average [7.074ms][7,073.993us] FAIL 
+INFO  [AbstractTestCase] ---- ---- 
+INFO  [AbstractTestCase] Radius [8][2^(-8) = 0.00390625] 
+INFO  [AbstractTestCase] Class [CQZoneMatcherImpl] Indexing [SEPARATE_QUANTIZED] Zone height [0.0078125] count [513]  avg size [32720] min [4097] max [32776] 
+INFO  [AbstractTestCase] Searched [16,785,409] radius [0.00390625] found [95] in [10,000] loops, total [27s][27,175ms], average [2.718ms][2,717.529us] FAIL 
+INFO  [AbstractTestCase] ---- ---- 
+INFO  [AbstractTestCase] Radius [9][2^(-9) = 0.001953125] 
+INFO  [AbstractTestCase] Class [CQZoneMatcherImpl] Indexing [SEPARATE_QUANTIZED] Zone height [0.0078125] count [513]  avg size [32720] min [4097] max [32776] 
+INFO  [AbstractTestCase] Searched [16,785,409] radius [0.001953125] found [22] in [10,000] loops, total [15s][15,477ms], average [1.548ms][1,547.714us] FAIL 
+INFO  [AbstractTestCase] ---- ---- 
+INFO  [AbstractTestCase] Radius [10][2^(-10) = 9.765625E-4] 
+INFO  [AbstractTestCase] Class [CQZoneMatcherImpl] Indexing [SEPARATE_QUANTIZED] Zone height [0.0078125] count [513]  avg size [32720] min [4097] max [32776] 
+INFO  [AbstractTestCase] Searched [16,785,409] radius [9.765625E-4] found [4] in [10,000] loops, total [9s][9,458ms], average [0.946ms][945.876us] PASS 
+INFO  [AbstractTestCase] <<<< 
+INFO  [AbstractTestCase] ---- ---- 
+INFO  [AbstractTestCase] Insert [0][3][9] 
+INFO  [AbstractTestCase] Insert [1][5][25] 
+INFO  [AbstractTestCase] Insert [2][9][81] 
+INFO  [AbstractTestCase] Insert [3][17][289] 
+INFO  [AbstractTestCase] Insert [4][33][1,089] 
+INFO  [AbstractTestCase] Insert [5][65][4,225] 
+INFO  [AbstractTestCase] Insert [6][129][16,641] 
+INFO  [AbstractTestCase] Insert [7][257][66,049] 
+INFO  [AbstractTestCase] Insert [8][513][263,169] 
+INFO  [AbstractTestCase] Insert [9][1,025][1,050,625] 
+INFO  [AbstractTestCase] Total  [9][(2^(9+1))+1 = 1025] => [1025^2 = 1050625] 
+INFO  [AbstractTestCase] Range  [2.0][2.0/1050625 = 0.00000190]  
+INFO  [AbstractTestCase] Zone   [8][2^(-8) = 0.00390625] 
+INFO  [AbstractTestCase] Memory [10.2GiB][3.8GiB][21.9GiB] 
+INFO  [AbstractTestCase] >>>> 
+INFO  [AbstractTestCase] ---- ---- 
+INFO  [AbstractTestCase] Radius [6][2^(-6) = 0.015625] 
+INFO  [AbstractTestCase] Class [CQZoneMatcherImpl] Indexing [SEPARATE_QUANTIZED] Zone height [0.00390625] count [1025]  avg size [1025] min [1025] max [1025] 
+INFO  [AbstractTestCase] Searched [1,050,625] radius [0.015625] found [94] in [10,000] loops, total [7s][7,179ms], average [0.718ms][717.936us] PASS 
+INFO  [AbstractTestCase] ---- ---- 
+INFO  [AbstractTestCase] Radius [7][2^(-7) = 0.0078125] 
+INFO  [AbstractTestCase] Class [CQZoneMatcherImpl] Indexing [SEPARATE_QUANTIZED] Zone height [0.00390625] count [1025]  avg size [1025] min [1025] max [1025] 
+INFO  [AbstractTestCase] Searched [1,050,625] radius [0.0078125] found [22] in [10,000] loops, total [4s][4,138ms], average [0.414ms][413.847us] PASS 
+INFO  [AbstractTestCase] ---- ---- 
+INFO  [AbstractTestCase] Radius [8][2^(-8) = 0.00390625] 
+INFO  [AbstractTestCase] Class [CQZoneMatcherImpl] Indexing [SEPARATE_QUANTIZED] Zone height [0.00390625] count [1025]  avg size [1025] min [1025] max [1025] 
+INFO  [AbstractTestCase] Searched [1,050,625] radius [0.00390625] found [5] in [10,000] loops, total [3s][3,103ms], average [0.310ms][310.302us] PASS 
+INFO  [AbstractTestCase] ---- ---- 
+INFO  [AbstractTestCase] Radius [9][2^(-9) = 0.001953125] 
+INFO  [AbstractTestCase] Class [CQZoneMatcherImpl] Indexing [SEPARATE_QUANTIZED] Zone height [0.00390625] count [1025]  avg size [1025] min [1025] max [1025] 
+INFO  [AbstractTestCase] Searched [1,050,625] radius [0.001953125] found [1] in [10,000] loops, total [1s][1,222ms], average [0.122ms][122.278us] PASS 
+INFO  [AbstractTestCase] ---- ---- 
+INFO  [AbstractTestCase] Radius [10][2^(-10) = 9.765625E-4] 
+INFO  [AbstractTestCase] Class [CQZoneMatcherImpl] Indexing [SEPARATE_QUANTIZED] Zone height [0.00390625] count [1025]  avg size [1025] min [1025] max [1025] 
+INFO  [AbstractTestCase] Searched [1,050,625] radius [9.765625E-4] found [1] in [10,000] loops, total [1s][1,220ms], average [0.122ms][122.038us] PASS 
+INFO  [AbstractTestCase] <<<< 
+INFO  [AbstractTestCase] Insert [10][2,049][4,198,401] 
+INFO  [AbstractTestCase] Total  [10][(2^(10+1))+1 = 2049] => [2049^2 = 4198401] 
+INFO  [AbstractTestCase] Range  [2.0][2.0/4198401 = 0.00000048]  
+INFO  [AbstractTestCase] Zone   [8][2^(-8) = 0.00390625] 
+INFO  [AbstractTestCase] Memory [11.2GiB][1.6GiB][21.9GiB] 
+INFO  [AbstractTestCase] >>>> 
+INFO  [AbstractTestCase] ---- ---- 
+INFO  [AbstractTestCase] Radius [6][2^(-6) = 0.015625] 
+INFO  [AbstractTestCase] Class [CQZoneMatcherImpl] Indexing [SEPARATE_QUANTIZED] Zone height [0.00390625] count [1025]  avg size [4096] min [2049] max [4098] 
+INFO  [AbstractTestCase] Searched [4,198,401] radius [0.015625] found [390] in [10,000] loops, total [23s][23,375ms], average [2.338ms][2,337.534us] FAIL 
+INFO  [AbstractTestCase] ---- ---- 
+INFO  [AbstractTestCase] Radius [7][2^(-7) = 0.0078125] 
+INFO  [AbstractTestCase] Class [CQZoneMatcherImpl] Indexing [SEPARATE_QUANTIZED] Zone height [0.00390625] count [1025]  avg size [4096] min [2049] max [4098] 
+INFO  [AbstractTestCase] Searched [4,198,401] radius [0.0078125] found [94] in [10,000] loops, total [12s][12,545ms], average [1.255ms][1,254.547us] FAIL 
+INFO  [AbstractTestCase] ---- ---- 
+INFO  [AbstractTestCase] Radius [8][2^(-8) = 0.00390625] 
+INFO  [AbstractTestCase] Class [CQZoneMatcherImpl] Indexing [SEPARATE_QUANTIZED] Zone height [0.00390625] count [1025]  avg size [4096] min [2049] max [4098] 
+INFO  [AbstractTestCase] Searched [4,198,401] radius [0.00390625] found [23] in [10,000] loops, total [7s][7,011ms], average [0.701ms][701.190us] PASS 
+INFO  [AbstractTestCase] ---- ---- 
+INFO  [AbstractTestCase] Radius [9][2^(-9) = 0.001953125] 
+INFO  [AbstractTestCase] Class [CQZoneMatcherImpl] Indexing [SEPARATE_QUANTIZED] Zone height [0.00390625] count [1025]  avg size [4096] min [2049] max [4098] 
+INFO  [AbstractTestCase] Searched [4,198,401] radius [0.001953125] found [4] in [10,000] loops, total [3s][3,944ms], average [0.394ms][394.416us] PASS 
+INFO  [AbstractTestCase] ---- ---- 
+INFO  [AbstractTestCase] Radius [10][2^(-10) = 9.765625E-4] 
+INFO  [AbstractTestCase] Class [CQZoneMatcherImpl] Indexing [SEPARATE_QUANTIZED] Zone height [0.00390625] count [1025]  avg size [4096] min [2049] max [4098] 
+INFO  [AbstractTestCase] Searched [4,198,401] radius [9.765625E-4] found [1] in [10,000] loops, total [1s][1,892ms], average [0.189ms][189.207us] PASS 
+INFO  [AbstractTestCase] <<<< 
+INFO  [AbstractTestCase] Insert [11][4,097][16,785,409] 
+INFO  [AbstractTestCase] Total  [11][(2^(11+1))+1 = 4097] => [4097^2 = 16785409] 
+INFO  [AbstractTestCase] Range  [2.0][2.0/16785409 = 0.00000012]  
+INFO  [AbstractTestCase] Zone   [8][2^(-8) = 0.00390625] 
+INFO  [AbstractTestCase] Memory [12.8GiB][6.3GiB][21.9GiB] 
+INFO  [AbstractTestCase] >>>> 
+INFO  [AbstractTestCase] ---- ---- 
+INFO  [AbstractTestCase] Radius [6][2^(-6) = 0.015625] 
+INFO  [AbstractTestCase] Class [CQZoneMatcherImpl] Indexing [SEPARATE_QUANTIZED] Zone height [0.00390625] count [1025]  avg size [16376] min [4097] max [16388] 
+INFO  [AbstractTestCase] Searched [16,785,409] radius [0.015625] found [1,594] in [10,000] loops, total [313s][313,193ms], average [31.319ms][31,319.377us] FAIL 
+INFO  [AbstractTestCase] ---- ---- 
+INFO  [AbstractTestCase] Radius [7][2^(-7) = 0.0078125] 
+INFO  [AbstractTestCase] Class [CQZoneMatcherImpl] Indexing [SEPARATE_QUANTIZED] Zone height [0.00390625] count [1025]  avg size [16376] min [4097] max [16388] 
+INFO  [AbstractTestCase] Searched [16,785,409] radius [0.0078125] found [390] in [10,000] loops, total [70s][70,819ms], average [7.082ms][7,081.924us] FAIL 
+INFO  [AbstractTestCase] ---- ---- 
+INFO  [AbstractTestCase] Radius [8][2^(-8) = 0.00390625] 
+INFO  [AbstractTestCase] Class [CQZoneMatcherImpl] Indexing [SEPARATE_QUANTIZED] Zone height [0.00390625] count [1025]  avg size [16376] min [4097] max [16388] 
+INFO  [AbstractTestCase] Searched [16,785,409] radius [0.00390625] found [95] in [10,000] loops, total [26s][26,856ms], average [2.686ms][2,685.682us] FAIL 
+INFO  [AbstractTestCase] ---- ---- 
+INFO  [AbstractTestCase] Radius [9][2^(-9) = 0.001953125] 
+INFO  [AbstractTestCase] Class [CQZoneMatcherImpl] Indexing [SEPARATE_QUANTIZED] Zone height [0.00390625] count [1025]  avg size [16376] min [4097] max [16388] 
+INFO  [AbstractTestCase] Searched [16,785,409] radius [0.001953125] found [22] in [10,000] loops, total [15s][15,103ms], average [1.510ms][1,510.329us] FAIL 
+INFO  [AbstractTestCase] ---- ---- 
+INFO  [AbstractTestCase] Radius [10][2^(-10) = 9.765625E-4] 
+INFO  [AbstractTestCase] Class [CQZoneMatcherImpl] Indexing [SEPARATE_QUANTIZED] Zone height [0.00390625] count [1025]  avg size [16376] min [4097] max [16388] 
+INFO  [AbstractTestCase] Searched [16,785,409] radius [9.765625E-4] found [4] in [10,000] loops, total [9s][9,833ms], average [0.983ms][983.395us] PASS 
+INFO  [AbstractTestCase] <<<< 
+INFO  [AbstractTestCase] ---- ---- 
+INFO  [AbstractTestCase] Insert [0][3][9] 
+INFO  [AbstractTestCase] Insert [1][5][25] 
+INFO  [AbstractTestCase] Insert [2][9][81] 
+INFO  [AbstractTestCase] Insert [3][17][289] 
+INFO  [AbstractTestCase] Insert [4][33][1,089] 
+INFO  [AbstractTestCase] Insert [5][65][4,225] 
+INFO  [AbstractTestCase] Insert [6][129][16,641] 
+INFO  [AbstractTestCase] Insert [7][257][66,049] 
+INFO  [AbstractTestCase] Insert [8][513][263,169] 
+INFO  [AbstractTestCase] Insert [9][1,025][1,050,625] 
+INFO  [AbstractTestCase] Total  [9][(2^(9+1))+1 = 1025] => [1025^2 = 1050625] 
+INFO  [AbstractTestCase] Range  [2.0][2.0/1050625 = 0.00000190]  
+INFO  [AbstractTestCase] Zone   [9][2^(-9) = 0.001953125] 
+INFO  [AbstractTestCase] Memory [12.3GiB][3.2GiB][21.9GiB] 
+INFO  [AbstractTestCase] >>>> 
+INFO  [AbstractTestCase] ---- ---- 
+INFO  [AbstractTestCase] Radius [6][2^(-6) = 0.015625] 
+INFO  [AbstractTestCase] Class [CQZoneMatcherImpl] Indexing [SEPARATE_QUANTIZED] Zone height [0.001953125] count [1025]  avg size [1025] min [1025] max [1025] 
+INFO  [AbstractTestCase] Searched [1,050,625] radius [0.015625] found [94] in [10,000] loops, total [6s][6,981ms], average [0.698ms][698.106us] PASS 
+INFO  [AbstractTestCase] ---- ---- 
+INFO  [AbstractTestCase] Radius [7][2^(-7) = 0.0078125] 
+INFO  [AbstractTestCase] Class [CQZoneMatcherImpl] Indexing [SEPARATE_QUANTIZED] Zone height [0.001953125] count [1025]  avg size [1025] min [1025] max [1025] 
+INFO  [AbstractTestCase] Searched [1,050,625] radius [0.0078125] found [22] in [10,000] loops, total [4s][4,145ms], average [0.415ms][414.538us] PASS 
+INFO  [AbstractTestCase] ---- ---- 
+INFO  [AbstractTestCase] Radius [8][2^(-8) = 0.00390625] 
+INFO  [AbstractTestCase] Class [CQZoneMatcherImpl] Indexing [SEPARATE_QUANTIZED] Zone height [0.001953125] count [1025]  avg size [1025] min [1025] max [1025] 
+INFO  [AbstractTestCase] Searched [1,050,625] radius [0.00390625] found [5] in [10,000] loops, total [2s][2,333ms], average [0.233ms][233.372us] PASS 
+INFO  [AbstractTestCase] ---- ---- 
+INFO  [AbstractTestCase] Radius [9][2^(-9) = 0.001953125] 
+INFO  [AbstractTestCase] Class [CQZoneMatcherImpl] Indexing [SEPARATE_QUANTIZED] Zone height [0.001953125] count [1025]  avg size [1025] min [1025] max [1025] 
+INFO  [AbstractTestCase] Searched [1,050,625] radius [0.001953125] found [1] in [10,000] loops, total [1s][1,150ms], average [0.115ms][115.025us] PASS 
+INFO  [AbstractTestCase] ---- ---- 
+INFO  [AbstractTestCase] Radius [10][2^(-10) = 9.765625E-4] 
+INFO  [AbstractTestCase] Class [CQZoneMatcherImpl] Indexing [SEPARATE_QUANTIZED] Zone height [0.001953125] count [1025]  avg size [1025] min [1025] max [1025] 
+INFO  [AbstractTestCase] Searched [1,050,625] radius [9.765625E-4] found [1] in [10,000] loops, total [1s][1,177ms], average [0.118ms][117.765us] PASS 
+INFO  [AbstractTestCase] <<<< 
+INFO  [AbstractTestCase] Insert [10][2,049][4,198,401] 
+INFO  [AbstractTestCase] Total  [10][(2^(10+1))+1 = 2049] => [2049^2 = 4198401] 
+INFO  [AbstractTestCase] Range  [2.0][2.0/4198401 = 0.00000048]  
+INFO  [AbstractTestCase] Zone   [9][2^(-9) = 0.001953125] 
+INFO  [AbstractTestCase] Memory [13.2GiB][5.1GiB][21.9GiB] 
+INFO  [AbstractTestCase] >>>> 
+INFO  [AbstractTestCase] ---- ---- 
+INFO  [AbstractTestCase] Radius [6][2^(-6) = 0.015625] 
+INFO  [AbstractTestCase] Class [CQZoneMatcherImpl] Indexing [SEPARATE_QUANTIZED] Zone height [0.001953125] count [2049]  avg size [2049] min [2049] max [2049] 
+INFO  [AbstractTestCase] Searched [4,198,401] radius [0.015625] found [390] in [10,000] loops, total [23s][23,901ms], average [2.390ms][2,390.192us] FAIL 
+INFO  [AbstractTestCase] ---- ---- 
+INFO  [AbstractTestCase] Radius [7][2^(-7) = 0.0078125] 
+INFO  [AbstractTestCase] Class [CQZoneMatcherImpl] Indexing [SEPARATE_QUANTIZED] Zone height [0.001953125] count [2049]  avg size [2049] min [2049] max [2049] 
+INFO  [AbstractTestCase] Searched [4,198,401] radius [0.0078125] found [94] in [10,000] loops, total [13s][13,436ms], average [1.344ms][1,343.653us] FAIL 
+INFO  [AbstractTestCase] ---- ---- 
+INFO  [AbstractTestCase] Radius [8][2^(-8) = 0.00390625] 
+INFO  [AbstractTestCase] Class [CQZoneMatcherImpl] Indexing [SEPARATE_QUANTIZED] Zone height [0.001953125] count [2049]  avg size [2049] min [2049] max [2049] 
+INFO  [AbstractTestCase] Searched [4,198,401] radius [0.00390625] found [23] in [10,000] loops, total [7s][7,025ms], average [0.703ms][702.550us] PASS 
+INFO  [AbstractTestCase] ---- ---- 
+INFO  [AbstractTestCase] Radius [9][2^(-9) = 0.001953125] 
+INFO  [AbstractTestCase] Class [CQZoneMatcherImpl] Indexing [SEPARATE_QUANTIZED] Zone height [0.001953125] count [2049]  avg size [2049] min [2049] max [2049] 
+INFO  [AbstractTestCase] Searched [4,198,401] radius [0.001953125] found [4] in [10,000] loops, total [5s][5,344ms], average [0.534ms][534.499us] PASS 
+INFO  [AbstractTestCase] ---- ---- 
+INFO  [AbstractTestCase] Radius [10][2^(-10) = 9.765625E-4] 
+INFO  [AbstractTestCase] Class [CQZoneMatcherImpl] Indexing [SEPARATE_QUANTIZED] Zone height [0.001953125] count [2049]  avg size [2049] min [2049] max [2049] 
+INFO  [AbstractTestCase] Searched [4,198,401] radius [9.765625E-4] found [1] in [10,000] loops, total [2s][2,269ms], average [0.227ms][226.970us] PASS 
+INFO  [AbstractTestCase] <<<< 
+INFO  [AbstractTestCase] Insert [11][4,097][16,785,409] 
+INFO  [AbstractTestCase] Total  [11][(2^(11+1))+1 = 4097] => [4097^2 = 16785409] 
+INFO  [AbstractTestCase] Range  [2.0][2.0/16785409 = 0.00000012]  
+INFO  [AbstractTestCase] Zone   [9][2^(-9) = 0.001953125] 
+INFO  [AbstractTestCase] Memory [12.4GiB][7.3GiB][21.9GiB] 
+INFO  [AbstractTestCase] >>>> 
+INFO  [AbstractTestCase] ---- ---- 
+INFO  [AbstractTestCase] Radius [6][2^(-6) = 0.015625] 
+INFO  [AbstractTestCase] Class [CQZoneMatcherImpl] Indexing [SEPARATE_QUANTIZED] Zone height [0.001953125] count [2049]  avg size [8192] min [4097] max [8194] 
+INFO  [AbstractTestCase] Searched [16,785,409] radius [0.015625] found [1,594] in [10,000] loops, total [341s][341,607ms], average [34.161ms][34,160.792us] FAIL 
+INFO  [AbstractTestCase] ---- ---- 
+INFO  [AbstractTestCase] Radius [7][2^(-7) = 0.0078125] 
+INFO  [AbstractTestCase] Class [CQZoneMatcherImpl] Indexing [SEPARATE_QUANTIZED] Zone height [0.001953125] count [2049]  avg size [8192] min [4097] max [8194] 
+INFO  [AbstractTestCase] Searched [16,785,409] radius [0.0078125] found [390] in [10,000] loops, total [92s][92,743ms], average [9.274ms][9,274.354us] FAIL 
+INFO  [AbstractTestCase] ---- ---- 
+INFO  [AbstractTestCase] Radius [8][2^(-8) = 0.00390625] 
+INFO  [AbstractTestCase] Class [CQZoneMatcherImpl] Indexing [SEPARATE_QUANTIZED] Zone height [0.001953125] count [2049]  avg size [8192] min [4097] max [8194] 
+INFO  [AbstractTestCase] Searched [16,785,409] radius [0.00390625] found [95] in [10,000] loops, total [29s][29,697ms], average [2.970ms][2,969.777us] FAIL 
+INFO  [AbstractTestCase] ---- ---- 
+INFO  [AbstractTestCase] Radius [9][2^(-9) = 0.001953125] 
+INFO  [AbstractTestCase] Class [CQZoneMatcherImpl] Indexing [SEPARATE_QUANTIZED] Zone height [0.001953125] count [2049]  avg size [8192] min [4097] max [8194] 
+INFO  [AbstractTestCase] Searched [16,785,409] radius [0.001953125] found [22] in [10,000] loops, total [16s][16,656ms], average [1.666ms][1,665.634us] FAIL 
+INFO  [AbstractTestCase] ---- ---- 
+INFO  [AbstractTestCase] Radius [10][2^(-10) = 9.765625E-4] 
+INFO  [AbstractTestCase] Class [CQZoneMatcherImpl] Indexing [SEPARATE_QUANTIZED] Zone height [0.001953125] count [2049]  avg size [8192] min [4097] max [8194] 
+INFO  [AbstractTestCase] Searched [16,785,409] radius [9.765625E-4] found [4] in [10,000] loops, total [10s][10,111ms], average [1.011ms][1,011.186us] FAIL 
+INFO  [AbstractTestCase] <<<< 
+INFO  [AbstractTestCase] ---- ---- 
+INFO  [AbstractTestCase] Insert [0][3][9] 
+INFO  [AbstractTestCase] Insert [1][5][25] 
+INFO  [AbstractTestCase] Insert [2][9][81] 
+INFO  [AbstractTestCase] Insert [3][17][289] 
+INFO  [AbstractTestCase] Insert [4][33][1,089] 
+INFO  [AbstractTestCase] Insert [5][65][4,225] 
+INFO  [AbstractTestCase] Insert [6][129][16,641] 
+INFO  [AbstractTestCase] Insert [7][257][66,049] 
+INFO  [AbstractTestCase] Insert [8][513][263,169] 
+INFO  [AbstractTestCase] Insert [9][1,025][1,050,625] 
+INFO  [AbstractTestCase] Total  [9][(2^(9+1))+1 = 1025] => [1025^2 = 1050625] 
+INFO  [AbstractTestCase] Range  [2.0][2.0/1050625 = 0.00000190]  
+INFO  [AbstractTestCase] Zone   [10][2^(-10) = 9.765625E-4] 
+INFO  [AbstractTestCase] Memory [12.4GiB][2.5GiB][21.9GiB] 
+INFO  [AbstractTestCase] >>>> 
+INFO  [AbstractTestCase] ---- ---- 
+INFO  [AbstractTestCase] Radius [6][2^(-6) = 0.015625] 
+INFO  [AbstractTestCase] Class [CQZoneMatcherImpl] Indexing [SEPARATE_QUANTIZED] Zone height [9.765625E-4] count [1025]  avg size [1025] min [1025] max [1025] 
+INFO  [AbstractTestCase] Searched [1,050,625] radius [0.015625] found [94] in [10,000] loops, total [7s][7,566ms], average [0.757ms][756.605us] PASS 
+INFO  [AbstractTestCase] ---- ---- 
+INFO  [AbstractTestCase] Radius [7][2^(-7) = 0.0078125] 
+INFO  [AbstractTestCase] Class [CQZoneMatcherImpl] Indexing [SEPARATE_QUANTIZED] Zone height [9.765625E-4] count [1025]  avg size [1025] min [1025] max [1025] 
+INFO  [AbstractTestCase] Searched [1,050,625] radius [0.0078125] found [22] in [10,000] loops, total [3s][3,451ms], average [0.345ms][345.192us] PASS 
+INFO  [AbstractTestCase] ---- ---- 
+INFO  [AbstractTestCase] Radius [8][2^(-8) = 0.00390625] 
+INFO  [AbstractTestCase] Class [CQZoneMatcherImpl] Indexing [SEPARATE_QUANTIZED] Zone height [9.765625E-4] count [1025]  avg size [1025] min [1025] max [1025] 
+INFO  [AbstractTestCase] Searched [1,050,625] radius [0.00390625] found [5] in [10,000] loops, total [2s][2,293ms], average [0.229ms][229.385us] PASS 
+INFO  [AbstractTestCase] ---- ---- 
+INFO  [AbstractTestCase] Radius [9][2^(-9) = 0.001953125] 
+INFO  [AbstractTestCase] Class [CQZoneMatcherImpl] Indexing [SEPARATE_QUANTIZED] Zone height [9.765625E-4] count [1025]  avg size [1025] min [1025] max [1025] 
+INFO  [AbstractTestCase] Searched [1,050,625] radius [0.001953125] found [1] in [10,000] loops, total [1s][1,120ms], average [0.112ms][112.080us] PASS 
+INFO  [AbstractTestCase] ---- ---- 
+INFO  [AbstractTestCase] Radius [10][2^(-10) = 9.765625E-4] 
+INFO  [AbstractTestCase] Class [CQZoneMatcherImpl] Indexing [SEPARATE_QUANTIZED] Zone height [9.765625E-4] count [1025]  avg size [1025] min [1025] max [1025] 
+INFO  [AbstractTestCase] Searched [1,050,625] radius [9.765625E-4] found [1] in [10,000] loops, total [1s][1,449ms], average [0.145ms][144.958us] PASS 
+INFO  [AbstractTestCase] <<<< 
+INFO  [AbstractTestCase] Insert [10][2,049][4,198,401] 
+INFO  [AbstractTestCase] Total  [10][(2^(10+1))+1 = 2049] => [2049^2 = 4198401] 
+INFO  [AbstractTestCase] Range  [2.0][2.0/4198401 = 0.00000048]  
+INFO  [AbstractTestCase] Zone   [10][2^(-10) = 9.765625E-4] 
+INFO  [AbstractTestCase] Memory [12.3GiB][4.9GiB][21.9GiB] 
+INFO  [AbstractTestCase] >>>> 
+INFO  [AbstractTestCase] ---- ---- 
+INFO  [AbstractTestCase] Radius [6][2^(-6) = 0.015625] 
+INFO  [AbstractTestCase] Class [CQZoneMatcherImpl] Indexing [SEPARATE_QUANTIZED] Zone height [9.765625E-4] count [2049]  avg size [2049] min [2049] max [2049] 
+INFO  [AbstractTestCase] Searched [4,198,401] radius [0.015625] found [390] in [10,000] loops, total [23s][23,481ms], average [2.348ms][2,348.178us] FAIL 
+INFO  [AbstractTestCase] ---- ---- 
+INFO  [AbstractTestCase] Radius [7][2^(-7) = 0.0078125] 
+INFO  [AbstractTestCase] Class [CQZoneMatcherImpl] Indexing [SEPARATE_QUANTIZED] Zone height [9.765625E-4] count [2049]  avg size [2049] min [2049] max [2049] 
+INFO  [AbstractTestCase] Searched [4,198,401] radius [0.0078125] found [94] in [10,000] loops, total [12s][12,303ms], average [1.230ms][1,230.314us] FAIL 
+INFO  [AbstractTestCase] ---- ---- 
+INFO  [AbstractTestCase] Radius [8][2^(-8) = 0.00390625] 
+INFO  [AbstractTestCase] Class [CQZoneMatcherImpl] Indexing [SEPARATE_QUANTIZED] Zone height [9.765625E-4] count [2049]  avg size [2049] min [2049] max [2049] 
+INFO  [AbstractTestCase] Searched [4,198,401] radius [0.00390625] found [23] in [10,000] loops, total [7s][7,812ms], average [0.781ms][781.242us] PASS 
+INFO  [AbstractTestCase] ---- ---- 
+INFO  [AbstractTestCase] Radius [9][2^(-9) = 0.001953125] 
+INFO  [AbstractTestCase] Class [CQZoneMatcherImpl] Indexing [SEPARATE_QUANTIZED] Zone height [9.765625E-4] count [2049]  avg size [2049] min [2049] max [2049] 
+INFO  [AbstractTestCase] Searched [4,198,401] radius [0.001953125] found [4] in [10,000] loops, total [4s][4,624ms], average [0.462ms][462.479us] PASS 
+INFO  [AbstractTestCase] ---- ---- 
+INFO  [AbstractTestCase] Radius [10][2^(-10) = 9.765625E-4] 
+INFO  [AbstractTestCase] Class [CQZoneMatcherImpl] Indexing [SEPARATE_QUANTIZED] Zone height [9.765625E-4] count [2049]  avg size [2049] min [2049] max [2049] 
+INFO  [AbstractTestCase] Searched [4,198,401] radius [9.765625E-4] found [1] in [10,000] loops, total [3s][3,299ms], average [0.330ms][329.937us] PASS 
+INFO  [AbstractTestCase] <<<< 
+INFO  [AbstractTestCase] Insert [11][4,097][16,785,409] 
+INFO  [AbstractTestCase] Total  [11][(2^(11+1))+1 = 4097] => [4097^2 = 16785409] 
+INFO  [AbstractTestCase] Range  [2.0][2.0/16785409 = 0.00000012]  
+INFO  [AbstractTestCase] Zone   [10][2^(-10) = 9.765625E-4] 
+INFO  [AbstractTestCase] Memory [14.2GiB][8.2GiB][21.9GiB] 
+INFO  [AbstractTestCase] >>>> 
+INFO  [AbstractTestCase] ---- ---- 
+INFO  [AbstractTestCase] Radius [6][2^(-6) = 0.015625] 
+INFO  [AbstractTestCase] Class [CQZoneMatcherImpl] Indexing [SEPARATE_QUANTIZED] Zone height [9.765625E-4] count [4097]  avg size [4097] min [4097] max [4097] 
+INFO  [AbstractTestCase] Searched [16,785,409] radius [0.015625] found [1,594] in [10,000] loops, total [351s][351,848ms], average [35.185ms][35,184.831us] FAIL 
+INFO  [AbstractTestCase] ---- ---- 
+INFO  [AbstractTestCase] Radius [7][2^(-7) = 0.0078125] 
+INFO  [AbstractTestCase] Class [CQZoneMatcherImpl] Indexing [SEPARATE_QUANTIZED] Zone height [9.765625E-4] count [4097]  avg size [4097] min [4097] max [4097] 
+INFO  [AbstractTestCase] Searched [16,785,409] radius [0.0078125] found [390] in [10,000] loops, total [105s][105,574ms], average [10.557ms][10,557.470us] FAIL 
+INFO  [AbstractTestCase] ---- ---- 
+INFO  [AbstractTestCase] Radius [8][2^(-8) = 0.00390625] 
+INFO  [AbstractTestCase] Class [CQZoneMatcherImpl] Indexing [SEPARATE_QUANTIZED] Zone height [9.765625E-4] count [4097]  avg size [4097] min [4097] max [4097] 
+INFO  [AbstractTestCase] Searched [16,785,409] radius [0.00390625] found [95] in [10,000] loops, total [30s][30,595ms], average [3.060ms][3,059.513us] FAIL 
+INFO  [AbstractTestCase] ---- ---- 
+INFO  [AbstractTestCase] Radius [9][2^(-9) = 0.001953125] 
+INFO  [AbstractTestCase] Class [CQZoneMatcherImpl] Indexing [SEPARATE_QUANTIZED] Zone height [9.765625E-4] count [4097]  avg size [4097] min [4097] max [4097] 
+INFO  [AbstractTestCase] Searched [16,785,409] radius [0.001953125] found [22] in [10,000] loops, total [17s][17,601ms], average [1.760ms][1,760.185us] FAIL 
+INFO  [AbstractTestCase] ---- ---- 
+INFO  [AbstractTestCase] Radius [10][2^(-10) = 9.765625E-4] 
+INFO  [AbstractTestCase] Class [CQZoneMatcherImpl] Indexing [SEPARATE_QUANTIZED] Zone height [9.765625E-4] count [4097]  avg size [4097] min [4097] max [4097] 
+INFO  [AbstractTestCase] Searched [16,785,409] radius [9.765625E-4] found [4] in [10,000] loops, total [11s][11,694ms], average [1.169ms][1,169.454us] FAIL 
+INFO  [AbstractTestCase] <<<< 
+INFO  [AbstractTestCase] ---- ---- 
+INFO  [AbstractTestCase] Insert [0][3][9] 
+INFO  [AbstractTestCase] Insert [1][5][25] 
+INFO  [AbstractTestCase] Insert [2][9][81] 
+INFO  [AbstractTestCase] Insert [3][17][289] 
+INFO  [AbstractTestCase] Insert [4][33][1,089] 
+INFO  [AbstractTestCase] Insert [5][65][4,225] 
+INFO  [AbstractTestCase] Insert [6][129][16,641] 
+INFO  [AbstractTestCase] Insert [7][257][66,049] 
+INFO  [AbstractTestCase] Insert [8][513][263,169] 
+INFO  [AbstractTestCase] Insert [9][1,025][1,050,625] 
+INFO  [AbstractTestCase] Total  [9][(2^(9+1))+1 = 1025] => [1025^2 = 1050625] 
+INFO  [AbstractTestCase] Range  [1.0][1.0/1050625 = 0.00000095]  
+INFO  [AbstractTestCase] Zone   [6][2^(-6) = 0.015625] 
+INFO  [AbstractTestCase] Memory [14.8GiB][6.9GiB][21.9GiB] 
+INFO  [AbstractTestCase] >>>> 
+INFO  [AbstractTestCase] ---- ---- 
+INFO  [AbstractTestCase] Radius [6][2^(-6) = 0.015625] 
+INFO  [AbstractTestCase] Class [CQZoneMatcherImpl] Indexing [SEPARATE_QUANTIZED] Zone height [0.015625] count [129]  avg size [8144] min [1025] max [8200] 
+INFO  [AbstractTestCase] Searched [1,050,625] radius [0.015625] found [390] in [10,000] loops, total [13s][13,868ms], average [1.387ms][1,386.854us] FAIL 
+INFO  [AbstractTestCase] ---- ---- 
+INFO  [AbstractTestCase] Radius [7][2^(-7) = 0.0078125] 
+INFO  [AbstractTestCase] Class [CQZoneMatcherImpl] Indexing [SEPARATE_QUANTIZED] Zone height [0.015625] count [129]  avg size [8144] min [1025] max [8200] 
+INFO  [AbstractTestCase] Searched [1,050,625] radius [0.0078125] found [94] in [10,000] loops, total [6s][6,100ms], average [0.610ms][610.066us] PASS 
+INFO  [AbstractTestCase] ---- ---- 
+INFO  [AbstractTestCase] Radius [8][2^(-8) = 0.00390625] 
+INFO  [AbstractTestCase] Class [CQZoneMatcherImpl] Indexing [SEPARATE_QUANTIZED] Zone height [0.015625] count [129]  avg size [8144] min [1025] max [8200] 
+INFO  [AbstractTestCase] Searched [1,050,625] radius [0.00390625] found [23] in [10,000] loops, total [3s][3,146ms], average [0.315ms][314.672us] PASS 
+INFO  [AbstractTestCase] ---- ---- 
+INFO  [AbstractTestCase] Radius [9][2^(-9) = 0.001953125] 
+INFO  [AbstractTestCase] Class [CQZoneMatcherImpl] Indexing [SEPARATE_QUANTIZED] Zone height [0.015625] count [129]  avg size [8144] min [1025] max [8200] 
+INFO  [AbstractTestCase] Searched [1,050,625] radius [0.001953125] found [4] in [10,000] loops, total [1s][1,906ms], average [0.191ms][190.605us] PASS 
+INFO  [AbstractTestCase] ---- ---- 
+INFO  [AbstractTestCase] Radius [10][2^(-10) = 9.765625E-4] 
+INFO  [AbstractTestCase] Class [CQZoneMatcherImpl] Indexing [SEPARATE_QUANTIZED] Zone height [0.015625] count [129]  avg size [8144] min [1025] max [8200] 
+INFO  [AbstractTestCase] Searched [1,050,625] radius [9.765625E-4] found [1] in [10,000] loops, total [0s][674ms], average [0.067ms][67.405us] PASS 
+INFO  [AbstractTestCase] <<<< 
+INFO  [AbstractTestCase] Insert [10][2,049][4,198,401] 
+INFO  [AbstractTestCase] Total  [10][(2^(10+1))+1 = 2049] => [2049^2 = 4198401] 
+INFO  [AbstractTestCase] Range  [1.0][1.0/4198401 = 0.00000024]  
+INFO  [AbstractTestCase] Zone   [6][2^(-6) = 0.015625] 
+INFO  [AbstractTestCase] Memory [14.8GiB][8.1GiB][21.9GiB] 
+INFO  [AbstractTestCase] >>>> 
+INFO  [AbstractTestCase] ---- ---- 
+INFO  [AbstractTestCase] Radius [6][2^(-6) = 0.015625] 
+INFO  [AbstractTestCase] Class [CQZoneMatcherImpl] Indexing [SEPARATE_QUANTIZED] Zone height [0.015625] count [129]  avg size [32545] min [2049] max [32784] 
+INFO  [AbstractTestCase] Searched [4,198,401] radius [0.015625] found [1,594] in [10,000] loops, total [69s][69,609ms], average [6.961ms][6,960.944us] FAIL 
+INFO  [AbstractTestCase] ---- ---- 
+INFO  [AbstractTestCase] Radius [7][2^(-7) = 0.0078125] 
+INFO  [AbstractTestCase] Class [CQZoneMatcherImpl] Indexing [SEPARATE_QUANTIZED] Zone height [0.015625] count [129]  avg size [32545] min [2049] max [32784] 
+INFO  [AbstractTestCase] Searched [4,198,401] radius [0.0078125] found [390] in [10,000] loops, total [26s][26,337ms], average [2.634ms][2,633.736us] FAIL 
+INFO  [AbstractTestCase] ---- ---- 
+INFO  [AbstractTestCase] Radius [8][2^(-8) = 0.00390625] 
+INFO  [AbstractTestCase] Class [CQZoneMatcherImpl] Indexing [SEPARATE_QUANTIZED] Zone height [0.015625] count [129]  avg size [32545] min [2049] max [32784] 
+INFO  [AbstractTestCase] Searched [4,198,401] radius [0.00390625] found [95] in [10,000] loops, total [12s][12,857ms], average [1.286ms][1,285.757us] FAIL 
+INFO  [AbstractTestCase] ---- ---- 
+INFO  [AbstractTestCase] Radius [9][2^(-9) = 0.001953125] 
+INFO  [AbstractTestCase] Class [CQZoneMatcherImpl] Indexing [SEPARATE_QUANTIZED] Zone height [0.015625] count [129]  avg size [32545] min [2049] max [32784] 
+INFO  [AbstractTestCase] Searched [4,198,401] radius [0.001953125] found [22] in [10,000] loops, total [7s][7,166ms], average [0.717ms][716.622us] PASS 
+INFO  [AbstractTestCase] ---- ---- 
+INFO  [AbstractTestCase] Radius [10][2^(-10) = 9.765625E-4] 
+INFO  [AbstractTestCase] Class [CQZoneMatcherImpl] Indexing [SEPARATE_QUANTIZED] Zone height [0.015625] count [129]  avg size [32545] min [2049] max [32784] 
+INFO  [AbstractTestCase] Searched [4,198,401] radius [9.765625E-4] found [4] in [10,000] loops, total [4s][4,452ms], average [0.445ms][445.272us] PASS 
+INFO  [AbstractTestCase] <<<< 
+INFO  [AbstractTestCase] Insert [11][4,097][16,785,409] 
+INFO  [AbstractTestCase] Total  [11][(2^(11+1))+1 = 4097] => [4097^2 = 16785409] 
+INFO  [AbstractTestCase] Range  [1.0][1.0/16785409 = 0.00000006]  
+INFO  [AbstractTestCase] Zone   [6][2^(-6) = 0.015625] 
+INFO  [AbstractTestCase] Memory [13.1GiB][7.9GiB][21.9GiB] 
+INFO  [AbstractTestCase] >>>> 
+INFO  [AbstractTestCase] ---- ---- 
+INFO  [AbstractTestCase] Radius [6][2^(-6) = 0.015625] 
+INFO  [AbstractTestCase] Class [CQZoneMatcherImpl] Indexing [SEPARATE_QUANTIZED] Zone height [0.015625] count [129]  avg size [130119] min [4097] max [131104] 
+INFO  [AbstractTestCase] Searched [16,785,409] radius [0.015625] found [6,414] in [10,000] loops, total [702s][702,269ms], average [70.227ms][70,226.952us] FAIL 
+INFO  [AbstractTestCase] ---- ---- 
+INFO  [AbstractTestCase] Radius [7][2^(-7) = 0.0078125] 
+INFO  [AbstractTestCase] Class [CQZoneMatcherImpl] Indexing [SEPARATE_QUANTIZED] Zone height [0.015625] count [129]  avg size [130119] min [4097] max [131104] 
+INFO  [AbstractTestCase] Searched [16,785,409] radius [0.0078125] found [1,594] in [10,000] loops, total [333s][333,377ms], average [33.338ms][33,337.702us] FAIL 
+INFO  [AbstractTestCase] ---- ---- 
+INFO  [AbstractTestCase] Radius [8][2^(-8) = 0.00390625] 
+INFO  [AbstractTestCase] Class [CQZoneMatcherImpl] Indexing [SEPARATE_QUANTIZED] Zone height [0.015625] count [129]  avg size [130119] min [4097] max [131104] 
+INFO  [AbstractTestCase] Searched [16,785,409] radius [0.00390625] found [391] in [10,000] loops, total [75s][75,119ms], average [7.512ms][7,511.995us] FAIL 
+INFO  [AbstractTestCase] ---- ---- 
+INFO  [AbstractTestCase] Radius [9][2^(-9) = 0.001953125] 
+INFO  [AbstractTestCase] Class [CQZoneMatcherImpl] Indexing [SEPARATE_QUANTIZED] Zone height [0.015625] count [129]  avg size [130119] min [4097] max [131104] 
+INFO  [AbstractTestCase] Searched [16,785,409] radius [0.001953125] found [94] in [10,000] loops, total [28s][28,864ms], average [2.886ms][2,886.437us] FAIL 
+INFO  [AbstractTestCase] ---- ---- 
+INFO  [AbstractTestCase] Radius [10][2^(-10) = 9.765625E-4] 
+INFO  [AbstractTestCase] Class [CQZoneMatcherImpl] Indexing [SEPARATE_QUANTIZED] Zone height [0.015625] count [129]  avg size [130119] min [4097] max [131104] 
+INFO  [AbstractTestCase] Searched [16,785,409] radius [9.765625E-4] found [22] in [10,000] loops, total [16s][16,925ms], average [1.693ms][1,692.586us] FAIL 
+INFO  [AbstractTestCase] <<<< 
+INFO  [AbstractTestCase] ---- ---- 
+INFO  [AbstractTestCase] Insert [0][3][9] 
+INFO  [AbstractTestCase] Insert [1][5][25] 
+INFO  [AbstractTestCase] Insert [2][9][81] 
+INFO  [AbstractTestCase] Insert [3][17][289] 
+INFO  [AbstractTestCase] Insert [4][33][1,089] 
+INFO  [AbstractTestCase] Insert [5][65][4,225] 
+INFO  [AbstractTestCase] Insert [6][129][16,641] 
+INFO  [AbstractTestCase] Insert [7][257][66,049] 
+INFO  [AbstractTestCase] Insert [8][513][263,169] 
+INFO  [AbstractTestCase] Insert [9][1,025][1,050,625] 
+INFO  [AbstractTestCase] Total  [9][(2^(9+1))+1 = 1025] => [1025^2 = 1050625] 
+INFO  [AbstractTestCase] Range  [1.0][1.0/1050625 = 0.00000095]  
+INFO  [AbstractTestCase] Zone   [7][2^(-7) = 0.0078125] 
+INFO  [AbstractTestCase] Memory [14.0GiB][7.5GiB][21.9GiB] 
+INFO  [AbstractTestCase] >>>> 
+INFO  [AbstractTestCase] ---- ---- 
+INFO  [AbstractTestCase] Radius [6][2^(-6) = 0.015625] 
+INFO  [AbstractTestCase] Class [CQZoneMatcherImpl] Indexing [SEPARATE_QUANTIZED] Zone height [0.0078125] count [257]  avg size [4088] min [1025] max [4100] 
+INFO  [AbstractTestCase] Searched [1,050,625] radius [0.015625] found [390] in [10,000] loops, total [13s][13,518ms], average [1.352ms][1,351.836us] FAIL 
+INFO  [AbstractTestCase] ---- ---- 
+INFO  [AbstractTestCase] Radius [7][2^(-7) = 0.0078125] 
+INFO  [AbstractTestCase] Class [CQZoneMatcherImpl] Indexing [SEPARATE_QUANTIZED] Zone height [0.0078125] count [257]  avg size [4088] min [1025] max [4100] 
+INFO  [AbstractTestCase] Searched [1,050,625] radius [0.0078125] found [94] in [10,000] loops, total [5s][5,660ms], average [0.566ms][566.027us] PASS 
+INFO  [AbstractTestCase] ---- ---- 
+INFO  [AbstractTestCase] Radius [8][2^(-8) = 0.00390625] 
+INFO  [AbstractTestCase] Class [CQZoneMatcherImpl] Indexing [SEPARATE_QUANTIZED] Zone height [0.0078125] count [257]  avg size [4088] min [1025] max [4100] 
+INFO  [AbstractTestCase] Searched [1,050,625] radius [0.00390625] found [23] in [10,000] loops, total [3s][3,044ms], average [0.304ms][304.495us] PASS 
+INFO  [AbstractTestCase] ---- ---- 
+INFO  [AbstractTestCase] Radius [9][2^(-9) = 0.001953125] 
+INFO  [AbstractTestCase] Class [CQZoneMatcherImpl] Indexing [SEPARATE_QUANTIZED] Zone height [0.0078125] count [257]  avg size [4088] min [1025] max [4100] 
+INFO  [AbstractTestCase] Searched [1,050,625] radius [0.001953125] found [4] in [10,000] loops, total [1s][1,847ms], average [0.185ms][184.762us] PASS 
+INFO  [AbstractTestCase] ---- ---- 
+INFO  [AbstractTestCase] Radius [10][2^(-10) = 9.765625E-4] 
+INFO  [AbstractTestCase] Class [CQZoneMatcherImpl] Indexing [SEPARATE_QUANTIZED] Zone height [0.0078125] count [257]  avg size [4088] min [1025] max [4100] 
+INFO  [AbstractTestCase] Searched [1,050,625] radius [9.765625E-4] found [1] in [10,000] loops, total [0s][643ms], average [0.064ms][64.398us] PASS 
+INFO  [AbstractTestCase] <<<< 
+INFO  [AbstractTestCase] Insert [10][2,049][4,198,401] 
+INFO  [AbstractTestCase] Total  [10][(2^(10+1))+1 = 2049] => [2049^2 = 4198401] 
+INFO  [AbstractTestCase] Range  [1.0][1.0/4198401 = 0.00000024]  
+INFO  [AbstractTestCase] Zone   [7][2^(-7) = 0.0078125] 
+INFO  [AbstractTestCase] Memory [14.8GiB][6.4GiB][21.9GiB] 
+INFO  [AbstractTestCase] >>>> 
+INFO  [AbstractTestCase] ---- ---- 
+INFO  [AbstractTestCase] Radius [6][2^(-6) = 0.015625] 
+INFO  [AbstractTestCase] Class [CQZoneMatcherImpl] Indexing [SEPARATE_QUANTIZED] Zone height [0.0078125] count [257]  avg size [16336] min [2049] max [16392] 
+INFO  [AbstractTestCase] Searched [4,198,401] radius [0.015625] found [1,594] in [10,000] loops, total [75s][75,679ms], average [7.568ms][7,567.905us] FAIL 
+INFO  [AbstractTestCase] ---- ---- 
+INFO  [AbstractTestCase] Radius [7][2^(-7) = 0.0078125] 
+INFO  [AbstractTestCase] Class [CQZoneMatcherImpl] Indexing [SEPARATE_QUANTIZED] Zone height [0.0078125] count [257]  avg size [16336] min [2049] max [16392] 
+INFO  [AbstractTestCase] Searched [4,198,401] radius [0.0078125] found [390] in [10,000] loops, total [26s][26,557ms], average [2.656ms][2,655.771us] FAIL 
+INFO  [AbstractTestCase] ---- ---- 
+INFO  [AbstractTestCase] Radius [8][2^(-8) = 0.00390625] 
+INFO  [AbstractTestCase] Class [CQZoneMatcherImpl] Indexing [SEPARATE_QUANTIZED] Zone height [0.0078125] count [257]  avg size [16336] min [2049] max [16392] 
+INFO  [AbstractTestCase] Searched [4,198,401] radius [0.00390625] found [95] in [10,000] loops, total [13s][13,367ms], average [1.337ms][1,336.739us] FAIL 
+INFO  [AbstractTestCase] ---- ---- 
+INFO  [AbstractTestCase] Radius [9][2^(-9) = 0.001953125] 
+INFO  [AbstractTestCase] Class [CQZoneMatcherImpl] Indexing [SEPARATE_QUANTIZED] Zone height [0.0078125] count [257]  avg size [16336] min [2049] max [16392] 
+INFO  [AbstractTestCase] Searched [4,198,401] radius [0.001953125] found [22] in [10,000] loops, total [7s][7,413ms], average [0.741ms][741.345us] PASS 
+INFO  [AbstractTestCase] ---- ---- 
+INFO  [AbstractTestCase] Radius [10][2^(-10) = 9.765625E-4] 
+INFO  [AbstractTestCase] Class [CQZoneMatcherImpl] Indexing [SEPARATE_QUANTIZED] Zone height [0.0078125] count [257]  avg size [16336] min [2049] max [16392] 
+INFO  [AbstractTestCase] Searched [4,198,401] radius [9.765625E-4] found [4] in [10,000] loops, total [4s][4,603ms], average [0.460ms][460.352us] PASS 
+INFO  [AbstractTestCase] <<<< 
+INFO  [AbstractTestCase] Insert [11][4,097][16,785,409] 
+INFO  [AbstractTestCase] Total  [11][(2^(11+1))+1 = 4097] => [4097^2 = 16785409] 
+INFO  [AbstractTestCase] Range  [1.0][1.0/16785409 = 0.00000006]  
+INFO  [AbstractTestCase] Zone   [7][2^(-7) = 0.0078125] 
+INFO  [AbstractTestCase] Memory [13.6GiB][4.7GiB][21.9GiB] 
+INFO  [AbstractTestCase] >>>> 
+INFO  [AbstractTestCase] ---- ---- 
+INFO  [AbstractTestCase] Radius [6][2^(-6) = 0.015625] 
+INFO  [AbstractTestCase] Class [CQZoneMatcherImpl] Indexing [SEPARATE_QUANTIZED] Zone height [0.0078125] count [257]  avg size [65312] min [4097] max [65552] 
+INFO  [AbstractTestCase] Searched [16,785,409] radius [0.015625] found [6,414] in [10,000] loops, total [688s][688,717ms], average [68.872ms][68,871.796us] FAIL 
+INFO  [AbstractTestCase] ---- ---- 
+INFO  [AbstractTestCase] Radius [7][2^(-7) = 0.0078125] 
+INFO  [AbstractTestCase] Class [CQZoneMatcherImpl] Indexing [SEPARATE_QUANTIZED] Zone height [0.0078125] count [257]  avg size [65312] min [4097] max [65552] 
+INFO  [AbstractTestCase] Searched [16,785,409] radius [0.0078125] found [1,594] in [10,000] loops, total [330s][330,146ms], average [33.015ms][33,014.687us] FAIL 
+INFO  [AbstractTestCase] ---- ---- 
+INFO  [AbstractTestCase] Radius [8][2^(-8) = 0.00390625] 
+INFO  [AbstractTestCase] Class [CQZoneMatcherImpl] Indexing [SEPARATE_QUANTIZED] Zone height [0.0078125] count [257]  avg size [65312] min [4097] max [65552] 
+INFO  [AbstractTestCase] Searched [16,785,409] radius [0.00390625] found [391] in [10,000] loops, total [70s][70,718ms], average [7.072ms][7,071.829us] FAIL 
+INFO  [AbstractTestCase] ---- ---- 
+INFO  [AbstractTestCase] Radius [9][2^(-9) = 0.001953125] 
+INFO  [AbstractTestCase] Class [CQZoneMatcherImpl] Indexing [SEPARATE_QUANTIZED] Zone height [0.0078125] count [257]  avg size [65312] min [4097] max [65552] 
+INFO  [AbstractTestCase] Searched [16,785,409] radius [0.001953125] found [94] in [10,000] loops, total [27s][27,961ms], average [2.796ms][2,796.176us] FAIL 
+INFO  [AbstractTestCase] ---- ---- 
+INFO  [AbstractTestCase] Radius [10][2^(-10) = 9.765625E-4] 
+INFO  [AbstractTestCase] Class [CQZoneMatcherImpl] Indexing [SEPARATE_QUANTIZED] Zone height [0.0078125] count [257]  avg size [65312] min [4097] max [65552] 
+INFO  [AbstractTestCase] Searched [16,785,409] radius [9.765625E-4] found [22] in [10,000] loops, total [15s][15,576ms], average [1.558ms][1,557.667us] FAIL 
+INFO  [AbstractTestCase] <<<< 
+INFO  [AbstractTestCase] ---- ---- 
+INFO  [AbstractTestCase] Insert [0][3][9] 
+INFO  [AbstractTestCase] Insert [1][5][25] 
+INFO  [AbstractTestCase] Insert [2][9][81] 
+INFO  [AbstractTestCase] Insert [3][17][289] 
+INFO  [AbstractTestCase] Insert [4][33][1,089] 
+INFO  [AbstractTestCase] Insert [5][65][4,225] 
+INFO  [AbstractTestCase] Insert [6][129][16,641] 
+INFO  [AbstractTestCase] Insert [7][257][66,049] 
+INFO  [AbstractTestCase] Insert [8][513][263,169] 
+INFO  [AbstractTestCase] Insert [9][1,025][1,050,625] 
+INFO  [AbstractTestCase] Total  [9][(2^(9+1))+1 = 1025] => [1025^2 = 1050625] 
+INFO  [AbstractTestCase] Range  [1.0][1.0/1050625 = 0.00000095]  
+INFO  [AbstractTestCase] Zone   [8][2^(-8) = 0.00390625] 
+INFO  [AbstractTestCase] Memory [14.9GiB][7.8GiB][21.9GiB] 
+INFO  [AbstractTestCase] >>>> 
+INFO  [AbstractTestCase] ---- ---- 
+INFO  [AbstractTestCase] Radius [6][2^(-6) = 0.015625] 
+INFO  [AbstractTestCase] Class [CQZoneMatcherImpl] Indexing [SEPARATE_QUANTIZED] Zone height [0.00390625] count [513]  avg size [2048] min [1025] max [2050] 
+INFO  [AbstractTestCase] Searched [1,050,625] radius [0.015625] found [390] in [10,000] loops, total [13s][13,947ms], average [1.395ms][1,394.723us] FAIL 
+INFO  [AbstractTestCase] ---- ---- 
+INFO  [AbstractTestCase] Radius [7][2^(-7) = 0.0078125] 
+INFO  [AbstractTestCase] Class [CQZoneMatcherImpl] Indexing [SEPARATE_QUANTIZED] Zone height [0.00390625] count [513]  avg size [2048] min [1025] max [2050] 
+INFO  [AbstractTestCase] Searched [1,050,625] radius [0.0078125] found [94] in [10,000] loops, total [5s][5,936ms], average [0.594ms][593.615us] PASS 
+INFO  [AbstractTestCase] ---- ---- 
+INFO  [AbstractTestCase] Radius [8][2^(-8) = 0.00390625] 
+INFO  [AbstractTestCase] Class [CQZoneMatcherImpl] Indexing [SEPARATE_QUANTIZED] Zone height [0.00390625] count [513]  avg size [2048] min [1025] max [2050] 
+INFO  [AbstractTestCase] Searched [1,050,625] radius [0.00390625] found [23] in [10,000] loops, total [3s][3,403ms], average [0.340ms][340.358us] PASS 
+INFO  [AbstractTestCase] ---- ---- 
+INFO  [AbstractTestCase] Radius [9][2^(-9) = 0.001953125] 
+INFO  [AbstractTestCase] Class [CQZoneMatcherImpl] Indexing [SEPARATE_QUANTIZED] Zone height [0.00390625] count [513]  avg size [2048] min [1025] max [2050] 
+INFO  [AbstractTestCase] Searched [1,050,625] radius [0.001953125] found [4] in [10,000] loops, total [2s][2,081ms], average [0.208ms][208.193us] PASS 
+INFO  [AbstractTestCase] ---- ---- 
+INFO  [AbstractTestCase] Radius [10][2^(-10) = 9.765625E-4] 
+INFO  [AbstractTestCase] Class [CQZoneMatcherImpl] Indexing [SEPARATE_QUANTIZED] Zone height [0.00390625] count [513]  avg size [2048] min [1025] max [2050] 
+INFO  [AbstractTestCase] Searched [1,050,625] radius [9.765625E-4] found [1] in [10,000] loops, total [0s][870ms], average [0.087ms][87.002us] PASS 
+INFO  [AbstractTestCase] <<<< 
+INFO  [AbstractTestCase] Insert [10][2,049][4,198,401] 
+INFO  [AbstractTestCase] Total  [10][(2^(10+1))+1 = 2049] => [2049^2 = 4198401] 
+INFO  [AbstractTestCase] Range  [1.0][1.0/4198401 = 0.00000024]  
+INFO  [AbstractTestCase] Zone   [8][2^(-8) = 0.00390625] 
+INFO  [AbstractTestCase] Memory [14.7GiB][3.0GiB][21.9GiB] 
+INFO  [AbstractTestCase] >>>> 
+INFO  [AbstractTestCase] ---- ---- 
+INFO  [AbstractTestCase] Radius [6][2^(-6) = 0.015625] 
+INFO  [AbstractTestCase] Class [CQZoneMatcherImpl] Indexing [SEPARATE_QUANTIZED] Zone height [0.00390625] count [513]  avg size [8184] min [2049] max [8196] 
+INFO  [AbstractTestCase] Searched [4,198,401] radius [0.015625] found [1,594] in [10,000] loops, total [72s][72,314ms], average [7.231ms][7,231.442us] FAIL 
+INFO  [AbstractTestCase] ---- ---- 
+INFO  [AbstractTestCase] Radius [7][2^(-7) = 0.0078125] 
+INFO  [AbstractTestCase] Class [CQZoneMatcherImpl] Indexing [SEPARATE_QUANTIZED] Zone height [0.00390625] count [513]  avg size [8184] min [2049] max [8196] 
+INFO  [AbstractTestCase] Searched [4,198,401] radius [0.0078125] found [390] in [10,000] loops, total [23s][23,963ms], average [2.396ms][2,396.385us] FAIL 
+INFO  [AbstractTestCase] ---- ---- 
+INFO  [AbstractTestCase] Radius [8][2^(-8) = 0.00390625] 
+INFO  [AbstractTestCase] Class [CQZoneMatcherImpl] Indexing [SEPARATE_QUANTIZED] Zone height [0.00390625] count [513]  avg size [8184] min [2049] max [8196] 
+INFO  [AbstractTestCase] Searched [4,198,401] radius [0.00390625] found [95] in [10,000] loops, total [12s][12,151ms], average [1.215ms][1,215.168us] FAIL 
+INFO  [AbstractTestCase] ---- ---- 
+INFO  [AbstractTestCase] Radius [9][2^(-9) = 0.001953125] 
+INFO  [AbstractTestCase] Class [CQZoneMatcherImpl] Indexing [SEPARATE_QUANTIZED] Zone height [0.00390625] count [513]  avg size [8184] min [2049] max [8196] 
+INFO  [AbstractTestCase] Searched [4,198,401] radius [0.001953125] found [22] in [10,000] loops, total [6s][6,878ms], average [0.688ms][687.891us] PASS 
+INFO  [AbstractTestCase] ---- ---- 
+INFO  [AbstractTestCase] Radius [10][2^(-10) = 9.765625E-4] 
+INFO  [AbstractTestCase] Class [CQZoneMatcherImpl] Indexing [SEPARATE_QUANTIZED] Zone height [0.00390625] count [513]  avg size [8184] min [2049] max [8196] 
+INFO  [AbstractTestCase] Searched [4,198,401] radius [9.765625E-4] found [4] in [10,000] loops, total [4s][4,302ms], average [0.430ms][430.203us] PASS 
+INFO  [AbstractTestCase] <<<< 
+INFO  [AbstractTestCase] Insert [11][4,097][16,785,409] 
+INFO  [AbstractTestCase] Total  [11][(2^(11+1))+1 = 4097] => [4097^2 = 16785409] 
+INFO  [AbstractTestCase] Range  [1.0][1.0/16785409 = 0.00000006]  
+INFO  [AbstractTestCase] Zone   [8][2^(-8) = 0.00390625] 
+INFO  [AbstractTestCase] Memory [13.7GiB][6.0GiB][21.9GiB] 
+INFO  [AbstractTestCase] >>>> 
+INFO  [AbstractTestCase] ---- ---- 
+INFO  [AbstractTestCase] Radius [6][2^(-6) = 0.015625] 
+INFO  [AbstractTestCase] Class [CQZoneMatcherImpl] Indexing [SEPARATE_QUANTIZED] Zone height [0.00390625] count [513]  avg size [32720] min [4097] max [32776] 
+INFO  [AbstractTestCase] Searched [16,785,409] radius [0.015625] found [6,414] in [10,000] loops, total [676s][676,573ms], average [67.657ms][67,657.365us] FAIL 
+INFO  [AbstractTestCase] ---- ---- 
+INFO  [AbstractTestCase] Radius [7][2^(-7) = 0.0078125] 
+INFO  [AbstractTestCase] Class [CQZoneMatcherImpl] Indexing [SEPARATE_QUANTIZED] Zone height [0.00390625] count [513]  avg size [32720] min [4097] max [32776] 
+INFO  [AbstractTestCase] Searched [16,785,409] radius [0.0078125] found [1,594] in [10,000] loops, total [319s][319,773ms], average [31.977ms][31,977.313us] FAIL 
+INFO  [AbstractTestCase] ---- ---- 
+INFO  [AbstractTestCase] Radius [8][2^(-8) = 0.00390625] 
+INFO  [AbstractTestCase] Class [CQZoneMatcherImpl] Indexing [SEPARATE_QUANTIZED] Zone height [0.00390625] count [513]  avg size [32720] min [4097] max [32776] 
+INFO  [AbstractTestCase] Searched [16,785,409] radius [0.00390625] found [391] in [10,000] loops, total [73s][73,805ms], average [7.381ms][7,380.597us] FAIL 
+INFO  [AbstractTestCase] ---- ---- 
+INFO  [AbstractTestCase] Radius [9][2^(-9) = 0.001953125] 
+INFO  [AbstractTestCase] Class [CQZoneMatcherImpl] Indexing [SEPARATE_QUANTIZED] Zone height [0.00390625] count [513]  avg size [32720] min [4097] max [32776] 
+INFO  [AbstractTestCase] Searched [16,785,409] radius [0.001953125] found [94] in [10,000] loops, total [27s][27,495ms], average [2.750ms][2,749.506us] FAIL 
+INFO  [AbstractTestCase] ---- ---- 
+INFO  [AbstractTestCase] Radius [10][2^(-10) = 9.765625E-4] 
+INFO  [AbstractTestCase] Class [CQZoneMatcherImpl] Indexing [SEPARATE_QUANTIZED] Zone height [0.00390625] count [513]  avg size [32720] min [4097] max [32776] 
+INFO  [AbstractTestCase] Searched [16,785,409] radius [9.765625E-4] found [22] in [10,000] loops, total [15s][15,514ms], average [1.551ms][1,551.419us] FAIL 
+INFO  [AbstractTestCase] <<<< 
+INFO  [AbstractTestCase] ---- ---- 
+INFO  [AbstractTestCase] Insert [0][3][9] 
+INFO  [AbstractTestCase] Insert [1][5][25] 
+INFO  [AbstractTestCase] Insert [2][9][81] 
+INFO  [AbstractTestCase] Insert [3][17][289] 
+INFO  [AbstractTestCase] Insert [4][33][1,089] 
+INFO  [AbstractTestCase] Insert [5][65][4,225] 
+INFO  [AbstractTestCase] Insert [6][129][16,641] 
+INFO  [AbstractTestCase] Insert [7][257][66,049] 
+INFO  [AbstractTestCase] Insert [8][513][263,169] 
+INFO  [AbstractTestCase] Insert [9][1,025][1,050,625] 
+INFO  [AbstractTestCase] Total  [9][(2^(9+1))+1 = 1025] => [1025^2 = 1050625] 
+INFO  [AbstractTestCase] Range  [1.0][1.0/1050625 = 0.00000095]  
+INFO  [AbstractTestCase] Zone   [9][2^(-9) = 0.001953125] 
+INFO  [AbstractTestCase] Memory [14.6GiB][6.2GiB][21.9GiB] 
+INFO  [AbstractTestCase] >>>> 
+INFO  [AbstractTestCase] ---- ---- 
+INFO  [AbstractTestCase] Radius [6][2^(-6) = 0.015625] 
+INFO  [AbstractTestCase] Class [CQZoneMatcherImpl] Indexing [SEPARATE_QUANTIZED] Zone height [0.001953125] count [1025]  avg size [1025] min [1025] max [1025] 
+INFO  [AbstractTestCase] Searched [1,050,625] radius [0.015625] found [390] in [10,000] loops, total [13s][13,589ms], average [1.359ms][1,358.922us] FAIL 
+INFO  [AbstractTestCase] ---- ---- 
+INFO  [AbstractTestCase] Radius [7][2^(-7) = 0.0078125] 
+INFO  [AbstractTestCase] Class [CQZoneMatcherImpl] Indexing [SEPARATE_QUANTIZED] Zone height [0.001953125] count [1025]  avg size [1025] min [1025] max [1025] 
+INFO  [AbstractTestCase] Searched [1,050,625] radius [0.0078125] found [94] in [10,000] loops, total [6s][6,374ms], average [0.637ms][637.479us] PASS 
+INFO  [AbstractTestCase] ---- ---- 
+INFO  [AbstractTestCase] Radius [8][2^(-8) = 0.00390625] 
+INFO  [AbstractTestCase] Class [CQZoneMatcherImpl] Indexing [SEPARATE_QUANTIZED] Zone height [0.001953125] count [1025]  avg size [1025] min [1025] max [1025] 
+INFO  [AbstractTestCase] Searched [1,050,625] radius [0.00390625] found [23] in [10,000] loops, total [3s][3,454ms], average [0.345ms][345.462us] PASS 
+INFO  [AbstractTestCase] ---- ---- 
+INFO  [AbstractTestCase] Radius [9][2^(-9) = 0.001953125] 
+INFO  [AbstractTestCase] Class [CQZoneMatcherImpl] Indexing [SEPARATE_QUANTIZED] Zone height [0.001953125] count [1025]  avg size [1025] min [1025] max [1025] 
+INFO  [AbstractTestCase] Searched [1,050,625] radius [0.001953125] found [4] in [10,000] loops, total [2s][2,236ms], average [0.224ms][223.680us] PASS 
+INFO  [AbstractTestCase] ---- ---- 
+INFO  [AbstractTestCase] Radius [10][2^(-10) = 9.765625E-4] 
+INFO  [AbstractTestCase] Class [CQZoneMatcherImpl] Indexing [SEPARATE_QUANTIZED] Zone height [0.001953125] count [1025]  avg size [1025] min [1025] max [1025] 
+INFO  [AbstractTestCase] Searched [1,050,625] radius [9.765625E-4] found [1] in [10,000] loops, total [1s][1,311ms], average [0.131ms][131.156us] PASS 
+INFO  [AbstractTestCase] <<<< 
+INFO  [AbstractTestCase] Insert [10][2,049][4,198,401] 
+INFO  [AbstractTestCase] Total  [10][(2^(10+1))+1 = 2049] => [2049^2 = 4198401] 
+INFO  [AbstractTestCase] Range  [1.0][1.0/4198401 = 0.00000024]  
+INFO  [AbstractTestCase] Zone   [9][2^(-9) = 0.001953125] 
+INFO  [AbstractTestCase] Memory [14.2GiB][3.0GiB][21.9GiB] 
+INFO  [AbstractTestCase] >>>> 
+INFO  [AbstractTestCase] ---- ---- 
+INFO  [AbstractTestCase] Radius [6][2^(-6) = 0.015625] 
+INFO  [AbstractTestCase] Class [CQZoneMatcherImpl] Indexing [SEPARATE_QUANTIZED] Zone height [0.001953125] count [1025]  avg size [4096] min [2049] max [4098] 
+INFO  [AbstractTestCase] Searched [4,198,401] radius [0.015625] found [1,594] in [10,000] loops, total [71s][71,733ms], average [7.173ms][7,173.330us] FAIL 
+INFO  [AbstractTestCase] ---- ---- 
+INFO  [AbstractTestCase] Radius [7][2^(-7) = 0.0078125] 
+INFO  [AbstractTestCase] Class [CQZoneMatcherImpl] Indexing [SEPARATE_QUANTIZED] Zone height [0.001953125] count [1025]  avg size [4096] min [2049] max [4098] 
+INFO  [AbstractTestCase] Searched [4,198,401] radius [0.0078125] found [390] in [10,000] loops, total [23s][23,479ms], average [2.348ms][2,347.945us] FAIL 
+INFO  [AbstractTestCase] ---- ---- 
+INFO  [AbstractTestCase] Radius [8][2^(-8) = 0.00390625] 
+INFO  [AbstractTestCase] Class [CQZoneMatcherImpl] Indexing [SEPARATE_QUANTIZED] Zone height [0.001953125] count [1025]  avg size [4096] min [2049] max [4098] 
+INFO  [AbstractTestCase] Searched [4,198,401] radius [0.00390625] found [95] in [10,000] loops, total [11s][11,991ms], average [1.199ms][1,199.171us] FAIL 
+INFO  [AbstractTestCase] ---- ---- 
+INFO  [AbstractTestCase] Radius [9][2^(-9) = 0.001953125] 
+INFO  [AbstractTestCase] Class [CQZoneMatcherImpl] Indexing [SEPARATE_QUANTIZED] Zone height [0.001953125] count [1025]  avg size [4096] min [2049] max [4098] 
+INFO  [AbstractTestCase] Searched [4,198,401] radius [0.001953125] found [22] in [10,000] loops, total [7s][7,420ms], average [0.742ms][742.086us] PASS 
+INFO  [AbstractTestCase] ---- ---- 
+INFO  [AbstractTestCase] Radius [10][2^(-10) = 9.765625E-4] 
+INFO  [AbstractTestCase] Class [CQZoneMatcherImpl] Indexing [SEPARATE_QUANTIZED] Zone height [0.001953125] count [1025]  avg size [4096] min [2049] max [4098] 
+INFO  [AbstractTestCase] Searched [4,198,401] radius [9.765625E-4] found [4] in [10,000] loops, total [4s][4,437ms], average [0.444ms][443.741us] PASS 
+INFO  [AbstractTestCase] <<<< 
+INFO  [AbstractTestCase] Insert [11][4,097][16,785,409] 
+INFO  [AbstractTestCase] Total  [11][(2^(11+1))+1 = 4097] => [4097^2 = 16785409] 
+INFO  [AbstractTestCase] Range  [1.0][1.0/16785409 = 0.00000006]  
+INFO  [AbstractTestCase] Zone   [9][2^(-9) = 0.001953125] 
+INFO  [AbstractTestCase] Memory [13.2GiB][3.9GiB][21.9GiB] 
+INFO  [AbstractTestCase] >>>> 
+INFO  [AbstractTestCase] ---- ---- 
+INFO  [AbstractTestCase] Radius [6][2^(-6) = 0.015625] 
+INFO  [AbstractTestCase] Class [CQZoneMatcherImpl] Indexing [SEPARATE_QUANTIZED] Zone height [0.001953125] count [1025]  avg size [16376] min [4097] max [16388] 
+INFO  [AbstractTestCase] Searched [16,785,409] radius [0.015625] found [6,414] in [10,000] loops, total [694s][694,637ms], average [69.464ms][69,463.772us] FAIL 
+INFO  [AbstractTestCase] ---- ---- 
+INFO  [AbstractTestCase] Radius [7][2^(-7) = 0.0078125] 
+INFO  [AbstractTestCase] Class [CQZoneMatcherImpl] Indexing [SEPARATE_QUANTIZED] Zone height [0.001953125] count [1025]  avg size [16376] min [4097] max [16388] 
+INFO  [AbstractTestCase] Searched [16,785,409] radius [0.0078125] found [1,594] in [10,000] loops, total [333s][333,964ms], average [33.396ms][33,396.454us] FAIL 
+INFO  [AbstractTestCase] ---- ---- 
+INFO  [AbstractTestCase] Radius [8][2^(-8) = 0.00390625] 
+INFO  [AbstractTestCase] Class [CQZoneMatcherImpl] Indexing [SEPARATE_QUANTIZED] Zone height [0.001953125] count [1025]  avg size [16376] min [4097] max [16388] 
+INFO  [AbstractTestCase] Searched [16,785,409] radius [0.00390625] found [391] in [10,000] loops, total [81s][81,052ms], average [8.105ms][8,105.288us] FAIL 
+INFO  [AbstractTestCase] ---- ---- 
+INFO  [AbstractTestCase] Radius [9][2^(-9) = 0.001953125] 
+INFO  [AbstractTestCase] Class [CQZoneMatcherImpl] Indexing [SEPARATE_QUANTIZED] Zone height [0.001953125] count [1025]  avg size [16376] min [4097] max [16388] 
+INFO  [AbstractTestCase] Searched [16,785,409] radius [0.001953125] found [94] in [10,000] loops, total [28s][28,080ms], average [2.808ms][2,808.019us] FAIL 
+INFO  [AbstractTestCase] ---- ---- 
+INFO  [AbstractTestCase] Radius [10][2^(-10) = 9.765625E-4] 
+INFO  [AbstractTestCase] Class [CQZoneMatcherImpl] Indexing [SEPARATE_QUANTIZED] Zone height [0.001953125] count [1025]  avg size [16376] min [4097] max [16388] 
+INFO  [AbstractTestCase] Searched [16,785,409] radius [9.765625E-4] found [22] in [10,000] loops, total [15s][15,786ms], average [1.579ms][1,578.610us] FAIL 
+INFO  [AbstractTestCase] <<<< 
+INFO  [AbstractTestCase] ---- ---- 
+INFO  [AbstractTestCase] Insert [0][3][9] 
+INFO  [AbstractTestCase] Insert [1][5][25] 
+INFO  [AbstractTestCase] Insert [2][9][81] 
+INFO  [AbstractTestCase] Insert [3][17][289] 
+INFO  [AbstractTestCase] Insert [4][33][1,089] 
+INFO  [AbstractTestCase] Insert [5][65][4,225] 
+INFO  [AbstractTestCase] Insert [6][129][16,641] 
+INFO  [AbstractTestCase] Insert [7][257][66,049] 
+INFO  [AbstractTestCase] Insert [8][513][263,169] 
+INFO  [AbstractTestCase] Insert [9][1,025][1,050,625] 
+INFO  [AbstractTestCase] Total  [9][(2^(9+1))+1 = 1025] => [1025^2 = 1050625] 
+INFO  [AbstractTestCase] Range  [1.0][1.0/1050625 = 0.00000095]  
+INFO  [AbstractTestCase] Zone   [10][2^(-10) = 9.765625E-4] 
+INFO  [AbstractTestCase] Memory [13.5GiB][2.9GiB][21.9GiB] 
+INFO  [AbstractTestCase] >>>> 
+INFO  [AbstractTestCase] ---- ---- 
+INFO  [AbstractTestCase] Radius [6][2^(-6) = 0.015625] 
+INFO  [AbstractTestCase] Class [CQZoneMatcherImpl] Indexing [SEPARATE_QUANTIZED] Zone height [9.765625E-4] count [1025]  avg size [1025] min [1025] max [1025] 
+INFO  [AbstractTestCase] Searched [1,050,625] radius [0.015625] found [390] in [10,000] loops, total [13s][13,515ms], average [1.352ms][1,351.581us] FAIL 
+INFO  [AbstractTestCase] ---- ---- 
+INFO  [AbstractTestCase] Radius [7][2^(-7) = 0.0078125] 
+INFO  [AbstractTestCase] Class [CQZoneMatcherImpl] Indexing [SEPARATE_QUANTIZED] Zone height [9.765625E-4] count [1025]  avg size [1025] min [1025] max [1025] 
+INFO  [AbstractTestCase] Searched [1,050,625] radius [0.0078125] found [94] in [10,000] loops, total [6s][6,488ms], average [0.649ms][648.832us] PASS 
+INFO  [AbstractTestCase] ---- ---- 
+INFO  [AbstractTestCase] Radius [8][2^(-8) = 0.00390625] 
+INFO  [AbstractTestCase] Class [CQZoneMatcherImpl] Indexing [SEPARATE_QUANTIZED] Zone height [9.765625E-4] count [1025]  avg size [1025] min [1025] max [1025] 
+INFO  [AbstractTestCase] Searched [1,050,625] radius [0.00390625] found [23] in [10,000] loops, total [3s][3,582ms], average [0.358ms][358.285us] PASS 
+INFO  [AbstractTestCase] ---- ---- 
+INFO  [AbstractTestCase] Radius [9][2^(-9) = 0.001953125] 
+INFO  [AbstractTestCase] Class [CQZoneMatcherImpl] Indexing [SEPARATE_QUANTIZED] Zone height [9.765625E-4] count [1025]  avg size [1025] min [1025] max [1025] 
+INFO  [AbstractTestCase] Searched [1,050,625] radius [0.001953125] found [4] in [10,000] loops, total [2s][2,327ms], average [0.233ms][232.733us] PASS 
+INFO  [AbstractTestCase] ---- ---- 
+INFO  [AbstractTestCase] Radius [10][2^(-10) = 9.765625E-4] 
+INFO  [AbstractTestCase] Class [CQZoneMatcherImpl] Indexing [SEPARATE_QUANTIZED] Zone height [9.765625E-4] count [1025]  avg size [1025] min [1025] max [1025] 
+INFO  [AbstractTestCase] Searched [1,050,625] radius [9.765625E-4] found [1] in [10,000] loops, total [1s][1,112ms], average [0.111ms][111.264us] PASS 
+INFO  [AbstractTestCase] <<<< 
+INFO  [AbstractTestCase] Insert [10][2,049][4,198,401] 
+INFO  [AbstractTestCase] Total  [10][(2^(10+1))+1 = 2049] => [2049^2 = 4198401] 
+INFO  [AbstractTestCase] Range  [1.0][1.0/4198401 = 0.00000024]  
+INFO  [AbstractTestCase] Zone   [10][2^(-10) = 9.765625E-4] 
+INFO  [AbstractTestCase] Memory [12.3GiB][9.5GiB][21.9GiB] 
+INFO  [AbstractTestCase] >>>> 
+INFO  [AbstractTestCase] ---- ---- 
+INFO  [AbstractTestCase] Radius [6][2^(-6) = 0.015625] 
+INFO  [AbstractTestCase] Class [CQZoneMatcherImpl] Indexing [SEPARATE_QUANTIZED] Zone height [9.765625E-4] count [2049]  avg size [2049] min [2049] max [2049] 
+INFO  [AbstractTestCase] Searched [4,198,401] radius [0.015625] found [1,594] in [10,000] loops, total [70s][70,094ms], average [7.009ms][7,009.422us] FAIL 
+INFO  [AbstractTestCase] ---- ---- 
+INFO  [AbstractTestCase] Radius [7][2^(-7) = 0.0078125] 
+INFO  [AbstractTestCase] Class [CQZoneMatcherImpl] Indexing [SEPARATE_QUANTIZED] Zone height [9.765625E-4] count [2049]  avg size [2049] min [2049] max [2049] 
+INFO  [AbstractTestCase] Searched [4,198,401] radius [0.0078125] found [390] in [10,000] loops, total [23s][23,657ms], average [2.366ms][2,365.789us] FAIL 
+INFO  [AbstractTestCase] ---- ---- 
+INFO  [AbstractTestCase] Radius [8][2^(-8) = 0.00390625] 
+INFO  [AbstractTestCase] Class [CQZoneMatcherImpl] Indexing [SEPARATE_QUANTIZED] Zone height [9.765625E-4] count [2049]  avg size [2049] min [2049] max [2049] 
+INFO  [AbstractTestCase] Searched [4,198,401] radius [0.00390625] found [95] in [10,000] loops, total [13s][13,352ms], average [1.335ms][1,335.201us] FAIL 
+INFO  [AbstractTestCase] ---- ---- 
+INFO  [AbstractTestCase] Radius [9][2^(-9) = 0.001953125] 
+INFO  [AbstractTestCase] Class [CQZoneMatcherImpl] Indexing [SEPARATE_QUANTIZED] Zone height [9.765625E-4] count [2049]  avg size [2049] min [2049] max [2049] 
+INFO  [AbstractTestCase] Searched [4,198,401] radius [0.001953125] found [22] in [10,000] loops, total [7s][7,643ms], average [0.764ms][764.304us] PASS 
+INFO  [AbstractTestCase] ---- ---- 
+INFO  [AbstractTestCase] Radius [10][2^(-10) = 9.765625E-4] 
+INFO  [AbstractTestCase] Class [CQZoneMatcherImpl] Indexing [SEPARATE_QUANTIZED] Zone height [9.765625E-4] count [2049]  avg size [2049] min [2049] max [2049] 
+INFO  [AbstractTestCase] Searched [4,198,401] radius [9.765625E-4] found [4] in [10,000] loops, total [5s][5,070ms], average [0.507ms][507.039us] PASS 
+INFO  [AbstractTestCase] <<<< 
+INFO  [AbstractTestCase] Insert [11][4,097][16,785,409] 
+INFO  [AbstractTestCase] Total  [11][(2^(11+1))+1 = 4097] => [4097^2 = 16785409] 
+INFO  [AbstractTestCase] Range  [1.0][1.0/16785409 = 0.00000006]  
+INFO  [AbstractTestCase] Zone   [10][2^(-10) = 9.765625E-4] 
+INFO  [AbstractTestCase] Memory [16.2GiB][6.8GiB][21.9GiB] 
+INFO  [AbstractTestCase] >>>> 
+INFO  [AbstractTestCase] ---- ---- 
+INFO  [AbstractTestCase] Radius [6][2^(-6) = 0.015625] 
+INFO  [AbstractTestCase] Class [CQZoneMatcherImpl] Indexing [SEPARATE_QUANTIZED] Zone height [9.765625E-4] count [2049]  avg size [8192] min [4097] max [8194] 
+INFO  [AbstractTestCase] Searched [16,785,409] radius [0.015625] found [6,414] in [10,000] loops, total [685s][685,834ms], average [68.583ms][68,583.489us] FAIL 
+INFO  [AbstractTestCase] ---- ---- 
+INFO  [AbstractTestCase] Radius [7][2^(-7) = 0.0078125] 
+INFO  [AbstractTestCase] Class [CQZoneMatcherImpl] Indexing [SEPARATE_QUANTIZED] Zone height [9.765625E-4] count [2049]  avg size [8192] min [4097] max [8194] 
+INFO  [AbstractTestCase] Searched [16,785,409] radius [0.0078125] found [1,594] in [10,000] loops, total [325s][325,147ms], average [32.515ms][32,514.700us] FAIL 
+INFO  [AbstractTestCase] ---- ---- 
+INFO  [AbstractTestCase] Radius [8][2^(-8) = 0.00390625] 
+INFO  [AbstractTestCase] Class [CQZoneMatcherImpl] Indexing [SEPARATE_QUANTIZED] Zone height [9.765625E-4] count [2049]  avg size [8192] min [4097] max [8194] 
+INFO  [AbstractTestCase] Searched [16,785,409] radius [0.00390625] found [391] in [10,000] loops, total [79s][79,813ms], average [7.981ms][7,981.398us] FAIL 
+INFO  [AbstractTestCase] ---- ---- 
+INFO  [AbstractTestCase] Radius [9][2^(-9) = 0.001953125] 
+INFO  [AbstractTestCase] Class [CQZoneMatcherImpl] Indexing [SEPARATE_QUANTIZED] Zone height [9.765625E-4] count [2049]  avg size [8192] min [4097] max [8194] 
+INFO  [AbstractTestCase] Searched [16,785,409] radius [0.001953125] found [94] in [10,000] loops, total [28s][28,959ms], average [2.896ms][2,895.973us] FAIL 
+INFO  [AbstractTestCase] ---- ---- 
+INFO  [AbstractTestCase] Radius [10][2^(-10) = 9.765625E-4] 
+INFO  [AbstractTestCase] Class [CQZoneMatcherImpl] Indexing [SEPARATE_QUANTIZED] Zone height [9.765625E-4] count [2049]  avg size [8192] min [4097] max [8194] 
+INFO  [AbstractTestCase] Searched [16,785,409] radius [9.765625E-4] found [22] in [10,000] loops, total [16s][16,480ms], average [1.648ms][1,648.070us] FAIL 
+INFO  [AbstractTestCase] <<<< 
+INFO  [AbstractTestCase] ---- Finalize 
+INFO  [AbstractTestCase] ---- Running gc 
+INFO  [AbstractTestCase] Target [120.0][120.0] 
+INFO  [AbstractTestCase] ---- ---- 
+INFO  [AbstractTestCase] Insert [0][3][9] 
+INFO  [AbstractTestCase] Insert [1][5][25] 
+INFO  [AbstractTestCase] Insert [2][9][81] 
+INFO  [AbstractTestCase] Insert [3][17][289] 
+INFO  [AbstractTestCase] Insert [4][33][1,089] 
+INFO  [AbstractTestCase] Insert [5][65][4,225] 
+INFO  [AbstractTestCase] Insert [6][129][16,641] 
+INFO  [AbstractTestCase] Insert [7][257][66,049] 
+INFO  [AbstractTestCase] Insert [8][513][263,169] 
+INFO  [AbstractTestCase] Insert [9][1,025][1,050,625] 
+INFO  [AbstractTestCase] Total  [9][(2^(9+1))+1 = 1025] => [1025^2 = 1050625] 
+INFO  [AbstractTestCase] Range  [2.0][2.0/1050625 = 0.00000190]  
+INFO  [AbstractTestCase] Zone   [6][2^(-6) = 0.015625] 
+INFO  [AbstractTestCase] Memory [16.4GiB][12.4GiB][21.9GiB] 
+INFO  [AbstractTestCase] >>>> 
+INFO  [AbstractTestCase] ---- ---- 
+INFO  [AbstractTestCase] Radius [6][2^(-6) = 0.015625] 
+INFO  [AbstractTestCase] Class [CQZoneMatcherImpl] Indexing [SEPARATE_SIMPLE] Zone height [0.015625] count [257]  avg size [4088] min [1025] max [4100] 
+INFO  [AbstractTestCase] Searched [1,050,625] radius [0.015625] found [94] in [10,000] loops, total [0s][715ms], average [0.072ms][71.501us] PASS 
+INFO  [AbstractTestCase] ---- ---- 
+INFO  [AbstractTestCase] Radius [7][2^(-7) = 0.0078125] 
+INFO  [AbstractTestCase] Class [CQZoneMatcherImpl] Indexing [SEPARATE_SIMPLE] Zone height [0.015625] count [257]  avg size [4088] min [1025] max [4100] 
+INFO  [AbstractTestCase] Searched [1,050,625] radius [0.0078125] found [22] in [10,000] loops, total [0s][291ms], average [0.029ms][29.195us] PASS 
+INFO  [AbstractTestCase] ---- ---- 
+INFO  [AbstractTestCase] Radius [8][2^(-8) = 0.00390625] 
+INFO  [AbstractTestCase] Class [CQZoneMatcherImpl] Indexing [SEPARATE_SIMPLE] Zone height [0.015625] count [257]  avg size [4088] min [1025] max [4100] 
+INFO  [AbstractTestCase] Searched [1,050,625] radius [0.00390625] found [5] in [10,000] loops, total [0s][187ms], average [0.019ms][18.798us] PASS 
+INFO  [AbstractTestCase] ---- ---- 
+INFO  [AbstractTestCase] Radius [9][2^(-9) = 0.001953125] 
+INFO  [AbstractTestCase] Class [CQZoneMatcherImpl] Indexing [SEPARATE_SIMPLE] Zone height [0.015625] count [257]  avg size [4088] min [1025] max [4100] 
+INFO  [AbstractTestCase] Searched [1,050,625] radius [0.001953125] found [1] in [10,000] loops, total [0s][119ms], average [0.012ms][11.969us] PASS 
+INFO  [AbstractTestCase] ---- ---- 
+INFO  [AbstractTestCase] Radius [10][2^(-10) = 9.765625E-4] 
+INFO  [AbstractTestCase] Class [CQZoneMatcherImpl] Indexing [SEPARATE_SIMPLE] Zone height [0.015625] count [257]  avg size [4088] min [1025] max [4100] 
+INFO  [AbstractTestCase] Searched [1,050,625] radius [9.765625E-4] found [1] in [10,000] loops, total [0s][110ms], average [0.011ms][11.080us] PASS 
+INFO  [AbstractTestCase] <<<< 
+INFO  [AbstractTestCase] Insert [10][2,049][4,198,401] 
+INFO  [AbstractTestCase] Total  [10][(2^(10+1))+1 = 2049] => [2049^2 = 4198401] 
+INFO  [AbstractTestCase] Range  [2.0][2.0/4198401 = 0.00000048]  
+INFO  [AbstractTestCase] Zone   [6][2^(-6) = 0.015625] 
+INFO  [AbstractTestCase] Memory [16.4GiB][13.5GiB][21.9GiB] 
+INFO  [AbstractTestCase] >>>> 
+INFO  [AbstractTestCase] ---- ---- 
+INFO  [AbstractTestCase] Radius [6][2^(-6) = 0.015625] 
+INFO  [AbstractTestCase] Class [CQZoneMatcherImpl] Indexing [SEPARATE_SIMPLE] Zone height [0.015625] count [257]  avg size [16336] min [2049] max [16392] 
+INFO  [AbstractTestCase] Searched [4,198,401] radius [0.015625] found [390] in [10,000] loops, total [2s][2,233ms], average [0.223ms][223.324us] PASS 
+INFO  [AbstractTestCase] ---- ---- 
+INFO  [AbstractTestCase] Radius [7][2^(-7) = 0.0078125] 
+INFO  [AbstractTestCase] Class [CQZoneMatcherImpl] Indexing [SEPARATE_SIMPLE] Zone height [0.015625] count [257]  avg size [16336] min [2049] max [16392] 
+INFO  [AbstractTestCase] Searched [4,198,401] radius [0.0078125] found [94] in [10,000] loops, total [0s][557ms], average [0.056ms][55.768us] PASS 
+INFO  [AbstractTestCase] ---- ---- 
+INFO  [AbstractTestCase] Radius [8][2^(-8) = 0.00390625] 
+INFO  [AbstractTestCase] Class [CQZoneMatcherImpl] Indexing [SEPARATE_SIMPLE] Zone height [0.015625] count [257]  avg size [16336] min [2049] max [16392] 
+INFO  [AbstractTestCase] Searched [4,198,401] radius [0.00390625] found [23] in [10,000] loops, total [0s][248ms], average [0.025ms][24.827us] PASS 
+INFO  [AbstractTestCase] ---- ---- 
+INFO  [AbstractTestCase] Radius [9][2^(-9) = 0.001953125] 
+INFO  [AbstractTestCase] Class [CQZoneMatcherImpl] Indexing [SEPARATE_SIMPLE] Zone height [0.015625] count [257]  avg size [16336] min [2049] max [16392] 
+INFO  [AbstractTestCase] Searched [4,198,401] radius [0.001953125] found [4] in [10,000] loops, total [0s][819ms], average [0.082ms][81.971us] PASS 
+INFO  [AbstractTestCase] ---- ---- 
+INFO  [AbstractTestCase] Radius [10][2^(-10) = 9.765625E-4] 
+INFO  [AbstractTestCase] Class [CQZoneMatcherImpl] Indexing [SEPARATE_SIMPLE] Zone height [0.015625] count [257]  avg size [16336] min [2049] max [16392] 
+INFO  [AbstractTestCase] Searched [4,198,401] radius [9.765625E-4] found [1] in [10,000] loops, total [0s][116ms], average [0.012ms][11.658us] PASS 
+INFO  [AbstractTestCase] <<<< 
+INFO  [AbstractTestCase] Insert [11][4,097][16,785,409] 
+INFO  [AbstractTestCase] Total  [11][(2^(11+1))+1 = 4097] => [4097^2 = 16785409] 
+INFO  [AbstractTestCase] Range  [2.0][2.0/16785409 = 0.00000012]  
+INFO  [AbstractTestCase] Zone   [6][2^(-6) = 0.015625] 
+INFO  [AbstractTestCase] Memory [14.0GiB][7.5GiB][21.9GiB] 
+INFO  [AbstractTestCase] >>>> 
+INFO  [AbstractTestCase] ---- ---- 
+INFO  [AbstractTestCase] Radius [6][2^(-6) = 0.015625] 
+INFO  [AbstractTestCase] Class [CQZoneMatcherImpl] Indexing [SEPARATE_SIMPLE] Zone height [0.015625] count [257]  avg size [65312] min [4097] max [65552] 
+INFO  [AbstractTestCase] Searched [16,785,409] radius [0.015625] found [1,594] in [10,000] loops, total [11s][11,860ms], average [1.186ms][1,186.080us] FAIL 
+INFO  [AbstractTestCase] ---- ---- 
+INFO  [AbstractTestCase] Radius [7][2^(-7) = 0.0078125] 
+INFO  [AbstractTestCase] Class [CQZoneMatcherImpl] Indexing [SEPARATE_SIMPLE] Zone height [0.015625] count [257]  avg size [65312] min [4097] max [65552] 
+INFO  [AbstractTestCase] Searched [16,785,409] radius [0.0078125] found [390] in [10,000] loops, total [2s][2,197ms], average [0.220ms][219.748us] PASS 
+INFO  [AbstractTestCase] ---- ---- 
+INFO  [AbstractTestCase] Radius [8][2^(-8) = 0.00390625] 
+INFO  [AbstractTestCase] Class [CQZoneMatcherImpl] Indexing [SEPARATE_SIMPLE] Zone height [0.015625] count [257]  avg size [65312] min [4097] max [65552] 
+INFO  [AbstractTestCase] Searched [16,785,409] radius [0.00390625] found [95] in [10,000] loops, total [0s][720ms], average [0.072ms][72.087us] PASS 
+INFO  [AbstractTestCase] ---- ---- 
+INFO  [AbstractTestCase] Radius [9][2^(-9) = 0.001953125] 
+INFO  [AbstractTestCase] Class [CQZoneMatcherImpl] Indexing [SEPARATE_SIMPLE] Zone height [0.015625] count [257]  avg size [65312] min [4097] max [65552] 
+INFO  [AbstractTestCase] Searched [16,785,409] radius [0.001953125] found [22] in [10,000] loops, total [0s][379ms], average [0.038ms][37.974us] PASS 
+INFO  [AbstractTestCase] ---- ---- 
+INFO  [AbstractTestCase] Radius [10][2^(-10) = 9.765625E-4] 
+INFO  [AbstractTestCase] Class [CQZoneMatcherImpl] Indexing [SEPARATE_SIMPLE] Zone height [0.015625] count [257]  avg size [65312] min [4097] max [65552] 
+INFO  [AbstractTestCase] Searched [16,785,409] radius [9.765625E-4] found [4] in [10,000] loops, total [0s][173ms], average [0.017ms][17.384us] PASS 
+INFO  [AbstractTestCase] <<<< 
+INFO  [AbstractTestCase] ---- ---- 
+INFO  [AbstractTestCase] Insert [0][3][9] 
+INFO  [AbstractTestCase] Insert [1][5][25] 
+INFO  [AbstractTestCase] Insert [2][9][81] 
+INFO  [AbstractTestCase] Insert [3][17][289] 
+INFO  [AbstractTestCase] Insert [4][33][1,089] 
+INFO  [AbstractTestCase] Insert [5][65][4,225] 
+INFO  [AbstractTestCase] Insert [6][129][16,641] 
+INFO  [AbstractTestCase] Insert [7][257][66,049] 
+INFO  [AbstractTestCase] Insert [8][513][263,169] 
+INFO  [AbstractTestCase] Insert [9][1,025][1,050,625] 
+INFO  [AbstractTestCase] Total  [9][(2^(9+1))+1 = 1025] => [1025^2 = 1050625] 
+INFO  [AbstractTestCase] Range  [2.0][2.0/1050625 = 0.00000190]  
+INFO  [AbstractTestCase] Zone   [7][2^(-7) = 0.0078125] 
+INFO  [AbstractTestCase] Memory [14.3GiB][6.4GiB][21.9GiB] 
+INFO  [AbstractTestCase] >>>> 
+INFO  [AbstractTestCase] ---- ---- 
+INFO  [AbstractTestCase] Radius [6][2^(-6) = 0.015625] 
+INFO  [AbstractTestCase] Class [CQZoneMatcherImpl] Indexing [SEPARATE_SIMPLE] Zone height [0.0078125] count [513]  avg size [2048] min [1025] max [2050] 
+INFO  [AbstractTestCase] Searched [1,050,625] radius [0.015625] found [94] in [10,000] loops, total [1s][1,496ms], average [0.150ms][149.625us] PASS 
+INFO  [AbstractTestCase] ---- ---- 
+INFO  [AbstractTestCase] Radius [7][2^(-7) = 0.0078125] 
+INFO  [AbstractTestCase] Class [CQZoneMatcherImpl] Indexing [SEPARATE_SIMPLE] Zone height [0.0078125] count [513]  avg size [2048] min [1025] max [2050] 
+INFO  [AbstractTestCase] Searched [1,050,625] radius [0.0078125] found [22] in [10,000] loops, total [0s][403ms], average [0.040ms][40.382us] PASS 
+INFO  [AbstractTestCase] ---- ---- 
+INFO  [AbstractTestCase] Radius [8][2^(-8) = 0.00390625] 
+INFO  [AbstractTestCase] Class [CQZoneMatcherImpl] Indexing [SEPARATE_SIMPLE] Zone height [0.0078125] count [513]  avg size [2048] min [1025] max [2050] 
+INFO  [AbstractTestCase] Searched [1,050,625] radius [0.00390625] found [5] in [10,000] loops, total [0s][238ms], average [0.024ms][23.827us] PASS 
+INFO  [AbstractTestCase] ---- ---- 
+INFO  [AbstractTestCase] Radius [9][2^(-9) = 0.001953125] 
+INFO  [AbstractTestCase] Class [CQZoneMatcherImpl] Indexing [SEPARATE_SIMPLE] Zone height [0.0078125] count [513]  avg size [2048] min [1025] max [2050] 
+INFO  [AbstractTestCase] Searched [1,050,625] radius [0.001953125] found [1] in [10,000] loops, total [0s][209ms], average [0.021ms][20.992us] PASS 
+INFO  [AbstractTestCase] ---- ---- 
+INFO  [AbstractTestCase] Radius [10][2^(-10) = 9.765625E-4] 
+INFO  [AbstractTestCase] Class [CQZoneMatcherImpl] Indexing [SEPARATE_SIMPLE] Zone height [0.0078125] count [513]  avg size [2048] min [1025] max [2050] 
+INFO  [AbstractTestCase] Searched [1,050,625] radius [9.765625E-4] found [1] in [10,000] loops, total [0s][209ms], average [0.021ms][20.987us] PASS 
+INFO  [AbstractTestCase] <<<< 
+INFO  [AbstractTestCase] Insert [10][2,049][4,198,401] 
+INFO  [AbstractTestCase] Total  [10][(2^(10+1))+1 = 2049] => [2049^2 = 4198401] 
+INFO  [AbstractTestCase] Range  [2.0][2.0/4198401 = 0.00000048]  
+INFO  [AbstractTestCase] Zone   [7][2^(-7) = 0.0078125] 
+INFO  [AbstractTestCase] Memory [14.7GiB][6.9GiB][21.9GiB] 
+INFO  [AbstractTestCase] >>>> 
+INFO  [AbstractTestCase] ---- ---- 
+INFO  [AbstractTestCase] Radius [6][2^(-6) = 0.015625] 
+INFO  [AbstractTestCase] Class [CQZoneMatcherImpl] Indexing [SEPARATE_SIMPLE] Zone height [0.0078125] count [513]  avg size [8184] min [2049] max [8196] 
+INFO  [AbstractTestCase] Searched [4,198,401] radius [0.015625] found [390] in [10,000] loops, total [2s][2,990ms], average [0.299ms][299.000us] PASS 
+INFO  [AbstractTestCase] ---- ---- 
+INFO  [AbstractTestCase] Radius [7][2^(-7) = 0.0078125] 
+INFO  [AbstractTestCase] Class [CQZoneMatcherImpl] Indexing [SEPARATE_SIMPLE] Zone height [0.0078125] count [513]  avg size [8184] min [2049] max [8196] 
+INFO  [AbstractTestCase] Searched [4,198,401] radius [0.0078125] found [94] in [10,000] loops, total [0s][748ms], average [0.075ms][74.832us] PASS 
+INFO  [AbstractTestCase] ---- ---- 
+INFO  [AbstractTestCase] Radius [8][2^(-8) = 0.00390625] 
+INFO  [AbstractTestCase] Class [CQZoneMatcherImpl] Indexing [SEPARATE_SIMPLE] Zone height [0.0078125] count [513]  avg size [8184] min [2049] max [8196] 
+INFO  [AbstractTestCase] Searched [4,198,401] radius [0.00390625] found [23] in [10,000] loops, total [0s][479ms], average [0.048ms][47.928us] PASS 
+INFO  [AbstractTestCase] ---- ---- 
+INFO  [AbstractTestCase] Radius [9][2^(-9) = 0.001953125] 
+INFO  [AbstractTestCase] Class [CQZoneMatcherImpl] Indexing [SEPARATE_SIMPLE] Zone height [0.0078125] count [513]  avg size [8184] min [2049] max [8196] 
+INFO  [AbstractTestCase] Searched [4,198,401] radius [0.001953125] found [4] in [10,000] loops, total [0s][317ms], average [0.032ms][31.724us] PASS 
+INFO  [AbstractTestCase] ---- ---- 
+INFO  [AbstractTestCase] Radius [10][2^(-10) = 9.765625E-4] 
+INFO  [AbstractTestCase] Class [CQZoneMatcherImpl] Indexing [SEPARATE_SIMPLE] Zone height [0.0078125] count [513]  avg size [8184] min [2049] max [8196] 
+INFO  [AbstractTestCase] Searched [4,198,401] radius [9.765625E-4] found [1] in [10,000] loops, total [0s][206ms], average [0.021ms][20.643us] PASS 
+INFO  [AbstractTestCase] <<<< 
+INFO  [AbstractTestCase] Insert [11][4,097][16,785,409] 
+INFO  [AbstractTestCase] Total  [11][(2^(11+1))+1 = 4097] => [4097^2 = 16785409] 
+INFO  [AbstractTestCase] Range  [2.0][2.0/16785409 = 0.00000012]  
+INFO  [AbstractTestCase] Zone   [7][2^(-7) = 0.0078125] 
+INFO  [AbstractTestCase] Memory [15.0GiB][7.1GiB][21.9GiB] 
+INFO  [AbstractTestCase] >>>> 
+INFO  [AbstractTestCase] ---- ---- 
+INFO  [AbstractTestCase] Radius [6][2^(-6) = 0.015625] 
+INFO  [AbstractTestCase] Class [CQZoneMatcherImpl] Indexing [SEPARATE_SIMPLE] Zone height [0.0078125] count [513]  avg size [32720] min [4097] max [32776] 
+INFO  [AbstractTestCase] Searched [16,785,409] radius [0.015625] found [1,594] in [10,000] loops, total [8s][8,220ms], average [0.822ms][822.095us] PASS 
+INFO  [AbstractTestCase] ---- ---- 
+INFO  [AbstractTestCase] Radius [7][2^(-7) = 0.0078125] 
+INFO  [AbstractTestCase] Class [CQZoneMatcherImpl] Indexing [SEPARATE_SIMPLE] Zone height [0.0078125] count [513]  avg size [32720] min [4097] max [32776] 
+INFO  [AbstractTestCase] Searched [16,785,409] radius [0.0078125] found [390] in [10,000] loops, total [2s][2,072ms], average [0.207ms][207.264us] PASS 
+INFO  [AbstractTestCase] ---- ---- 
+INFO  [AbstractTestCase] Radius [8][2^(-8) = 0.00390625] 
+INFO  [AbstractTestCase] Class [CQZoneMatcherImpl] Indexing [SEPARATE_SIMPLE] Zone height [0.0078125] count [513]  avg size [32720] min [4097] max [32776] 
+INFO  [AbstractTestCase] Searched [16,785,409] radius [0.00390625] found [95] in [10,000] loops, total [0s][744ms], average [0.074ms][74.464us] PASS 
+INFO  [AbstractTestCase] ---- ---- 
+INFO  [AbstractTestCase] Radius [9][2^(-9) = 0.001953125] 
+INFO  [AbstractTestCase] Class [CQZoneMatcherImpl] Indexing [SEPARATE_SIMPLE] Zone height [0.0078125] count [513]  avg size [32720] min [4097] max [32776] 
+INFO  [AbstractTestCase] Searched [16,785,409] radius [0.001953125] found [22] in [10,000] loops, total [0s][388ms], average [0.039ms][38.840us] PASS 
+INFO  [AbstractTestCase] ---- ---- 
+INFO  [AbstractTestCase] Radius [10][2^(-10) = 9.765625E-4] 
+INFO  [AbstractTestCase] Class [CQZoneMatcherImpl] Indexing [SEPARATE_SIMPLE] Zone height [0.0078125] count [513]  avg size [32720] min [4097] max [32776] 
+INFO  [AbstractTestCase] Searched [16,785,409] radius [9.765625E-4] found [4] in [10,000] loops, total [0s][270ms], average [0.027ms][27.013us] PASS 
+INFO  [AbstractTestCase] <<<< 
+INFO  [AbstractTestCase] ---- ---- 
+INFO  [AbstractTestCase] Insert [0][3][9] 
+INFO  [AbstractTestCase] Insert [1][5][25] 
+INFO  [AbstractTestCase] Insert [2][9][81] 
+INFO  [AbstractTestCase] Insert [3][17][289] 
+INFO  [AbstractTestCase] Insert [4][33][1,089] 
+INFO  [AbstractTestCase] Insert [5][65][4,225] 
+INFO  [AbstractTestCase] Insert [6][129][16,641] 
+INFO  [AbstractTestCase] Insert [7][257][66,049] 
+INFO  [AbstractTestCase] Insert [8][513][263,169] 
+INFO  [AbstractTestCase] Insert [9][1,025][1,050,625] 
+INFO  [AbstractTestCase] Total  [9][(2^(9+1))+1 = 1025] => [1025^2 = 1050625] 
+INFO  [AbstractTestCase] Range  [2.0][2.0/1050625 = 0.00000190]  
+INFO  [AbstractTestCase] Zone   [8][2^(-8) = 0.00390625] 
+INFO  [AbstractTestCase] Memory [15.2GiB][7.9GiB][21.9GiB] 
+INFO  [AbstractTestCase] >>>> 
+INFO  [AbstractTestCase] ---- ---- 
+INFO  [AbstractTestCase] Radius [6][2^(-6) = 0.015625] 
+INFO  [AbstractTestCase] Class [CQZoneMatcherImpl] Indexing [SEPARATE_SIMPLE] Zone height [0.00390625] count [1025]  avg size [1025] min [1025] max [1025] 
+INFO  [AbstractTestCase] Searched [1,050,625] radius [0.015625] found [94] in [10,000] loops, total [1s][1,613ms], average [0.161ms][161.327us] PASS 
+INFO  [AbstractTestCase] ---- ---- 
+INFO  [AbstractTestCase] Radius [7][2^(-7) = 0.0078125] 
+INFO  [AbstractTestCase] Class [CQZoneMatcherImpl] Indexing [SEPARATE_SIMPLE] Zone height [0.00390625] count [1025]  avg size [1025] min [1025] max [1025] 
+INFO  [AbstractTestCase] Searched [1,050,625] radius [0.0078125] found [22] in [10,000] loops, total [0s][846ms], average [0.085ms][84.676us] PASS 
+INFO  [AbstractTestCase] ---- ---- 
+INFO  [AbstractTestCase] Radius [8][2^(-8) = 0.00390625] 
+INFO  [AbstractTestCase] Class [CQZoneMatcherImpl] Indexing [SEPARATE_SIMPLE] Zone height [0.00390625] count [1025]  avg size [1025] min [1025] max [1025] 
+INFO  [AbstractTestCase] Searched [1,050,625] radius [0.00390625] found [5] in [10,000] loops, total [0s][673ms], average [0.067ms][67.345us] PASS 
+INFO  [AbstractTestCase] ---- ---- 
+INFO  [AbstractTestCase] Radius [9][2^(-9) = 0.001953125] 
+INFO  [AbstractTestCase] Class [CQZoneMatcherImpl] Indexing [SEPARATE_SIMPLE] Zone height [0.00390625] count [1025]  avg size [1025] min [1025] max [1025] 
+INFO  [AbstractTestCase] Searched [1,050,625] radius [0.001953125] found [1] in [10,000] loops, total [0s][605ms], average [0.061ms][60.507us] PASS 
+INFO  [AbstractTestCase] ---- ---- 
+INFO  [AbstractTestCase] Radius [10][2^(-10) = 9.765625E-4] 
+INFO  [AbstractTestCase] Class [CQZoneMatcherImpl] Indexing [SEPARATE_SIMPLE] Zone height [0.00390625] count [1025]  avg size [1025] min [1025] max [1025] 
+INFO  [AbstractTestCase] Searched [1,050,625] radius [9.765625E-4] found [1] in [10,000] loops, total [0s][605ms], average [0.061ms][60.504us] PASS 
+INFO  [AbstractTestCase] <<<< 
+INFO  [AbstractTestCase] Insert [10][2,049][4,198,401] 
+INFO  [AbstractTestCase] Total  [10][(2^(10+1))+1 = 2049] => [2049^2 = 4198401] 
+INFO  [AbstractTestCase] Range  [2.0][2.0/4198401 = 0.00000048]  
+INFO  [AbstractTestCase] Zone   [8][2^(-8) = 0.00390625] 
+INFO  [AbstractTestCase] Memory [15.2GiB][7.8GiB][21.9GiB] 
+INFO  [AbstractTestCase] >>>> 
+INFO  [AbstractTestCase] ---- ---- 
+INFO  [AbstractTestCase] Radius [6][2^(-6) = 0.015625] 
+INFO  [AbstractTestCase] Class [CQZoneMatcherImpl] Indexing [SEPARATE_SIMPLE] Zone height [0.00390625] count [1025]  avg size [4096] min [2049] max [4098] 
+INFO  [AbstractTestCase] Searched [4,198,401] radius [0.015625] found [390] in [10,000] loops, total [2s][2,688ms], average [0.269ms][268.803us] PASS 
+INFO  [AbstractTestCase] ---- ---- 
+INFO  [AbstractTestCase] Radius [7][2^(-7) = 0.0078125] 
+INFO  [AbstractTestCase] Class [CQZoneMatcherImpl] Indexing [SEPARATE_SIMPLE] Zone height [0.00390625] count [1025]  avg size [4096] min [2049] max [4098] 
+INFO  [AbstractTestCase] Searched [4,198,401] radius [0.0078125] found [94] in [10,000] loops, total [1s][1,200ms], average [0.120ms][120.042us] PASS 
+INFO  [AbstractTestCase] ---- ---- 
+INFO  [AbstractTestCase] Radius [8][2^(-8) = 0.00390625] 
+INFO  [AbstractTestCase] Class [CQZoneMatcherImpl] Indexing [SEPARATE_SIMPLE] Zone height [0.00390625] count [1025]  avg size [4096] min [2049] max [4098] 
+INFO  [AbstractTestCase] Searched [4,198,401] radius [0.00390625] found [23] in [10,000] loops, total [1s][1,346ms], average [0.135ms][134.650us] PASS 
+INFO  [AbstractTestCase] ---- ---- 
+INFO  [AbstractTestCase] Radius [9][2^(-9) = 0.001953125] 
+INFO  [AbstractTestCase] Class [CQZoneMatcherImpl] Indexing [SEPARATE_SIMPLE] Zone height [0.00390625] count [1025]  avg size [4096] min [2049] max [4098] 
+INFO  [AbstractTestCase] Searched [4,198,401] radius [0.001953125] found [4] in [10,000] loops, total [0s][576ms], average [0.058ms][57.684us] PASS 
+INFO  [AbstractTestCase] ---- ---- 
+INFO  [AbstractTestCase] Radius [10][2^(-10) = 9.765625E-4] 
+INFO  [AbstractTestCase] Class [CQZoneMatcherImpl] Indexing [SEPARATE_SIMPLE] Zone height [0.00390625] count [1025]  avg size [4096] min [2049] max [4098] 
+INFO  [AbstractTestCase] Searched [4,198,401] radius [9.765625E-4] found [1] in [10,000] loops, total [0s][540ms], average [0.054ms][54.007us] PASS 
+INFO  [AbstractTestCase] <<<< 
+INFO  [AbstractTestCase] Insert [11][4,097][16,785,409] 
+INFO  [AbstractTestCase] Total  [11][(2^(11+1))+1 = 4097] => [4097^2 = 16785409] 
+INFO  [AbstractTestCase] Range  [2.0][2.0/16785409 = 0.00000012]  
+INFO  [AbstractTestCase] Zone   [8][2^(-8) = 0.00390625] 
+INFO  [AbstractTestCase] Memory [14.9GiB][5.0GiB][21.9GiB] 
+INFO  [AbstractTestCase] >>>> 
+INFO  [AbstractTestCase] ---- ---- 
+INFO  [AbstractTestCase] Radius [6][2^(-6) = 0.015625] 
+INFO  [AbstractTestCase] Class [CQZoneMatcherImpl] Indexing [SEPARATE_SIMPLE] Zone height [0.00390625] count [1025]  avg size [16376] min [4097] max [16388] 
+INFO  [AbstractTestCase] Searched [16,785,409] radius [0.015625] found [1,594] in [10,000] loops, total [8s][8,820ms], average [0.882ms][882.049us] PASS 
+INFO  [AbstractTestCase] ---- ---- 
+INFO  [AbstractTestCase] Radius [7][2^(-7) = 0.0078125] 
+INFO  [AbstractTestCase] Class [CQZoneMatcherImpl] Indexing [SEPARATE_SIMPLE] Zone height [0.00390625] count [1025]  avg size [16376] min [4097] max [16388] 
+INFO  [AbstractTestCase] Searched [16,785,409] radius [0.0078125] found [390] in [10,000] loops, total [2s][2,754ms], average [0.275ms][275.495us] PASS 
+INFO  [AbstractTestCase] ---- ---- 
+INFO  [AbstractTestCase] Radius [8][2^(-8) = 0.00390625] 
+INFO  [AbstractTestCase] Class [CQZoneMatcherImpl] Indexing [SEPARATE_SIMPLE] Zone height [0.00390625] count [1025]  avg size [16376] min [4097] max [16388] 
+INFO  [AbstractTestCase] Searched [16,785,409] radius [0.00390625] found [95] in [10,000] loops, total [1s][1,179ms], average [0.118ms][117.936us] PASS 
+INFO  [AbstractTestCase] ---- ---- 
+INFO  [AbstractTestCase] Radius [9][2^(-9) = 0.001953125] 
+INFO  [AbstractTestCase] Class [CQZoneMatcherImpl] Indexing [SEPARATE_SIMPLE] Zone height [0.00390625] count [1025]  avg size [16376] min [4097] max [16388] 
+INFO  [AbstractTestCase] Searched [16,785,409] radius [0.001953125] found [22] in [10,000] loops, total [0s][767ms], average [0.077ms][76.792us] PASS 
+INFO  [AbstractTestCase] ---- ---- 
+INFO  [AbstractTestCase] Radius [10][2^(-10) = 9.765625E-4] 
+INFO  [AbstractTestCase] Class [CQZoneMatcherImpl] Indexing [SEPARATE_SIMPLE] Zone height [0.00390625] count [1025]  avg size [16376] min [4097] max [16388] 
+INFO  [AbstractTestCase] Searched [16,785,409] radius [9.765625E-4] found [4] in [10,000] loops, total [0s][654ms], average [0.065ms][65.488us] PASS 
+INFO  [AbstractTestCase] <<<< 
+INFO  [AbstractTestCase] ---- ---- 
+INFO  [AbstractTestCase] Insert [0][3][9] 
+INFO  [AbstractTestCase] Insert [1][5][25] 
+INFO  [AbstractTestCase] Insert [2][9][81] 
+INFO  [AbstractTestCase] Insert [3][17][289] 
+INFO  [AbstractTestCase] Insert [4][33][1,089] 
+INFO  [AbstractTestCase] Insert [5][65][4,225] 
+INFO  [AbstractTestCase] Insert [6][129][16,641] 
+INFO  [AbstractTestCase] Insert [7][257][66,049] 
+INFO  [AbstractTestCase] Insert [8][513][263,169] 
+INFO  [AbstractTestCase] Insert [9][1,025][1,050,625] 
+INFO  [AbstractTestCase] Total  [9][(2^(9+1))+1 = 1025] => [1025^2 = 1050625] 
+INFO  [AbstractTestCase] Range  [2.0][2.0/1050625 = 0.00000190]  
+INFO  [AbstractTestCase] Zone   [9][2^(-9) = 0.001953125] 
+INFO  [AbstractTestCase] Memory [14.8GiB][7.7GiB][21.9GiB] 
+INFO  [AbstractTestCase] >>>> 
+INFO  [AbstractTestCase] ---- ---- 
+INFO  [AbstractTestCase] Radius [6][2^(-6) = 0.015625] 
+INFO  [AbstractTestCase] Class [CQZoneMatcherImpl] Indexing [SEPARATE_SIMPLE] Zone height [0.001953125] count [1025]  avg size [1025] min [1025] max [1025] 
+INFO  [AbstractTestCase] Searched [1,050,625] radius [0.015625] found [94] in [10,000] loops, total [1s][1,376ms], average [0.138ms][137.643us] PASS 
+INFO  [AbstractTestCase] ---- ---- 
+INFO  [AbstractTestCase] Radius [7][2^(-7) = 0.0078125] 
+INFO  [AbstractTestCase] Class [CQZoneMatcherImpl] Indexing [SEPARATE_SIMPLE] Zone height [0.001953125] count [1025]  avg size [1025] min [1025] max [1025] 
+INFO  [AbstractTestCase] Searched [1,050,625] radius [0.0078125] found [22] in [10,000] loops, total [1s][1,030ms], average [0.103ms][103.083us] PASS 
+INFO  [AbstractTestCase] ---- ---- 
+INFO  [AbstractTestCase] Radius [8][2^(-8) = 0.00390625] 
+INFO  [AbstractTestCase] Class [CQZoneMatcherImpl] Indexing [SEPARATE_SIMPLE] Zone height [0.001953125] count [1025]  avg size [1025] min [1025] max [1025] 
+INFO  [AbstractTestCase] Searched [1,050,625] radius [0.00390625] found [5] in [10,000] loops, total [0s][669ms], average [0.067ms][66.941us] PASS 
+INFO  [AbstractTestCase] ---- ---- 
+INFO  [AbstractTestCase] Radius [9][2^(-9) = 0.001953125] 
+INFO  [AbstractTestCase] Class [CQZoneMatcherImpl] Indexing [SEPARATE_SIMPLE] Zone height [0.001953125] count [1025]  avg size [1025] min [1025] max [1025] 
+INFO  [AbstractTestCase] Searched [1,050,625] radius [0.001953125] found [1] in [10,000] loops, total [0s][575ms], average [0.058ms][57.587us] PASS 
+INFO  [AbstractTestCase] ---- ---- 
+INFO  [AbstractTestCase] Radius [10][2^(-10) = 9.765625E-4] 
+INFO  [AbstractTestCase] Class [CQZoneMatcherImpl] Indexing [SEPARATE_SIMPLE] Zone height [0.001953125] count [1025]  avg size [1025] min [1025] max [1025] 
+INFO  [AbstractTestCase] Searched [1,050,625] radius [9.765625E-4] found [1] in [10,000] loops, total [0s][576ms], average [0.058ms][57.648us] PASS 
+INFO  [AbstractTestCase] <<<< 
+INFO  [AbstractTestCase] Insert [10][2,049][4,198,401] 
+INFO  [AbstractTestCase] Total  [10][(2^(10+1))+1 = 2049] => [2049^2 = 4198401] 
+INFO  [AbstractTestCase] Range  [2.0][2.0/4198401 = 0.00000048]  
+INFO  [AbstractTestCase] Zone   [9][2^(-9) = 0.001953125] 
+INFO  [AbstractTestCase] Memory [14.3GiB][11.4GiB][21.9GiB] 
+INFO  [AbstractTestCase] >>>> 
+INFO  [AbstractTestCase] ---- ---- 
+INFO  [AbstractTestCase] Radius [6][2^(-6) = 0.015625] 
+INFO  [AbstractTestCase] Class [CQZoneMatcherImpl] Indexing [SEPARATE_SIMPLE] Zone height [0.001953125] count [2049]  avg size [2049] min [2049] max [2049] 
+INFO  [AbstractTestCase] Searched [4,198,401] radius [0.015625] found [390] in [10,000] loops, total [3s][3,854ms], average [0.385ms][385.489us] PASS 
+INFO  [AbstractTestCase] ---- ---- 
+INFO  [AbstractTestCase] Radius [7][2^(-7) = 0.0078125] 
+INFO  [AbstractTestCase] Class [CQZoneMatcherImpl] Indexing [SEPARATE_SIMPLE] Zone height [0.001953125] count [2049]  avg size [2049] min [2049] max [2049] 
+INFO  [AbstractTestCase] Searched [4,198,401] radius [0.0078125] found [94] in [10,000] loops, total [2s][2,709ms], average [0.271ms][270.913us] PASS 
+INFO  [AbstractTestCase] ---- ---- 
+INFO  [AbstractTestCase] Radius [8][2^(-8) = 0.00390625] 
+INFO  [AbstractTestCase] Class [CQZoneMatcherImpl] Indexing [SEPARATE_SIMPLE] Zone height [0.001953125] count [2049]  avg size [2049] min [2049] max [2049] 
+INFO  [AbstractTestCase] Searched [4,198,401] radius [0.00390625] found [23] in [10,000] loops, total [1s][1,621ms], average [0.162ms][162.155us] PASS 
+INFO  [AbstractTestCase] ---- ---- 
+INFO  [AbstractTestCase] Radius [9][2^(-9) = 0.001953125] 
+INFO  [AbstractTestCase] Class [CQZoneMatcherImpl] Indexing [SEPARATE_SIMPLE] Zone height [0.001953125] count [2049]  avg size [2049] min [2049] max [2049] 
+INFO  [AbstractTestCase] Searched [4,198,401] radius [0.001953125] found [4] in [10,000] loops, total [1s][1,455ms], average [0.146ms][145.529us] PASS 
+INFO  [AbstractTestCase] ---- ---- 
+INFO  [AbstractTestCase] Radius [10][2^(-10) = 9.765625E-4] 
+INFO  [AbstractTestCase] Class [CQZoneMatcherImpl] Indexing [SEPARATE_SIMPLE] Zone height [0.001953125] count [2049]  avg size [2049] min [2049] max [2049] 
+INFO  [AbstractTestCase] Searched [4,198,401] radius [9.765625E-4] found [1] in [10,000] loops, total [1s][1,389ms], average [0.139ms][138.912us] PASS 
+INFO  [AbstractTestCase] <<<< 
+INFO  [AbstractTestCase] Insert [11][4,097][16,785,409] 
+INFO  [AbstractTestCase] Total  [11][(2^(11+1))+1 = 4097] => [4097^2 = 16785409] 
+INFO  [AbstractTestCase] Range  [2.0][2.0/16785409 = 0.00000012]  
+INFO  [AbstractTestCase] Zone   [9][2^(-9) = 0.001953125] 
+INFO  [AbstractTestCase] Memory [19.2GiB][6.4GiB][21.9GiB] 
+INFO  [AbstractTestCase] >>>> 
+INFO  [AbstractTestCase] ---- ---- 
+INFO  [AbstractTestCase] Radius [6][2^(-6) = 0.015625] 
+INFO  [AbstractTestCase] Class [CQZoneMatcherImpl] Indexing [SEPARATE_SIMPLE] Zone height [0.001953125] count [2049]  avg size [8192] min [4097] max [8194] 
+INFO  [AbstractTestCase] Searched [16,785,409] radius [0.015625] found [1,594] in [10,000] loops, total [9s][9,974ms], average [0.997ms][997.480us] PASS 
+INFO  [AbstractTestCase] ---- ---- 
+INFO  [AbstractTestCase] Radius [7][2^(-7) = 0.0078125] 
+INFO  [AbstractTestCase] Class [CQZoneMatcherImpl] Indexing [SEPARATE_SIMPLE] Zone height [0.001953125] count [2049]  avg size [8192] min [4097] max [8194] 
+INFO  [AbstractTestCase] Searched [16,785,409] radius [0.0078125] found [390] in [10,000] loops, total [3s][3,452ms], average [0.345ms][345.218us] PASS 
+INFO  [AbstractTestCase] ---- ---- 
+INFO  [AbstractTestCase] Radius [8][2^(-8) = 0.00390625] 
+INFO  [AbstractTestCase] Class [CQZoneMatcherImpl] Indexing [SEPARATE_SIMPLE] Zone height [0.001953125] count [2049]  avg size [8192] min [4097] max [8194] 
+INFO  [AbstractTestCase] Searched [16,785,409] radius [0.00390625] found [95] in [10,000] loops, total [2s][2,117ms], average [0.212ms][211.798us] PASS 
+INFO  [AbstractTestCase] ---- ---- 
+INFO  [AbstractTestCase] Radius [9][2^(-9) = 0.001953125] 
+INFO  [AbstractTestCase] Class [CQZoneMatcherImpl] Indexing [SEPARATE_SIMPLE] Zone height [0.001953125] count [2049]  avg size [8192] min [4097] max [8194] 
+INFO  [AbstractTestCase] Searched [16,785,409] radius [0.001953125] found [22] in [10,000] loops, total [1s][1,575ms], average [0.158ms][157.528us] PASS 
+INFO  [AbstractTestCase] ---- ---- 
+INFO  [AbstractTestCase] Radius [10][2^(-10) = 9.765625E-4] 
+INFO  [AbstractTestCase] Class [CQZoneMatcherImpl] Indexing [SEPARATE_SIMPLE] Zone height [0.001953125] count [2049]  avg size [8192] min [4097] max [8194] 
+INFO  [AbstractTestCase] Searched [16,785,409] radius [9.765625E-4] found [4] in [10,000] loops, total [1s][1,444ms], average [0.144ms][144.439us] PASS 
+INFO  [AbstractTestCase] <<<< 
+INFO  [AbstractTestCase] ---- ---- 
+INFO  [AbstractTestCase] Insert [0][3][9] 
+INFO  [AbstractTestCase] Insert [1][5][25] 
+INFO  [AbstractTestCase] Insert [2][9][81] 
+INFO  [AbstractTestCase] Insert [3][17][289] 
+INFO  [AbstractTestCase] Insert [4][33][1,089] 
+INFO  [AbstractTestCase] Insert [5][65][4,225] 
+INFO  [AbstractTestCase] Insert [6][129][16,641] 
+INFO  [AbstractTestCase] Insert [7][257][66,049] 
+INFO  [AbstractTestCase] Insert [8][513][263,169] 
+INFO  [AbstractTestCase] Insert [9][1,025][1,050,625] 
+INFO  [AbstractTestCase] Total  [9][(2^(9+1))+1 = 1025] => [1025^2 = 1050625] 
+INFO  [AbstractTestCase] Range  [2.0][2.0/1050625 = 0.00000190]  
+INFO  [AbstractTestCase] Zone   [10][2^(-10) = 9.765625E-4] 
+INFO  [AbstractTestCase] Memory [19.1GiB][9.1GiB][21.9GiB] 
+INFO  [AbstractTestCase] >>>> 
+INFO  [AbstractTestCase] ---- ---- 
+INFO  [AbstractTestCase] Radius [6][2^(-6) = 0.015625] 
+INFO  [AbstractTestCase] Class [CQZoneMatcherImpl] Indexing [SEPARATE_SIMPLE] Zone height [9.765625E-4] count [1025]  avg size [1025] min [1025] max [1025] 
+INFO  [AbstractTestCase] Searched [1,050,625] radius [0.015625] found [94] in [10,000] loops, total [1s][1,339ms], average [0.134ms][133.926us] PASS 
+INFO  [AbstractTestCase] ---- ---- 
+INFO  [AbstractTestCase] Radius [7][2^(-7) = 0.0078125] 
+INFO  [AbstractTestCase] Class [CQZoneMatcherImpl] Indexing [SEPARATE_SIMPLE] Zone height [9.765625E-4] count [1025]  avg size [1025] min [1025] max [1025] 
+INFO  [AbstractTestCase] Searched [1,050,625] radius [0.0078125] found [22] in [10,000] loops, total [0s][807ms], average [0.081ms][80.779us] PASS 
+INFO  [AbstractTestCase] ---- ---- 
+INFO  [AbstractTestCase] Radius [8][2^(-8) = 0.00390625] 
+INFO  [AbstractTestCase] Class [CQZoneMatcherImpl] Indexing [SEPARATE_SIMPLE] Zone height [9.765625E-4] count [1025]  avg size [1025] min [1025] max [1025] 
+INFO  [AbstractTestCase] Searched [1,050,625] radius [0.00390625] found [5] in [10,000] loops, total [0s][620ms], average [0.062ms][62.009us] PASS 
+INFO  [AbstractTestCase] ---- ---- 
+INFO  [AbstractTestCase] Radius [9][2^(-9) = 0.001953125] 
+INFO  [AbstractTestCase] Class [CQZoneMatcherImpl] Indexing [SEPARATE_SIMPLE] Zone height [9.765625E-4] count [1025]  avg size [1025] min [1025] max [1025] 
+INFO  [AbstractTestCase] Searched [1,050,625] radius [0.001953125] found [1] in [10,000] loops, total [0s][521ms], average [0.052ms][52.157us] PASS 
+INFO  [AbstractTestCase] ---- ---- 
+INFO  [AbstractTestCase] Radius [10][2^(-10) = 9.765625E-4] 
+INFO  [AbstractTestCase] Class [CQZoneMatcherImpl] Indexing [SEPARATE_SIMPLE] Zone height [9.765625E-4] count [1025]  avg size [1025] min [1025] max [1025] 
+INFO  [AbstractTestCase] Searched [1,050,625] radius [9.765625E-4] found [1] in [10,000] loops, total [0s][521ms], average [0.052ms][52.133us] PASS 
+INFO  [AbstractTestCase] <<<< 
+INFO  [AbstractTestCase] Insert [10][2,049][4,198,401] 
+INFO  [AbstractTestCase] Total  [10][(2^(10+1))+1 = 2049] => [2049^2 = 4198401] 
+INFO  [AbstractTestCase] Range  [2.0][2.0/4198401 = 0.00000048]  
+INFO  [AbstractTestCase] Zone   [10][2^(-10) = 9.765625E-4] 
+INFO  [AbstractTestCase] Memory [19.1GiB][9.5GiB][21.9GiB] 
+INFO  [AbstractTestCase] >>>> 
+INFO  [AbstractTestCase] ---- ---- 
+INFO  [AbstractTestCase] Radius [6][2^(-6) = 0.015625] 
+INFO  [AbstractTestCase] Class [CQZoneMatcherImpl] Indexing [SEPARATE_SIMPLE] Zone height [9.765625E-4] count [2049]  avg size [2049] min [2049] max [2049] 
+INFO  [AbstractTestCase] Searched [4,198,401] radius [0.015625] found [390] in [10,000] loops, total [3s][3,682ms], average [0.368ms][368.242us] PASS 
+INFO  [AbstractTestCase] ---- ---- 
+INFO  [AbstractTestCase] Radius [7][2^(-7) = 0.0078125] 
+INFO  [AbstractTestCase] Class [CQZoneMatcherImpl] Indexing [SEPARATE_SIMPLE] Zone height [9.765625E-4] count [2049]  avg size [2049] min [2049] max [2049] 
+INFO  [AbstractTestCase] Searched [4,198,401] radius [0.0078125] found [94] in [10,000] loops, total [2s][2,641ms], average [0.264ms][264.184us] PASS 
+INFO  [AbstractTestCase] ---- ---- 
+INFO  [AbstractTestCase] Radius [8][2^(-8) = 0.00390625] 
+INFO  [AbstractTestCase] Class [CQZoneMatcherImpl] Indexing [SEPARATE_SIMPLE] Zone height [9.765625E-4] count [2049]  avg size [2049] min [2049] max [2049] 
+INFO  [AbstractTestCase] Searched [4,198,401] radius [0.00390625] found [23] in [10,000] loops, total [1s][1,524ms], average [0.152ms][152.401us] PASS 
+INFO  [AbstractTestCase] ---- ---- 
+INFO  [AbstractTestCase] Radius [9][2^(-9) = 0.001953125] 
+INFO  [AbstractTestCase] Class [CQZoneMatcherImpl] Indexing [SEPARATE_SIMPLE] Zone height [9.765625E-4] count [2049]  avg size [2049] min [2049] max [2049] 
+INFO  [AbstractTestCase] Searched [4,198,401] radius [0.001953125] found [4] in [10,000] loops, total [1s][1,352ms], average [0.135ms][135.288us] PASS 
+INFO  [AbstractTestCase] ---- ---- 
+INFO  [AbstractTestCase] Radius [10][2^(-10) = 9.765625E-4] 
+INFO  [AbstractTestCase] Class [CQZoneMatcherImpl] Indexing [SEPARATE_SIMPLE] Zone height [9.765625E-4] count [2049]  avg size [2049] min [2049] max [2049] 
+INFO  [AbstractTestCase] Searched [4,198,401] radius [9.765625E-4] found [1] in [10,000] loops, total [1s][1,491ms], average [0.149ms][149.172us] PASS 
+INFO  [AbstractTestCase] <<<< 
+INFO  [AbstractTestCase] Insert [11][4,097][16,785,409] 
+INFO  [AbstractTestCase] Total  [11][(2^(11+1))+1 = 4097] => [4097^2 = 16785409] 
+INFO  [AbstractTestCase] Range  [2.0][2.0/16785409 = 0.00000012]  
+INFO  [AbstractTestCase] Zone   [10][2^(-10) = 9.765625E-4] 
+INFO  [AbstractTestCase] Memory [18.4GiB][9.8GiB][21.9GiB] 
+INFO  [AbstractTestCase] >>>> 
+INFO  [AbstractTestCase] ---- ---- 
+INFO  [AbstractTestCase] Radius [6][2^(-6) = 0.015625] 
+INFO  [AbstractTestCase] Class [CQZoneMatcherImpl] Indexing [SEPARATE_SIMPLE] Zone height [9.765625E-4] count [4097]  avg size [4097] min [4097] max [4097] 
+INFO  [AbstractTestCase] Searched [16,785,409] radius [0.015625] found [1,594] in [10,000] loops, total [12s][12,455ms], average [1.246ms][1,245.570us] FAIL 
+INFO  [AbstractTestCase] ---- ---- 
+INFO  [AbstractTestCase] Radius [7][2^(-7) = 0.0078125] 
+INFO  [AbstractTestCase] Class [CQZoneMatcherImpl] Indexing [SEPARATE_SIMPLE] Zone height [9.765625E-4] count [4097]  avg size [4097] min [4097] max [4097] 
+INFO  [AbstractTestCase] Searched [16,785,409] radius [0.0078125] found [390] in [10,000] loops, total [5s][5,888ms], average [0.589ms][588.830us] PASS 
+INFO  [AbstractTestCase] ---- ---- 
+INFO  [AbstractTestCase] Radius [8][2^(-8) = 0.00390625] 
+INFO  [AbstractTestCase] Class [CQZoneMatcherImpl] Indexing [SEPARATE_SIMPLE] Zone height [9.765625E-4] count [4097]  avg size [4097] min [4097] max [4097] 
+INFO  [AbstractTestCase] Searched [16,785,409] radius [0.00390625] found [95] in [10,000] loops, total [3s][3,502ms], average [0.350ms][350.288us] PASS 
+INFO  [AbstractTestCase] ---- ---- 
+INFO  [AbstractTestCase] Radius [9][2^(-9) = 0.001953125] 
+INFO  [AbstractTestCase] Class [CQZoneMatcherImpl] Indexing [SEPARATE_SIMPLE] Zone height [9.765625E-4] count [4097]  avg size [4097] min [4097] max [4097] 
+INFO  [AbstractTestCase] Searched [16,785,409] radius [0.001953125] found [22] in [10,000] loops, total [2s][2,965ms], average [0.297ms][296.531us] PASS 
+INFO  [AbstractTestCase] ---- ---- 
+INFO  [AbstractTestCase] Radius [10][2^(-10) = 9.765625E-4] 
+INFO  [AbstractTestCase] Class [CQZoneMatcherImpl] Indexing [SEPARATE_SIMPLE] Zone height [9.765625E-4] count [4097]  avg size [4097] min [4097] max [4097] 
+INFO  [AbstractTestCase] Searched [16,785,409] radius [9.765625E-4] found [4] in [10,000] loops, total [2s][2,782ms], average [0.278ms][278.238us] PASS 
+INFO  [AbstractTestCase] <<<< 
+INFO  [AbstractTestCase] ---- ---- 
+INFO  [AbstractTestCase] Insert [0][3][9] 
+INFO  [AbstractTestCase] Insert [1][5][25] 
+INFO  [AbstractTestCase] Insert [2][9][81] 
+INFO  [AbstractTestCase] Insert [3][17][289] 
+INFO  [AbstractTestCase] Insert [4][33][1,089] 
+INFO  [AbstractTestCase] Insert [5][65][4,225] 
+INFO  [AbstractTestCase] Insert [6][129][16,641] 
+INFO  [AbstractTestCase] Insert [7][257][66,049] 
+INFO  [AbstractTestCase] Insert [8][513][263,169] 
+INFO  [AbstractTestCase] Insert [9][1,025][1,050,625] 
+INFO  [AbstractTestCase] Total  [9][(2^(9+1))+1 = 1025] => [1025^2 = 1050625] 
+INFO  [AbstractTestCase] Range  [1.0][1.0/1050625 = 0.00000095]  
+INFO  [AbstractTestCase] Zone   [6][2^(-6) = 0.015625] 
+INFO  [AbstractTestCase] Memory [18.4GiB][8.5GiB][21.9GiB] 
+INFO  [AbstractTestCase] >>>> 
+INFO  [AbstractTestCase] ---- ---- 
+INFO  [AbstractTestCase] Radius [6][2^(-6) = 0.015625] 
+INFO  [AbstractTestCase] Class [CQZoneMatcherImpl] Indexing [SEPARATE_SIMPLE] Zone height [0.015625] count [129]  avg size [8144] min [1025] max [8200] 
+INFO  [AbstractTestCase] Searched [1,050,625] radius [0.015625] found [390] in [10,000] loops, total [1s][1,837ms], average [0.184ms][183.773us] PASS 
+INFO  [AbstractTestCase] ---- ---- 
+INFO  [AbstractTestCase] Radius [7][2^(-7) = 0.0078125] 
+INFO  [AbstractTestCase] Class [CQZoneMatcherImpl] Indexing [SEPARATE_SIMPLE] Zone height [0.015625] count [129]  avg size [8144] min [1025] max [8200] 
+INFO  [AbstractTestCase] Searched [1,050,625] radius [0.0078125] found [94] in [10,000] loops, total [0s][514ms], average [0.051ms][51.411us] PASS 
+INFO  [AbstractTestCase] ---- ---- 
+INFO  [AbstractTestCase] Radius [8][2^(-8) = 0.00390625] 
+INFO  [AbstractTestCase] Class [CQZoneMatcherImpl] Indexing [SEPARATE_SIMPLE] Zone height [0.015625] count [129]  avg size [8144] min [1025] max [8200] 
+INFO  [AbstractTestCase] Searched [1,050,625] radius [0.00390625] found [23] in [10,000] loops, total [0s][206ms], average [0.021ms][20.610us] PASS 
+INFO  [AbstractTestCase] ---- ---- 
+INFO  [AbstractTestCase] Radius [9][2^(-9) = 0.001953125] 
+INFO  [AbstractTestCase] Class [CQZoneMatcherImpl] Indexing [SEPARATE_SIMPLE] Zone height [0.015625] count [129]  avg size [8144] min [1025] max [8200] 
+INFO  [AbstractTestCase] Searched [1,050,625] radius [0.001953125] found [4] in [10,000] loops, total [0s][113ms], average [0.011ms][11.364us] PASS 
+INFO  [AbstractTestCase] ---- ---- 
+INFO  [AbstractTestCase] Radius [10][2^(-10) = 9.765625E-4] 
+INFO  [AbstractTestCase] Class [CQZoneMatcherImpl] Indexing [SEPARATE_SIMPLE] Zone height [0.015625] count [129]  avg size [8144] min [1025] max [8200] 
+INFO  [AbstractTestCase] Searched [1,050,625] radius [9.765625E-4] found [1] in [10,000] loops, total [0s][75ms], average [0.008ms][7.535us] PASS 
+INFO  [AbstractTestCase] <<<< 
+INFO  [AbstractTestCase] Insert [10][2,049][4,198,401] 
+INFO  [AbstractTestCase] Total  [10][(2^(10+1))+1 = 2049] => [2049^2 = 4198401] 
+INFO  [AbstractTestCase] Range  [1.0][1.0/4198401 = 0.00000024]  
+INFO  [AbstractTestCase] Zone   [6][2^(-6) = 0.015625] 
+INFO  [AbstractTestCase] Memory [18.4GiB][8.2GiB][21.9GiB] 
+INFO  [AbstractTestCase] >>>> 
+INFO  [AbstractTestCase] ---- ---- 
+INFO  [AbstractTestCase] Radius [6][2^(-6) = 0.015625] 
+INFO  [AbstractTestCase] Class [CQZoneMatcherImpl] Indexing [SEPARATE_SIMPLE] Zone height [0.015625] count [129]  avg size [32545] min [2049] max [32784] 
+INFO  [AbstractTestCase] Searched [4,198,401] radius [0.015625] found [1,594] in [10,000] loops, total [7s][7,520ms], average [0.752ms][752.080us] PASS 
+INFO  [AbstractTestCase] ---- ---- 
+INFO  [AbstractTestCase] Radius [7][2^(-7) = 0.0078125] 
+INFO  [AbstractTestCase] Class [CQZoneMatcherImpl] Indexing [SEPARATE_SIMPLE] Zone height [0.015625] count [129]  avg size [32545] min [2049] max [32784] 
+INFO  [AbstractTestCase] Searched [4,198,401] radius [0.0078125] found [390] in [10,000] loops, total [1s][1,927ms], average [0.193ms][192.740us] PASS 
+INFO  [AbstractTestCase] ---- ---- 
+INFO  [AbstractTestCase] Radius [8][2^(-8) = 0.00390625] 
+INFO  [AbstractTestCase] Class [CQZoneMatcherImpl] Indexing [SEPARATE_SIMPLE] Zone height [0.015625] count [129]  avg size [32545] min [2049] max [32784] 
+INFO  [AbstractTestCase] Searched [4,198,401] radius [0.00390625] found [95] in [10,000] loops, total [0s][723ms], average [0.072ms][72.306us] PASS 
+INFO  [AbstractTestCase] ---- ---- 
+INFO  [AbstractTestCase] Radius [9][2^(-9) = 0.001953125] 
+INFO  [AbstractTestCase] Class [CQZoneMatcherImpl] Indexing [SEPARATE_SIMPLE] Zone height [0.015625] count [129]  avg size [32545] min [2049] max [32784] 
+INFO  [AbstractTestCase] Searched [4,198,401] radius [0.001953125] found [22] in [10,000] loops, total [0s][375ms], average [0.038ms][37.583us] PASS 
+INFO  [AbstractTestCase] ---- ---- 
+INFO  [AbstractTestCase] Radius [10][2^(-10) = 9.765625E-4] 
+INFO  [AbstractTestCase] Class [CQZoneMatcherImpl] Indexing [SEPARATE_SIMPLE] Zone height [0.015625] count [129]  avg size [32545] min [2049] max [32784] 
+INFO  [AbstractTestCase] Searched [4,198,401] radius [9.765625E-4] found [4] in [10,000] loops, total [0s][181ms], average [0.018ms][18.121us] PASS 
+INFO  [AbstractTestCase] <<<< 
+INFO  [AbstractTestCase] Insert [11][4,097][16,785,409] 
+INFO  [AbstractTestCase] Total  [11][(2^(11+1))+1 = 4097] => [4097^2 = 16785409] 
+INFO  [AbstractTestCase] Range  [1.0][1.0/16785409 = 0.00000006]  
+INFO  [AbstractTestCase] Zone   [6][2^(-6) = 0.015625] 
+INFO  [AbstractTestCase] Memory [15.0GiB][7.1GiB][21.9GiB] 
+INFO  [AbstractTestCase] >>>> 
+INFO  [AbstractTestCase] ---- ---- 
+INFO  [AbstractTestCase] Radius [6][2^(-6) = 0.015625] 
+INFO  [AbstractTestCase] Class [CQZoneMatcherImpl] Indexing [SEPARATE_SIMPLE] Zone height [0.015625] count [129]  avg size [130119] min [4097] max [131104] 
+INFO  [AbstractTestCase] Searched [16,785,409] radius [0.015625] found [6,414] in [10,000] loops, total [30s][30,281ms], average [3.028ms][3,028.116us] FAIL 
+INFO  [AbstractTestCase] ---- ---- 
+INFO  [AbstractTestCase] Radius [7][2^(-7) = 0.0078125] 
+INFO  [AbstractTestCase] Class [CQZoneMatcherImpl] Indexing [SEPARATE_SIMPLE] Zone height [0.015625] count [129]  avg size [130119] min [4097] max [131104] 
+INFO  [AbstractTestCase] Searched [16,785,409] radius [0.0078125] found [1,594] in [10,000] loops, total [8s][8,360ms], average [0.836ms][836.077us] PASS 
+INFO  [AbstractTestCase] ---- ---- 
+INFO  [AbstractTestCase] Radius [8][2^(-8) = 0.00390625] 
+INFO  [AbstractTestCase] Class [CQZoneMatcherImpl] Indexing [SEPARATE_SIMPLE] Zone height [0.015625] count [129]  avg size [130119] min [4097] max [131104] 
+INFO  [AbstractTestCase] Searched [16,785,409] radius [0.00390625] found [391] in [10,000] loops, total [2s][2,896ms], average [0.290ms][289.647us] PASS 
+INFO  [AbstractTestCase] ---- ---- 
+INFO  [AbstractTestCase] Radius [9][2^(-9) = 0.001953125] 
+INFO  [AbstractTestCase] Class [CQZoneMatcherImpl] Indexing [SEPARATE_SIMPLE] Zone height [0.015625] count [129]  avg size [130119] min [4097] max [131104] 
+INFO  [AbstractTestCase] Searched [16,785,409] radius [0.001953125] found [94] in [10,000] loops, total [1s][1,128ms], average [0.113ms][112.862us] PASS 
+INFO  [AbstractTestCase] ---- ---- 
+INFO  [AbstractTestCase] Radius [10][2^(-10) = 9.765625E-4] 
+INFO  [AbstractTestCase] Class [CQZoneMatcherImpl] Indexing [SEPARATE_SIMPLE] Zone height [0.015625] count [129]  avg size [130119] min [4097] max [131104] 
+INFO  [AbstractTestCase] Searched [16,785,409] radius [9.765625E-4] found [22] in [10,000] loops, total [0s][471ms], average [0.047ms][47.139us] PASS 
+INFO  [AbstractTestCase] <<<< 
+INFO  [AbstractTestCase] ---- ---- 
+INFO  [AbstractTestCase] Insert [0][3][9] 
+INFO  [AbstractTestCase] Insert [1][5][25] 
+INFO  [AbstractTestCase] Insert [2][9][81] 
+INFO  [AbstractTestCase] Insert [3][17][289] 
+INFO  [AbstractTestCase] Insert [4][33][1,089] 
+INFO  [AbstractTestCase] Insert [5][65][4,225] 
+INFO  [AbstractTestCase] Insert [6][129][16,641] 
+INFO  [AbstractTestCase] Insert [7][257][66,049] 
+INFO  [AbstractTestCase] Insert [8][513][263,169] 
+INFO  [AbstractTestCase] Insert [9][1,025][1,050,625] 
+INFO  [AbstractTestCase] Total  [9][(2^(9+1))+1 = 1025] => [1025^2 = 1050625] 
+INFO  [AbstractTestCase] Range  [1.0][1.0/1050625 = 0.00000095]  
+INFO  [AbstractTestCase] Zone   [7][2^(-7) = 0.0078125] 
+INFO  [AbstractTestCase] Memory [15.9GiB][7.1GiB][21.9GiB] 
+INFO  [AbstractTestCase] >>>> 
+INFO  [AbstractTestCase] ---- ---- 
+INFO  [AbstractTestCase] Radius [6][2^(-6) = 0.015625] 
+INFO  [AbstractTestCase] Class [CQZoneMatcherImpl] Indexing [SEPARATE_SIMPLE] Zone height [0.0078125] count [257]  avg size [4088] min [1025] max [4100] 
+INFO  [AbstractTestCase] Searched [1,050,625] radius [0.015625] found [390] in [10,000] loops, total [2s][2,527ms], average [0.253ms][252.700us] PASS 
+INFO  [AbstractTestCase] ---- ---- 
+INFO  [AbstractTestCase] Radius [7][2^(-7) = 0.0078125] 
+INFO  [AbstractTestCase] Class [CQZoneMatcherImpl] Indexing [SEPARATE_SIMPLE] Zone height [0.0078125] count [257]  avg size [4088] min [1025] max [4100] 
+INFO  [AbstractTestCase] Searched [1,050,625] radius [0.0078125] found [94] in [10,000] loops, total [0s][579ms], average [0.058ms][57.912us] PASS 
+INFO  [AbstractTestCase] ---- ---- 
+INFO  [AbstractTestCase] Radius [8][2^(-8) = 0.00390625] 
+INFO  [AbstractTestCase] Class [CQZoneMatcherImpl] Indexing [SEPARATE_SIMPLE] Zone height [0.0078125] count [257]  avg size [4088] min [1025] max [4100] 
+INFO  [AbstractTestCase] Searched [1,050,625] radius [0.00390625] found [23] in [10,000] loops, total [0s][232ms], average [0.023ms][23.265us] PASS 
+INFO  [AbstractTestCase] ---- ---- 
+INFO  [AbstractTestCase] Radius [9][2^(-9) = 0.001953125] 
+INFO  [AbstractTestCase] Class [CQZoneMatcherImpl] Indexing [SEPARATE_SIMPLE] Zone height [0.0078125] count [257]  avg size [4088] min [1025] max [4100] 
+INFO  [AbstractTestCase] Searched [1,050,625] radius [0.001953125] found [4] in [10,000] loops, total [0s][147ms], average [0.015ms][14.773us] PASS 
+INFO  [AbstractTestCase] ---- ---- 
+INFO  [AbstractTestCase] Radius [10][2^(-10) = 9.765625E-4] 
+INFO  [AbstractTestCase] Class [CQZoneMatcherImpl] Indexing [SEPARATE_SIMPLE] Zone height [0.0078125] count [257]  avg size [4088] min [1025] max [4100] 
+INFO  [AbstractTestCase] Searched [1,050,625] radius [9.765625E-4] found [1] in [10,000] loops, total [0s][117ms], average [0.012ms][11.769us] PASS 
+INFO  [AbstractTestCase] <<<< 
+INFO  [AbstractTestCase] Insert [10][2,049][4,198,401] 
+INFO  [AbstractTestCase] Total  [10][(2^(10+1))+1 = 2049] => [2049^2 = 4198401] 
+INFO  [AbstractTestCase] Range  [1.0][1.0/4198401 = 0.00000024]  
+INFO  [AbstractTestCase] Zone   [7][2^(-7) = 0.0078125] 
+INFO  [AbstractTestCase] Memory [15.9GiB][8.5GiB][21.9GiB] 
+INFO  [AbstractTestCase] >>>> 
+INFO  [AbstractTestCase] ---- ---- 
+INFO  [AbstractTestCase] Radius [6][2^(-6) = 0.015625] 
+INFO  [AbstractTestCase] Class [CQZoneMatcherImpl] Indexing [SEPARATE_SIMPLE] Zone height [0.0078125] count [257]  avg size [16336] min [2049] max [16392] 
+INFO  [AbstractTestCase] Searched [4,198,401] radius [0.015625] found [1,594] in [10,000] loops, total [8s][8,390ms], average [0.839ms][839.025us] PASS 
+INFO  [AbstractTestCase] ---- ---- 
+INFO  [AbstractTestCase] Radius [7][2^(-7) = 0.0078125] 
+INFO  [AbstractTestCase] Class [CQZoneMatcherImpl] Indexing [SEPARATE_SIMPLE] Zone height [0.0078125] count [257]  avg size [16336] min [2049] max [16392] 
+INFO  [AbstractTestCase] Searched [4,198,401] radius [0.0078125] found [390] in [10,000] loops, total [2s][2,167ms], average [0.217ms][216.752us] PASS 
+INFO  [AbstractTestCase] ---- ---- 
+INFO  [AbstractTestCase] Radius [8][2^(-8) = 0.00390625] 
+INFO  [AbstractTestCase] Class [CQZoneMatcherImpl] Indexing [SEPARATE_SIMPLE] Zone height [0.0078125] count [257]  avg size [16336] min [2049] max [16392] 
+INFO  [AbstractTestCase] Searched [4,198,401] radius [0.00390625] found [95] in [10,000] loops, total [0s][577ms], average [0.058ms][57.718us] PASS 
+INFO  [AbstractTestCase] ---- ---- 
+INFO  [AbstractTestCase] Radius [9][2^(-9) = 0.001953125] 
+INFO  [AbstractTestCase] Class [CQZoneMatcherImpl] Indexing [SEPARATE_SIMPLE] Zone height [0.0078125] count [257]  avg size [16336] min [2049] max [16392] 
+INFO  [AbstractTestCase] Searched [4,198,401] radius [0.001953125] found [22] in [10,000] loops, total [0s][247ms], average [0.025ms][24.754us] PASS 
+INFO  [AbstractTestCase] ---- ---- 
+INFO  [AbstractTestCase] Radius [10][2^(-10) = 9.765625E-4] 
+INFO  [AbstractTestCase] Class [CQZoneMatcherImpl] Indexing [SEPARATE_SIMPLE] Zone height [0.0078125] count [257]  avg size [16336] min [2049] max [16392] 
+INFO  [AbstractTestCase] Searched [4,198,401] radius [9.765625E-4] found [4] in [10,000] loops, total [0s][149ms], average [0.015ms][14.987us] PASS 
+INFO  [AbstractTestCase] <<<< 
+INFO  [AbstractTestCase] Insert [11][4,097][16,785,409] 
+INFO  [AbstractTestCase] Total  [11][(2^(11+1))+1 = 4097] => [4097^2 = 16785409] 
+INFO  [AbstractTestCase] Range  [1.0][1.0/16785409 = 0.00000006]  
+INFO  [AbstractTestCase] Zone   [7][2^(-7) = 0.0078125] 
+INFO  [AbstractTestCase] Memory [17.1GiB][8.2GiB][21.9GiB] 
+INFO  [AbstractTestCase] >>>> 
+INFO  [AbstractTestCase] ---- ---- 
+INFO  [AbstractTestCase] Radius [6][2^(-6) = 0.015625] 
+INFO  [AbstractTestCase] Class [CQZoneMatcherImpl] Indexing [SEPARATE_SIMPLE] Zone height [0.0078125] count [257]  avg size [65312] min [4097] max [65552] 
+INFO  [AbstractTestCase] Searched [16,785,409] radius [0.015625] found [6,414] in [10,000] loops, total [26s][26,765ms], average [2.677ms][2,676.511us] FAIL 
+INFO  [AbstractTestCase] ---- ---- 
+INFO  [AbstractTestCase] Radius [7][2^(-7) = 0.0078125] 
+INFO  [AbstractTestCase] Class [CQZoneMatcherImpl] Indexing [SEPARATE_SIMPLE] Zone height [0.0078125] count [257]  avg size [65312] min [4097] max [65552] 
+INFO  [AbstractTestCase] Searched [16,785,409] radius [0.0078125] found [1,594] in [10,000] loops, total [6s][6,595ms], average [0.660ms][659.581us] PASS 
+INFO  [AbstractTestCase] ---- ---- 
+INFO  [AbstractTestCase] Radius [8][2^(-8) = 0.00390625] 
+INFO  [AbstractTestCase] Class [CQZoneMatcherImpl] Indexing [SEPARATE_SIMPLE] Zone height [0.0078125] count [257]  avg size [65312] min [4097] max [65552] 
+INFO  [AbstractTestCase] Searched [16,785,409] radius [0.00390625] found [391] in [10,000] loops, total [2s][2,516ms], average [0.252ms][251.616us] PASS 
+INFO  [AbstractTestCase] ---- ---- 
+INFO  [AbstractTestCase] Radius [9][2^(-9) = 0.001953125] 
+INFO  [AbstractTestCase] Class [CQZoneMatcherImpl] Indexing [SEPARATE_SIMPLE] Zone height [0.0078125] count [257]  avg size [65312] min [4097] max [65552] 
+INFO  [AbstractTestCase] Searched [16,785,409] radius [0.001953125] found [94] in [10,000] loops, total [0s][932ms], average [0.093ms][93.223us] PASS 
+INFO  [AbstractTestCase] ---- ---- 
+INFO  [AbstractTestCase] Radius [10][2^(-10) = 9.765625E-4] 
+INFO  [AbstractTestCase] Class [CQZoneMatcherImpl] Indexing [SEPARATE_SIMPLE] Zone height [0.0078125] count [257]  avg size [65312] min [4097] max [65552] 
+INFO  [AbstractTestCase] Searched [16,785,409] radius [9.765625E-4] found [22] in [10,000] loops, total [0s][417ms], average [0.042ms][41.789us] PASS 
+INFO  [AbstractTestCase] <<<< 
+INFO  [AbstractTestCase] ---- ---- 
+INFO  [AbstractTestCase] Insert [0][3][9] 
+INFO  [AbstractTestCase] Insert [1][5][25] 
+INFO  [AbstractTestCase] Insert [2][9][81] 
+INFO  [AbstractTestCase] Insert [3][17][289] 
+INFO  [AbstractTestCase] Insert [4][33][1,089] 
+INFO  [AbstractTestCase] Insert [5][65][4,225] 
+INFO  [AbstractTestCase] Insert [6][129][16,641] 
+INFO  [AbstractTestCase] Insert [7][257][66,049] 
+INFO  [AbstractTestCase] Insert [8][513][263,169] 
+INFO  [AbstractTestCase] Insert [9][1,025][1,050,625] 
+INFO  [AbstractTestCase] Total  [9][(2^(9+1))+1 = 1025] => [1025^2 = 1050625] 
+INFO  [AbstractTestCase] Range  [1.0][1.0/1050625 = 0.00000095]  
+INFO  [AbstractTestCase] Zone   [8][2^(-8) = 0.00390625] 
+INFO  [AbstractTestCase] Memory [17.4GiB][11.3GiB][21.9GiB] 
+INFO  [AbstractTestCase] >>>> 
+INFO  [AbstractTestCase] ---- ---- 
+INFO  [AbstractTestCase] Radius [6][2^(-6) = 0.015625] 
+INFO  [AbstractTestCase] Class [CQZoneMatcherImpl] Indexing [SEPARATE_SIMPLE] Zone height [0.00390625] count [513]  avg size [2048] min [1025] max [2050] 
+INFO  [AbstractTestCase] Searched [1,050,625] radius [0.015625] found [390] in [10,000] loops, total [2s][2,305ms], average [0.231ms][230.521us] PASS 
+INFO  [AbstractTestCase] ---- ---- 
+INFO  [AbstractTestCase] Radius [7][2^(-7) = 0.0078125] 
+INFO  [AbstractTestCase] Class [CQZoneMatcherImpl] Indexing [SEPARATE_SIMPLE] Zone height [0.00390625] count [513]  avg size [2048] min [1025] max [2050] 
+INFO  [AbstractTestCase] Searched [1,050,625] radius [0.0078125] found [94] in [10,000] loops, total [1s][1,477ms], average [0.148ms][147.743us] PASS 
+INFO  [AbstractTestCase] ---- ---- 
+INFO  [AbstractTestCase] Radius [8][2^(-8) = 0.00390625] 
+INFO  [AbstractTestCase] Class [CQZoneMatcherImpl] Indexing [SEPARATE_SIMPLE] Zone height [0.00390625] count [513]  avg size [2048] min [1025] max [2050] 
+INFO  [AbstractTestCase] Searched [1,050,625] radius [0.00390625] found [23] in [10,000] loops, total [0s][425ms], average [0.043ms][42.510us] PASS 
+INFO  [AbstractTestCase] ---- ---- 
+INFO  [AbstractTestCase] Radius [9][2^(-9) = 0.001953125] 
+INFO  [AbstractTestCase] Class [CQZoneMatcherImpl] Indexing [SEPARATE_SIMPLE] Zone height [0.00390625] count [513]  avg size [2048] min [1025] max [2050] 
+INFO  [AbstractTestCase] Searched [1,050,625] radius [0.001953125] found [4] in [10,000] loops, total [0s][230ms], average [0.023ms][23.031us] PASS 
+INFO  [AbstractTestCase] ---- ---- 
+INFO  [AbstractTestCase] Radius [10][2^(-10) = 9.765625E-4] 
+INFO  [AbstractTestCase] Class [CQZoneMatcherImpl] Indexing [SEPARATE_SIMPLE] Zone height [0.00390625] count [513]  avg size [2048] min [1025] max [2050] 
+INFO  [AbstractTestCase] Searched [1,050,625] radius [9.765625E-4] found [1] in [10,000] loops, total [0s][199ms], average [0.020ms][19.950us] PASS 
+INFO  [AbstractTestCase] <<<< 
+INFO  [AbstractTestCase] Insert [10][2,049][4,198,401] 
+INFO  [AbstractTestCase] Total  [10][(2^(10+1))+1 = 2049] => [2049^2 = 4198401] 
+INFO  [AbstractTestCase] Range  [1.0][1.0/4198401 = 0.00000024]  
+INFO  [AbstractTestCase] Zone   [8][2^(-8) = 0.00390625] 
+INFO  [AbstractTestCase] Memory [17.3GiB][6.8GiB][21.9GiB] 
+INFO  [AbstractTestCase] >>>> 
+INFO  [AbstractTestCase] ---- ---- 
+INFO  [AbstractTestCase] Radius [6][2^(-6) = 0.015625] 
+INFO  [AbstractTestCase] Class [CQZoneMatcherImpl] Indexing [SEPARATE_SIMPLE] Zone height [0.00390625] count [513]  avg size [8184] min [2049] max [8196] 
+INFO  [AbstractTestCase] Searched [4,198,401] radius [0.015625] found [1,594] in [10,000] loops, total [8s][8,879ms], average [0.888ms][887.958us] PASS 
+INFO  [AbstractTestCase] ---- ---- 
+INFO  [AbstractTestCase] Radius [7][2^(-7) = 0.0078125] 
+INFO  [AbstractTestCase] Class [CQZoneMatcherImpl] Indexing [SEPARATE_SIMPLE] Zone height [0.00390625] count [513]  avg size [8184] min [2049] max [8196] 
+INFO  [AbstractTestCase] Searched [4,198,401] radius [0.0078125] found [390] in [10,000] loops, total [2s][2,051ms], average [0.205ms][205.158us] PASS 
+INFO  [AbstractTestCase] ---- ---- 
+INFO  [AbstractTestCase] Radius [8][2^(-8) = 0.00390625] 
+INFO  [AbstractTestCase] Class [CQZoneMatcherImpl] Indexing [SEPARATE_SIMPLE] Zone height [0.00390625] count [513]  avg size [8184] min [2049] max [8196] 
+INFO  [AbstractTestCase] Searched [4,198,401] radius [0.00390625] found [95] in [10,000] loops, total [0s][723ms], average [0.072ms][72.346us] PASS 
+INFO  [AbstractTestCase] ---- ---- 
+INFO  [AbstractTestCase] Radius [9][2^(-9) = 0.001953125] 
+INFO  [AbstractTestCase] Class [CQZoneMatcherImpl] Indexing [SEPARATE_SIMPLE] Zone height [0.00390625] count [513]  avg size [8184] min [2049] max [8196] 
+INFO  [AbstractTestCase] Searched [4,198,401] radius [0.001953125] found [22] in [10,000] loops, total [0s][401ms], average [0.040ms][40.127us] PASS 
+INFO  [AbstractTestCase] ---- ---- 
+INFO  [AbstractTestCase] Radius [10][2^(-10) = 9.765625E-4] 
+INFO  [AbstractTestCase] Class [CQZoneMatcherImpl] Indexing [SEPARATE_SIMPLE] Zone height [0.00390625] count [513]  avg size [8184] min [2049] max [8196] 
+INFO  [AbstractTestCase] Searched [4,198,401] radius [9.765625E-4] found [4] in [10,000] loops, total [0s][241ms], average [0.024ms][24.101us] PASS 
+INFO  [AbstractTestCase] <<<< 
+INFO  [AbstractTestCase] Insert [11][4,097][16,785,409] 
+INFO  [AbstractTestCase] Total  [11][(2^(11+1))+1 = 4097] => [4097^2 = 16785409] 
+INFO  [AbstractTestCase] Range  [1.0][1.0/16785409 = 0.00000006]  
+INFO  [AbstractTestCase] Zone   [8][2^(-8) = 0.00390625] 
+INFO  [AbstractTestCase] Memory [18.1GiB][11.1GiB][21.9GiB] 
+INFO  [AbstractTestCase] >>>> 
+INFO  [AbstractTestCase] ---- ---- 
+INFO  [AbstractTestCase] Radius [6][2^(-6) = 0.015625] 
+INFO  [AbstractTestCase] Class [CQZoneMatcherImpl] Indexing [SEPARATE_SIMPLE] Zone height [0.00390625] count [513]  avg size [32720] min [4097] max [32776] 
+INFO  [AbstractTestCase] Searched [16,785,409] radius [0.015625] found [6,414] in [10,000] loops, total [26s][26,550ms], average [2.655ms][2,655.052us] FAIL 
+INFO  [AbstractTestCase] ---- ---- 
+INFO  [AbstractTestCase] Radius [7][2^(-7) = 0.0078125] 
+INFO  [AbstractTestCase] Class [CQZoneMatcherImpl] Indexing [SEPARATE_SIMPLE] Zone height [0.00390625] count [513]  avg size [32720] min [4097] max [32776] 
+INFO  [AbstractTestCase] Searched [16,785,409] radius [0.0078125] found [1,594] in [10,000] loops, total [7s][7,285ms], average [0.729ms][728.592us] PASS 
+INFO  [AbstractTestCase] ---- ---- 
+INFO  [AbstractTestCase] Radius [8][2^(-8) = 0.00390625] 
+INFO  [AbstractTestCase] Class [CQZoneMatcherImpl] Indexing [SEPARATE_SIMPLE] Zone height [0.00390625] count [513]  avg size [32720] min [4097] max [32776] 
+INFO  [AbstractTestCase] Searched [16,785,409] radius [0.00390625] found [391] in [10,000] loops, total [2s][2,565ms], average [0.257ms][256.593us] PASS 
+INFO  [AbstractTestCase] ---- ---- 
+INFO  [AbstractTestCase] Radius [9][2^(-9) = 0.001953125] 
+INFO  [AbstractTestCase] Class [CQZoneMatcherImpl] Indexing [SEPARATE_SIMPLE] Zone height [0.00390625] count [513]  avg size [32720] min [4097] max [32776] 
+INFO  [AbstractTestCase] Searched [16,785,409] radius [0.001953125] found [94] in [10,000] loops, total [0s][817ms], average [0.082ms][81.798us] PASS 
+INFO  [AbstractTestCase] ---- ---- 
+INFO  [AbstractTestCase] Radius [10][2^(-10) = 9.765625E-4] 
+INFO  [AbstractTestCase] Class [CQZoneMatcherImpl] Indexing [SEPARATE_SIMPLE] Zone height [0.00390625] count [513]  avg size [32720] min [4097] max [32776] 
+INFO  [AbstractTestCase] Searched [16,785,409] radius [9.765625E-4] found [22] in [10,000] loops, total [0s][396ms], average [0.040ms][39.624us] PASS 
+INFO  [AbstractTestCase] <<<< 
+INFO  [AbstractTestCase] ---- ---- 
+INFO  [AbstractTestCase] Insert [0][3][9] 
+INFO  [AbstractTestCase] Insert [1][5][25] 
+INFO  [AbstractTestCase] Insert [2][9][81] 
+INFO  [AbstractTestCase] Insert [3][17][289] 
+INFO  [AbstractTestCase] Insert [4][33][1,089] 
+INFO  [AbstractTestCase] Insert [5][65][4,225] 
+INFO  [AbstractTestCase] Insert [6][129][16,641] 
+INFO  [AbstractTestCase] Insert [7][257][66,049] 
+INFO  [AbstractTestCase] Insert [8][513][263,169] 
+INFO  [AbstractTestCase] Insert [9][1,025][1,050,625] 
+INFO  [AbstractTestCase] Total  [9][(2^(9+1))+1 = 1025] => [1025^2 = 1050625] 
+INFO  [AbstractTestCase] Range  [1.0][1.0/1050625 = 0.00000095]  
+INFO  [AbstractTestCase] Zone   [9][2^(-9) = 0.001953125] 
+INFO  [AbstractTestCase] Memory [18.8GiB][10.2GiB][21.9GiB] 
+INFO  [AbstractTestCase] >>>> 
+INFO  [AbstractTestCase] ---- ---- 
+INFO  [AbstractTestCase] Radius [6][2^(-6) = 0.015625] 
+INFO  [AbstractTestCase] Class [CQZoneMatcherImpl] Indexing [SEPARATE_SIMPLE] Zone height [0.001953125] count [1025]  avg size [1025] min [1025] max [1025] 
+INFO  [AbstractTestCase] Searched [1,050,625] radius [0.015625] found [390] in [10,000] loops, total [3s][3,632ms], average [0.363ms][363.213us] PASS 
+INFO  [AbstractTestCase] ---- ---- 
+INFO  [AbstractTestCase] Radius [7][2^(-7) = 0.0078125] 
+INFO  [AbstractTestCase] Class [CQZoneMatcherImpl] Indexing [SEPARATE_SIMPLE] Zone height [0.001953125] count [1025]  avg size [1025] min [1025] max [1025] 
+INFO  [AbstractTestCase] Searched [1,050,625] radius [0.0078125] found [94] in [10,000] loops, total [1s][1,314ms], average [0.131ms][131.401us] PASS 
+INFO  [AbstractTestCase] ---- ---- 
+INFO  [AbstractTestCase] Radius [8][2^(-8) = 0.00390625] 
+INFO  [AbstractTestCase] Class [CQZoneMatcherImpl] Indexing [SEPARATE_SIMPLE] Zone height [0.001953125] count [1025]  avg size [1025] min [1025] max [1025] 
+INFO  [AbstractTestCase] Searched [1,050,625] radius [0.00390625] found [23] in [10,000] loops, total [0s][816ms], average [0.082ms][81.671us] PASS 
+INFO  [AbstractTestCase] ---- ---- 
+INFO  [AbstractTestCase] Radius [9][2^(-9) = 0.001953125] 
+INFO  [AbstractTestCase] Class [CQZoneMatcherImpl] Indexing [SEPARATE_SIMPLE] Zone height [0.001953125] count [1025]  avg size [1025] min [1025] max [1025] 
+INFO  [AbstractTestCase] Searched [1,050,625] radius [0.001953125] found [4] in [10,000] loops, total [0s][643ms], average [0.064ms][64.315us] PASS 
+INFO  [AbstractTestCase] ---- ---- 
+INFO  [AbstractTestCase] Radius [10][2^(-10) = 9.765625E-4] 
+INFO  [AbstractTestCase] Class [CQZoneMatcherImpl] Indexing [SEPARATE_SIMPLE] Zone height [0.001953125] count [1025]  avg size [1025] min [1025] max [1025] 
+INFO  [AbstractTestCase] Searched [1,050,625] radius [9.765625E-4] found [1] in [10,000] loops, total [0s][582ms], average [0.058ms][58.230us] PASS 
+INFO  [AbstractTestCase] <<<< 
+INFO  [AbstractTestCase] Insert [10][2,049][4,198,401] 
+INFO  [AbstractTestCase] Total  [10][(2^(10+1))+1 = 2049] => [2049^2 = 4198401] 
+INFO  [AbstractTestCase] Range  [1.0][1.0/4198401 = 0.00000024]  
+INFO  [AbstractTestCase] Zone   [9][2^(-9) = 0.001953125] 
+INFO  [AbstractTestCase] Memory [18.2GiB][10.5GiB][21.9GiB] 
+INFO  [AbstractTestCase] >>>> 
+INFO  [AbstractTestCase] ---- ---- 
+INFO  [AbstractTestCase] Radius [6][2^(-6) = 0.015625] 
+INFO  [AbstractTestCase] Class [CQZoneMatcherImpl] Indexing [SEPARATE_SIMPLE] Zone height [0.001953125] count [1025]  avg size [4096] min [2049] max [4098] 
+INFO  [AbstractTestCase] Searched [4,198,401] radius [0.015625] found [1,594] in [10,000] loops, total [9s][9,530ms], average [0.953ms][953.064us] PASS 
+INFO  [AbstractTestCase] ---- ---- 
+INFO  [AbstractTestCase] Radius [7][2^(-7) = 0.0078125] 
+INFO  [AbstractTestCase] Class [CQZoneMatcherImpl] Indexing [SEPARATE_SIMPLE] Zone height [0.001953125] count [1025]  avg size [4096] min [2049] max [4098] 
+INFO  [AbstractTestCase] Searched [4,198,401] radius [0.0078125] found [390] in [10,000] loops, total [2s][2,721ms], average [0.272ms][272.181us] PASS 
+INFO  [AbstractTestCase] ---- ---- 
+INFO  [AbstractTestCase] Radius [8][2^(-8) = 0.00390625] 
+INFO  [AbstractTestCase] Class [CQZoneMatcherImpl] Indexing [SEPARATE_SIMPLE] Zone height [0.001953125] count [1025]  avg size [4096] min [2049] max [4098] 
+INFO  [AbstractTestCase] Searched [4,198,401] radius [0.00390625] found [95] in [10,000] loops, total [1s][1,268ms], average [0.127ms][126.861us] PASS 
+INFO  [AbstractTestCase] ---- ---- 
+INFO  [AbstractTestCase] Radius [9][2^(-9) = 0.001953125] 
+INFO  [AbstractTestCase] Class [CQZoneMatcherImpl] Indexing [SEPARATE_SIMPLE] Zone height [0.001953125] count [1025]  avg size [4096] min [2049] max [4098] 
+INFO  [AbstractTestCase] Searched [4,198,401] radius [0.001953125] found [22] in [10,000] loops, total [0s][763ms], average [0.076ms][76.300us] PASS 
+INFO  [AbstractTestCase] ---- ---- 
+INFO  [AbstractTestCase] Radius [10][2^(-10) = 9.765625E-4] 
+INFO  [AbstractTestCase] Class [CQZoneMatcherImpl] Indexing [SEPARATE_SIMPLE] Zone height [0.001953125] count [1025]  avg size [4096] min [2049] max [4098] 
+INFO  [AbstractTestCase] Searched [4,198,401] radius [9.765625E-4] found [4] in [10,000] loops, total [0s][603ms], average [0.060ms][60.359us] PASS 
+INFO  [AbstractTestCase] <<<< 
+INFO  [AbstractTestCase] Insert [11][4,097][16,785,409] 
+INFO  [AbstractTestCase] Total  [11][(2^(11+1))+1 = 4097] => [4097^2 = 16785409] 
+INFO  [AbstractTestCase] Range  [1.0][1.0/16785409 = 0.00000006]  
+INFO  [AbstractTestCase] Zone   [9][2^(-9) = 0.001953125] 
+INFO  [AbstractTestCase] Memory [18.8GiB][2.8GiB][21.9GiB] 
+INFO  [AbstractTestCase] >>>> 
+INFO  [AbstractTestCase] ---- ---- 
+INFO  [AbstractTestCase] Radius [6][2^(-6) = 0.015625] 
+INFO  [AbstractTestCase] Class [CQZoneMatcherImpl] Indexing [SEPARATE_SIMPLE] Zone height [0.001953125] count [1025]  avg size [16376] min [4097] max [16388] 
+INFO  [AbstractTestCase] Searched [16,785,409] radius [0.015625] found [6,414] in [10,000] loops, total [27s][27,680ms], average [2.768ms][2,768.017us] FAIL 
+INFO  [AbstractTestCase] ---- ---- 
+INFO  [AbstractTestCase] Radius [7][2^(-7) = 0.0078125] 
+INFO  [AbstractTestCase] Class [CQZoneMatcherImpl] Indexing [SEPARATE_SIMPLE] Zone height [0.001953125] count [1025]  avg size [16376] min [4097] max [16388] 
+INFO  [AbstractTestCase] Searched [16,785,409] radius [0.0078125] found [1,594] in [10,000] loops, total [7s][7,426ms], average [0.743ms][742.633us] PASS 
+INFO  [AbstractTestCase] ---- ---- 
+INFO  [AbstractTestCase] Radius [8][2^(-8) = 0.00390625] 
+INFO  [AbstractTestCase] Class [CQZoneMatcherImpl] Indexing [SEPARATE_SIMPLE] Zone height [0.001953125] count [1025]  avg size [16376] min [4097] max [16388] 
+INFO  [AbstractTestCase] Searched [16,785,409] radius [0.00390625] found [391] in [10,000] loops, total [2s][2,429ms], average [0.243ms][242.963us] PASS 
+INFO  [AbstractTestCase] ---- ---- 
+INFO  [AbstractTestCase] Radius [9][2^(-9) = 0.001953125] 
+INFO  [AbstractTestCase] Class [CQZoneMatcherImpl] Indexing [SEPARATE_SIMPLE] Zone height [0.001953125] count [1025]  avg size [16376] min [4097] max [16388] 
+INFO  [AbstractTestCase] Searched [16,785,409] radius [0.001953125] found [94] in [10,000] loops, total [1s][1,229ms], average [0.123ms][122.974us] PASS 
+INFO  [AbstractTestCase] ---- ---- 
+INFO  [AbstractTestCase] Radius [10][2^(-10) = 9.765625E-4] 
+INFO  [AbstractTestCase] Class [CQZoneMatcherImpl] Indexing [SEPARATE_SIMPLE] Zone height [0.001953125] count [1025]  avg size [16376] min [4097] max [16388] 
+INFO  [AbstractTestCase] Searched [16,785,409] radius [9.765625E-4] found [22] in [10,000] loops, total [0s][739ms], average [0.074ms][73.983us] PASS 
+INFO  [AbstractTestCase] <<<< 
+INFO  [AbstractTestCase] ---- ---- 
+INFO  [AbstractTestCase] Insert [0][3][9] 
+INFO  [AbstractTestCase] Insert [1][5][25] 
+INFO  [AbstractTestCase] Insert [2][9][81] 
+INFO  [AbstractTestCase] Insert [3][17][289] 
+INFO  [AbstractTestCase] Insert [4][33][1,089] 
+INFO  [AbstractTestCase] Insert [5][65][4,225] 
+INFO  [AbstractTestCase] Insert [6][129][16,641] 
+INFO  [AbstractTestCase] Insert [7][257][66,049] 
+INFO  [AbstractTestCase] Insert [8][513][263,169] 
+INFO  [AbstractTestCase] Insert [9][1,025][1,050,625] 
+INFO  [AbstractTestCase] Total  [9][(2^(9+1))+1 = 1025] => [1025^2 = 1050625] 
+INFO  [AbstractTestCase] Range  [1.0][1.0/1050625 = 0.00000095]  
+INFO  [AbstractTestCase] Zone   [10][2^(-10) = 9.765625E-4] 
+INFO  [AbstractTestCase] Memory [18.8GiB][4.7GiB][21.9GiB] 
+INFO  [AbstractTestCase] >>>> 
+INFO  [AbstractTestCase] ---- ---- 
+INFO  [AbstractTestCase] Radius [6][2^(-6) = 0.015625] 
+INFO  [AbstractTestCase] Class [CQZoneMatcherImpl] Indexing [SEPARATE_SIMPLE] Zone height [9.765625E-4] count [1025]  avg size [1025] min [1025] max [1025] 
+INFO  [AbstractTestCase] Searched [1,050,625] radius [0.015625] found [390] in [10,000] loops, total [3s][3,808ms], average [0.381ms][380.864us] PASS 
+INFO  [AbstractTestCase] ---- ---- 
+INFO  [AbstractTestCase] Radius [7][2^(-7) = 0.0078125] 
+INFO  [AbstractTestCase] Class [CQZoneMatcherImpl] Indexing [SEPARATE_SIMPLE] Zone height [9.765625E-4] count [1025]  avg size [1025] min [1025] max [1025] 
+INFO  [AbstractTestCase] Searched [1,050,625] radius [0.0078125] found [94] in [10,000] loops, total [1s][1,297ms], average [0.130ms][129.732us] PASS 
+INFO  [AbstractTestCase] ---- ---- 
+INFO  [AbstractTestCase] Radius [8][2^(-8) = 0.00390625] 
+INFO  [AbstractTestCase] Class [CQZoneMatcherImpl] Indexing [SEPARATE_SIMPLE] Zone height [9.765625E-4] count [1025]  avg size [1025] min [1025] max [1025] 
+INFO  [AbstractTestCase] Searched [1,050,625] radius [0.00390625] found [23] in [10,000] loops, total [0s][775ms], average [0.078ms][77.517us] PASS 
+INFO  [AbstractTestCase] ---- ---- 
+INFO  [AbstractTestCase] Radius [9][2^(-9) = 0.001953125] 
+INFO  [AbstractTestCase] Class [CQZoneMatcherImpl] Indexing [SEPARATE_SIMPLE] Zone height [9.765625E-4] count [1025]  avg size [1025] min [1025] max [1025] 
+INFO  [AbstractTestCase] Searched [1,050,625] radius [0.001953125] found [4] in [10,000] loops, total [0s][595ms], average [0.060ms][59.591us] PASS 
+INFO  [AbstractTestCase] ---- ---- 
+INFO  [AbstractTestCase] Radius [10][2^(-10) = 9.765625E-4] 
+INFO  [AbstractTestCase] Class [CQZoneMatcherImpl] Indexing [SEPARATE_SIMPLE] Zone height [9.765625E-4] count [1025]  avg size [1025] min [1025] max [1025] 
+INFO  [AbstractTestCase] Searched [1,050,625] radius [9.765625E-4] found [1] in [10,000] loops, total [0s][504ms], average [0.050ms][50.487us] PASS 
+INFO  [AbstractTestCase] <<<< 
+INFO  [AbstractTestCase] Insert [10][2,049][4,198,401] 
+INFO  [AbstractTestCase] Total  [10][(2^(10+1))+1 = 2049] => [2049^2 = 4198401] 
+INFO  [AbstractTestCase] Range  [1.0][1.0/4198401 = 0.00000024]  
+INFO  [AbstractTestCase] Zone   [10][2^(-10) = 9.765625E-4] 
+INFO  [AbstractTestCase] Memory [15.1GiB][6.3GiB][21.9GiB] 
+INFO  [AbstractTestCase] >>>> 
+INFO  [AbstractTestCase] ---- ---- 
+INFO  [AbstractTestCase] Radius [6][2^(-6) = 0.015625] 
+INFO  [AbstractTestCase] Class [CQZoneMatcherImpl] Indexing [SEPARATE_SIMPLE] Zone height [9.765625E-4] count [2049]  avg size [2049] min [2049] max [2049] 
+INFO  [AbstractTestCase] Searched [4,198,401] radius [0.015625] found [1,594] in [10,000] loops, total [11s][11,391ms], average [1.139ms][1,139.126us] FAIL 
+INFO  [AbstractTestCase] ---- ---- 
+INFO  [AbstractTestCase] Radius [7][2^(-7) = 0.0078125] 
+INFO  [AbstractTestCase] Class [CQZoneMatcherImpl] Indexing [SEPARATE_SIMPLE] Zone height [9.765625E-4] count [2049]  avg size [2049] min [2049] max [2049] 
+INFO  [AbstractTestCase] Searched [4,198,401] radius [0.0078125] found [390] in [10,000] loops, total [3s][3,805ms], average [0.381ms][380.504us] PASS 
+INFO  [AbstractTestCase] ---- ---- 
+INFO  [AbstractTestCase] Radius [8][2^(-8) = 0.00390625] 
+INFO  [AbstractTestCase] Class [CQZoneMatcherImpl] Indexing [SEPARATE_SIMPLE] Zone height [9.765625E-4] count [2049]  avg size [2049] min [2049] max [2049] 
+INFO  [AbstractTestCase] Searched [4,198,401] radius [0.00390625] found [95] in [10,000] loops, total [2s][2,124ms], average [0.212ms][212.439us] PASS 
+INFO  [AbstractTestCase] ---- ---- 
+INFO  [AbstractTestCase] Radius [9][2^(-9) = 0.001953125] 
+INFO  [AbstractTestCase] Class [CQZoneMatcherImpl] Indexing [SEPARATE_SIMPLE] Zone height [9.765625E-4] count [2049]  avg size [2049] min [2049] max [2049] 
+INFO  [AbstractTestCase] Searched [4,198,401] radius [0.001953125] found [22] in [10,000] loops, total [1s][1,633ms], average [0.163ms][163.313us] PASS 
+INFO  [AbstractTestCase] ---- ---- 
+INFO  [AbstractTestCase] Radius [10][2^(-10) = 9.765625E-4] 
+INFO  [AbstractTestCase] Class [CQZoneMatcherImpl] Indexing [SEPARATE_SIMPLE] Zone height [9.765625E-4] count [2049]  avg size [2049] min [2049] max [2049] 
+INFO  [AbstractTestCase] Searched [4,198,401] radius [9.765625E-4] found [4] in [10,000] loops, total [1s][1,461ms], average [0.146ms][146.191us] PASS 
+INFO  [AbstractTestCase] <<<< 
+INFO  [AbstractTestCase] Insert [11][4,097][16,785,409] 
+INFO  [AbstractTestCase] Total  [11][(2^(11+1))+1 = 4097] => [4097^2 = 16785409] 
+INFO  [AbstractTestCase] Range  [1.0][1.0/16785409 = 0.00000006]  
+INFO  [AbstractTestCase] Zone   [10][2^(-10) = 9.765625E-4] 
+INFO  [AbstractTestCase] Memory [15.2GiB][6.7GiB][21.9GiB] 
+INFO  [AbstractTestCase] >>>> 
+INFO  [AbstractTestCase] ---- ---- 
+INFO  [AbstractTestCase] Radius [6][2^(-6) = 0.015625] 
+INFO  [AbstractTestCase] Class [CQZoneMatcherImpl] Indexing [SEPARATE_SIMPLE] Zone height [9.765625E-4] count [2049]  avg size [8192] min [4097] max [8194] 
+INFO  [AbstractTestCase] Searched [16,785,409] radius [0.015625] found [6,414] in [10,000] loops, total [31s][31,477ms], average [3.148ms][3,147.722us] FAIL 
+INFO  [AbstractTestCase] ---- ---- 
+INFO  [AbstractTestCase] Radius [7][2^(-7) = 0.0078125] 
+INFO  [AbstractTestCase] Class [CQZoneMatcherImpl] Indexing [SEPARATE_SIMPLE] Zone height [9.765625E-4] count [2049]  avg size [8192] min [4097] max [8194] 
+INFO  [AbstractTestCase] Searched [16,785,409] radius [0.0078125] found [1,594] in [10,000] loops, total [8s][8,866ms], average [0.887ms][886.618us] PASS 
+INFO  [AbstractTestCase] ---- ---- 
+INFO  [AbstractTestCase] Radius [8][2^(-8) = 0.00390625] 
+INFO  [AbstractTestCase] Class [CQZoneMatcherImpl] Indexing [SEPARATE_SIMPLE] Zone height [9.765625E-4] count [2049]  avg size [8192] min [4097] max [8194] 
+INFO  [AbstractTestCase] Searched [16,785,409] radius [0.00390625] found [391] in [10,000] loops, total [3s][3,550ms], average [0.355ms][355.074us] PASS 
+INFO  [AbstractTestCase] ---- ---- 
+INFO  [AbstractTestCase] Radius [9][2^(-9) = 0.001953125] 
+INFO  [AbstractTestCase] Class [CQZoneMatcherImpl] Indexing [SEPARATE_SIMPLE] Zone height [9.765625E-4] count [2049]  avg size [8192] min [4097] max [8194] 
+INFO  [AbstractTestCase] Searched [16,785,409] radius [0.001953125] found [94] in [10,000] loops, total [2s][2,015ms], average [0.202ms][201.529us] PASS 
+INFO  [AbstractTestCase] ---- ---- 
+INFO  [AbstractTestCase] Radius [10][2^(-10) = 9.765625E-4] 
+INFO  [AbstractTestCase] Class [CQZoneMatcherImpl] Indexing [SEPARATE_SIMPLE] Zone height [9.765625E-4] count [2049]  avg size [8192] min [4097] max [8194] 
+INFO  [AbstractTestCase] Searched [16,785,409] radius [9.765625E-4] found [22] in [10,000] loops, total [1s][1,572ms], average [0.157ms][157.252us] PASS 
+INFO  [AbstractTestCase] <<<< 
+INFO  [GenericApplicationContext] Closing org.springframework.context.support.GenericApplicationContext@6ca8564a: startup date [Sun Mar 15 18:07:22 UTC 2020]; root of context hierarchy 

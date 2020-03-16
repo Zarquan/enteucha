@@ -34,7 +34,8 @@ import edu.jhu.htm.geometry.Circle;
 import lombok.extern.slf4j.Slf4j;
 import uk.ac.roe.wfau.enteucha.api.Matcher;
 import uk.ac.roe.wfau.enteucha.api.Position;
-import uk.ac.roe.wfau.enteucha.util.PositionFilteredIterator;
+import uk.ac.roe.wfau.enteucha.util.CartesianSquaresFilter;
+import uk.ac.roe.wfau.enteucha.util.MinMaxRangeFilter;
 import uk.ac.roe.wfau.enteucha.util.PositionResultSetIterator;
 
 /**
@@ -321,11 +322,15 @@ implements Matcher
             final String query = template.replace("?", builder.toString());
             //log.trace("--- [{}]", query);
 
-            return new PositionFilteredIterator(
-                new PositionResultSetIterator(
-                    statement.executeQuery(
-                        query
-                        )
+            return new MinMaxRangeFilter(
+                new CartesianSquaresFilter(
+                    new PositionResultSetIterator(
+                        statement.executeQuery(
+                            query
+                            )
+                        ),
+                    target,
+                    radius
                     ),
                 target,
                 radius
