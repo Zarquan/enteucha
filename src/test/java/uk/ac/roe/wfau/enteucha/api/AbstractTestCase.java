@@ -73,6 +73,7 @@ extends TestCase
     
     @Value("${enteucha.test.count.min:9}")
     protected int countmin;
+
     @Value("${enteucha.test.count.max:10}")
     protected int countmax;
 

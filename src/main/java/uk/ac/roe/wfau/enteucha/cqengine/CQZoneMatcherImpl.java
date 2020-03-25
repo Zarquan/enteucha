@@ -213,7 +213,7 @@ implements CQZoneMatcher
     @Override
     public void insert(final Position position)
         {
-        //log.debug("insert() [{}][{}]", position.ra(), position.dec());
+        log.debug("insert [{}][{}]", position.ra(), position.dec());
         final Zone zone = select(
             (int) FastMath.floor((position.dec() + 90) / this.zoneheight)
             );
