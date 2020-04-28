@@ -213,7 +213,7 @@ implements CQZoneMatcher
     @Override
     public void insert(final Position position)
         {
-        log.debug("insert [{}][{}]", position.ra(), position.dec());
+        //log.debug("insert [{}][{}]", position.ra(), position.dec());
         final Zone zone = select(
             (int) FastMath.floor((position.dec() + 90) / this.zoneheight)
             );
@@ -222,7 +222,7 @@ implements CQZoneMatcher
             position
             );
         this.total++;
-        //log.debug("Added [{}][{}]", zone.total(), total());
+        //log.debug("Added [{}][{}][{}]", zone.ident(), zone.total(), total());
         }
 
     /**
@@ -292,15 +292,16 @@ implements CQZoneMatcher
             //builder.append("Zone [");
             //builder.append(zone.ident());
             //builder.append("] ");
+            long zonesize = zone.total();
             subcount++;
-            subtotal += zone.total();
-            if (zone.total() > maxtotal)
+            subtotal += zonesize;
+            if (zonesize > maxtotal)
                 {
-                maxtotal = zone.total();
+                maxtotal = zonesize;
                 }
-            if (zone.total() < mintotal)
+            if (zonesize < mintotal)
                 {
-                mintotal = zone.total();
+                mintotal = zonesize;
                 }
             }
         builder.append("count [");

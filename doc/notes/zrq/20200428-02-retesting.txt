@@ -298,7 +298,7 @@ Switched to a new branch '20200309-zrq-retest'
 
 
 # -----------------------------------------------------
-# Update the test data size.
+# Update the test settings.
 #[user@builder]
 
     pushd /var/local/build/enteucha
@@ -410,7 +410,7 @@ Switched to a new branch '20200309-zrq-retest'
 
 # -----------------------------------------------------
 # -----------------------------------------------------
-# Update the test data size.
+# Update the test settings.
 #[user@builder]
 
     pushd /var/local/build/enteucha
@@ -515,4 +515,77 @@ Switched to a new branch '20200309-zrq-retest'
 05:31:39.894 INFO  <data-row><matcher>CQZoneMatcherImpl</matcher><points>4198401</points><range>64.0</range><zone>0.015625</zone><radius>0.0625</radius><found>3</found><repeat>1000</repeat><timesum>179<timesum><timeavg>0.179</timeavg></data-row>
 05:31:39.894 INFO  <<<<
 --END--
+
+
+
+
+
+
+
+
+
+
+
+
+# -----------------------------------------------------
+# Run our tests.
+#[user@builder]
+
+    reset
+    retest
+
+--START--
+....
+....
+05:44:30.328 INFO  Total  [10][(2^(10+1))+1 = 2049] => [2049^2 = 4198401]
+05:44:30.329 INFO  Range  [6][2^6 = 64.0] [64.0/4198401 = 0.00001524]
+05:44:30.329 INFO  Zone   [6][2^(-6) = 0.015625]
+05:44:30.330 INFO  Memory [6.6GiB][2.3GiB][26.7GiB]
+05:44:30.330 INFO  >>>>
+05:44:30.330 INFO  ---- ----
+05:44:30.330 INFO  Radius [4][2^(-4) = 0.0625]
+05:44:30.381 INFO  Class [HsqlHtmidMatcherImpl] Total rows [4,198,401] Depth [10] URL [jdbc:hsqldb:mem:zonematch]
+05:44:30.381 INFO  Searched [4,198,401] range [64.0] zone [0.015625] radius [0.0625] found [3] in [10] loops, total [0s][50ms], average [5.027ms][5,026.622us] FAIL
+05:44:30.382 INFO  <data-row><matcher>HsqlHtmidMatcherImpl</matcher><points>4198401</points><range>64.0</range><zone>0.015625</zone><radius>0.0625</radius><found>3</found><repeat>10</repeat><timesum>50<timesum><timeavg>5.027</timeavg></data-row>
+05:44:30.382 INFO  <<<<
+--END--
+
+
+--START--
+....
+....
+05:44:55.522 INFO  Total  [10][(2^(10+1))+1 = 2049] => [2049^2 = 4198401]
+05:44:55.523 INFO  Range  [6][2^6 = 64.0] [64.0/4198401 = 0.00001524]
+05:44:55.523 INFO  Zone   [6][2^(-6) = 0.015625]
+05:44:55.523 INFO  Memory [4.8GiB][3.0GiB][26.7GiB]
+05:44:55.523 INFO  >>>>
+05:44:55.523 INFO  ---- ----
+05:44:55.523 INFO  Radius [4][2^(-4) = 0.0625]
+05:44:55.642 INFO  Class [HsqlZoneMatcherImpl] Indexing [SEPARATE] Total rows [4,198,401] Zone height [0.015625] URL [jdbc:hsqldb:mem:zonematch]
+05:44:55.642 INFO  Searched [4,198,401] range [64.0] zone [0.015625] radius [0.0625] found [3] in [10] loops, total [0s][117ms], average [11.797ms][11,797.285us] FAIL
+05:44:55.643 INFO  <data-row><matcher>HsqlZoneMatcherImpl</matcher><points>4198401</points><range>64.0</range><zone>0.015625</zone><radius>0.0625</radius><found>3</found><repeat>10</repeat><timesum>117<timesum><timeavg>11.797</timeavg></data-row>
+05:44:55.643 INFO  <<<<
+--END--
+
+
+--START--
+....
+....
+05:47:18.075 INFO  Total  [10][(2^(10+1))+1 = 2049] => [2049^2 = 4198401]
+05:47:18.075 INFO  Range  [6][2^6 = 64.0] [64.0/4198401 = 0.00001524]
+05:47:18.076 INFO  Zone   [6][2^(-6) = 0.015625]
+05:47:18.076 INFO  Memory [11.8GiB][3.8GiB][26.7GiB]
+05:47:18.076 INFO  >>>>
+05:47:18.077 INFO  ---- ----
+05:47:18.077 INFO  Radius [4][2^(-4) = 0.0625]
+05:47:18.113 INFO  Class [CQZoneMatcherImpl] Indexing [SEPARATE_SIMPLE] Zone height [0.015625] count [2049]  avg size [2049] min [2049] max [2049]
+05:47:18.114 INFO  Searched [4,198,401] range [64.0] zone [0.015625] radius [0.0625] found [3] in [10] loops, total [0s][30ms], average [3.011ms][3,011.252us] FAIL
+05:47:18.115 INFO  <data-row><matcher>CQZoneMatcherImpl</matcher><points>4198401</points><range>64.0</range><zone>0.015625</zone><radius>0.0625</radius><found>3</found><repeat>10</repeat><timesum>30<timesum><timeavg>3.011</timeavg></data-row>
+05:47:18.115 INFO  <<<<
+--END--
+
+
+
+
+
 
