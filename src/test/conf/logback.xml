@@ -24,7 +24,7 @@
 	    | Enteucha logging.
 	    +-->
 	<logger name="uk.ac.roe.wfau.enteucha">
-		<level value="TRACE"/>
+		<level value="INFO"/>
 	</logger>
 
     <!--+
@@ -151,7 +151,7 @@
 	    | C3PO loggers
 	    | Includes strange DEBUG via Exception logging.
 	    | http://stackoverflow.com/questions/8403227/weird-error-close-by-client-stack-trace
-	    | http://forum.springsource.org/archive/index.php/t-47689.html 
+	    | http://forum.springsource.org/archive/index.php/t-47689.html
 	    | https://forum.hibernate.org/viewtopic.php?f=1&t=982410
 	    +-->
 	<logger name="com.mchange">
@@ -163,6 +163,6 @@
 	<logger name="com.mchange.v2.c3p0.impl.C3P0ImplUtils">
 		<level value="WARN" />
 	</logger>
-	
+
 </configuration>
 

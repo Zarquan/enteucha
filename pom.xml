@@ -70,7 +70,7 @@
 		<connection>scm:git:git://github.com/Zarquan/enteucha.git</connection>
 		<developerConnection>scm:git:git@github.com:Zarquan/enteucha.git</developerConnection>
 	</scm>
-        
+
     <properties>
 
         <firethorn.version>2.1.25</firethorn.version>
@@ -126,7 +126,7 @@
         </repository>
 
         <!--+
-            | Archive repository for 3rd party dependencies 
+            | Archive repository for 3rd party dependencies
             | that are not available online.
             |
             +-->
@@ -375,7 +375,7 @@
                 <artifactId>maven-surefire-plugin</artifactId>
                 <version>2.22.0</version>
                 <configuration>
-                    <argLine>-Xmx10g -Xms10g</argLine>
+                    <!--argLine>-Xmx10g -Xms10g</argLine-->
                 </configuration>
             </plugin>
             <plugin>
