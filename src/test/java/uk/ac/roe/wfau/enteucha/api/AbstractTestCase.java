@@ -21,6 +21,7 @@ package uk.ac.roe.wfau.enteucha.api;
 import java.util.Iterator;
 
 import org.apache.commons.math3.util.FastMath;
+import org.junit.Before;
 import org.springframework.beans.factory.annotation.Value;
 
 import junit.framework.TestCase;
@@ -42,21 +43,21 @@ extends TestCase
         {
         }
 
-    @Value("${enteucha.test.loop:1000}")
+    @Value("${enteucha.loop:1000}")
     protected int looprepeat;    
 
     /**
      * The minimum range exponent.
      * 
      */
-    @Value("${enteucha.test.range.min:0}")
+    @Value("${enteucha.range.min:0}")
     protected int rangemin;
 
     /**
      * The maximum range exponent.
      * 
      */
-    @Value("${enteucha.test.range.max:1}")
+    @Value("${enteucha.range.max:1}")
     protected int rangemax;
 
     /**
@@ -71,24 +72,24 @@ extends TestCase
      */
     protected double rangeval;
     
-    @Value("${enteucha.test.count.min:9}")
-    protected int countmin;
+    @Value("${enteucha.select.min:9}")
+    protected int selectmin;
 
-    @Value("${enteucha.test.count.max:10}")
-    protected int countmax;
+    @Value("${enteucha.insert.max:10}")
+    protected int selectmax;
 
     /**
      * The minimum zone exponent.
      * 
      */
-    @Value("${enteucha.test.zone.min:6}")
+    @Value("${enteucha.zone.min:6}")
     protected int zonemin;
 
     /**
      * The maximum zone exponent.
      * 
      */
-    @Value("${enteucha.test.zone.max:9}")
+    @Value("${enteucha.zone.max:9}")
     protected int zonemax;
 
     /**
@@ -107,14 +108,14 @@ extends TestCase
      * The minimum radius exponent.
      * 
      */
-    @Value("${enteucha.test.radius.min:6}")
+    @Value("${enteucha.radius.min:6}")
     protected int radiusmin;
 
     /**
      * The maximum radius exponent.
      * 
      */
-    @Value("${enteucha.test.radius.max:9}")
+    @Value("${enteucha.radius.max:9}")
     protected int radiusmax;
 
     /**
@@ -139,22 +140,53 @@ extends TestCase
     boolean first = true ;
 
     /**
-     * The target position we are trying to crossmacth.
+     * The target ra in degrees.
      * 
      */
-    final private Position target = new PositionImpl(
-            120.0,
-            120.0
-            );
+    @Value("${enteucha.target.ra:120}")
+    protected double targetra;
+
+    /**
+     * The target decin degrees.
+     * 
+     */
+    @Value("${enteucha.target.dec:-10}")
+    protected double targetdec;
     
     /**
      * The target position we are trying to crossmacth.
      * 
      */
+    private Position target = null; 
+
+    /**
+     * Initialse our test.
+     * 
+     */
+    @Before
+    public void init()
+        {
+        this.target = new PositionImpl(
+            targetra,
+            targetdec
+            );
+        }
+    
+    /**
+     * The target position we are trying to crossmacth.
+     * 
     public Position target()
         {
+        if (this.target == null)
+            {
+            this.target = new PositionImpl(
+                targetra,
+                targetdec
+                );
+            }
         return this.target;
         }
+     */
 
     /**
      * Test finding things.
@@ -186,7 +218,7 @@ extends TestCase
                     );
                 log.info("---- ----");
                 //TODO Move the insert loop to a plugin (matrix, votable ..)
-                for (int insertexp = 0 ; insertexp <= countmax ; insertexp++)
+                for (int insertexp = 0 ; insertexp <= selectmax ; insertexp++)
                     {
                     double insertnum = FastMath.pow(2.0, insertexp);
                     double traceexp = insertexp + 1 ;
@@ -219,7 +251,7 @@ extends TestCase
                                 );
                             }
                         }
-                    if (insertexp >= countmin)
+                    if (insertexp >= selectmin)
                         {
                         log.info(
                             "Total  [{}][(2^({}+1))+1 = {}] => [{}^2 = {}]",
@@ -230,7 +262,7 @@ extends TestCase
                             String.format("%.0f", tracesum)
                             );
                         log.info(
-                            "Range [{}][2^{} = {}] [{}/{} = {}] ",
+                            "Range  [{}][2^{} = {}] [{}/{} = {}] ",
                             this.rangeexp,
                             this.rangeexp,
                             this.rangeval,
