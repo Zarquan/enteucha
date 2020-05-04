@@ -196,13 +196,12 @@ extends TestCase
         {
         if (first)
             {
+            startup(factory);
             first = false;
             }
-        else {
-            clean();
-            }
+        clean();
         log.info("Target [{}][{}]", target.ra(), target.dec());
-
+        log.info("<outerloop target='{},{}'>", target.ra(), target.dec());
         // TODO Move the range loop inside the matrix insert plugin.
         for (this.rangeexp = this.rangemax ; this.rangeexp >= this.rangemin ; this.rangeexp--)
             {
@@ -267,8 +266,8 @@ extends TestCase
                             this.rangeexp,
                             this.rangeval,
                             this.rangeval,
-                            String.format("%.0f", tracesum),
-                            String.format("%.8f", (rangeval / tracesum))
+                            String.format("%.0f", tracenum),
+                            String.format("%.8f", (rangeval / tracenum))
                             );
                         log.info(
                             "Zone   [{}][2^(-{}) = {}]",
@@ -276,6 +275,13 @@ extends TestCase
                             this.zoneexp,
                             this.zoneval
                             );
+                        log.info(
+                            "span/zone [{} / {}] = [{}]",
+                            String.format("%.4f", (rangeval / tracenum)),
+                            String.format("%.4f", this.zoneval),
+                            String.format("%.4f", ((rangeval / tracenum) / this.zoneval))
+                            );
+                        
                         log.info(
                             "Memory [{}][{}][{}]",
                             humanSize(runtime.totalMemory()),
@@ -292,6 +298,7 @@ extends TestCase
                     }
                 }
             }
+        log.info("</outerloop>");
         }
 
     public void innerloop(final Matcher matcher, final Position target)
@@ -365,7 +372,7 @@ extends TestCase
                 );
 
             log.info(
-                  "<data-row><matcher>{}</matcher><points>{}</points><range>{}</range><zone>{}</zone><radius>{}</radius><found>{}</found><repeat>{}</repeat><timesum>{}<timesum><timeavg>{}</timeavg></data-row>",
+                  "<data-row><matcher>{}</matcher><points>{}</points><range>{}</range><zone>{}</zone><radius>{}</radius><found>{}</found><repeat>{}</repeat><timesum>{}</timesum><timeavg>{}</timeavg></data-row>",
                   matcher.type(),
                   String.format("%d", matcher.total()),
                   rangeval,
@@ -373,14 +380,30 @@ extends TestCase
                   radiusval,
                   String.format("%d", (loopcount/this.looprepeat)),
                   String.format("%d", this.looprepeat),
-                  
                   String.format("%d", (looptime/1000000)),
                   String.format("%.3f", (average/1000000))
-                  
                   );
             }
         }
 
+    protected void startup(final Matcher.Factory factory)
+        {
+        log.debug("startup ----");
+        final Matcher matcher = factory.create();
+        matcher.insert(
+            target
+            );
+        Iterator<Position> iter = matcher.matches(
+            target,
+            0.0
+            );
+        while (iter.hasNext())
+            {
+            Position pos = iter.next();
+            log.debug("-- [{}][{}][{}]", pos.ra(), pos.dec());
+            }
+        }
+    
     /**
      * Format a data size as a human readable String.
      * https://programming.guide/java/formatting-byte-size-to-human-readable-format.html 
@@ -415,7 +438,7 @@ extends TestCase
         try {
             log.info("---- Finalize");
             System.runFinalization();
-            Thread.sleep(10000);
+            Thread.sleep(1000);
             }
         catch (final InterruptedException ouch)
             {
@@ -424,7 +447,7 @@ extends TestCase
         try {
             log.info("---- Running gc");
             System.gc();
-            Thread.sleep(10000);
+            Thread.sleep(1000);
             }
         catch (final InterruptedException ouch)
             {

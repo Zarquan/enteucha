@@ -141,16 +141,16 @@ implements CQZoneMatcher
         //log.trace("contains() [{}][{}][{}]", target.ra(), target.dec(), radius);
         //log.trace("height [{}]",  this.zoneheight);
 
-        final Integer min = (int) FastMath.floor(((target.dec() + 90) - radius) / this.zoneheight) ;
-        final Integer max = (int) FastMath.floor(((target.dec() + 90) + radius) / this.zoneheight) ;
+        //final Integer min = (int) FastMath.floor(((target.dec() + 90) - radius) / this.zoneheight) ;
+        //final Integer max = (int) FastMath.floor(((target.dec() + 90) + radius) / this.zoneheight) ;
 
         //log.trace("min [{}]", min);
         //log.trace("max [{}]", max);
 
         return new GenericIterable<Zone, ZoneImpl>(
             between(
-                min,
-                max
+                zoneid(target, -radius),
+                zoneid(target,  radius)
                 )
             );
         }
@@ -210,19 +210,39 @@ implements CQZoneMatcher
             }
         }
 
+    protected int zoneid(final Position position)
+        {
+        return zoneid(position, null);
+        }
+    
+    protected int zoneid(final Position position, Double radius)
+        {
+        double angle = position.dec() + 90 ;
+        if (radius != null)
+            {
+            angle += radius;
+            }
+        int result = (int) FastMath.floor(angle / this.zoneheight) ;
+        //log.debug("zoneid [{}/{}] = [{}]", angle, this.zoneheight, result);
+        //log.debug("zoneid [{},{}]+[{}] => [{}]", position.ra(), position.dec(), radius, result);
+        return result;
+        }
+    
     @Override
     public void insert(final Position position)
         {
-        //log.debug("insert [{}][{}]", position.ra(), position.dec());
+        //log.debug("insert [{},{}]", position.ra(), position.dec());
         final Zone zone = select(
-            (int) FastMath.floor((position.dec() + 90) / this.zoneheight)
+            zoneid(
+                position
+                )
             );
-        //log.debug("Zone [{}]", zone.ident());
+        //log.debug("Zone   [{}]", zone.ident());
         zone.insert(
             position
             );
         this.total++;
-        //log.debug("Added [{}][{}][{}]", zone.ident(), zone.total(), total());
+        //log.debug("insert [{},{}][{}]", zone.ident(), zone.total(), total());
         }
 
     /**
