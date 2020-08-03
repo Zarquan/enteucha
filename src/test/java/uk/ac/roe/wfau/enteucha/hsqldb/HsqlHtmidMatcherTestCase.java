@@ -20,6 +20,7 @@ package uk.ac.roe.wfau.enteucha.hsqldb;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
+import org.springframework.stereotype.Component;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
@@ -38,6 +39,7 @@ import uk.ac.roe.wfau.enteucha.api.Matcher;
         "classpath:component-config.xml"
         }
     )
+@Component
 public class HsqlHtmidMatcherTestCase
 extends AbstractTestCase
     {

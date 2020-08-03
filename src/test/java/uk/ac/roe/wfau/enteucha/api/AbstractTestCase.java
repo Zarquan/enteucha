@@ -23,6 +23,7 @@ import java.util.Iterator;
 import org.apache.commons.math3.util.FastMath;
 import org.junit.Before;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.stereotype.Component;
 
 import junit.framework.TestCase;
 import lombok.extern.slf4j.Slf4j;
@@ -32,6 +33,7 @@ import lombok.extern.slf4j.Slf4j;
  * 
  */
 @Slf4j
+@Component
 public abstract class AbstractTestCase
 extends TestCase
     {
