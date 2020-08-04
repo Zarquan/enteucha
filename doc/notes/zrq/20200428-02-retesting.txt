@@ -46,7 +46,7 @@ INFO : Disc size [16GiB]
 
 # -----------------------------------------------------
 # Update the virtual machine memory allocation.
-#[user@trop04]
+#[user@work01]
 
     vmname=Onaukon
     vmsize=250G
@@ -109,7 +109,7 @@ Domain Onaukon started
 
 # -----------------------------------------------------
 # Login to the new virtual machine.
-#[user@desktop]
+#[user@work01]
 
     ssh "${vmname:?}"
 
@@ -223,6 +223,7 @@ Switched to a new branch '20200309-zrq-retest'
         --tty \
         --interactive \
         --user "$(id -u)" \
+        --hostname builder \
         --volume "/var/local/cache:/var/local/cache" \
         --volume "/var/local/build:/var/local/build" \
         --volume "${SSH_AUTH_SOCK}:/tmp/ssh_auth_sock" \

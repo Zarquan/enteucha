@@ -29,6 +29,10 @@
     #
     # Command line to run test case outside Maven/
 
+# -----------------------------------------------------
+# Collect the classpath from Eclipse.
+#[user@desktop]
+
     cat > /tmp/classpath << 'EOF'
 /var/local/projects/LSST-UK/enteucha/github-zrq/target/test-classes
 /var/local/projects/LSST-UK/enteucha/github-zrq/target/classes
@@ -110,6 +114,10 @@ ${mvnrepo}/joda-time/joda-time/2.10/joda-time-2.10.jar
 EOF
 
 
+# -----------------------------------------------------
+# Build or classpath list.
+#[user@desktop]
+
     mvnrepo=/var/local/cache/maven
 
     unset classpath
@@ -117,6 +125,10 @@ EOF
     do
         eval classpath=${classpath}:${path:?}
     done
+
+# -----------------------------------------------------
+# Compile and run the tests.
+#[user@desktop]
 
     mvn clean compile test-compile
 

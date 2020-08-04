@@ -64,8 +64,8 @@ extends AbstractTestCase
         IndexingShape[] shapes =
             {
             IndexingShape.SEPARATE,
-            //IndexingShape.COMBINED,
-            //IndexingShape.COMPLEX
+            IndexingShape.COMBINED,
+            IndexingShape.COMPLEX
             };
         for (IndexingShape indexshape : shapes)
             {
