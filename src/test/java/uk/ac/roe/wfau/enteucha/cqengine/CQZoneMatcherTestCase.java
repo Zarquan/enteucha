@@ -20,17 +20,20 @@ package uk.ac.roe.wfau.enteucha.cqengine;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
+import org.springframework.stereotype.Component;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
 import uk.ac.roe.wfau.enteucha.api.AbstractTestCase;
 import uk.ac.roe.wfau.enteucha.api.Matcher;
 import uk.ac.roe.wfau.enteucha.cqengine.CQZoneMatcher.IndexingShape;
+import uk.ac.roe.wfau.enteucha.hsqldb.HsqlZoneMatcherTestCase;
 
 /**
  * 
  * 
  */
+@Component
 @RunWith(
         SpringJUnit4ClassRunner.class
         )
@@ -57,7 +60,7 @@ extends AbstractTestCase
      * 
      */
     @Test
-    public void testFind()
+    public void test()
         {
         IndexingShape[] shapes =
             {
@@ -82,5 +85,16 @@ extends AbstractTestCase
                     }
                 );
             }
+        }
+
+    /**
+     * Public main() method.
+     *
+     */
+    public static void main(String[] args)
+        {
+        testmain(
+            CQZoneMatcherTestCase.class
+            );
         }
     }

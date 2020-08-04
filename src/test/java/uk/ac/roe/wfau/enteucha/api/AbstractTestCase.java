@@ -22,11 +22,14 @@ import java.util.Iterator;
 
 import org.apache.commons.math3.util.FastMath;
 import org.junit.Before;
+import org.junit.Test;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
 import org.springframework.stereotype.Component;
 
 import junit.framework.TestCase;
 import lombok.extern.slf4j.Slf4j;
+import uk.ac.roe.wfau.enteucha.hsqldb.HsqlZoneMatcherTestCase;
 
 /**
  * 
@@ -37,8 +40,8 @@ import lombok.extern.slf4j.Slf4j;
 public abstract class AbstractTestCase
 extends TestCase
     {
-
     /**
+     * Public constructor.
      * 
      */
     public AbstractTestCase()
@@ -173,22 +176,12 @@ extends TestCase
             targetdec
             );
         }
-    
+
     /**
-     * The target position we are trying to crossmacth.
+     * Run our test.
      * 
-    public Position target()
-        {
-        if (this.target == null)
-            {
-            this.target = new PositionImpl(
-                targetra,
-                targetdec
-                );
-            }
-        return this.target;
-        }
      */
+    public abstract void test();
 
     /**
      * Test finding things.
@@ -440,7 +433,7 @@ extends TestCase
         try {
             log.info("---- Finalize");
             System.runFinalization();
-            Thread.sleep(1000);
+            Thread.sleep(100);
             }
         catch (final InterruptedException ouch)
             {
@@ -449,11 +442,26 @@ extends TestCase
         try {
             log.info("---- Running gc");
             System.gc();
-            Thread.sleep(1000);
+            Thread.sleep(100);
             }
         catch (final InterruptedException ouch)
             {
             log.debug("InterruptedException [{}]", ouch);
             }
+        }
+
+    /**
+     * Public testmain() method.
+     *
+     */
+    public static void testmain(final Class<?> clazz)
+        {
+        ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext("component-config.xml");
+
+        AbstractTestCase target = (AbstractTestCase) context.getBean(clazz);
+        target.init();
+        target.test();
+
+        context.close();
         }
     }

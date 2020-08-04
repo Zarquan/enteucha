@@ -18,7 +18,6 @@
 
 package uk.ac.roe.wfau.enteucha.hsqldb;
 
-import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.stereotype.Component;
 import org.springframework.test.context.ContextConfiguration;
@@ -28,9 +27,10 @@ import uk.ac.roe.wfau.enteucha.api.AbstractTestCase;
 import uk.ac.roe.wfau.enteucha.api.Matcher;
 
 /**
- * 
+ *  
  * 
  */
+@Component
 @RunWith(
         SpringJUnit4ClassRunner.class
         )
@@ -39,7 +39,6 @@ import uk.ac.roe.wfau.enteucha.api.Matcher;
         "classpath:component-config.xml"
         }
     )
-@Component
 public class HsqlHtmidMatcherTestCase
 extends AbstractTestCase
     {
@@ -50,15 +49,15 @@ extends AbstractTestCase
      */
     public HsqlHtmidMatcherTestCase()
         {
-        super();
+        super(
+            );
         }
 
     /**
-     * Test finding things.
+     * Run our test.
      * 
      */
-    @Test
-    public void testFind()
+    public void test()
         {
         outerloop(
             new Matcher.Factory()
@@ -69,6 +68,17 @@ extends AbstractTestCase
                     return new HsqlHtmidMatcherImpl();
                     }
                 }
+            );        
+        }
+
+    /**
+     * Public main() method.
+     *
+     */
+    public static void main(String[] args)
+        {
+        testmain(
+            HsqlHtmidMatcherTestCase.class
             );
         }
     }
