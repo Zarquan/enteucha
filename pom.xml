@@ -73,7 +73,7 @@
 
     <properties>
 
-        <firethorn.version>2.1.25</firethorn.version>
+        <firethorn.version>2.1.36</firethorn.version>
 
         <!--+
             | Generate checksums.
@@ -111,7 +111,7 @@
         <repository>
             <id>firethorn-cache</id>
             <name>Repository for Firethorn components</name>
-            <url>http://data.metagrid.co.uk/wfau/maven/firethorn</url>
+            <url>http://data.metagrid.co.uk/wfau/maven/firethorn/firethorn</url>
             <layout>default</layout>
         </repository>
 
@@ -121,7 +121,7 @@
         <repository>
             <id>external-cache</id>
             <name>Cache for 3rd party components</name>
-            <url>http://data.metagrid.co.uk/wfau/maven/external</url>
+            <url>http://data.metagrid.co.uk/wfau/maven/firethorn/external</url>
             <layout>default</layout>
         </repository>
 
@@ -133,7 +133,7 @@
         <repository>
             <id>external-archive</id>
             <name>Archive for 3rd party components</name>
-            <url>http://data.metagrid.co.uk/wfau/maven/archive</url>
+            <url>http://data.metagrid.co.uk/wfau/maven/firethorn/archive</url>
             <layout>default</layout>
         </repository>
 
