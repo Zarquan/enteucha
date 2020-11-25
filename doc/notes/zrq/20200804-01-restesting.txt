@@ -110,7 +110,12 @@ Domain Onaukon started
 # Login to the new virtual machine.
 #[user@work01]
 
-    ssh-keygen -f "${HOME}/.ssh/known_hosts" -R "${vmname:?}"
+    vmipv4=$(
+        host "${vmname,,}" | sed 's/\(.*\) has address \([.0-9]*\)$/\2/'
+        )
+
+    ssh-keygen -f "${HOME}/.ssh/known_hosts" -R "${vmname,,}"
+    ssh-keygen -f "${HOME}/.ssh/known_hosts" -R "${vmipv4:?}"
 
     ssh "${vmname:?}"
 
@@ -122,7 +127,7 @@ Domain Onaukon started
     sudo chgrp 'users' /var/local/cache
     sudo chmod 'a+rwx' /var/local/cache
 
-    # Need to make it 'a' ragter than 'g' because Docker user still has root group.
+    # Need to make it 'a' rather than 'g' because Docker user still has root group.
 
 # -----------------------------------------------------
 # Create our build directory.
@@ -236,7 +241,6 @@ Switched to a new branch '20200309-zrq-retest'
         --volume "/var/local/build:/var/local/build" \
         --volume "${SSH_AUTH_SOCK}:/tmp/ssh_auth_sock" \
         --volume "/var/run/docker.sock:/var/run/docker.sock" \
-        --volume "${secretsh}:/bin/secret" \
         "firethorn/builder:latest" \
         'bash'
 
@@ -287,6 +291,47 @@ Switched to a new branch '20200309-zrq-retest'
 
 
 # -----------------------------------------------------
+# Collect our classpath.
+# https://stackoverflow.com/questions/16655010/in-maven-how-output-the-classpath-being-used
+# https://stackoverflow.com/a/27451672
+#[user@builder]
+
+    pushd /var/local/build/enteucha
+
+        mvn \
+            dependency:build-classpath \
+            -D 'mdep.outputFile=/tmp/classpath.txt'
+
+    popd
+
+
+--START--
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time: 0.937 s
+[INFO] Finished at: 2020-08-04T10:47:17Z
+[INFO] Final Memory: 33M/1963M
+[INFO] ------------------------------------------------------------------------
+--END--
+
+
+# -----------------------------------------------------
+# Build our classpath.
+#[user@builder]
+
+    classpath=$(cat /tmp/classpath.txt)
+    classpath=/var/local/build/enteucha/target/classes:${classpath}
+    classpath=/var/local/build/enteucha/target/test-classes:${classpath}
+
+    echo "Classpath [${classpath:?}]"
+
+--START--
+Classpath [/var/local/build/enteucha/target/test-classes:/var/local/build/enteucha/target/classes:/var/local/cache/maven/....]
+--END--
+
+
+# -----------------------------------------------------
 # Update logging config.
 #[user@builder]
 
@@ -313,9 +358,8 @@ Switched to a new branch '20200309-zrq-retest'
 #[user@builder]
 
     pushd /var/local/build/enteucha
-        pushd target/test-classes
 
-            vi test.properties
+        vi target/test-classes/test.properties
 
             ~   enteucha.loop=10
 
@@ -334,61 +378,37 @@ Switched to a new branch '20200309-zrq-retest'
                 enteucha.target.ra=0
                 enteucha.target.dec=0
 
-        popd
     popd
-
-
-# -----------------------------------------------------
-# Collect our classpath.
-# https://stackoverflow.com/questions/16655010/in-maven-how-output-the-classpath-being-used
-# https://stackoverflow.com/a/27451672
-#[user@builder]
-
-    pushd /var/local/build/enteucha
-
-        mvn \
-            dependency:build-classpath \
-            -D 'mdep.outputFile=/tmp/classpath.txt'
-
-    popd
-
-    cat /tmp/classpath.txt
-
---START--
-/var/local/cache/maven/com/googlecode/cqengine/cqengine/2.12.4/cqengine-2.12.4.jar....
---END--
-
-
-    classpath=$(cat /tmp/classpath.txt)
-    classpath=/var/local/build/enteucha/target/classes:${classpath}
-    classpath=/var/local/build/enteucha/target/test-classes:${classpath}
-
-    echo "Classpath [${classpath:?}]"
-
---START--
-Classpath [/var/local/build/enteucha/target/test-classes:/var/local/build/enteucha/target/classes:/var/local/cache/maven/....]
---END--
 
 
 # -----------------------------------------------------
 # Run our tests.
 #[user@desktop]
 
-    java \
-        -classpath "${classpath:?}" \
-        uk.ac.roe.wfau.enteucha.hsqldb.HsqlHtmidMatcherTestCase
+    pushd /var/local/build/enteucha
+
+        java \
+            -Xmx200g \
+            -Xms200g \
+            -classpath "${classpath:?}" \
+            uk.ac.roe.wfau.enteucha.hsqldb.HsqlHtmidMatcherTestCase
 
 
-    java \
-        -Dfile.encoding=UTF-8 \
-        -classpath "${classpath:?}" \
-        uk.ac.roe.wfau.enteucha.hsqldb.HsqlZoneMatcherTestCase
+        java \
+            -Xmx200g \
+            -Xms200g \
+            -classpath "${classpath:?}" \
+            uk.ac.roe.wfau.enteucha.hsqldb.HsqlZoneMatcherTestCase
 
 
-    java \
-        -Dfile.encoding=UTF-8 \
-        -classpath "${classpath:?}" \
-        uk.ac.roe.wfau.enteucha.cqengine.CQZoneMatcherTestCase
+        java \
+            -Xmx200g \
+            -Xms200g \
+            -classpath "${classpath:?}" \
+            uk.ac.roe.wfau.enteucha.cqengine.CQZoneMatcherTestCase
+
+    popd
+
 
 
 

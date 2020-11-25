@@ -19,6 +19,7 @@
 package uk.ac.roe.wfau.enteucha.api;
 
 import java.util.Iterator;
+import java.util.Random;
 
 import org.apache.commons.math3.util.FastMath;
 import org.junit.Before;
@@ -32,8 +33,8 @@ import lombok.extern.slf4j.Slf4j;
 import uk.ac.roe.wfau.enteucha.hsqldb.HsqlZoneMatcherTestCase;
 
 /**
- * 
- * 
+ *
+ *
  */
 @Slf4j
 @Component
@@ -42,41 +43,45 @@ extends TestCase
     {
     /**
      * Public constructor.
-     * 
+     *
      */
     public AbstractTestCase()
         {
         }
 
+    /**
+     * The target loop count.
+     *
+     */
     @Value("${enteucha.loop:1000}")
-    protected int looprepeat;    
+    protected int looprepeat;
 
     /**
      * The minimum range exponent.
-     * 
+     *
      */
     @Value("${enteucha.range.min:0}")
     protected int rangemin;
 
     /**
      * The maximum range exponent.
-     * 
+     *
      */
     @Value("${enteucha.range.max:1}")
     protected int rangemax;
 
     /**
      * The range exponent, ({@link rangemax} .. {@link rangemin}}).
-     * 
+     *
      */
     protected int rangeexp;
-    
+
     /**
      * The range value, 2^(-{@link rangeexp}).
-     * 
+     *
      */
     protected double rangeval;
-    
+
     @Value("${enteucha.select.min:9}")
     protected int selectmin;
 
@@ -85,88 +90,104 @@ extends TestCase
 
     /**
      * The minimum zone exponent.
-     * 
+     *
      */
     @Value("${enteucha.zone.min:6}")
     protected int zonemin;
 
     /**
      * The maximum zone exponent.
-     * 
+     *
      */
     @Value("${enteucha.zone.max:9}")
     protected int zonemax;
 
     /**
      * The zone exponent, ({@link zonemin} .. {@link zonemax}}).
-     * 
+     *
      */
     protected int zoneexp;
 
     /**
      * The zone size, 2^(-{@link zoneexp}).
-     * 
+     *
      */
     protected double zoneval;
-    
+
     /**
      * The minimum radius exponent.
-     * 
+     *
      */
     @Value("${enteucha.radius.min:6}")
     protected int radiusmin;
 
     /**
      * The maximum radius exponent.
-     * 
+     *
      */
     @Value("${enteucha.radius.max:9}")
     protected int radiusmax;
 
     /**
      * The radius exponent, ({@link rangemax} .. {@link rangemin}}).
-     * 
+     *
      */
     protected int radiusexp;
 
     /**
      * The radius, 2^(-{@link radiusexp}).
-     * 
+     *
      */
     protected double radiusval;
 
-    
+
     final Runtime runtime = Runtime.getRuntime();
 
     /**
      * Flag to prevent clean on the first call to outer loop.
-     *  
+     *
      */
     boolean first = true ;
 
     /**
      * The target ra in degrees.
-     * 
+     *
      */
     @Value("${enteucha.target.ra:120}")
     protected double targetra;
 
     /**
      * The target decin degrees.
-     * 
+     *
      */
     @Value("${enteucha.target.dec:-10}")
     protected double targetdec;
-    
+
     /**
      * The target position we are trying to crossmacth.
-     * 
+     *
      */
-    private Position target = null; 
+    private Position target = null;
+
+    /**
+     * Our random offset generator.
+     *
+     */
+    private Random random = new Random();
+
+    /**
+     * Generate a random offset +/- the jitter value.
+     *
+     */
+    protected double random(double jitter)
+        {
+        return (this.random.nextDouble() - 0.5) * jitter ;
+        }
+
 
     /**
      * Initialse our test.
-     * 
+     *
      */
     @Before
     public void init()
@@ -179,13 +200,13 @@ extends TestCase
 
     /**
      * Run our test.
-     * 
+     *
      */
     public abstract void test();
 
     /**
      * Test finding things.
-     * 
+     *
      */
     public void outerloop(final Matcher.Factory factory)
         {
@@ -218,6 +239,8 @@ extends TestCase
                     double traceexp = insertexp + 1 ;
                     double tracenum = FastMath.pow(2.0, traceexp)+1;
                     double tracesum = FastMath.pow(tracenum, 2.0);
+                    double jitter   = rangeval/tracenum;
+
                     //log.info("Insert range [2^{} = {}]",     rangeexp,  rangeval);
                     //log.info("Insert count [2^({}+1) = {}]", insertexp, insertnum);
                     log.info("Insert [{}][{}][{}]",
@@ -239,8 +262,8 @@ extends TestCase
                                 }
                             matcher.insert(
                                 new PositionImpl(
-                                    (target.ra()  + (rangeval * (-c/insertnum))),
-                                    (target.dec() + (rangeval * (+d/insertnum)))
+                                    (target.ra()  + (rangeval * (-c/insertnum)) + this.random(jitter)),
+                                    (target.dec() + (rangeval * (+d/insertnum)) + this.random(jitter))
                                     )
                                 );
                             }
@@ -276,7 +299,7 @@ extends TestCase
                             String.format("%.4f", this.zoneval),
                             String.format("%.4f", ((rangeval / tracenum) / this.zoneval))
                             );
-                        
+
                         log.info(
                             "Memory [{}][{}][{}]",
                             humanSize(runtime.totalMemory()),
@@ -286,7 +309,7 @@ extends TestCase
                         log.info(">>>>");
                         innerloop(
                             matcher,
-                            target 
+                            target
                             );
                         log.info("<<<<");
                         }
@@ -308,7 +331,7 @@ extends TestCase
                 radiusexp,
                 radiusval
                 );
-            
+
             long looptime  = 0 ;
             long loopcount = 0 ;
             for(int loop = 0 ; loop < this.looprepeat ; loop++)
@@ -334,8 +357,8 @@ extends TestCase
                 //log.debug("Found [{}] in [{}µs {}ns][{}µs {}ns][{}µs {}ns]", matchcount, (innerone/1000), innerone, (innertwo/1000), innertwo, (innertime/1000), innertime);
                 //log.debug("Found [{}] in [{}ms][{}µs][{}ns]", matchcount, (innertime/1000000), (innertime/1000), innertime);
                 }
-            
-            double average = looptime/this.looprepeat; 
+
+            double average = looptime/this.looprepeat;
 
 //
 // TODO Checksum the ra and dec values to compare between different runs ?
@@ -343,7 +366,7 @@ extends TestCase
 // TODO Table output for analysis in TopCat
 // TODO Concurrent searches on a static dataset.
 //
-            
+
             log.info(
                 matcher.info()
                 );
@@ -356,13 +379,13 @@ extends TestCase
                 radiusval,
                 String.format("%,d", (loopcount/this.looprepeat)),
                 String.format("%,d", this.looprepeat),
-                
+
                 String.format("%,d", (looptime/1000000000)),
                 String.format("%,d", (looptime/1000000)),
-                
+
                 String.format("%,.3f", (average/1000000)),
                 String.format("%,.3f", (average/1000)),
-                
+
                 (((average) < 1000000) ? "PASS" : "FAIL")
                 );
 
@@ -398,21 +421,21 @@ extends TestCase
             log.debug("-- [{}][{}][{}]", pos.ra(), pos.dec());
             }
         }
-    
+
     /**
      * Format a data size as a human readable String.
-     * https://programming.guide/java/formatting-byte-size-to-human-readable-format.html 
-     * 
+     * https://programming.guide/java/formatting-byte-size-to-human-readable-format.html
+     *
      */
     public static String humanSize(long bytes)
         {
         return humanSize(bytes, false);
         }
-    
+
     /**
      * Format a number as a human readable String.
-     * https://programming.guide/java/formatting-byte-size-to-human-readable-format.html 
-     * 
+     * https://programming.guide/java/formatting-byte-size-to-human-readable-format.html
+     *
      */
     public static String humanSize(long value, boolean si)
         {
@@ -423,10 +446,10 @@ extends TestCase
         return String.format("%.1f%sB", value / Math.pow(unit, exponent), prefix);
         }
 
-    
+
     /**
      * Run finalise and gc.
-     *  
+     *
      */
     public void clean()
         {
