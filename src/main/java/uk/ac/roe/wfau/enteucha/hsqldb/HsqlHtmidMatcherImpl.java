@@ -49,14 +49,14 @@ implements Matcher
     {
     /**
      * Default depth.
-     * 
+     *
      */
     public static final int DEFAULT_DEPTH = 10;
     public static final int DEFAULT_BUILD = 10;
 
     /**
      * Public constructor.
-     * 
+     *
      */
     public HsqlHtmidMatcherImpl()
         {
@@ -68,12 +68,13 @@ implements Matcher
 
     /**
      * Public constructor.
-     * 
+     *
      */
     public HsqlHtmidMatcherImpl(final int depth, final int build)
         {
         this.depth = depth;
-        this.index = new HTMindexImp(depth, build);
+        this.build = build;
+//      this.index = new HTMindexImp(depth, build);
         this.init();
         }
 
@@ -84,16 +85,17 @@ implements Matcher
         {
         return this.total;
         }
-    
-    /**
-     * The depth of our index.
-     * 
-     */
-    protected final int depth ;
 
     /**
      * The depth of our index.
-     * 
+     *
+     */
+    protected final int depth ;
+    protected final int build ;
+
+    /**
+     * The depth of our index.
+     *
      */
     protected final int depth()
         {
@@ -102,20 +104,20 @@ implements Matcher
 
     /**
      * Our HTM index.
-     * 
+     *
      */
-    protected final HTMindex index ;         
+    protected final HTMindex index ;
 
     /**
      * Invalid HTMID, {@value}.
-     * 
+     *
      */
     public static final Long INVALID_HTMID = -1L ;
 
     /**
-     * Get the HTM triangle ID that contains a point. 
+     * Get the HTM triangle ID that contains a point.
      * @param pos The point position.
-     * 
+     *
      */
     public Long htmid(Position pos)
         {
@@ -123,10 +125,10 @@ implements Matcher
         }
 
     /**
-     * Get the HTM triangle ID that contains a point. 
+     * Get the HTM triangle ID that contains a point.
      * @param ra  The point position.
      * @param dec The point position.
-     * 
+     *
      */
     public Long htmid(double ra, double dec)
         {
@@ -146,11 +148,11 @@ implements Matcher
         }
 
     /**
-     * Get a list of HTM triangles that intersect a circle. 
+     * Get a list of HTM triangles that intersect a circle.
      * @param ra  The circle position.
      * @param dec The circle position.
      * @param radius The circle radius.
-     * 
+     *
      */
     public Collection<Long> circle(double ra, double dec, double radius)
         {
@@ -164,18 +166,18 @@ implements Matcher
                 ra,
                 dec,
                 (radius * 160)
-                ); 
+                );
             final Domain domain = circle.getDomain();
             domain.setOlevel(depth);
-            
+
             //log.debug("intersect - start");
             domain.intersect(
                 (HTMindexImp) index,
                 range,
                 false
-                );        
+                );
             //log.debug("intersect - done");
-            
+
             @SuppressWarnings("unchecked")
             final Iterator<Long> iter = new HTMrangeIterator(
                 range,
@@ -197,13 +199,18 @@ implements Matcher
             };
         return list ;
         }
-    
+
     @Override
     public void init()
         {
+        this.index = new HTMindexImp(
+            this.depth,
+            this.build
+            );
+
         try {
             this.connect();
-    
+
             this.connection().createStatement().executeUpdate(
                     "DROP TABLE htmsources IF EXISTS"
                     );
@@ -232,7 +239,7 @@ implements Matcher
                 );
             }
         }
-    
+
     @Override
     public void insert(final Position position)
         {
@@ -276,7 +283,7 @@ implements Matcher
                 );
             }
         }
-    
+
     @Override
     public Iterator<Position> matches(Position target, Double radius)
         {
@@ -309,7 +316,7 @@ implements Matcher
             while (iter.hasNext())
                 {
                 builder.append(
-                    iter.next() 
+                    iter.next()
                     );
                 if (iter.hasNext())
                     {
@@ -318,7 +325,7 @@ implements Matcher
                         );
                     }
                 }
-            
+
             final String query = template.replace("?", builder.toString());
             //log.trace("--- [{}]", query);
 
@@ -354,7 +361,7 @@ implements Matcher
     @Override
     public String info()
         {
-        final StringBuilder builder = new StringBuilder(); 
+        final StringBuilder builder = new StringBuilder();
         builder.append("Class [");
         builder.append(this.getClass().getSimpleName());
         builder.append("] ");
