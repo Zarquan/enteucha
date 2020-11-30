@@ -33,15 +33,13 @@
 
         createvm
 
---START--
-....
-INFO : Node name [Larilaweth]
-INFO : Base name [fedora-28-docker-base-20180708.qcow]
-INFO : Base path [/var/lib/libvirt/images/base/fedora-28-docker-base-20180708.qcow]
-INFO : Disc name [Larilaweth.qcow]
-INFO : Disc size [16GiB]
-....
---END--
+    >   ....
+    >   INFO : Node name [Larilaweth]
+    >   INFO : Base name [fedora-28-docker-base-20180708.qcow]
+    >   INFO : Base path [/var/lib/libvirt/images/base/fedora-28-docker-base-20180708.qcow]
+    >   INFO : Disc name [Larilaweth.qcow]
+    >   INFO : Disc size [16GiB]
+    >   ....
 
 # -----------------------------------------------------
 # Update the virtual machine memory allocation.
@@ -56,9 +54,7 @@ INFO : Disc size [16GiB]
         --connect "${connection:?}" \
         shutdown "${vmname:?}"
 
---START--
-Domain Larilaweth is being shutdown
---END--
+    >   Domain Larilaweth is being shutdown
 
 
     virsh \
@@ -66,11 +62,9 @@ Domain Larilaweth is being shutdown
         list \
             --all
 
---START--
- Id    Name                           State
-----------------------------------------------------
- -     Larilaweth                     shut off
---END--
+    >    Id    Name                           State
+    >   ----------------------------------------------------
+    >    -     Larilaweth                     shut off
 
 
     virsh \
@@ -89,9 +83,7 @@ Domain Larilaweth is being shutdown
         --connect "${connection:?}" \
         start "${vmname:?}"
         
---START--
-Domain Larilaweth started
---END--
+    >   Domain Larilaweth started
 
 
     virsh \
@@ -99,11 +91,9 @@ Domain Larilaweth started
         list \
             --all
 
---START--
- Id    Name                           State
-----------------------------------------------------
- 10    Larilaweth                     running
---END--
+    >    Id    Name                           State
+    >   ----------------------------------------------------
+    >    10    Larilaweth                     running
 
 
 # -----------------------------------------------------
@@ -146,14 +136,12 @@ Domain Larilaweth started
     popd
 
 
---START--
-   
-TestHTMfunc.java                              100% 7921   295.3KB/s   00:00    
-TestHTMindexImp.java                          100% 5411   182.8KB/s   00:00    
-....
-htmid-3.0.1.jar                               100%   83KB  92.9KB/s   00:00    
-duplicate-finder-result.xml                   100% 5627   126.5KB/s   00:00  
---END--
+    >      
+    >   TestHTMfunc.java                              100% 7921   295.3KB/s   00:00    
+    >   TestHTMindexImp.java                          100% 5411   182.8KB/s   00:00    
+    >   ....
+    >   htmid-3.0.1.jar                               100%   83KB  92.9KB/s   00:00    
+    >   duplicate-finder-result.xml                   100% 5627   126.5KB/s   00:00  
 
 
 # -----------------------------------------------------
@@ -188,14 +176,12 @@ EOF
         popd
     fi
 
---START--
-remote: Enumerating objects: 81, done.
-remote: Counting objects: 100% (81/81), done.
-remote: Compressing objects: 100% (37/37), done.
-remote: Total 1059 (delta 24), reused 68 (delta 19), pack-reused 978
-Receiving objects: 100% (1059/1059), 608.15 KiB | 313.00 KiB/s, done.
-Resolving deltas: 100% (314/314), done.
---END--
+    >   remote: Enumerating objects: 81, done.
+    >   remote: Counting objects: 100% (81/81), done.
+    >   remote: Compressing objects: 100% (37/37), done.
+    >   remote: Total 1059 (delta 24), reused 68 (delta 19), pack-reused 978
+    >   Receiving objects: 100% (1059/1059), 608.15 KiB | 313.00 KiB/s, done.
+    >   Resolving deltas: 100% (314/314), done.
 
 
 # -----------------------------------------------------
@@ -211,10 +197,8 @@ Resolving deltas: 100% (314/314), done.
     popd
 
 
---START--
-Branch '20200309-zrq-retest' set up to track remote branch '20200309-zrq-retest' from 'origin'.
-Switched to a new branch '20200309-zrq-retest'
---END--
+    >   Branch '20200309-zrq-retest' set up to track remote branch '20200309-zrq-retest' from 'origin'.
+    >   Switched to a new branch '20200309-zrq-retest'
 
 # -----------------------------------------------------
 # Run an instance of firethorn builder container.
@@ -245,17 +229,15 @@ Switched to a new branch '20200309-zrq-retest'
         mvn clean install -D 'skipTests=true'
     popd
 
---START--
-....
-....
-[INFO] ------------------------------------------------------------------------
-[INFO] BUILD SUCCESS
-[INFO] ------------------------------------------------------------------------
-[INFO] Total time: 17.821 s
-[INFO] Finished at: 2020-03-12T15:27:43Z
-[INFO] Final Memory: 33M/1904M
-[INFO] ------------------------------------------------------------------------
---END--
+    >   ....
+    >   ....
+    >   [INFO] ------------------------------------------------------------------------
+    >   [INFO] BUILD SUCCESS
+    >   [INFO] ------------------------------------------------------------------------
+    >   [INFO] Total time: 17.821 s
+    >   [INFO] Finished at: 2020-03-12T15:27:43Z
+    >   [INFO] Final Memory: 33M/1904M
+    >   [INFO] ------------------------------------------------------------------------
 
 
 
@@ -267,17 +249,15 @@ Switched to a new branch '20200309-zrq-retest'
         mvn clean compile
     popd
 
---START--
-....
-....
-[INFO] ------------------------------------------------------------------------
-[INFO] BUILD SUCCESS
-[INFO] ------------------------------------------------------------------------
-[INFO] Total time: 19.915 s
-[INFO] Finished at: 2020-03-12T15:28:28Z
-[INFO] Final Memory: 35M/1170M
-[INFO] ------------------------------------------------------------------------
---END--
+    >   ....
+    >   ....
+    >   [INFO] ------------------------------------------------------------------------
+    >   [INFO] BUILD SUCCESS
+    >   [INFO] ------------------------------------------------------------------------
+    >   [INFO] Total time: 19.915 s
+    >   [INFO] Finished at: 2020-03-12T15:28:28Z
+    >   [INFO] Final Memory: 35M/1170M
+    >   [INFO] ------------------------------------------------------------------------
 
 
 
@@ -320,8 +300,6 @@ Switched to a new branch '20200309-zrq-retest'
 
     retest
 
---START--
-....
-....
---END--
+    >   ....
+    >   ....
 

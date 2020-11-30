@@ -47,16 +47,14 @@
                 --copy-of "//_:plugin[_:artifactId='maven-surefire-plugin']" \
             pom.xml
 
---START--
-<plugin xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-    <groupId>org.apache.maven.plugins</groupId>
-    <artifactId>maven-surefire-plugin</artifactId>
-    <version>2.22.0</version>
-    <configuration>
-        <argLine>-Xmx10g -Xms10g</argLine>
-    </configuration>
-</plugin>
---END--
+    >   <plugin xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    >       <groupId>org.apache.maven.plugins</groupId>
+    >       <artifactId>maven-surefire-plugin</artifactId>
+    >       <version>2.22.0</version>
+    >       <configuration>
+    >           <argLine>-Xmx10g -Xms10g</argLine>
+    >       </configuration>
+    >   </plugin>
 
 
         xmlstarlet \
@@ -66,9 +64,7 @@
                 --copy-of "//_:plugin[_:artifactId='maven-surefire-plugin']/_:configuration/_:argLine" \
             pom.xml
 
---START--
-<argLine xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">-Xmx10g -Xms10g</argLine>
---END--
+    >   <argLine xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">-Xmx10g -Xms10g</argLine>
 
 
         xmlstarlet \
@@ -84,13 +80,11 @@
 
         diff pom.xml pom.new
         
---START--
-378c374
-<                     <argLine>-Xmx10g -Xms10g</argLine>
----
->                     <argLine>-Xmx95g -Xms95g</argLine>
-458,460d453
---END--
+    >   378c374
+    >   <                     <argLine>-Xmx10g -Xms10g</argLine>
+    >   ---
+    >   >                     <argLine>-Xmx95g -Xms95g</argLine>
+    >   458,460d453
         
         rm pom.xml
         mv pom.new pom.xml
@@ -125,22 +119,20 @@
     Totals [12] [(2^(12+1))+1 = 8193] => [8193^2 = 67125249]
     Range  [1.0] step [1.0/67125249 = 0.00000001]  
 
---START--
-....
-14:46:36.747 INFO  ---- ---- 
-14:46:36.748 INFO  Radius [2^-7 = 0.0078125] 
-14:46:40.112 INFO  Class [HsqlHtmidMatcherImpl] Total rows [67,125,249] Depth [10] URL [jdbc:hsqldb:mem:zonematch] 
-14:46:40.112 INFO  Searched [67,125,249] radius [0.0078125] found [6416] in [10] loops, total [3s][3363ms][3363517?s][3363517904ns], average [336ms][336351?s][336351790ns] FAIL 
-14:46:40.112 INFO  ---- ---- 
-14:46:40.113 INFO  Radius [2^-8 = 0.00390625] 
-14:46:41.135 INFO  Class [HsqlHtmidMatcherImpl] Total rows [67,125,249] Depth [10] URL [jdbc:hsqldb:mem:zonematch] 
-14:46:41.135 INFO  Searched [67,125,249] radius [0.00390625] found [1597] in [10] loops, total [1s][1021ms][1021779?s][1021779198ns], average [102ms][102177?s][102177919ns] FAIL 
-14:46:41.136 INFO  ---- ---- 
-14:46:41.136 INFO  Radius [2^-9 = 0.001953125] 
-14:46:42.144 INFO  Class [HsqlHtmidMatcherImpl] Total rows [67,125,249] Depth [10] URL [jdbc:hsqldb:mem:zonematch] 
-14:46:42.144 INFO  Searched [67,125,249] radius [0.001953125] found [392] in [10] loops, total [1s][1007ms][1007586?s][1007586781ns], average [100ms][100758?s][100758678ns] FAIL 
-....
---END--
+    >   ....
+    >   14:46:36.747 INFO  ---- ---- 
+    >   14:46:36.748 INFO  Radius [2^-7 = 0.0078125] 
+    >   14:46:40.112 INFO  Class [HsqlHtmidMatcherImpl] Total rows [67,125,249] Depth [10] URL [jdbc:hsqldb:mem:zonematch] 
+    >   14:46:40.112 INFO  Searched [67,125,249] radius [0.0078125] found [6416] in [10] loops, total [3s][3363ms][3363517?s][3363517904ns], average [336ms][336351?s][336351790ns] FAIL 
+    >   14:46:40.112 INFO  ---- ---- 
+    >   14:46:40.113 INFO  Radius [2^-8 = 0.00390625] 
+    >   14:46:41.135 INFO  Class [HsqlHtmidMatcherImpl] Total rows [67,125,249] Depth [10] URL [jdbc:hsqldb:mem:zonematch] 
+    >   14:46:41.135 INFO  Searched [67,125,249] radius [0.00390625] found [1597] in [10] loops, total [1s][1021ms][1021779?s][1021779198ns], average [102ms][102177?s][102177919ns] FAIL 
+    >   14:46:41.136 INFO  ---- ---- 
+    >   14:46:41.136 INFO  Radius [2^-9 = 0.001953125] 
+    >   14:46:42.144 INFO  Class [HsqlHtmidMatcherImpl] Total rows [67,125,249] Depth [10] URL [jdbc:hsqldb:mem:zonematch] 
+    >   14:46:42.144 INFO  Searched [67,125,249] radius [0.001953125] found [392] in [10] loops, total [1s][1007ms][1007586?s][1007586781ns], average [100ms][100758?s][100758678ns] FAIL 
+    >   ....
 
 # -----------------------------------------------------
 
@@ -148,22 +140,20 @@
     Totals [12] [(2^(12+1))+1 = 8193] => [8193^2 = 67125249]
     Range  [1.0] step [1.0/67125249 = 0.00000001]  
 
---START--
-....
-14:55:42.413 INFO  ---- ---- 
-14:55:42.413 INFO  Radius [2^-7 = 0.0078125] 
-14:55:49.235 INFO  Class [HsqlZoneMatcherImpl] Indexing [SEPARATE] Total rows [67,125,249] Zone height [0.015625] URL [jdbc:hsqldb:mem:zonematch] 
-14:55:49.236 INFO  Searched [67,125,249] radius [0.0078125] found [6414] in [10] loops, total [6s][6820ms][6820557?s][6820557744ns], average [682ms][682055?s][682055774ns] FAIL 
-14:55:49.236 INFO  ---- ---- 
-14:55:49.237 INFO  Radius [2^-8 = 0.00390625] 
-14:55:55.442 INFO  Class [HsqlZoneMatcherImpl] Indexing [SEPARATE] Total rows [67,125,249] Zone height [0.015625] URL [jdbc:hsqldb:mem:zonematch] 
-14:55:55.443 INFO  Searched [67,125,249] radius [0.00390625] found [1595] in [10] loops, total [6s][6204ms][6204728?s][6204728963ns], average [620ms][620472?s][620472896ns] FAIL 
-14:55:55.444 INFO  ---- ---- 
-14:55:55.445 INFO  Radius [2^-9 = 0.001953125] 
-14:56:01.675 INFO  Class [HsqlZoneMatcherImpl] Indexing [SEPARATE] Total rows [67,125,249] Zone height [0.015625] URL [jdbc:hsqldb:mem:zonematch] 
-14:56:01.676 INFO  Searched [67,125,249] radius [0.001953125] found [390] in [10] loops, total [6s][6230ms][6230013?s][6230013914ns], average [623ms][623001?s][623001391ns] FAIL 
-....
---END--
+    >   ....
+    >   14:55:42.413 INFO  ---- ---- 
+    >   14:55:42.413 INFO  Radius [2^-7 = 0.0078125] 
+    >   14:55:49.235 INFO  Class [HsqlZoneMatcherImpl] Indexing [SEPARATE] Total rows [67,125,249] Zone height [0.015625] URL [jdbc:hsqldb:mem:zonematch] 
+    >   14:55:49.236 INFO  Searched [67,125,249] radius [0.0078125] found [6414] in [10] loops, total [6s][6820ms][6820557?s][6820557744ns], average [682ms][682055?s][682055774ns] FAIL 
+    >   14:55:49.236 INFO  ---- ---- 
+    >   14:55:49.237 INFO  Radius [2^-8 = 0.00390625] 
+    >   14:55:55.442 INFO  Class [HsqlZoneMatcherImpl] Indexing [SEPARATE] Total rows [67,125,249] Zone height [0.015625] URL [jdbc:hsqldb:mem:zonematch] 
+    >   14:55:55.443 INFO  Searched [67,125,249] radius [0.00390625] found [1595] in [10] loops, total [6s][6204ms][6204728?s][6204728963ns], average [620ms][620472?s][620472896ns] FAIL 
+    >   14:55:55.444 INFO  ---- ---- 
+    >   14:55:55.445 INFO  Radius [2^-9 = 0.001953125] 
+    >   14:56:01.675 INFO  Class [HsqlZoneMatcherImpl] Indexing [SEPARATE] Total rows [67,125,249] Zone height [0.015625] URL [jdbc:hsqldb:mem:zonematch] 
+    >   14:56:01.676 INFO  Searched [67,125,249] radius [0.001953125] found [390] in [10] loops, total [6s][6230ms][6230013?s][6230013914ns], average [623ms][623001?s][623001391ns] FAIL 
+    >   ....
 
     HSQL zone perfoms worse than HSQL htmid because zone height is too high, small number of large zones with lots of points in them.
     -- decrease the zone height to improve performance
@@ -178,10 +168,8 @@
     Totals [12] [(2^(12+1))+1 = 8193] => [8193^2 = 67125249]
     Range  [1.0] step [1.0/67125249 = 0.00000001]  
 
---START--
-....
-....
---END--
+    >   ....
+    >   ....
 
     Second pass of HSQL zone with smaller zone height fails with resource error
 
@@ -192,24 +180,22 @@
     Range  [1.0] step [1.0/67125249 = 0.00000001] 
     Zone height [0.015625] count [129] size avg [520350] 
 
---START--
-....
-15:13:33.333 INFO  ---- ---- 
-15:13:33.333 INFO  Radius [2^-7 = 0.0078125] 
-15:13:35.161 INFO  Class [CQZoneMatcherImpl] Indexing [SEPARATE_QUANTIZED] Zone height [0.015625] Zone count [129] Zone size avg [520350] min [8193] max [524352] 
-15:13:35.162 INFO  Searched [67,125,249] radius [0.0078125] found [6414] in [10] loops, total [1s][1826ms][1826763?s][1826763237ns], average [182ms][182676?s][182676323ns] FAIL 
-15:13:35.162 INFO  ---- ---- 
-15:13:35.162 INFO  Radius [2^-8 = 0.00390625] 
-15:13:35.999 INFO  Class [CQZoneMatcherImpl] Indexing [SEPARATE_QUANTIZED] Zone height [0.015625] Zone count [129] Zone size avg [520350] min [8193] max [524352] 
-15:13:35.999 INFO  Searched [67,125,249] radius [0.00390625] found [1595] in [10] loops, total [0s][835ms][835845?s][835845696ns], average [83ms][83584?s][83584569ns] FAIL 
-15:13:36.000 INFO  ---- ---- 
-15:13:36.000 INFO  Radius [2^-9 = 0.001953125] 
-15:13:36.432 INFO  Class [CQZoneMatcherImpl] Indexing [SEPARATE_QUANTIZED] Zone height [0.015625] Zone count [129] Zone size avg [520350] min [8193] max [524352] 
-15:13:36.433 INFO  Searched [67,125,249] radius [0.001953125] found [390] in [10] loops, total [0s][431ms][431763?s][431763303ns], average [43ms][43176?s][43176330ns] FAIL 
-15:13:36.433 INFO  <<<< 
-15:13:36.433 INFO  Zone height [2^-7 = 0.0078125] 
-....
---END--
+    >   ....
+    >   15:13:33.333 INFO  ---- ---- 
+    >   15:13:33.333 INFO  Radius [2^-7 = 0.0078125] 
+    >   15:13:35.161 INFO  Class [CQZoneMatcherImpl] Indexing [SEPARATE_QUANTIZED] Zone height [0.015625] Zone count [129] Zone size avg [520350] min [8193] max [524352] 
+    >   15:13:35.162 INFO  Searched [67,125,249] radius [0.0078125] found [6414] in [10] loops, total [1s][1826ms][1826763?s][1826763237ns], average [182ms][182676?s][182676323ns] FAIL 
+    >   15:13:35.162 INFO  ---- ---- 
+    >   15:13:35.162 INFO  Radius [2^-8 = 0.00390625] 
+    >   15:13:35.999 INFO  Class [CQZoneMatcherImpl] Indexing [SEPARATE_QUANTIZED] Zone height [0.015625] Zone count [129] Zone size avg [520350] min [8193] max [524352] 
+    >   15:13:35.999 INFO  Searched [67,125,249] radius [0.00390625] found [1595] in [10] loops, total [0s][835ms][835845?s][835845696ns], average [83ms][83584?s][83584569ns] FAIL 
+    >   15:13:36.000 INFO  ---- ---- 
+    >   15:13:36.000 INFO  Radius [2^-9 = 0.001953125] 
+    >   15:13:36.432 INFO  Class [CQZoneMatcherImpl] Indexing [SEPARATE_QUANTIZED] Zone height [0.015625] Zone count [129] Zone size avg [520350] min [8193] max [524352] 
+    >   15:13:36.433 INFO  Searched [67,125,249] radius [0.001953125] found [390] in [10] loops, total [0s][431ms][431763?s][431763303ns], average [43ms][43176?s][43176330ns] FAIL 
+    >   15:13:36.433 INFO  <<<< 
+    >   15:13:36.433 INFO  Zone height [2^-7 = 0.0078125] 
+    >   ....
 
     CQ zone is the best so far, even with small number of large zones.
 
@@ -220,22 +206,20 @@
     Range [1.0] step [1.0/67125249 = 0.00000001]  
     Zone height [0.0078125] count [257] size avg [261187]
 
---START--
-....
-15:23:22.429 INFO  ---- ---- 
-15:23:22.429 INFO  Radius [2^-7 = 0.0078125] 
-15:23:24.168 INFO  Class [CQZoneMatcherImpl] Indexing [SEPARATE_QUANTIZED] Zone height [0.0078125] Zone count [257] Zone size avg [261187] min [8193] max [262176] 
-15:23:24.169 INFO  Searched [67,125,249] radius [0.0078125] found [6414] in [10] loops, total [1s][1738ms][1738482?s][1738482215ns], average [173ms][173848?s][173848221ns] FAIL 
-15:23:24.170 INFO  ---- ---- 
-15:23:24.171 INFO  Radius [2^-8 = 0.00390625] 
-15:23:25.051 INFO  Class [CQZoneMatcherImpl] Indexing [SEPARATE_QUANTIZED] Zone height [0.0078125] Zone count [257] Zone size avg [261187] min [8193] max [262176] 
-15:23:25.051 INFO  Searched [67,125,249] radius [0.00390625] found [1595] in [10] loops, total [0s][879ms][879556?s][879556208ns], average [87ms][87955?s][87955620ns] FAIL 
-15:23:25.052 INFO  ---- ---- 
-15:23:25.052 INFO  Radius [2^-9 = 0.001953125] 
-15:23:25.503 INFO  Class [CQZoneMatcherImpl] Indexing [SEPARATE_QUANTIZED] Zone height [0.0078125] Zone count [257] Zone size avg [261187] min [8193] max [262176] 
-15:23:25.504 INFO  Searched [67,125,249] radius [0.001953125] found [390] in [10] loops, total [0s][450ms][450683?s][450683917ns], average [45ms][45068?s][45068391ns] FAIL 
-....
---END--
+    >   ....
+    >   15:23:22.429 INFO  ---- ---- 
+    >   15:23:22.429 INFO  Radius [2^-7 = 0.0078125] 
+    >   15:23:24.168 INFO  Class [CQZoneMatcherImpl] Indexing [SEPARATE_QUANTIZED] Zone height [0.0078125] Zone count [257] Zone size avg [261187] min [8193] max [262176] 
+    >   15:23:24.169 INFO  Searched [67,125,249] radius [0.0078125] found [6414] in [10] loops, total [1s][1738ms][1738482?s][1738482215ns], average [173ms][173848?s][173848221ns] FAIL 
+    >   15:23:24.170 INFO  ---- ---- 
+    >   15:23:24.171 INFO  Radius [2^-8 = 0.00390625] 
+    >   15:23:25.051 INFO  Class [CQZoneMatcherImpl] Indexing [SEPARATE_QUANTIZED] Zone height [0.0078125] Zone count [257] Zone size avg [261187] min [8193] max [262176] 
+    >   15:23:25.051 INFO  Searched [67,125,249] radius [0.00390625] found [1595] in [10] loops, total [0s][879ms][879556?s][879556208ns], average [87ms][87955?s][87955620ns] FAIL 
+    >   15:23:25.052 INFO  ---- ---- 
+    >   15:23:25.052 INFO  Radius [2^-9 = 0.001953125] 
+    >   15:23:25.503 INFO  Class [CQZoneMatcherImpl] Indexing [SEPARATE_QUANTIZED] Zone height [0.0078125] Zone count [257] Zone size avg [261187] min [8193] max [262176] 
+    >   15:23:25.504 INFO  Searched [67,125,249] radius [0.001953125] found [390] in [10] loops, total [0s][450ms][450683?s][450683917ns], average [45ms][45068?s][45068391ns] FAIL 
+    >   ....
 
 
 # -----------------------------------------------------
@@ -245,21 +229,19 @@
     Range  [1.0] step [1.0/67125249 = 0.00000001]  
     Zone height [0.015625] count [129] size avg [520350]
 
---START--
-....
-15:30:52.468 INFO  Radius [2^-7 = 0.0078125] 
-15:30:52.544 INFO  Class [CQZoneMatcherImpl] Indexing [SEPARATE_SIMPLE] Zone height [0.015625] Zone count [129] Zone size avg [520350] min [8193] max [524352] 
-15:30:52.545 INFO  Searched [67,125,249] radius [0.0078125] found [6414] in [10] loops, total [0s][75ms][75966?s][75966510ns], average [7ms][7596?s][7596651ns] FAIL 
-15:30:52.545 INFO  ---- ---- 
-15:30:52.545 INFO  Radius [2^-8 = 0.00390625] 
-15:30:52.560 INFO  Class [CQZoneMatcherImpl] Indexing [SEPARATE_SIMPLE] Zone height [0.015625] Zone count [129] Zone size avg [520350] min [8193] max [524352] 
-15:30:52.560 INFO  Searched [67,125,249] radius [0.00390625] found [1595] in [10] loops, total [0s][13ms][13782?s][13782043ns], average [1ms][1378?s][1378204ns] FAIL 
-15:30:52.560 INFO  ---- ---- 
-15:30:52.561 INFO  Radius [2^-9 = 0.001953125] 
-15:30:52.567 INFO  Class [CQZoneMatcherImpl] Indexing [SEPARATE_SIMPLE] Zone height [0.015625] Zone count [129] Zone size avg [520350] min [8193] max [524352] 
-15:30:52.568 INFO  Searched [67,125,249] radius [0.001953125] found [390] in [10] loops, total [0s][6ms][6422?s][6422909ns], average [0ms][642?s][642290ns] PASS 
-....
---END--
+    >   ....
+    >   15:30:52.468 INFO  Radius [2^-7 = 0.0078125] 
+    >   15:30:52.544 INFO  Class [CQZoneMatcherImpl] Indexing [SEPARATE_SIMPLE] Zone height [0.015625] Zone count [129] Zone size avg [520350] min [8193] max [524352] 
+    >   15:30:52.545 INFO  Searched [67,125,249] radius [0.0078125] found [6414] in [10] loops, total [0s][75ms][75966?s][75966510ns], average [7ms][7596?s][7596651ns] FAIL 
+    >   15:30:52.545 INFO  ---- ---- 
+    >   15:30:52.545 INFO  Radius [2^-8 = 0.00390625] 
+    >   15:30:52.560 INFO  Class [CQZoneMatcherImpl] Indexing [SEPARATE_SIMPLE] Zone height [0.015625] Zone count [129] Zone size avg [520350] min [8193] max [524352] 
+    >   15:30:52.560 INFO  Searched [67,125,249] radius [0.00390625] found [1595] in [10] loops, total [0s][13ms][13782?s][13782043ns], average [1ms][1378?s][1378204ns] FAIL 
+    >   15:30:52.560 INFO  ---- ---- 
+    >   15:30:52.561 INFO  Radius [2^-9 = 0.001953125] 
+    >   15:30:52.567 INFO  Class [CQZoneMatcherImpl] Indexing [SEPARATE_SIMPLE] Zone height [0.015625] Zone count [129] Zone size avg [520350] min [8193] max [524352] 
+    >   15:30:52.568 INFO  Searched [67,125,249] radius [0.001953125] found [390] in [10] loops, total [0s][6ms][6422?s][6422909ns], average [0ms][642?s][642290ns] PASS 
+    >   ....
 
     CQ zone manages to get < 1ms even with only 129 zones for 67 million points
 
@@ -270,21 +252,19 @@
     Range [1.0] step [1.0/67125249 = 0.00000001]  
     Zone height [0.0078125] count [257] size avg [261187]
 
---START--
-....
-15:40:13.213 INFO  Radius [2^-7 = 0.0078125] 
-15:40:13.243 INFO  Class [CQZoneMatcherImpl] Indexing [SEPARATE_SIMPLE] Zone height [0.0078125] Zone count [257] Zone size avg [261187] min [8193] max [262176] 
-15:40:13.244 INFO  Searched [67,125,249] radius [0.0078125] found [6414] in [10] loops, total [0s][29ms][29851?s][29851115ns], average [2ms][2985?s][2985111ns] FAIL 
-15:40:13.244 INFO  ---- ---- 
-15:40:13.244 INFO  Radius [2^-8 = 0.00390625] 
-15:40:13.253 INFO  Class [CQZoneMatcherImpl] Indexing [SEPARATE_SIMPLE] Zone height [0.0078125] Zone count [257] Zone size avg [261187] min [8193] max [262176] 
-15:40:13.254 INFO  Searched [67,125,249] radius [0.00390625] found [1595] in [10] loops, total [0s][8ms][8768?s][8768824ns], average [0ms][876?s][876882ns] PASS 
-15:40:13.254 INFO  ---- ---- 
-15:40:13.254 INFO  Radius [2^-9 = 0.001953125] 
-15:40:13.259 INFO  Class [CQZoneMatcherImpl] Indexing [SEPARATE_SIMPLE] Zone height [0.0078125] Zone count [257] Zone size avg [261187] min [8193] max [262176] 
-15:40:13.259 INFO  Searched [67,125,249] radius [0.001953125] found [390] in [10] loops, total [0s][4ms][4659?s][4659797ns], average [0ms][465?s][465979ns] PASS 
-....
---END--
+    >   ....
+    >   15:40:13.213 INFO  Radius [2^-7 = 0.0078125] 
+    >   15:40:13.243 INFO  Class [CQZoneMatcherImpl] Indexing [SEPARATE_SIMPLE] Zone height [0.0078125] Zone count [257] Zone size avg [261187] min [8193] max [262176] 
+    >   15:40:13.244 INFO  Searched [67,125,249] radius [0.0078125] found [6414] in [10] loops, total [0s][29ms][29851?s][29851115ns], average [2ms][2985?s][2985111ns] FAIL 
+    >   15:40:13.244 INFO  ---- ---- 
+    >   15:40:13.244 INFO  Radius [2^-8 = 0.00390625] 
+    >   15:40:13.253 INFO  Class [CQZoneMatcherImpl] Indexing [SEPARATE_SIMPLE] Zone height [0.0078125] Zone count [257] Zone size avg [261187] min [8193] max [262176] 
+    >   15:40:13.254 INFO  Searched [67,125,249] radius [0.00390625] found [1595] in [10] loops, total [0s][8ms][8768?s][8768824ns], average [0ms][876?s][876882ns] PASS 
+    >   15:40:13.254 INFO  ---- ---- 
+    >   15:40:13.254 INFO  Radius [2^-9 = 0.001953125] 
+    >   15:40:13.259 INFO  Class [CQZoneMatcherImpl] Indexing [SEPARATE_SIMPLE] Zone height [0.0078125] Zone count [257] Zone size avg [261187] min [8193] max [262176] 
+    >   15:40:13.259 INFO  Searched [67,125,249] radius [0.001953125] found [390] in [10] loops, total [0s][4ms][4659?s][4659797ns], average [0ms][465?s][465979ns] PASS 
+    >   ....
 
     CQ zone manages to get < 1ms with only 257 zones for 67 million points
 

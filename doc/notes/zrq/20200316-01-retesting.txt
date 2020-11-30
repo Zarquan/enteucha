@@ -67,8 +67,6 @@
 
         diff pom.xml pom.new
         
---START--
---END--
 
         
         rm pom.xml
