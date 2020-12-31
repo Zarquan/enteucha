@@ -210,11 +210,13 @@ extends TestCase
      */
     public void outerloop(final Matcher.Factory factory)
         {
+/*
         if (first)
             {
             startup(factory);
             first = false;
             }
+ */
         clean();
         log.info("Target [{}][{}]", target.ra(), target.dec());
         log.info("<outerloop target='{},{}'>", target.ra(), target.dec());
@@ -227,10 +229,7 @@ extends TestCase
             for (this.zoneexp = this.zonemin ; this.zoneexp <= this.zonemax ; this.zoneexp++ )
                 {
                 this.zoneval = FastMath.pow(2.0, -this.zoneexp );
-                final Matcher matcher = factory.create();
-                matcher.insert(
-                    target
-                    );
+                Matcher matcher = startup(factory);
                 log.info("---- ----");
                 //TODO Move the insert loop to a plugin (matrix, votable ..)
                 for (int insertexp = 0 ; insertexp <= selectmax ; insertexp++)
@@ -404,15 +403,15 @@ extends TestCase
             }
         }
 
-    protected void startup(final Matcher.Factory factory)
+    protected Matcher startup(final Matcher.Factory factory)
         {
         log.debug("startup ----");
-        final Matcher matcher = factory.create();
+        Matcher matcher = factory.create();
         matcher.insert(
-            target
+            this.target
             );
         Iterator<Position> iter = matcher.matches(
-            target,
+            this.target,
             0.0
             );
         while (iter.hasNext())
@@ -420,6 +419,7 @@ extends TestCase
             Position pos = iter.next();
             log.debug("-- [{}][{}][{}]", pos.ra(), pos.dec());
             }
+        return matcher;
         }
 
     /**
