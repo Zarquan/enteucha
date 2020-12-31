@@ -106,7 +106,7 @@ implements Matcher
      * Our HTM index.
      *
      */
-    protected final HTMindex index ;
+    protected HTMindex index ;
 
     /**
      * Invalid HTMID, {@value}.
