@@ -32,8 +32,8 @@ import uk.ac.roe.wfau.enteucha.util.MinMaxRangeFilter;
 import uk.ac.roe.wfau.enteucha.util.PositionResultSetIterator;
 
 /**
- * 
- * 
+ *
+ *
  */
 @Slf4j
 public class HsqlZoneMatcherImpl
@@ -42,7 +42,7 @@ implements Matcher
     {
     /**
      * Public constructor.
-     * 
+     *
      */
     public HsqlZoneMatcherImpl(int count)
         {
@@ -51,10 +51,10 @@ implements Matcher
             count
             ) ;
         }
-    
+
     /**
      * Public constructor.
-     * 
+     *
      */
     public HsqlZoneMatcherImpl(final IndexingShape indexing, double height)
         {
@@ -65,7 +65,7 @@ implements Matcher
 
     /**
      * Indexing shape.
-     * 
+     *
      */
     public enum IndexingShape
         {
@@ -76,13 +76,13 @@ implements Matcher
 
     /**
      * The {@link IndexingShape} for this {@link Matcher}.
-     * 
+     *
      */
     private IndexingShape indexing ;
 
     /**
      * The {@link IndexingShape} for this {@link Matcher}.
-     * 
+     *
      */
     public IndexingShape indexing()
         {
@@ -91,28 +91,28 @@ implements Matcher
 
     /**
      * The height of each zone slice.
-     * 
+     *
      */
     private double height ;
 
     /**
      * The height of each zone slice.
-     * 
+     *
      */
     public double height()
         {
         return this.height;
         }
-    
+
     /**
      * Small offset to avoid divide by zero.
-     * 
+     *
      */
     protected static final Double epsilon = 10E-6;
 
     /**
      * Initialise our database connection.
-     * 
+     *
      */
     public void init()
         {
@@ -181,11 +181,11 @@ implements Matcher
                         + ")"
                         );
                 break ;
-                    
+
                 default :
                     throw new IllegalArgumentException(
                         "Unknown indexing shape [{" + this.indexing.name() + "}]"
-                        ); 
+                        );
                 }
             }
         catch (final SQLException ouch)
@@ -227,7 +227,7 @@ implements Matcher
             + "        ? "
             ;
 /*
- * 
+ *
             + " AND "
             + "    ra BETWEEN "
             + "        ? "
@@ -239,16 +239,16 @@ implements Matcher
             + "    AND "
             + "        ? "
             ;
- * 
+ *
  */
 
 /*
- * TODO Make this configurable. 
+ * TODO Make this configurable.
             + "    AND "
             + "        ? "
             + "    AND  "
             + "        ? > (power((cx - ?), 2) + power((cy - ?), 2) + power(cz - ?, 2)) ";
- *             
+ *
  */
 
         final int minzone = (int) FastMath.floor(((target.dec() + 90) - radius) / this.height) ;
@@ -260,11 +260,11 @@ implements Matcher
         double maxra = (target.ra() + factor);
  *
  */
-        double mindec = target.dec() - radius ; 
-        double maxdec = target.dec() + radius ; 
+        double mindec = target.dec() - radius ;
+        double maxdec = target.dec() + radius ;
 
         /*
-         * 
+         *
         double squaresin = 4 * (
                 FastMath.pow(
                     FastMath.sin(
@@ -274,19 +274,19 @@ implements Matcher
                         ),
                     2)
                 );
-         * 
+         *
          */
 
         //log.debug("min/max zone [{}][{}]", minzone, maxzone);
         //log.debug("min/max ra   [{}][{}]", minra, maxra);
         //log.debug("min/max dec  [{}][{}]", mindec, maxdec);
-        
+
         try {
             final PreparedStatement statement = connection().prepareStatement(template);
 
             statement.setInt(1, minzone);
-            statement.setInt(2, maxzone);            
-/*            
+            statement.setInt(2, maxzone);
+/*
             statement.setDouble(3, minra);
             statement.setDouble(4, maxra);
 
@@ -373,14 +373,20 @@ implements Matcher
         }
 
     @Override
+    public String index()
+        {
+        return this.indexing.name();
+        }
+
+    @Override
     public String info()
         {
-        final StringBuilder builder = new StringBuilder(); 
+        final StringBuilder builder = new StringBuilder();
         builder.append("Class [");
-        builder.append(this.getClass().getSimpleName());
+        builder.append(this.type());
         builder.append("] ");
-        builder.append("Indexing [");
-        builder.append(this.indexing.name());
+        builder.append("Index [");
+        builder.append(this.index());
         builder.append("] ");
         builder.append("Total rows [");
         builder.append(String.format("%,d", this.total()));

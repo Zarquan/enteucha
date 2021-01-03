@@ -258,17 +258,14 @@ Resolving deltas: 100% (581/581), done.
 --START--
 ....
 ....
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time: 2.575 s
+[INFO] Finished at: 2020-12-31T15:33:04Z
+[INFO] Final Memory: 37M/1577M
+[INFO] ------------------------------------------------------------------------
 --END--
-
-    >   ....
-    >   ....
-    >   [INFO] ------------------------------------------------------------------------
-    >   [INFO] BUILD SUCCESS
-    >   [INFO] ------------------------------------------------------------------------
-    >   [INFO] Total time: 2.226 s
-    >   [INFO] Finished at: 2020-08-04T10:17:01Z
-    >   [INFO] Final Memory: 38M/1577M
-    >   [INFO] ------------------------------------------------------------------------
 
 
 # -----------------------------------------------------
@@ -288,15 +285,14 @@ Resolving deltas: 100% (581/581), done.
 --START--
 ....
 ....
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time: 7.136 s
+[INFO] Finished at: 2020-12-31T15:33:37Z
+[INFO] Final Memory: 29M/1567M
+[INFO] ------------------------------------------------------------------------
 --END--
-
-    >   [INFO] ------------------------------------------------------------------------
-    >   [INFO] BUILD SUCCESS
-    >   [INFO] ------------------------------------------------------------------------
-    >   [INFO] Total time: 0.937 s
-    >   [INFO] Finished at: 2020-08-04T10:47:17Z
-    >   [INFO] Final Memory: 33M/1963M
-    >   [INFO] ------------------------------------------------------------------------
 
 
 # -----------------------------------------------------
@@ -310,89 +306,162 @@ Resolving deltas: 100% (581/581), done.
     echo "Classpath [${classpath:?}]"
 
 --START--
-....
-....
+Classpath [/var/local/build/enteucha/target/test-classes:/var/local/build/enteucha/target/classes:/var/local/cache/maven ....]
 --END--
-    >   Classpath [/var/local/build/enteucha/target/test-classes:/var/local/build/enteucha/target/classes:/var/local/cache/maven/....]
 
 
 # -----------------------------------------------------
-# Update logging config.
+# Update the test settings and run our tests.
 #[user@builder]
 
-    pushd /var/local/build/enteucha
-        pushd target/test-classes
+    xmxmem=300g
+    xmsmem=300g
 
-            vi logback.xml
+    testAll()
+        {
+        testHsqlHtmid
+        testHsqlZone
+        testCQZone
+        }
 
-                <!--+
-                    | Enteucha logging.
-                    +-->
-                <logger name="uk.ac.roe.wfau.enteucha">
-            -       <level value="DEBUG"/>
-            +       <level value="INFO"/>
-                </logger>
-
-
+    testHsqlHtmid()
+        {
+        echo ""
+        echo "---- ---- ---- ---- ---- ---- ---- ----"
+        pushd /var/local/build/enteucha
+            java \
+                -Xmx${xmxmem:?} \
+                -Xms${xmsmem:?} \
+                -classpath "${classpath:?}" \
+                uk.ac.roe.wfau.enteucha.hsqldb.HsqlHtmidMatcherTestCase
         popd
-    popd
+        }
+
+    testHsqlZone()
+        {
+        echo ""
+        echo "---- ---- ---- ---- ---- ---- ---- ----"
+        pushd /var/local/build/enteucha
+            java \
+                -Xmx${xmxmem:?} \
+                -Xms${xmsmem:?} \
+                -classpath "${classpath:?}" \
+                uk.ac.roe.wfau.enteucha.hsqldb.HsqlZoneMatcherTestCase
+        popd
+        }
+
+    testCQZone()
+        {
+        echo ""
+        echo "---- ---- ---- ---- ---- ---- ---- ----"
+        pushd /var/local/build/enteucha
+            java \
+                -Xmx${xmxmem:?} \
+                -Xms${xmsmem:?} \
+                -classpath "${classpath:?}" \
+                uk.ac.roe.wfau.enteucha.cqengine.CQZoneMatcherTestCase
+        popd
+        }
+
+    vi /var/local/build/enteucha/target/test-classes/test.properties
+
+        enteucha.loop=100
+
+        enteucha.select.min=10
+        enteucha.insert.max=10
+
+        enteucha.radius.min=4
+        enteucha.radius.max=4
+
+        enteucha.range.min=6
+        enteucha.range.max=6
+
+        enteucha.zone.min=6
+        enteucha.zone.max=6
+
+        enteucha.target.ra=0
+        enteucha.target.dec=0
+
+    testAll
+
+--START--
+15:50:17.390 INFO  >>>>
+15:50:17.390 INFO  ---- ----
+15:50:17.390 INFO  Radius [4][2^(-4) = 0.0625]
+15:50:17.512 INFO  Class [HsqlHtmidMatcherImpl] Total rows [4,198,401] Depth [10] URL [jdbc:hsqldb:mem:zonematch]
+15:50:17.513 INFO  Searched [4,198,401] range [64.0] zone [0.015625] radius [0.0625] found [4] in [100] loops, total [0s][121ms], average [1.213ms][1,213.230us] FAIL
+15:50:17.513 INFO  <data-row><matcher>HsqlHtmidMatcherImpl</matcher><points>4198401</points><range>64.0</range><zone>0.015625</zone><radius>0.0625</radius><found>4</found><repeat>100</repeat><timesum>121</timesum><timeavg>1.213</timeavg></data-row>
+15:50:17.513 INFO  <<<<
+--END--
+
+--START--
+15:51:16.595 INFO  >>>>
+15:51:16.595 INFO  ---- ----
+15:51:16.595 INFO  Radius [4][2^(-4) = 0.0625]
+15:51:17.350 INFO  Class [HsqlZoneMatcherImpl] Indexing [SEPARATE] Total rows [4,198,401] Zone height [0.015625] URL [jdbc:hsqldb:mem:zonematch]
+15:51:17.351 INFO  Searched [4,198,401] range [64.0] zone [0.015625] radius [0.0625] found [4] in [100] loops, total [0s][754ms], average [7.543ms][7,543.085us] FAIL
+15:51:17.361 INFO  <data-row><matcher>HsqlZoneMatcherImpl</matcher><points>4198401</points><range>64.0</range><zone>0.015625</zone><radius>0.0625</radius><found>4</found><repeat>100</repeat><timesum>754</timesum><timeavg>7.543</timeavg></data-row>
+15:51:17.361 INFO  <<<<
+....
+15:51:52.635 INFO  >>>>
+15:51:52.636 INFO  ---- ----
+15:51:52.636 INFO  Radius [4][2^(-4) = 0.0625]
+15:51:53.221 INFO  Class [HsqlZoneMatcherImpl] Indexing [COMBINED] Total rows [4,198,401] Zone height [0.015625] URL [jdbc:hsqldb:mem:zonematch]
+15:51:53.222 INFO  Searched [4,198,401] range [64.0] zone [0.015625] radius [0.0625] found [1] in [100] loops, total [0s][584ms], average [5.847ms][5,846.969us] FAIL
+15:51:53.222 INFO  <data-row><matcher>HsqlZoneMatcherImpl</matcher><points>4198401</points><range>64.0</range><zone>0.015625</zone><radius>0.0625</radius><found>1</found><repeat>100</repeat><timesum>584</timesum><timeavg>5.847</timeavg></data-row>
+15:51:53.222 INFO  <<<<
+....
+15:52:24.016 INFO  >>>>
+15:52:24.016 INFO  ---- ----
+15:52:24.016 INFO  Radius [4][2^(-4) = 0.0625]
+15:52:24.372 INFO  Class [HsqlZoneMatcherImpl] Indexing [COMPLEX] Total rows [4,198,401] Zone height [0.015625] URL [jdbc:hsqldb:mem:zonematch]
+15:52:24.373 INFO  Searched [4,198,401] range [64.0] zone [0.015625] radius [0.0625] found [3] in [100] loops, total [0s][355ms], average [3.552ms][3,552.466us] FAIL
+15:52:24.373 INFO  <data-row><matcher>HsqlZoneMatcherImpl</matcher><points>4198401</points><range>64.0</range><zone>0.015625</zone><radius>0.0625</radius><found>3</found><repeat>100</repeat><timesum>355</timesum><timeavg>3.552</timeavg></data-row>
+15:52:24.373 INFO  <<<<
+--END--
+
+--START--
+16:07:15.537 INFO  >>>>
+16:07:15.538 INFO  ---- ----
+16:07:15.538 INFO  Radius [4][2^(-4) = 0.0625]
+16:07:15.702 INFO  Class [CQZoneMatcherImpl] Indexing [SEPARATE_SIMPLE] Zone height [0.015625] count [8087]  avg size [519] min [1] max [1158]
+16:07:15.702 INFO  Searched [4,198,401] range [64.0] zone [0.015625] radius [0.0625] found [4] in [100] loops, total [0s][156ms], average [1.569ms][1,568.969us] FAIL
+16:07:15.703 INFO  <data-row><matcher>CQZoneMatcherImpl</matcher><points>4198401</points><range>64.0</range><zone>0.015625</zone><radius>0.0625</radius><found>4</found><repeat>100</repeat><timesum>156</timesum><timeavg>1.569</timeavg></data-row>
+16:07:15.703 INFO  <<<<
+--END--
 
 
 # -----------------------------------------------------
-# Update the test settings.
+# ....
 #[user@builder]
 
-    pushd /var/local/build/enteucha
+    vi /var/local/build/enteucha/target/test-classes/test.properties
 
-        vi target/test-classes/test.properties
+        enteucha.loop=100
 
-            ~   enteucha.loop=10
+        enteucha.select.min=10
+        enteucha.insert.max=10
 
-            ~   enteucha.select.min=10
-            ~   enteucha.insert.max=10
+        enteucha.radius.min=1
+        enteucha.radius.max=7
 
-                enteucha.radius.min=4
-                enteucha.radius.max=4
+        enteucha.range.min=6
+        enteucha.range.max=6
 
-            ~   enteucha.range.min=6
-            ~   enteucha.range.max=6
+        enteucha.zone.min=1
+        enteucha.zone.max=7
 
-                enteucha.zone.min=6
-                enteucha.zone.max=6
+        enteucha.target.ra=0.4
+        enteucha.target.dec=0.5
 
-                enteucha.target.ra=0
-                enteucha.target.dec=0
+    reset
 
-    popd
+    rm /var/local/build/enteucha/target/enteucha-info.log
 
+    testAll
 
-# -----------------------------------------------------
-# Run our tests.
-#[user@desktop]
-
-    pushd /var/local/build/enteucha
-
-        java \
-            -Xmx200g \
-            -Xms200g \
-            -classpath "${classpath:?}" \
-            uk.ac.roe.wfau.enteucha.hsqldb.HsqlHtmidMatcherTestCase
-
-
-        java \
-            -Xmx200g \
-            -Xms200g \
-            -classpath "${classpath:?}" \
-            uk.ac.roe.wfau.enteucha.hsqldb.HsqlZoneMatcherTestCase
-
-
-        java \
-            -Xmx200g \
-            -Xms200g \
-            -classpath "${classpath:?}" \
-            uk.ac.roe.wfau.enteucha.cqengine.CQZoneMatcherTestCase
-
-    popd
-
+    sed -n '
+        s|.*\(<data-row>.*</data-row>\).*|\1|p
+        ' /var/local/build/enteucha/target/enteucha-info.log
 
 

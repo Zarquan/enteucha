@@ -359,12 +359,21 @@ implements Matcher
         }
 
     @Override
+    public String index()
+        {
+        return "HTMID";
+        }
+
+    @Override
     public String info()
         {
         final StringBuilder builder = new StringBuilder();
         builder.append("Class [");
-        builder.append(this.getClass().getSimpleName());
+        builder.append(this.type());
         builder.append("] ");
+        builder.append("Index [");
+        builder.append(this.index());
+        builder.append("]");
         builder.append("Total rows [");
         builder.append(String.format("%,d", this.total()));
         builder.append("] ");

@@ -45,7 +45,7 @@ import uk.ac.roe.wfau.enteucha.util.CartesianSquaresFilter;
  * A CQEngine based implementation of {@link CQZoneMatcher}
  * TODO Add validation for out of range values.
  * TODO Add +360 and -360 copies for positions within margins of ra = 0 or 360.
- *  
+ *
  */
 @Slf4j
 public class CQZoneMatcherImpl
@@ -54,34 +54,34 @@ implements CQZoneMatcher
 
     /**
      * Small offset to avoid divide by zero.
-     * 
+     *
      */
     protected static final double epsilon = 10E-6;
 
     /**
      * The height in degrees of the {@link Zone}s in this set.
-     * 
+     *
      */
     private double zoneheight ;
 
     /**
      * The height in degrees of the {@link Zone}s in this set.
-     * 
+     *
      */
     public double height()
         {
         return this.zoneheight;
         }
-    
+
     /**
      * The {@link IndexingShape} for this {@link CQZoneMatcher}.
-     * 
+     *
      */
     protected IndexingShape indexing ;
 
     /**
      * The {@link IndexingShape} for this {@link CQZoneMatcher}.
-     * 
+     *
      */
     @Override
     public IndexingShape indexing()
@@ -92,7 +92,7 @@ implements CQZoneMatcher
 
     /**
      * Initialise this {@link CQZoneMatcher}.
-     * 
+     *
      */
     public void init()
         {
@@ -100,7 +100,7 @@ implements CQZoneMatcher
 
     /**
      * Public constructor.
-     * 
+     *
      */
     public CQZoneMatcherImpl(final IndexingShape indexing, double zoneheight)
         {
@@ -116,13 +116,13 @@ implements CQZoneMatcher
 
     //long radectotal = 0 ;
     //long radeccount = 0 ;
-    
+
     @Override
     public Iterator<Position> matches(final Position target, final Double radius)
         {
         //log.trace("matches() [{}][{}][{}]", target.ra(), target.dec(), radius);
 
-        final IterableListCat<Position> list = new IterableListCat<Position>();  
+        final IterableListCat<Position> list = new IterableListCat<Position>();
         for (Zone zone : contains(target, radius))
             {
             list.add(
@@ -134,7 +134,7 @@ implements CQZoneMatcher
             }
         return list.iterator();
         }
-        
+
     @Override
     public Iterable<Zone> contains(final Position target, final Double radius)
         {
@@ -154,10 +154,10 @@ implements CQZoneMatcher
                 )
             );
         }
-        
+
     /**
-     * Select a {@link ResultSet} of {@link ZoneImpl}s between an upper and lower bound.  
-     * 
+     * Select a {@link ResultSet} of {@link ZoneImpl}s between an upper and lower bound.
+     *
      */
     protected ResultSet<ZoneImpl> between(final Integer min, final Integer max)
         {
@@ -176,7 +176,7 @@ implements CQZoneMatcher
         //long zonedone = System.nanoTime();
         //long zonediff = zonedone - zonestart;
         //log.trace("Zone between took [{}µs][{}ns]", ((zonediff)/1000), (zonediff) );
-        return results ; 
+        return results ;
         }
 
     /**
@@ -214,7 +214,7 @@ implements CQZoneMatcher
         {
         return zoneid(position, null);
         }
-    
+
     protected int zoneid(final Position position, Double radius)
         {
         double angle = position.dec() + 90 ;
@@ -227,7 +227,7 @@ implements CQZoneMatcher
         //log.debug("zoneid [{},{}]+[{}] => [{}]", position.ra(), position.dec(), radius, result);
         return result;
         }
-    
+
     @Override
     public void insert(final Position position)
         {
@@ -261,8 +261,8 @@ implements CQZoneMatcher
         }
 
     /**
-     * Our collection of {@link Zone}s, indexed by {@link ZoneImpl.ZONE_ID}. 
-     * 
+     * Our collection of {@link Zone}s, indexed by {@link ZoneImpl.ZONE_ID}.
+     *
      */
     private final IndexedCollection<ZoneImpl> zones = new ConcurrentIndexedCollection<ZoneImpl>(
         OnHeapPersistence.onPrimaryKey(
@@ -272,7 +272,7 @@ implements CQZoneMatcher
 
     /**
      * The CQEngine {@link Attribute} for a {@link Zone} identifier.
-     * 
+     *
      */
     public static final SimpleAttribute<ZoneImpl, Integer> ZONE_ID = new SimpleAttribute<ZoneImpl, Integer>("zone.id")
         {
@@ -288,16 +288,22 @@ implements CQZoneMatcher
         {
         return this.getClass().getSimpleName();
         }
-        
+
+    @Override
+    public String index()
+        {
+        return this.indexing.name();
+        }
+
     @Override
     public String info()
         {
-        final StringBuilder builder = new StringBuilder(); 
+        final StringBuilder builder = new StringBuilder();
         builder.append("Class [");
-        builder.append(this.getClass().getSimpleName());
+        builder.append(this.type());
         builder.append("] ");
-        builder.append("Indexing [");
-        builder.append(this.indexing.name());
+        builder.append("Index [");
+        builder.append(this.index());
         builder.append("] ");
         builder.append("Zone height [");
         builder.append(this.zoneheight);
@@ -336,21 +342,21 @@ implements CQZoneMatcher
         builder.append(" max [");
         builder.append((maxtotal));
         builder.append("]");
-        
+
         return builder.toString();
         }
 
     /**
      * A CQEngine based implementation of {@link CQZoneMatcher.Zone}
-     * 
+     *
      */
     public class ZoneImpl
     implements CQZoneMatcher.Zone
         {
-    
+
         /**
          * Protected constructor.
-         * 
+         *
          */
         protected ZoneImpl(int ident)
             {
@@ -378,7 +384,7 @@ implements CQZoneMatcher
                 radius
                 );
             }
-        
+
         /**
          * Query our CQEngine collection for {@link Position}s within a search radius of a target {@link Position}.
          *
@@ -391,8 +397,8 @@ implements CQZoneMatcher
             double minra = (target.ra() - factor);
             double maxra = (target.ra() + factor);
 
-            double mindec = (target.dec() - radius) ; 
-            double maxdec = (target.dec() + radius) ; 
+            double mindec = (target.dec() - radius) ;
+            double maxdec = (target.dec() + radius) ;
 
             //log.trace("min/max ra  [{}][{}]", minra,  maxra) ;
             //log.trace("min/max dec [{}][{}]", mindec, maxdec);
@@ -441,10 +447,10 @@ implements CQZoneMatcher
                     );
                 }
             }
-    
+
         /**
-         * Our collection of {@link Position}s. 
-         * 
+         * Our collection of {@link Position}s.
+         *
          */
         private final IndexedCollection<Position> positions = new ConcurrentIndexedCollection<Position>();
 
@@ -488,7 +494,7 @@ implements CQZoneMatcher
                             )
                         );
                 break ;
-                
+
                 case COMBINED_SIMPLE:
                     {
                     positions.addIndex(
@@ -502,19 +508,19 @@ implements CQZoneMatcher
                 default:
                     throw new IllegalArgumentException(
                         "Unknown indexing [{" + CQZoneMatcherImpl.this.indexing.name() + "}]"
-                        ); 
+                        );
                 }
             }
 
         @Override
         public String info()
             {
-            final StringBuilder builder = new StringBuilder(); 
+            final StringBuilder builder = new StringBuilder();
             builder.append("Class [");
-            builder.append(this.getClass().getSimpleName());
+            builder.append(this.type());
             builder.append("] ");
-            builder.append("Indexing [");
-            builder.append(CQZoneMatcherImpl.this.indexing.name());
+            builder.append("Index [");
+            builder.append(this.index());
             builder.append("]");
             builder.append("Total rows [");
             builder.append(String.format("%,d", this.total()));
@@ -527,11 +533,17 @@ implements CQZoneMatcher
             {
             return this.getClass().getSimpleName();
             }
+
+        @Override
+        public String index()
+            {
+            return CQZoneMatcherImpl.this.indexing.name();
+            }
         }
 
     /**
      * The CQEngine {@link Attribute} for a {@link PositionImpl} right ascension.
-     * 
+     *
      */
     public static final SimpleAttribute<Position, Double> POS_RA = new SimpleAttribute<Position, Double>("pos.ra")
         {
@@ -544,7 +556,7 @@ implements CQZoneMatcher
 
     /**
      * The CQEngine {@link Attribute} for a {@link PositionImpl} declination.
-     * 
+     *
      */
     public static final SimpleAttribute<Position, Double> POS_DEC = new SimpleAttribute<Position, Double>("pos.dec")
         {
