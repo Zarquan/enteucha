@@ -317,13 +317,6 @@ Classpath [/var/local/build/enteucha/target/test-classes:/var/local/build/enteuc
     xmxmem=300g
     xmsmem=300g
 
-    testAll()
-        {
-        testHsqlHtmid
-        testHsqlZone
-        testCQZone
-        }
-
     testHsqlHtmid()
         {
         echo ""
@@ -362,6 +355,14 @@ Classpath [/var/local/build/enteucha/target/test-classes:/var/local/build/enteuc
                 uk.ac.roe.wfau.enteucha.cqengine.CQZoneMatcherTestCase
         popd
         }
+
+    testAll()
+        {
+        testHsqlHtmid
+        testHsqlZone
+        testCQZone
+        }
+
 
     vi /var/local/build/enteucha/target/test-classes/test.properties
 

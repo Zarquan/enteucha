@@ -373,7 +373,7 @@ implements Matcher
         builder.append("] ");
         builder.append("Index [");
         builder.append(this.index());
-        builder.append("]");
+        builder.append("] ");
         builder.append("Total rows [");
         builder.append(String.format("%,d", this.total()));
         builder.append("] ");
