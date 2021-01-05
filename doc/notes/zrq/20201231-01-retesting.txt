@@ -462,7 +462,106 @@ Classpath [/var/local/build/enteucha/target/test-classes:/var/local/build/enteuc
     testAll
 
     sed -n '
-        s|.*\(<data-row>.*</data-row>\).*|\1|p
-        ' /var/local/build/enteucha/target/enteucha-info.log
+        1 i\
+matcher,index,points,range,zone,radius,found,repeat,timesum,timeavg
+        /<data-row>.*<\/data-row>/ {
+            s/.*<data-row>\(.*\)<\/data-row>.*/\1/
+            s/<matcher>\(.*\)<\/matcher>/\1,/
+            s/<index>\(.*\)<\/index>/\1,/
+            s/<points>\(.*\)<\/points>/\1,/
+            s/<range>\(.*\)<\/range>/\1,/
+            s/<zone>\(.*\)<\/zone>/\1,/
+            s/<radius>\(.*\)<\/radius>/\1,/
+            s/<found>\(.*\)<\/found>/\1,/
+            s/<repeat>\(.*\)<\/repeat>/\1,/
+            s/<timesum>\(.*\)<\/timesum>/\1,/
+            s/<timeavg>\(.*\)<\/timeavg>/\1/
+            p
+            }
+        ' /var/local/build/enteucha/target/enteucha-info.log \
+        | tee /var/local/build/enteucha/target/enteucha-info.csv
+
+
+
+# -----------------------------------------------------
+# -----------------------------------------------------
+# Pull a copy of the results.
+#[user@desktop]
+
+    source enteucha.env
+    pushd "${ENTEUCHA_CODE}"
+
+        scp Stevedore@Onaukon:/var/local/build/enteucha/target/enteucha-info.csv target/enteucha-info.csv
+
+    popd
+
+    #
+    # Plot graphs in LibreOfficeCalc ..
+    #
+
+
+# -----------------------------------------------------
+# -----------------------------------------------------
+# ....
+#[user@builder]
+
+    vi /var/local/build/enteucha/target/test-classes/test.properties
+
+        enteucha.loop=100
+
+        enteucha.select.min=10
+        enteucha.insert.max=10
+
+        enteucha.radius.min=1
+        enteucha.radius.max=7
+
+    ~   enteucha.range.min=5
+    ~   enteucha.range.max=7
+
+        enteucha.zone.min=1
+        enteucha.zone.max=7
+
+        enteucha.target.ra=0.4
+        enteucha.target.dec=0.5
+
+    reset
+
+    rm /var/local/build/enteucha/target/enteucha-info.log
+
+    testAll
+
+    sed -n '
+        1 i\
+matcher,index,points,range,zone,radius,found,repeat,timesum,timeavg
+        /<data-row>.*<\/data-row>/ {
+            s/.*<data-row>\(.*\)<\/data-row>.*/\1/
+            s/<matcher>\(.*\)<\/matcher>/\1,/
+            s/<index>\(.*\)<\/index>/\1,/
+            s/<points>\(.*\)<\/points>/\1,/
+            s/<range>\(.*\)<\/range>/\1,/
+            s/<zone>\(.*\)<\/zone>/\1,/
+            s/<radius>\(.*\)<\/radius>/\1,/
+            s/<found>\(.*\)<\/found>/\1,/
+            s/<repeat>\(.*\)<\/repeat>/\1,/
+            s/<timesum>\(.*\)<\/timesum>/\1,/
+            s/<timeavg>\(.*\)<\/timeavg>/\1/
+            p
+            }
+        ' /var/local/build/enteucha/target/enteucha-info.log \
+        | tee /var/local/build/enteucha/target/enteucha-info.csv
+
+
+# -----------------------------------------------------
+# -----------------------------------------------------
+# Pull a copy of the results.
+#[user@desktop]
+
+    source enteucha.env
+    pushd "${ENTEUCHA_CODE}"
+
+        scp Stevedore@Onaukon:/var/local/build/enteucha/target/enteucha-info.csv target/enteucha-info.csv
+
+    popd
+
 
 
